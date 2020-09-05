@@ -1,0 +1,50 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-disposition",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-disposition",
+  "description": "This SearchParameter enables query of encounters by disposition to support automation of measure computation.",
+  "name": "disposition",
+  "purpose": "",
+  "code": "disposition",
+  "base": [
+    "Encounter"
+  ],
+  "type": "token",
+  "expression": "hospitalization.dispositionCode",
+  "xpath": "f:hospitalization/f:dispositionCode",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true
+}

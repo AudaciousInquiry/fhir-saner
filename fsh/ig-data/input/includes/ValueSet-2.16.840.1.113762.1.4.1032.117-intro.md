@@ -1,7 +1,7 @@
 <h3 id='vsac-snapshot'>This ValueSet is a SNAPSHOT of a ValueSet in VSAC</h3>
 <p>This ValueSet resource is a snapshot of a ValueSet made available through the US Value Set Authority
 Center (VSAC).  It is included as an aid to interpretation of the implementation guide, and to support initial
-implementation.  The ValueSet resource should be obtained directly from VSAC using the
+implementation.  The ValueSet resource **should** be obtained directly from VSAC using the
 following URL:</p>
 
 <p><a href='http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.117'>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.117</a></p>

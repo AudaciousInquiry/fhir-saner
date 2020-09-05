@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PatientDied",
+  "id": "PatientDied",
+  "title": "Patient Died",
+  "description": "Codes used to identify that a patient has died",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientDied"
+}

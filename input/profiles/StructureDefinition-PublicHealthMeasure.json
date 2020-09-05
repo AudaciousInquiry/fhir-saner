@@ -1,0 +1,484 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PublicHealthMeasure",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Specialized.Quality Reporting &amp; Testing"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure",
+  "version": "0.1.0",
+  "name": "PublicHealthMeasure",
+  "title": "Saner Public Health Measure",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Profile Saner Public Health Measure\nThe Public Health Measure Profile ensures that Measures are very well defined as an aid to automation\nof measures.  These are developed by The Saner Project team to ensure that the measure is well understood\nand computation of it can be automated from systems that have the measure data.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Measure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Measure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Measure.extension",
+        "path": "Measure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Measure.extension:measureTiming",
+        "path": "Measure.extension",
+        "sliceName": "measureTiming",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Measure.url",
+        "path": "Measure.url",
+        "short": "Each resource must have a url.",
+        "comment": "The url for resource defined in The Situation Awareness for Novel Epidemic Response IG will follow IG URL naming conventions.",
+        "min": 1
+      },
+      {
+        "id": "Measure.version",
+        "path": "Measure.version",
+        "short": "Resources are versioned like IG's 0.1.0 = first development version, 0.2.0 - first published for review version, 1.0.0 first official version ...",
+        "min": 1
+      },
+      {
+        "id": "Measure.name",
+        "path": "Measure.name",
+        "short": "Each resource must have a name.",
+        "comment": "The name should be in PascalCase, and should represent the Author's title of the resource.  Identify the Author to clarify",
+        "min": 1
+      },
+      {
+        "id": "Measure.status",
+        "path": "Measure.status",
+        "short": "draft | active | retired",
+        "comment": "draft - The resource is still in development. active - The resource is ready for piloting or normal use.  retired - resource has been deprecated or replaced.",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus"
+        }
+      },
+      {
+        "id": "Measure.experimental",
+        "path": "Measure.experimental",
+        "short": "A resource must indicate its experimental status",
+        "comment": "true - development, testing or pilots, false - production use",
+        "min": 1
+      },
+      {
+        "id": "Measure.subject[x]",
+        "path": "Measure.subject[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Measure.subjectCodeableConcept",
+        "path": "Measure.subjectCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "Location",
+              "system": "http://hl7.org/fhir/resource-types"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Measure.publisher",
+        "path": "Measure.publisher",
+        "short": "The name of the organization publishing this resource",
+        "min": 1
+      },
+      {
+        "id": "Measure.contact",
+        "path": "Measure.contact",
+        "short": "The contact information for whom to contact about this resource",
+        "comment": "At least one contact shall be an email",
+        "min": 1
+      },
+      {
+        "id": "Measure.useContext",
+        "path": "Measure.useContext",
+        "short": "The ISO 3166 code for use context",
+        "min": 1
+      },
+      {
+        "id": "Measure.author",
+        "path": "Measure.author",
+        "short": "The original author of the measure content, may be same as publisher, when otherwise, must include a relatedArtifact for the original author's publication",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Measure.author.name",
+        "path": "Measure.author.name",
+        "short": "The author must be identified by name. Can be the name of an individual or an organization.",
+        "min": 1
+      },
+      {
+        "id": "Measure.author.telecom",
+        "path": "Measure.author.telecom",
+        "short": "There must be contact information for the author.",
+        "comment": "At least on author contact should be an email address.",
+        "min": 1
+      },
+      {
+        "id": "Measure.relatedArtifact",
+        "path": "Measure.relatedArtifact",
+        "short": "There must be at least one artifact describing the measure in human readable form.",
+        "min": 1
+      },
+      {
+        "id": "Measure.library",
+        "path": "Measure.library",
+        "min": 1,
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Measure.group.extension",
+        "path": "Measure.group.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Measure.group.extension:groupAtts",
+        "path": "Measure.group.extension",
+        "sliceName": "groupAtts",
+        "short": "Describes the attributes of one or more sections of the measure (form) being reported",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:scoring",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "scoring"
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:scoring.value[x]",
+        "path": "Measure.group.extension.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:scoring.valueCodeableConcept",
+        "path": "Measure.group.extension.extension.valueCodeableConcept",
+        "short": "Measure must have a scoring",
+        "comment": "continuous-variable\n: Use continuous-variable when reporting a group of counts of the same type of resource, with different constraints on when to count it.\nAlso use continuous variable to report measures with computations over measure-observation values (e.g., average length of stay).\n\nproportion\n: Use proportion to report percentages, or ratios from the (generally) same initial population.\n\nratio\n: Use ratio to report ratios from different initial populations.\n\ncohort:\n: Use cohort to report counts of unrelated or orthogonal categories (e.g., masks, gowns, gloves) within a group, where proportions aren't of significance.\nAlso use cohort to count answers to categorical questions, where each question is one cohort, and is stratified by possible answers (e.g., Yes/No, 0 days/1-3 days/4-6 days/7-9 days/more than 9 days supply).",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-scoring"
+        }
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:type",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "type"
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:type.value[x]",
+        "path": "Measure.group.extension.extension.value[x]",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:type.valueCodeableConcept",
+        "path": "Measure.group.extension.extension.valueCodeableConcept",
+        "comment": "structure\n: Use when the measure is about capacity of a facility or organization to provide services, e.g., quantities of resources, staff, expendibles, et cetera.\n\nprocess\n: Use when the measure is about the execution of a process, things that are done, in process, et cetera.\n\noutcome\n: Use when the measure describes the outcome or result.  If by the measure you know a patient is getting better or worse, it's an outcome measure.\n\npatient-reported-outcome\n: Use when the outcome is reported by a patient or their authorized representative (usually used with \"satisfaction scores\", but could be used with other outcomes).\n\ncomposite\n: Use when two or more of the above are appropriate. Consider subdividing the group further.",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:rateAggregation",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "rateAggregation"
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:rateAggregation.valueString",
+        "path": "Measure.group.extension.extension.valueString",
+        "short": "aggregable-by-period | point-in-time | cumulative",
+        "comment": "aggregable-by-period\n: Use this when the value being reported can be aggregated (added to) values in other periods and retain meaning (e.g., adding admissions on day 1 and day 2 reporting period gives admissions for the combined reporting period)\"\n\npoint-in-time\n: Use this when the value being reported is a point-in-time (e.g. instantanious value) that cannot be meaningfully combined with a value from another reporting period\n\ncumulative\n: Use this when the value being reported is a point-in-time cumulative value over all reports",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureRateAggregationValues"
+        }
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:improvementNotation",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "improvementNotation"
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:improvementNotation.valueCodeableConcept",
+        "path": "Measure.group.extension.extension.valueCodeableConcept",
+        "comment": "increase\n: Use when a higher score indicates more patients are having better outcomes, are being treated, or can be treated, et cetera.\n\ndecrease:\n: Use when a higher score indicates more patients are having worse outcomes, are not be treated, or cannot be treated, et cetera.",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-improvement-notation"
+        }
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:subject",
+        "path": "Measure.group.extension.extension",
+        "sliceName": "subject"
+      },
+      {
+        "id": "Measure.group.extension:groupAtts.extension:subject.valueCodeableConcept",
+        "path": "Measure.group.extension.extension.valueCodeableConcept",
+        "comment": "Describe the subject being enumerated\nthat is associated with the measure.  The first code should identify the FHIR Resource type. The second should further describe\nit using SNOMED CT. Subsequent codes may describe it using other coding systems."
+      },
+      {
+        "id": "Measure.group.population.extension",
+        "path": "Measure.group.population.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Measure.group.population.extension:alternateCriteria",
+        "path": "Measure.group.population.extension",
+        "sliceName": "alternateCriteria",
+        "short": "Other expressions for computing the criterion",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasurePopulationAlternateCriteria"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Measure.group.population.code",
+        "path": "Measure.group.population.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasurePopulations"
+        }
+      },
+      {
+        "id": "Measure.group.population.code.coding",
+        "path": "Measure.group.population.code.coding",
+        "short": "The coding gives a 'name' for this population and must be supplied",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.population.code.text",
+        "path": "Measure.group.population.code.text",
+        "short": "A human readable description of what this population is"
+      },
+      {
+        "id": "Measure.group.population.description",
+        "path": "Measure.group.population.description",
+        "short": "Human readable instructions for counting or measuring this population",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.population.criteria",
+        "path": "Measure.group.population.criteria",
+        "short": "name should align with code.",
+        "type": [
+          {
+            "code": "Expression",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureCriteria"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Measure.group.population.criteria.description",
+        "path": "Measure.group.population.criteria.description",
+        "short": "Describe what the criterion does to a human (non-engineer)",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.population.criteria.name",
+        "path": "Measure.group.population.criteria.name",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.population.criteria.language",
+        "path": "Measure.group.population.criteria.language",
+        "short": "Give the expression for execution"
+      },
+      {
+        "id": "Measure.group.population.criteria.expression",
+        "path": "Measure.group.population.criteria.expression",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier",
+        "path": "Measure.group.stratifier",
+        "short": "A group may have none, some or many strata"
+      },
+      {
+        "id": "Measure.group.stratifier.code",
+        "path": "Measure.group.stratifier.code",
+        "short": "Describes the purpose of this stratifier",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.coding",
+        "path": "Measure.group.stratifier.code.coding",
+        "short": "Uniquely identifies the strata",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.coding.display",
+        "path": "Measure.group.stratifier.code.coding.display",
+        "short": "Provides a human readable name for the strata",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.text",
+        "path": "Measure.group.stratifier.code.text",
+        "short": "Describes the function of the stratifier."
+      },
+      {
+        "id": "Measure.group.stratifier.description",
+        "path": "Measure.group.stratifier.description",
+        "short": "Describes the overall function of the strata.",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.component",
+        "path": "Measure.group.stratifier.component",
+        "short": "A stratifier must have at least one stratum",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.component.description",
+        "path": "Measure.group.stratifier.component.description",
+        "short": "Describes the purpose of this stratum",
+        "min": 1
+      }
+    ]
+  }
+}

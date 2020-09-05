@@ -1,0 +1,128 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PublicHealthMeasureStratifier",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Specialized.Quality Reporting &amp; Testing"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureStratifier",
+  "version": "0.1.0",
+  "name": "PublicHealthMeasureStratifier",
+  "title": "Saner Public Health Measure Stratifier",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Profile Saner Public Health Measure Stratifier\n\nA stratifier is effecitively a mixin that can be used with an existing measure\nto add stratification detail to that measure.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Measure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Measure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Measure.group.stratifier",
+        "path": "Measure.group.stratifier",
+        "short": "A group may have none, some or many strata"
+      },
+      {
+        "id": "Measure.group.stratifier.code",
+        "path": "Measure.group.stratifier.code",
+        "short": "Describes the purpose of this stratifier",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.coding",
+        "path": "Measure.group.stratifier.code.coding",
+        "short": "Uniquely identifies the strata",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.coding.display",
+        "path": "Measure.group.stratifier.code.coding.display",
+        "short": "Provides a human readable name for the strata",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.code.text",
+        "path": "Measure.group.stratifier.code.text",
+        "short": "Describes the function of the stratifier."
+      },
+      {
+        "id": "Measure.group.stratifier.description",
+        "path": "Measure.group.stratifier.description",
+        "short": "Describes the overall function of the strata.",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.component",
+        "path": "Measure.group.stratifier.component",
+        "short": "A stratifier must have at least one stratum",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.component.description",
+        "path": "Measure.group.stratifier.component.description",
+        "short": "Describes the purpose of this stratum",
+        "min": 1
+      }
+    ]
+  }
+}

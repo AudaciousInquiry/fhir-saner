@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DecadeAgeBrackets",
+  "id": "DecadeAgeBrackets",
+  "title": "Age Brackets By Decade",
+  "description": "A Value Set of age groups generally by decade except youth (under 20), or over 80, commonly used for stratification in public health dashboards",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/DecadeAgeBrackets",
+  "compose": {
+    "include": [
+      {
+        "system": "http://profiles.ihe.net/fhir/CodeSystem/IHE_ADX_agerange",
+        "concept": [
+          {
+            "code": "P0Y--P20Y"
+          },
+          {
+            "code": "P20Y--P30Y"
+          },
+          {
+            "code": "P30Y--P40Y"
+          },
+          {
+            "code": "P40Y--P50Y"
+          },
+          {
+            "code": "P50Y--P60Y"
+          },
+          {
+            "code": "P60Y--P70Y"
+          },
+          {
+            "code": "P70Y--P80Y"
+          },
+          {
+            "code": "P80Y--P9999Y"
+          }
+        ]
+      }
+    ]
+  }
+}

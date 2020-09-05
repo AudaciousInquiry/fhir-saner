@@ -1,0 +1,63 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-code",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-code",
+  "description": "This SearchParameter enables resources used in The SANER Project to be discovered by codes or valueSets used in the resource including those in any extensions.",
+  "name": "code",
+  "purpose": "",
+  "code": "code",
+  "base": [
+    "Measure",
+    "MeasureReport",
+    "Questionnaire",
+    "QuestionnaireResponse"
+  ],
+  "type": "token",
+  "expression": "descendants().valueCodeableConcept | descendants().valueCoding | descendants().valueCode | code | descendants().ofType(Coding).not().code",
+  "xpath": "descendant::f:valueCodeableConcept | descendant::f:valueCoding | descendant::f:valueCode | f:code | f:descendant::f:code[ends-with(local-name(..),'oding')]",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true,
+  "modifier": [
+    "missing",
+    "text",
+    "not",
+    "in",
+    "not-in",
+    "below",
+    "above",
+    "ofType"
+  ]
+}

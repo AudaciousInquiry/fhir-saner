@@ -1,0 +1,370 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeasureGroupAttributes",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes",
+  "version": "0.1.0",
+  "name": "MeasureGroupAttributes",
+  "title": "Attributes describing a group of measures",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Attributes describing the group of measures",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:scoring",
+        "path": "Extension.extension",
+        "sliceName": "scoring",
+        "short": "Like Measure.scoring, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:scoring.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:scoring.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "scoring"
+      },
+      {
+        "id": "Extension.extension:scoring.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:scoring.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-scoring"
+        }
+      },
+      {
+        "id": "Extension.extension:compositeScoring",
+        "path": "Extension.extension",
+        "sliceName": "compositeScoring",
+        "short": "Like Measure.compositeScoring, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:compositeScoring.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:compositeScoring.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "compositeScoring"
+      },
+      {
+        "id": "Extension.extension:compositeScoring.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:compositeScoring.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/composite-measure-scoring"
+        }
+      },
+      {
+        "id": "Extension.extension:type",
+        "path": "Extension.extension",
+        "sliceName": "type",
+        "short": "Like Measure.type, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:type.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:type.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "type"
+      },
+      {
+        "id": "Extension.extension:type.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:type.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-type"
+        }
+      },
+      {
+        "id": "Extension.extension:riskAdjustment",
+        "path": "Extension.extension",
+        "sliceName": "riskAdjustment",
+        "short": "Like Measure.riskAdjustment, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:riskAdjustment.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:riskAdjustment.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "riskAdjustment"
+      },
+      {
+        "id": "Extension.extension:riskAdjustment.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:rateAggregation",
+        "path": "Extension.extension",
+        "sliceName": "rateAggregation",
+        "short": "Like Measure.rateAggregation, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:rateAggregation.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:rateAggregation.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "rateAggregation"
+      },
+      {
+        "id": "Extension.extension:rateAggregation.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:improvementNotation",
+        "path": "Extension.extension",
+        "sliceName": "improvementNotation",
+        "short": "Like Measure.improvementNotation, but applies to group",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:improvementNotation.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:improvementNotation.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "improvementNotation"
+      },
+      {
+        "id": "Extension.extension:improvementNotation.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:improvementNotation.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-improvement-notation"
+        }
+      },
+      {
+        "id": "Extension.extension:subject",
+        "path": "Extension.extension",
+        "sliceName": "subject",
+        "short": "Like Measure.subject, but applies to group",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:subject.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:subject.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "subject"
+      },
+      {
+        "id": "Extension.extension:subject.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasuredItemDescription"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:subject.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

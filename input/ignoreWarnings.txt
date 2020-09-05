@@ -1,0 +1,2 @@
+== Suppressed Messages ==
+# We are using the as recommended approach, but this is not yet understood by the IG Builder for vocabulary around FHIR Element names

@@ -82,7 +82,7 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                "code": "numBeds"
+                "code": "numbeds"
               },
               {
                 "system": "http://terminology.hl7.org/CodeSystem/measure-population",

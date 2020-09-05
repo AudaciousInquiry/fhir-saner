@@ -1,0 +1,14 @@
+{
+  "resourceType": "Location",
+  "id": "states-NJ",
+  "identifier": [
+    {
+      "system": "https://www.census.gov/geographies",
+      "value": "34"
+    }
+  ],
+  "position": {
+    "latitude": 40.1907,
+    "longitude": 74.6728
+  }
+}

@@ -216,7 +216,7 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                "code": "numBeds",
+                "code": "numbeds",
                 "display": "Hospital Inpatient Beds"
               }
             ],
@@ -225,7 +225,7 @@
           "description": "Required. Enter the total number of all inpatient beds, including all staffed, licensed, and overflow and surge/expansion beds created for inpatient care. This includes intensive care unit (ICU) beds.",
           "criteria": {
             "description": "A Bed where the location is an inpatient location.",
-            "name": "numBeds",
+            "name": "numbeds",
             "language": "text/fhirpath",
             "expression": "%numTotBeds.where(location.type in %ValueSet-InpatientLocations)"
           }

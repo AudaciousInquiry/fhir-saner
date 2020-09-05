@@ -1,11 +1,14 @@
 package com.ainq.fhir.saner.tools;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -28,11 +31,16 @@ import ca.uhn.fhir.parser.DataFormatException;
 import ca.uhn.fhir.parser.IParser;
 
 public class ResourceToFSH {
+    private static FhirContext ctx = FhirContext.forR4();
+    private static boolean explode = false;
+    private static String WILDCARDS[] = { "*.json", "*.xml" };
     public static void main(String args[]) {
-        FhirContext ctx = FhirContext.forR4();
-        boolean explode = false;
+        boolean isB64 = false;
         for (String arg: args) {
             switch (arg) {
+            case "-b":
+                isB64 = true;
+                continue;
             case "-4":
                 ctx = FhirContext.forR4();
                 continue;
@@ -46,31 +54,55 @@ public class ResourceToFSH {
                 explode = true;
                 continue;
             }
-            String resource;
-            try {
-                resource = FileUtils.readFileToString(new File(arg), StandardCharsets.UTF_8);
-            } catch (IOException e) {
-                e.printStackTrace();
-                continue;
+            if (arg.contains("?") || arg.contains("*")) {
+                String front = StringUtils.substringBeforeLast(arg.replace("\\", "/"),"/");
+                readFiles(new File(front), isB64, arg.substring(front.length() + 1));
+            } else {
+                readFiles(new File(arg), isB64, WILDCARDS);
             }
-            IParser p = resource.trim().startsWith("{") ? ctx.newJsonParser() : ctx.newXmlParser();
-            try {
-                IBaseResource r = p.parseResource(resource);
-                if (r instanceof ValueSet) {
-                    writeValueSet((ValueSet) r);
-                } else if (r instanceof org.hl7.fhir.dstu3.model.ValueSet) {
-                    // Convert to R4 and then translate to FSH
-                } else if (r instanceof org.hl7.fhir.dstu2.model.ValueSet) {
-                    // Convert to R4 and then translate to FSH
-                } else if (r instanceof org.hl7.fhir.r4.model.Bundle) {
-                    writeBundle((Bundle)r, explode);
-                } else if (r instanceof org.hl7.fhir.r4.model.Resource) {
-                    writeResource((Resource)r, false);
-                }
-            } catch (ConfigurationException | DataFormatException e) {
-                e.printStackTrace();
-                continue;
+        }
+    }
+
+    private static void readFiles(File f, boolean isB64, String ... wildcards) {
+        if (f.isDirectory()) {
+            FileFilter fileFilter = new WildcardFileFilter(wildcards);
+            for (File file: f.listFiles(fileFilter)) {
+                readFile(file, isB64);
             }
+        } else {
+            readFile(f, isB64);
+        }
+    }
+
+    private static void readFile(File f, boolean isB64) {
+        String resource = null;
+        try {
+            if (isB64) {
+                byte data[] = FileUtils.readFileToByteArray(f);
+                Base64.Encoder encoder = Base64.getMimeEncoder();
+                String encoded = encoder.encodeToString(data);
+                System.out.println(f.getName());
+                System.out.println(encoded);
+                System.out.println("------");
+                return;
+            }
+            resource = FileUtils.readFileToString(f, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        IParser p = resource.trim().startsWith("{") ? ctx.newJsonParser() : ctx.newXmlParser();
+        try {
+            IBaseResource r = p.parseResource(resource);
+            if (r instanceof ValueSet) {
+                writeValueSet((ValueSet) r);
+            } else if (r instanceof org.hl7.fhir.r4.model.Bundle) {
+                writeBundle((Bundle)r, explode);
+            } else if (r instanceof org.hl7.fhir.r4.model.Resource) {
+                writeResource((Resource)r, false);
+            }
+        } catch (ConfigurationException | DataFormatException e) {
+            e.printStackTrace();
         }
     }
 
@@ -92,10 +124,25 @@ public class ResourceToFSH {
             break;
         }
         System.out.printf("InstanceOf: %s%n", type);
-        System.out.printf("* id = \"%s\\\"%n", r.getIdElement().getIdPart());
+
+        String props[] = { "title", "description" };
+        for (String prop : props) {
+            try {
+                Property p = r.getChildByName(prop);
+                if (p != null && p.hasValues()) {
+                    String value = p.getValues().get(0).toString();
+                    System.out.printf("%s: \"%s\"%n", StringUtils.capitalize(prop), value);
+                }
+            } catch (Exception ex) {
+                // Swallow this, assume there's no title
+            }
+        }
+
+        System.out.printf("* id = \"%s\"%n", r.getIdElement().getIdPart());
 
         introspect("meta", m);
         introspect("", r);
+        System.out.println();
     }
 
     private static void introspect(String name, Base e) {
@@ -169,11 +216,6 @@ public class ResourceToFSH {
         if (r.hasDescription()) {
             System.out.printf("Description: \"%s\"%n", expand(r.getDescription()));
         }
-        String fields[] = {
-            "identifier", "version", "status", "experimental", "date", "publisher",
-            "jurisdiction", "immutable", "purpose", "copyright"
-        };
-
         int count = 0;
         for (Identifier ident: r.getIdentifier()) {
             System.out.printf(" * ^identifier[%d] = %s#%s%n", count++, ident.getSystem(), ident.getValue());
@@ -221,7 +263,11 @@ public class ResourceToFSH {
                 if (include.hasValueSet()) {
 
                 } else {
-
+                    for (ValueSet.ConceptReferenceComponent ref: include.getConcept()) {
+                        System.out.printf(" * %s#%s \"%s\"%n",
+                            include.getSystem(), ref.getCode(),
+                            expand(ref.getDisplay()));
+                    }
                 }
             }
             for (ValueSet.ConceptSetComponent exclude: r.getCompose().getExclude()) {

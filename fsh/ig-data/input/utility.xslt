@@ -35,7 +35,7 @@
     <xsl:template match="ig:ref" mode='desc'>
         <xsl:variable name='artifact' select='//ig:*[@id=current()/(@ref|@actor|@option|@tx)]'/>
         <xsl:text>[</xsl:text><xsl:value-of select="$artifact/ig:name"/>
-        <xsl:text>](actors_and_transactions.html#</xsl:text>
+        <xsl:text>](</xsl:text><xsl:value-of select='local-name($artifact)'/><xsl:text>s.html#</xsl:text>
         <xsl:value-of select="lower-case(translate($artifact/ig:name,' ','-'))"/>
         <xsl:text>)</xsl:text>
     </xsl:template>
@@ -73,7 +73,7 @@
                 <xsl:text>.html</xsl:text>
             </xsl:when>
             <xsl:when test="$item and local-name($item) = 'actor'">
-                <xsl:text>actors_and_transactions.html#</xsl:text>
+                <xsl:text>actors.html#</xsl:text>
                 <xsl:value-of select="lower-case(translate($item/ig:name,' ','-'))"/>
             </xsl:when>
             <xsl:when test="$item and local-name($item) = 'transaction'">
@@ -112,5 +112,26 @@
         <xsl:text>")&#xA;&#xA;**</xsl:text><xsl:value-of select="$title"/><xsl:text>**&#xA;&#xA;</xsl:text>
     </xsl:template>
 
-
+    <xsl:template match='*' mode='copy-as-text'>
+        <xsl:text>&lt;</xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:apply-templates select='@*' mode='copy-as-text'/>
+        <xsl:text>&gt;</xsl:text>
+        <xsl:apply-templates select='text()|*' mode='copy-as-text'/>
+        <xsl:text>&lt;/</xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>&gt;</xsl:text>
+    </xsl:template>
+    
+    <xsl:template match='text()' mode='copy-as-text'>
+        <xsl:copy-of select="."/>    
+    </xsl:template>
+    
+    <xsl:template match='@*' mode='copy-as-text'>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select='local-name()'/>
+        <xsl:text>='</xsl:text>
+        <xsl:value-of select='.'/>
+        <xsl:text>' </xsl:text>
+    </xsl:template>
 </xsl:stylesheet>

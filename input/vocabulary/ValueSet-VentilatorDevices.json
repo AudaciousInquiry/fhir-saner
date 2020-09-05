@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "VentilatorDevices",
+  "id": "VentilatorDevices",
+  "title": "Ventilator Devices",
+  "description": "Codes used for Ventilator Devices",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorDevices"
+}

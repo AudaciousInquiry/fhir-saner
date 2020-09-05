@@ -11,7 +11,7 @@ to discussion and change.
 
 The goal of publishing this guide is to encourage the creation of a community interested
 in extremely rapid development of interfaces that can support communication Bed and other
-resourcees to Public Health in this time of crisis.
+resources to Public Health in this time of crisis.
 
 This implementation guide provides the FHIR Implementation materials associated with
 the SANER project.
@@ -19,95 +19,116 @@ the SANER project.
 ### Organization of This Guide
 This guide is organized into five main sections:
 
-<details><summary>
 
-Volume I: [Overview](overview.html) - Provides an overview of the challenges this effort is trying to address.
-</summary>
-   1. [Technology Environment](technology_environment.html) - Describes the technology environment for uninitiated.
-   2. [Architecture](architecture.html) - Illustrates the Microservice Architecture
-   3. [Security Considerations](security_considerations.html) - Documents security concerns and mitigations
-   4. [Use Cases](use_cases.html) - Illustrates key use cases
-   5. [Actors and Transactions](actors_and_transactions.html) - Provides an overview of technical components
-   6. [Measures used for Reporting](measures.html) - Defines measures used by CDC and FEMA as FHIR Measure resources
+
+<details>
+    <summary>Chapter I: <a href="overview.html">Overview</a> - Provides an overview of the challenges this effort is trying to address.</summary>
+    <ol>
+      <li><a href="situational_awareness_measures.html">Measuring Situational Awareness</a> - Describes situational awareness and how to measure it.</li>
+      <li><a href="measure_aggregation.html">Aggregating Data</a> - Describes how to aggregate Measure data.</li>
+      <li><a href="StructureDefinition-PublicHealthMeasure.html">The Public Health Measure Profile</a> - </li>
+      <li><a href="measure_automation.html">Computing Measures</a> - Describes mechanisms to automate measure computation.</li>
+      <li><a href="phrase_book.html">Creating Measures supporting Automation</a> - A Phrase Book for creating automatable Measures</li>
+      <li><a href="measures.html">Example Measures used for Reporting</a> - Demonstrates examples for measures used by CDC as FHIR Measure resources.</li>
+    </ol>
 </details>
 
-<details><summary>
-
-Volume II: [Transactions](transactions.html) - Describes the interactions supported
-by this guide.
-</summary>
-   1. [Query Measure [PULL-TX]](transaction-1.html)
-   2. [Produce Measure [PUSH-TX]](transaction-2.html)
-   3. [Communicate Results [REPORT-TX]](transaction-3.html)
-
-</details>
-<details><summary>
-
-Volume III: [Profiles and Extensions](profiles.html) - Describes the purpose of the resource profiles and
-extensions defined by this guide.
-</summary>
-<ol>
-    <li>Profiles
-        <ol>
-           {% include list-simple-profiles.xhtml %}
-        </ol></li>
-    <li>Extensions
-        <ol>
-           {% include list-simple-extensions.xhtml %}
-        </ol>
-    </li>
-</ol>
-
+<details>
+    <summary>Chapter II: <a href="transactions.html">Technical Implementation</a> - Describes the technical approach of this guide.</summary>
+    <ol>
+        <li><a href="technology_environment.html">Environment</a> - Describes the technology environment.</li>
+        <li><a href="architecture.html">Architecture</a> - Illustrates the Microservice Architecture.</li>
+        <li><a href="security_considerations.html">Security Considerations</a> - Documents security concerns and mitigations.</li>
+        <li><a href="use_cases.html">Use Cases</a> - Illustrates key use cases.</li>
+        <li><a href="actors.html">Actors and Transactions</a> - Provides an overview of technical components.</li>
+        <li><a href="transaction-1.html">Query Measure [PULL-TX]</a></li>
+        <li><a href="transaction-2.html">Produce Measure [PUSH-TX]</a></li>
+        <li><a href="transaction-3.html">Communicate Results [REPORT-TX]</a></li>
+    </ol>
 </details>
 
-<details><summary>
-
-Volume IV: [Vocabulary](vocabulary.html)
-</summary>
-<ol>
-    <li>Value Sets
-        <ol>
-           {% include list-simple-valuesets.xhtml %}
-        </ol>
-    </li>
-    <li>Code Systems
-        <ol>
-           {% include list-simple-codesystems.xhtml %}
-        </ol>
-    </li>
-    <li>Concept Maps
-        <ol>
-           {% include list-simple-conceptmaps.xhtml %}
-        </ol>
-    </li>
-</ol>
+<details>
+    <summary>Chapter III: <a href="profiles.html">Profiles and Extensions</a> - Describes the purpose of the resource profiles and
+extensions defined by this guide.</summary>
+    <ol>
+        <li>Profiles
+            <ol>
+               {% include list-simple-profiles.xhtml %}
+            </ol></li>
+        <li>Extensions
+            <ol>
+               {% include list-simple-extensions.xhtml %}
+            </ol>
+        </li>
+    </ol>
 </details>
-<details><summary>
 
-Volume V: [Examples](examples.html)
-</summary>
-<ol>
-    <li>Measures
-        <ol>
-           {% include list-simple-measures.xhtml %}
-        </ol>
-    </li>
-    <li>Locations
-        <ol>
-           {% include list-simple-locations.xhtml %}
-        </ol>
-    </li>
-    <li>Organizations
-        <ol>
-             {% include list-simple-organizations.xhtml %}
-        </ol>
-    </li>
-    <li>Measure Reports
-        <ol>
-           {% include list-simple-measurereports.xhtml %}
-        </ol>
-    </li>
-</ol>
+<details>
+    <summary>Chapter IV: <a href="vocabulary.html">Vocabulary</a></summary>
+    <ol>
+        <li>Value Sets
+            <ol>
+               {% include list-simple-valuesets.xhtml %}
+            </ol>
+        </li>
+        <li>Code Systems
+            <ol>
+               {% include list-simple-codesystems.xhtml %}
+            </ol>
+        </li>
+        <li>Concept Maps
+            <ol>
+               {% include list-simple-conceptmaps.xhtml %}
+            </ol>
+        </li>
+    </ol>
+</details>
+<details>
+    <summary>Chapter V: Testing and Conformance</summary>
+    <ol>
+        <li><a href='test_plan.html'>Test Plan</a></ol></li>
+        <li id='capabilities'>Capability Statements
+            <ol>
+               {% include list-simple-capabilitystatements.xhtml %}
+            </ol>
+        </li>
+        <li>Operations
+            <ol>
+               {% include list-simple-operationdefinitions.xhtml %}
+            </ol>
+        </li>
+        <li>Search Parameters
+            <ol>
+               {% include list-simple-searchparameters.xhtml %}
+            </ol>
+        </li>
+    </ol>
+</details>
+
+<details>
+    <summary>Chapter VI: <a id='examples' href="examples.html">Examples</a></summary>
+    <ol>
+        <li>Measures
+            <ol>
+               {% include list-simple-measures.xhtml %}
+            </ol>
+        </li>
+        <li>Locations
+            <ol>
+               {% include list-simple-locations.xhtml %}
+            </ol>
+        </li>
+        <li>Organizations
+            <ol>
+                 {% include list-simple-organizations.xhtml %}
+            </ol>
+        </li>
+        <li>Measure Reports
+            <ol>
+               {% include list-simple-measurereports.xhtml %}
+            </ol>
+        </li>
+    </ol>
 </details>
 
 Click on any of the links above, head on over the [table of contents](toc.html), or

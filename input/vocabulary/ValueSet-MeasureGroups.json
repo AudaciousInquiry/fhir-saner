@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MeasureGroups",
+  "id": "MeasureGroups",
+  "title": "Measure Groups",
+  "description": "Measure Groups defined by the SANER Project",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureGroups",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+      }
+    ]
+  }
+}

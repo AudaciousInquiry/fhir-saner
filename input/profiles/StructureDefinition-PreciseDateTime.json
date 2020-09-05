@@ -1,0 +1,64 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PreciseDateTime",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime",
+  "version": "0.1.0",
+  "name": "PreciseDateTime",
+  "title": "Precise Date Time",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "A dateTime value that contains seconds and a timezone",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "primitive-type",
+  "abstract": false,
+  "type": "dateTime",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/dateTime",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "dateTime.value",
+        "path": "dateTime.value",
+        "constraint": [
+          {
+            "key": "DateTimePreciseToSecond",
+            "severity": "error",
+            "human": "The dateTime value must contain seconds and a timezone",
+            "expression": "length(replaceMatches('[0-9.T]',''))=6",
+            "xpath": "string-length(replace(@value,'01234566789.T',''))=6",
+            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MeasureGroupSystem",
+  "id": "MeasureGroupSystem",
+  "title": "Measure Group System",
+  "description": "A Code System for Groups defined by The SANER Project",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+  "concept": [
+    {
+      "code": "Beds",
+      "display": "Beds"
+    },
+    {
+      "code": "Ventilators",
+      "display": "Ventilators"
+    },
+    {
+      "code": "Encounters",
+      "display": "Encounters"
+    },
+    {
+      "code": "VentilatorSupplies",
+      "display": "Ventilator supplies (any, including tubing)"
+    },
+    {
+      "code": "N95Masks",
+      "display": "N95 masks"
+    },
+    {
+      "code": "OtherRespirators",
+      "display": "Other respirators including PAPRs"
+    },
+    {
+      "code": "SurgicalMasks",
+      "display": "Surgical masks"
+    },
+    {
+      "code": "EyeProtection",
+      "display": "Eye protection including face shields or goggles"
+    },
+    {
+      "code": "Gown",
+      "display": "Gowns (single use)"
+    },
+    {
+      "code": "Glove",
+      "display": "Gloves"
+    },
+    {
+      "code": "positiveIncreasePercent",
+      "display": "Percent Positive among Newly Resulted Tests"
+    },
+    {
+      "code": "positivePercent",
+      "display": "Cumulative Percent Positive among Resulted Tests"
+    }
+  ],
+  "count": 12
+}

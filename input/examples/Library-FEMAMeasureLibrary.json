@@ -1,0 +1,95 @@
+{
+  "resourceType": "Library",
+  "id": "FEMAMeasureLibrary",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+    ]
+  },
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "name": "FEMAMeasureLibrary",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/FEMAMeasureLibrary",
+  "title": "FEMA Measure Library",
+  "type": {
+    "coding": [
+      {
+        "code": "asset-collection"
+      }
+    ]
+  },
+  "useContext": [
+    {
+      "code": {
+        "code": "focus",
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "840539006",
+            "system": "http://snomed.info/sct",
+            "display": "COVID-19"
+          }
+        ]
+      }
+    }
+  ],
+  "author": [
+    {
+      "name": "HL7 Public Health Workgroup",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:pher@lists.hl7.org"
+        }
+      ]
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "url": "https://images.magnetmail.net/images/clients/AHA_MCHF/attach/2020/March/0330/Template_for_Daily_Hospital_COVID19_Reporting.xlsx",
+      "type": "documentation",
+      "display": "Template for Daily Hospital COVID-19 Reporting.xlsx",
+      "label": "Excel Spreadsheet template for reporting to FEMA"
+    }
+  ],
+  "content": [
+    {
+      "id": "SARSCoV2Labs",
+      "contentType": "application/fhir+xml",
+      "title": "C19HCC SARS coronavirus 2 Qualitative Detection Laboratory Tests",
+      "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.109"
+    }
+  ]
+}

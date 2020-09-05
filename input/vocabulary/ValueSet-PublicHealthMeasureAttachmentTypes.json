@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PublicHealthMeasureAttachmentTypes",
+  "id": "PublicHealthMeasureAttachmentTypes",
+  "title": "Public Health Measure Attachment Types",
+  "description": "Preferred Mime Types for use with Public Health Measure Definitions",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/PublicHealthMeasureAttachmentTypes",
+  "compose": {
+    "include": [
+      {
+        "system": "http://tools.ietf.org/html/bcp13",
+        "concept": [
+          {
+            "code": "application/fhir+xml"
+          },
+          {
+            "code": "application/fhir+json"
+          },
+          {
+            "code": "text/cql"
+          },
+          {
+            "code": "application/gzip"
+          }
+        ]
+      }
+    ]
+  }
+}

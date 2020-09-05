@@ -2,9 +2,9 @@
 hide footbox
 participant "Measure Source" as MeasureSource
 participant "Measure Consumer" as MeasureConsumer
+"MeasureSource" -> "MeasureConsumer" : 1. Push Measure
 activate "MeasureSource"
 activate "MeasureConsumer"
-"MeasureSource" -> "MeasureConsumer" : 1. Push Measure
 return
 deactivate "MeasureSource"
 deactivate "MeasureConsumer"

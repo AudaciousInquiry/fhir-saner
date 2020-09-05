@@ -1,0 +1,6 @@
+@startuml
+
+agent "Measure Consumer" as MeasureConsumer
+usecase (Communicate Results) as (REPORT-TX)
+MeasureConsumer --> (REPORT-TX)
+@enduml

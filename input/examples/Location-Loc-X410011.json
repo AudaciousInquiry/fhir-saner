@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "id": "Loc-X410011",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "name": "NORTH COUNTY HOSPITAL Building",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HOSP"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "latitude",
+            "valueDecimal": 42.00532
+          },
+          {
+            "url": "longitude",
+            "valueDecimal": -71.49621
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+      }
+    ],
+    "use": "work",
+    "type": "both",
+    "line": [
+      "115 CASS AVE"
+    ],
+    "city": "WOONSOCKET",
+    "district": "PROVIDENCE",
+    "state": "RI",
+    "postalCode": "02895",
+    "country": "USA"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si"
+      }
+    ]
+  },
+  "position": {
+    "longitude": -71.49621,
+    "latitude": 42.00532
+  },
+  "managingOrganization": {
+    "reference": "Organization/X410011"
+  }
+}

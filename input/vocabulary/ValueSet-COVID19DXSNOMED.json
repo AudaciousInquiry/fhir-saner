@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "COVID19DXSNOMED",
+  "id": "COVID19DXSNOMED",
+  "version": "Draft",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1124",
+  "date": "2020-08-12T17:36:54-04:00",
+  "publisher": "CSTE Steward",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "186747009",
+            "display": "Coronavirus infection (disorder)"
+          },
+          {
+            "code": "713084008",
+            "display": "Pneumonia caused by Human coronavirus (disorder)"
+          },
+          {
+            "code": "840539006",
+            "display": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+          },
+          {
+            "code": "840544004",
+            "display": "Suspected disease caused by severe acute respiratory coronavirus 2 (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

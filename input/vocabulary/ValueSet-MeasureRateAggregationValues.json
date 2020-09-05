@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MeasureRateAggregationValues",
+  "id": "MeasureRateAggregationValues",
+  "title": "Measure Rate Aggregation Value Set",
+  "description": "This Value Set Identifies methods of rate aggregation",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureRateAggregationValues",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureRateAggregation"
+      }
+    ]
+  }
+}

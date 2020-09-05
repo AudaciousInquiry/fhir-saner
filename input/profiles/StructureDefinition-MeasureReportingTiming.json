@@ -1,0 +1,163 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeasureReportingTiming",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureReportingTiming",
+  "version": "0.1.0",
+  "name": "MeasureReportingTiming",
+  "title": "Recommended Measure Reporting Times",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Provides the timing for measure  reporting",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Timing",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Timing",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Timing.event",
+        "path": "Timing.event",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat",
+        "path": "Timing.repeat",
+        "min": 1
+      },
+      {
+        "id": "Timing.repeat.bounds[x]",
+        "path": "Timing.repeat.bounds[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Timing.repeat.boundsPeriod",
+        "path": "Timing.repeat.boundsPeriod",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Timing.repeat.count",
+        "path": "Timing.repeat.count",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.countMax",
+        "path": "Timing.repeat.countMax",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.duration",
+        "path": "Timing.repeat.duration",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.durationMax",
+        "path": "Timing.repeat.durationMax",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.frequency",
+        "path": "Timing.repeat.frequency",
+        "min": 1,
+        "patternPositiveInt": 1
+      },
+      {
+        "id": "Timing.repeat.frequencyMax",
+        "path": "Timing.repeat.frequencyMax",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.period",
+        "path": "Timing.repeat.period",
+        "min": 1
+      },
+      {
+        "id": "Timing.repeat.periodMax",
+        "path": "Timing.repeat.periodMax",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.periodUnit",
+        "path": "Timing.repeat.periodUnit",
+        "min": 1
+      },
+      {
+        "id": "Timing.repeat.dayOfWeek",
+        "path": "Timing.repeat.dayOfWeek",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.timeOfDay",
+        "path": "Timing.repeat.timeOfDay",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.when",
+        "path": "Timing.repeat.when",
+        "max": "0"
+      },
+      {
+        "id": "Timing.repeat.offset",
+        "path": "Timing.repeat.offset",
+        "max": "0"
+      }
+    ]
+  }
+}

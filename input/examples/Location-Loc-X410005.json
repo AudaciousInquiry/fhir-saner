@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "id": "Loc-X410005",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "name": "SAINT JOHN HOSPITAL Building",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HOSP"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "latitude",
+            "valueDecimal": 41.855796
+          },
+          {
+            "url": "longitude",
+            "valueDecimal": -71.458498
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+      }
+    ],
+    "use": "work",
+    "type": "both",
+    "line": [
+      "200 HIGH SERVICE AVE"
+    ],
+    "city": "N PROVIDENCE",
+    "district": "PROVIDENCE",
+    "state": "RI",
+    "postalCode": "02904",
+    "country": "USA"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si"
+      }
+    ]
+  },
+  "position": {
+    "longitude": -71.458498,
+    "latitude": 41.855796
+  },
+  "managingOrganization": {
+    "reference": "Organization/X410005"
+  }
+}

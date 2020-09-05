@@ -1,21 +1,38 @@
-RuleSet: FEMADailyHospitalCOVID19ReportingRules
- * author.name = "FEMA"
+Instance: FEMAMeasureLibrary
+InstanceOf: PublicHealthMeasureLibrary
+ * insert SanerDefinitionContent
+ * id = "FEMAMeasureLibrary"
+ * name = "FEMAMeasureLibrary"
+ * url = "http://hl7.org/fhir/us/saner/StructureDefinition/FEMAMeasureLibrary"
+ * title = "FEMA Measure Library"
+ * type = #asset-collection
+ * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
+ * useContext.valueCodeableConcept = http://snomed.info/sct#840539006 "COVID-19"
+ * author.name = "HL7 Public Health Workgroup"
  * author.telecom.system = #email
- * author.telecom.value = "mailto:fema-hhs-covid-diagnostics-tf@fema.dhs.gov "
+ * author.telecom.value = "mailto:pher@lists.hl7.org"
+ * relatedArtifact[0].url = "https://images.magnetmail.net/images/clients/AHA_MCHF/attach/2020/March/0330/Template_for_Daily_Hospital_COVID19_Reporting.xlsx"
+ * relatedArtifact[0].type = #documentation
+ * relatedArtifact[0].display = "Template for Daily Hospital COVID-19 Reporting.xlsx"
+ * relatedArtifact[0].label = "Excel Spreadsheet template for reporting to FEMA"
+// We aren't automating FEMA, so this is just for testing the infrastructure
+//@Attachment content[0]=input/vocabulary/SARSCoV2Labs.xml
+ * content[0].id = "SARSCoV2Labs"
+ * content[0].contentType = #application/fhir+xml
+ * content[0].title = "C19HCC SARS coronavirus 2 Qualitative Detection Laboratory Tests"
+ * content[0].url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.109"
+//@Attachment ends
+
+RuleSet: FEMADailyHospitalCOVID19ReportingRules
+ * author.name = "HL7 Public Health Workgroup"
+ * author.telecom.system = #email
+ * author.telecom.value = "mailto:pher@lists.hl7.org"
  * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
  * useContext.valueCodeableConcept = http://snomed.info/sct#840539006 "COVID-19"
  * type = http://terminology.hl7.org/CodeSystem/measure-type#outcome
  * topic = http://snomed.info/sct#252318005 "Immunology laboratory test (procedure)"
  * rateAggregation = "aggregable-by-period"
-
-Instance: FEMADailyHospitalCOVID19Reporting
-InstanceOf: PublicHealthMeasure
-Title: "FEMA Laboratory Orders and Results Daily Increase Reporting"
-Description: "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts."
-Mixins: SanerDefinitionContent, FEMADailyHospitalCOVID19ReportingRules
-
- * name = "FEMADailyHospitalCOVID19Reporting"
- * url = "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting"
+ * insert DailyReporting
  * relatedArtifact[0].type = #documentation
  * relatedArtifact[0].url = "https://www.cms.gov/newsroom/press-releases/trump-administration-engages-americas-hospitals-unprecedented-data-sharing"
  * relatedArtifact[0].display = "Trump Administration Engages America’s Hospitals in Unprecedented Data Sharing"
@@ -32,6 +49,18 @@ Mixins: SanerDefinitionContent, FEMADailyHospitalCOVID19ReportingRules
  * relatedArtifact[3].url = "https://images.magnetmail.net/images/clients/AHA_MCHF/attach/2020/March/0330/Template_for_Daily_Hospital_COVID19_Reporting.xlsx"
  * relatedArtifact[3].display = "Template for Daily Hospital COVID-19 Reporting.xlsx"
  * relatedArtifact[3].label = "Excel Spreadsheet template for reporting to FEMA"
+ * library = Canonical(FEMAMeasureLibrary)
+
+
+Instance: FEMADailyHospitalCOVID19Reporting
+InstanceOf: PublicHealthMeasure
+Title: "FEMA Laboratory Orders and Results Daily Increase Reporting"
+Description: "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts."
+ * insert SanerDefinitionContent
+ * insert FEMADailyHospitalCOVID19ReportingRules
+ * name = "FEMADailyHospitalCOVID19Reporting"
+ * url = "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting"
+
 
 
 // positiveIncreasePercent IS the measureScore
@@ -142,27 +171,12 @@ Instance: ComputableFEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasure
 Title: "Computable FEMA Laboratory Orders and Results Daily Increase Reporting"
 Description: "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts."
-Mixins: SanerDefinitionContent, FEMADailyHospitalCOVID19ReportingRules
-
+ * insert SanerDefinitionContent
+ * insert FEMADailyHospitalCOVID19ReportingRules
  * name = "ComputableFEMADailyHospitalCOVID19Reporting"
  * url = "http://hl7.org/fhir/us/saner/Measure/ComputableFEMADailyHospitalCOVID19Reporting"
 
- * relatedArtifact[0].type = #documentation
- * relatedArtifact[0].url = "https://www.cms.gov/newsroom/press-releases/trump-administration-engages-americas-hospitals-unprecedented-data-sharing"
- * relatedArtifact[0].display = "Trump Administration Engages America’s Hospitals in Unprecedented Data Sharing"
- * relatedArtifact[0].label = "CMS Press Release"
- * relatedArtifact[1].type = #documentation
- * relatedArtifact[1].url = "https://www.whitehouse.gov/briefings-statements/text-letter-vice-president-hospital-administrators/"
- * relatedArtifact[1].display = "Text of a Letter from the Vice President to Hospital Administrators"
- * relatedArtifact[1].label = "Vice President Pence Letter to Hospital Administrators"
- * relatedArtifact[2].type = #documentation
- * relatedArtifact[2].url = "https://www.aha.org/advisory/2020-03-30-coronavirus-update-administration-requests-hospitals-report-daily-covid-19"
- * relatedArtifact[2].display = "Administration Requests Hospitals Report Daily on COVID-19 Testing Results, Bed and Ventilator"
- * relatedArtifact[2].label = "AHA Advisory on COVID-19 Reporting"
- * relatedArtifact[3].type = #documentation
- * relatedArtifact[3].url = "https://images.magnetmail.net/images/clients/AHA_MCHF/attach/2020/March/0330/Template_for_Daily_Hospital_COVID19_Reporting.xlsx"
- * relatedArtifact[3].display = "Template for Daily Hospital COVID-19 Reporting.xlsx"
- * relatedArtifact[3].label = "Excel Spreadsheet template for reporting to FEMA"
+
 
 
 // positiveIncreasePercent IS the measureScore

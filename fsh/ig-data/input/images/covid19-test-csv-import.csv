@@ -1,0 +1,5 @@
+orgid,collectionDate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numNICUBeds,numICUBedsOcc,numNICUBedsOcc,numVent,numVentUse,numC19HospPats,numConfC19HospPats,numC19MechVentPats,numConfC19MechVentPats,numC19HOPats,numConfC19HOPats,numC19OverflowPats,numConfC19OverflowPats,numC19OFMechVentPats,numConfC19OFMechVentPats,numC19Died ,numc19confnewadm,numc19suspnewadm,numc19honewpats,numConfC19HONewPats,numc19prevdied ,numConfC19PrevDied,numC19ICUPats,numConfC19ICUPats
+12345,5/29/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5
+12345,5/30/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5
+12345,5/31/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5
+12345,6/1/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5

@@ -1,0 +1,111 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "ProduceMeasure-report-csv",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "kind": "operation",
+  "code": "report-csv",
+  "resource": [
+    "Measure"
+  ],
+  "system": false,
+  "type": false,
+  "instance": true,
+  "name": "CreateorupdateaMeasureReportfromCSVFormat",
+  "title": "Create or update a MeasureReport from CSV Format",
+  "description": "Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.\nOtherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.",
+  "url": "http://hl7.org/fhir/us/saner/OperationDefinition/ProduceMeasure-report-csv",
+  "parameter": [
+    {
+      "name": "input",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "The input of the request is a CSV file with labeled columns containing the data in the report.",
+      "type": "Binary"
+    },
+    {
+      "name": "map",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "documentation": "Each parameter is a composite of column to measure mappings",
+      "searchType": "composite",
+      "type": "string"
+    },
+    {
+      "name": "period-end",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "The end of the reporting period.",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "period-start",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "documentation": "The start of the reporting period.",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "reporter",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "A reference or identifier of the reporter for the MeasureReport. If unspecified,\nthe server may determine the reporter based on business rules (e.g., based on the identity of the sender).",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "subject",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "A reference or identifier of the subject for the MeasureReport. If unspecified,\nthe server may determine the subject based on business rules (e.g., based on the identity of the sender).",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "return",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "documentation": "The result of the reporting operation",
+      "type": "Bundle"
+    }
+  ]
+}

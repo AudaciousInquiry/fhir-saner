@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Remdesivir",
+  "id": "Remdesivir",
+  "title": "Remdesivir",
+  "description": "This Value Set identifies Remdesivir",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/Remdsivir",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "concept": [
+          {
+            "code": "2284718"
+          },
+          {
+            "code": "2284957"
+          },
+          {
+            "code": "2284958"
+          },
+          {
+            "code": "2284959"
+          },
+          {
+            "code": "2284960"
+          },
+          {
+            "code": "2367757"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "870592005"
+          },
+          {
+            "code": "870519002"
+          },
+          {
+            "code": "870600003"
+          },
+          {
+            "code": "870518005"
+          },
+          {
+            "code": "870521007"
+          },
+          {
+            "code": "870520008"
+          },
+          {
+            "code": "870522000"
+          }
+        ]
+      }
+    ]
+  }
+}

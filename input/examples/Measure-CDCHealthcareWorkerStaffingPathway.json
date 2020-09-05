@@ -1,0 +1,1969 @@
+{
+  "resourceType": "Measure",
+  "id": "CDCHealthcareWorkerStaffingPathway",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Measure",
+      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+      "valueTiming": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      }
+    }
+  ],
+  "group": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "45956004",
+                    "system": "http://snomed.info/sct",
+                    "display": "Sanitarian"
+                  }
+                ],
+                "text": "Environmental services"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortenvsvc",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Front-line persons who clean patient rooms and all areas in a healthcare facility",
+          "criteria": {
+            "description": "Environmental services",
+            "name": "shortenvsvcTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Front-line persons who clean patient rooms and all areas in a healthcare facility",
+          "criteria": {
+            "description": "Environmental services",
+            "name": "shortenvsvcFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "106293008",
+                    "system": "http://snomed.info/sct",
+                    "display": "Nursing personnel"
+                  }
+                ],
+                "text": "Nurses"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortnurse",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Registered nurses and licensed practical nurses"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Registered nurses and licensed practical nurses",
+          "criteria": {
+            "description": "Nurses",
+            "name": "shortnurseTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Registered nurses and licensed practical nurses",
+          "criteria": {
+            "description": "Nurses",
+            "name": "shortnurseFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "442867008",
+                    "system": "http://snomed.info/sct",
+                    "display": "Respiratory therapist"
+                  }
+                ],
+                "text": "Respiratory therapists"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortrt",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+          "criteria": {
+            "description": "Respiratory therapists",
+            "name": "shortrtTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+          "criteria": {
+            "description": "Respiratory therapists",
+            "name": "shortrtFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "46255001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Pharmacist"
+                  }
+                ],
+                "text": "Pharmacists and pharmacy techs"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortphar",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Pharmacists and pharmacy techs"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Pharmacists and pharmacy techs",
+          "criteria": {
+            "description": "Pharmacists and pharmacy techs",
+            "name": "shortpharTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Pharmacists and pharmacy techs",
+          "criteria": {
+            "description": "Pharmacists and pharmacy techs",
+            "name": "shortpharFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "309343006",
+                    "system": "http://snomed.info/sct",
+                    "display": "Physician"
+                  }
+                ],
+                "text": "Physicians"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortphys",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Attending physicians, fellows"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Attending physicians, fellows",
+          "criteria": {
+            "description": "Physicians",
+            "name": "shortphysTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Attending physicians, fellows",
+          "criteria": {
+            "description": "Physicians",
+            "name": "shortphysFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "405623001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Assigned practitioner"
+                  }
+                ],
+                "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shorttemp",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+          "criteria": {
+            "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+            "name": "shorttempTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+          "criteria": {
+            "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+            "name": "shorttempFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "33738006",
+                    "system": "http://snomed.info/sct",
+                    "display": "Other medical/dental/veterinary/related worker"
+                  }
+                ],
+                "text": "Other HCP"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortoth",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
+          "criteria": {
+            "description": "Other HCP",
+            "name": "shortothTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
+          "criteria": {
+            "description": "Other HCP",
+            "name": "shortothFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  },
+                  {
+                    "code": "158965000",
+                    "system": "http://snomed.info/sct",
+                    "display": "Medical practitioner"
+                  }
+                ],
+                "text": "Other licensed independent practitioners"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortothlic",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Advanced practice nurses, physician assistants"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Advanced practice nurses, physician assistants",
+          "criteria": {
+            "description": "Other licensed independent practitioners",
+            "name": "shortothlicTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Advanced practice nurses, physician assistants",
+          "criteria": {
+            "description": "Other licensed independent practitioners",
+            "name": "shortothlicFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ],
+                "text": "Persons who work in the facility"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "shortothsfy",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
+      }
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortenvsvc",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Front-line persons who clean patient rooms and all areas in a healthcare facility",
+          "criteria": {
+            "description": "Environmental services",
+            "name": "posshortenvsvcTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Front-line persons who clean patient rooms and all areas in a healthcare facility",
+          "criteria": {
+            "description": "Environmental services",
+            "name": "posshortenvsvcFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortnurse",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Registered nurses and licensed practical nurses"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Registered nurses and licensed practical nurses",
+          "criteria": {
+            "description": "Nurses",
+            "name": "posshortnurseTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Registered nurses and licensed practical nurses",
+          "criteria": {
+            "description": "Nurses",
+            "name": "posshortnurseFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortrt",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+          "criteria": {
+            "description": "Respiratory therapists",
+            "name": "posshortrtTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+          "criteria": {
+            "description": "Respiratory therapists",
+            "name": "posshortrtFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortphar",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Pharmacists and pharmacy techs"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Pharmacists and pharmacy techs",
+          "criteria": {
+            "description": "Pharmacists and pharmacy techs",
+            "name": "posshortpharTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Pharmacists and pharmacy techs",
+          "criteria": {
+            "description": "Pharmacists and pharmacy techs",
+            "name": "posshortpharFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortphys",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Attending physicians, fellows"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Attending physicians, fellows",
+          "criteria": {
+            "description": "Physicians",
+            "name": "posshortphysTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Attending physicians, fellows",
+          "criteria": {
+            "description": "Physicians",
+            "name": "posshortphysFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshorttemp",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+          "criteria": {
+            "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+            "name": "posshorttempTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+          "criteria": {
+            "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+            "name": "posshorttempFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortoth",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
+          "criteria": {
+            "description": "Other HCP",
+            "name": "posshortothTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
+          "criteria": {
+            "description": "Other HCP",
+            "name": "posshortothFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortothlic",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Advanced practice nurses, physician assistants"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "true",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "YES - Advanced practice nurses, physician assistants",
+          "criteria": {
+            "description": "Other licensed independent practitioners",
+            "name": "posshortothlicTrue",
+            "language": "text/plain",
+            "expression": "true"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "false",
+                "system": "http://terminology.hl7.org/CodeSystem/special-values"
+              }
+            ]
+          },
+          "description": "NO - Advanced practice nurses, physician assistants",
+          "criteria": {
+            "description": "Other licensed independent practitioners",
+            "name": "posshortothlicFalse",
+            "language": "text/plain",
+            "expression": "false"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "Practitioner"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "structure",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "increase",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "aggregable-by-period"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "posshortothsfy",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+          }
+        ],
+        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
+      }
+    }
+  ],
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ],
+      "name": "HL7 Patient Administration Workgroup"
+    },
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://ainq.com"
+        }
+      ],
+      "name": "Audacious Inquiry"
+    },
+    {
+      "name": "Keith W. Boone",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/Measure/CDCHealthcareWorkerStaffingPathway",
+  "name": "CDCHealthcareWorkerStaffingPathway",
+  "title": "COVID-19 Healthcare Worker Staffing Pathway",
+  "date": "2020-04-27T07:08:50-04:00",
+  "description": "SANER implementation of the CDC COVID-19 Healthcare Worker Staffing Pathway",
+  "useContext": [
+    {
+      "code": {
+        "code": "focus",
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "840539006",
+            "system": "http://snomed.info/sct"
+          }
+        ]
+      }
+    }
+  ],
+  "author": [
+    {
+      "name": "Centers for Disease Control/National Healthcare Safety Network (CDC/NHSN)",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:nhsn@cdc.gov"
+        }
+      ]
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "type": "documentation",
+      "label": "NHSN COVID-19 Reporting for Acute Care",
+      "display": "CDC/NHSN COVID-19 Acute Care Module Home Page",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/"
+    },
+    {
+      "type": "documentation",
+      "label": "How to import COVID-19 Summary Data",
+      "display": "Facility - How to Upload COVID-19 CSV Data Files",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf"
+    },
+    {
+      "type": "documentation",
+      "label": "COVID-19 Module Analysis Reports",
+      "display": "NHSN COVID-19 Module Analysis Reports",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/pdfs/covid19/fac-analysis-qrg-508.pdf"
+    },
+    {
+      "type": "documentation",
+      "label": "Table of Instructions",
+      "display": "Instructions for Completion of the COVID-19 Healthcare Worker Staffing Pathway (CDC 57.131)",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.131-toi-508.pdf"
+    },
+    {
+      "type": "documentation",
+      "label": "PDF Form",
+      "display": "Healthcare Worker Staffing Pathway Form",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.131-covid19-hwp-blank-p.pdf"
+    },
+    {
+      "type": "documentation",
+      "label": "CSV File Template",
+      "display": "CDC/NHSN COVID-19 Acute Care Healthcare Supply Reporting CSV File Template",
+      "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+      "url": "https://www.cdc.gov/nhsn/pdfs/covid19/facility-import-hcw.csv"
+    }
+  ],
+  "library": [
+    "http://hl7.org/fhir/us/saner/StructureDefinition/NHSNMeasureLibrary"
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "composite",
+          "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+    ]
+  },
+  "type": "summary",
+  "status": "complete",
+  "measure": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
+  "subject": {
+    "identifier": {
+      "system": "https://www.census.gov/geographies",
+      "value": "34"
+    },
+    "reference": "Location/states-NJ",
+    "display": "State of New Jersey"
+  },
+  "reporter": {
+    "reference": "Organization/NJ-DPH",
+    "display": "New Jersey Department of Public Health"
+  },
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:375c3a69-9219-11ea-1863-09173f13e4c5"
+    }
+  ],
+  "date": "2020-04-17",
+  "period": {
+    "start": "2020-04-17",
+    "end": "2020-04-17"
+  },
+  "group": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "positiveIncreasePercent",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+          }
+        ]
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalOrdersIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "_count": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode": "unsupported"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalTestResultsIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "denominator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "count": 5619
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "positiveIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "numerator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "count": 3150
+        }
+      ],
+      "measureScore": {
+        "value": 56.06,
+        "unit": "%",
+        "code": "%",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "positivePercent",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+          }
+        ]
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalOrders",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "_count": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode": "unsupported"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "rejected",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "denominator-exclusion",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "_count": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode": "unsupported"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalTestResults",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "denominator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "count": 157449
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "positive",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+              },
+              {
+                "code": "numerator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ]
+          },
+          "count": 78467
+        }
+      ],
+      "measureScore": {
+        "value": 49.84,
+        "unit": "%",
+        "code": "%",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ]
+}

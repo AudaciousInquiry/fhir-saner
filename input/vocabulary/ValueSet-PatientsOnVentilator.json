@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PatientsOnVentilator",
+  "id": "PatientsOnVentilator",
+  "title": "Observations for Patients on a Ventilator",
+  "description": "This Value Set identifies patients currently on a ventilator",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientsOnVentilator",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "19835-8"
+          },
+          {
+            "code": "19994-3"
+          },
+          {
+            "code": "20077-4"
+          },
+          {
+            "code": "20079-0"
+          },
+          {
+            "code": "20103-8"
+          },
+          {
+            "code": "20112-9"
+          },
+          {
+            "code": "20115-2"
+          },
+          {
+            "code": "33438-3"
+          },
+          {
+            "code": "57655-3"
+          },
+          {
+            "code": "76530-5"
+          },
+          {
+            "code": "19839-0"
+          }
+        ]
+      }
+    ]
+  }
+}

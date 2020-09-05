@@ -5,11 +5,20 @@ skinparam Shadowing false
 folder Actors {
 agent "Measure Source" as MeasureSource
 agent "Measure Consumer" as MeasureConsumer
-MeasureSource -- MeasureConsumer : "Query Measure [PULL-TX] ↑\nProduce Measure [PUSH-TX] ↓"
+agent "Measure Definition Source" as MeasureDefinitionSource
+agent "Measure Definition Consumer" as MeasureDefinitionConsumer
+MeasureSource -- MeasureConsumer : "Query Measure [PULL-TX] ↑\nProduce Measure [PUSH-TX] ↓\nCompute Measure [COMPUTE-MX] ↕"
 MeasureConsumer -- MeasureConsumer : "Communicate Results [REPORT-TX] ↕"
+MeasureDefinitionSource -- MeasureDefinitionConsumer : "Query Measure Definition [PULL-MX] ↑"
+MeasureComputer -- MeasureComputer : "Compute Measure [COMPUTE-MX] ↕"
 }
 rectangle "Measure Intermediary" as MeasureIntermediary { 
-agent "Measure Source" as MeasureSourced2e316
-agent "Measure Consumer" as MeasureConsumerd2e360
+agent "Measure Source" as MeasureSourced3e437
+agent "Measure Consumer" as MeasureConsumerd3e437
 }
+rectangle "Measure Computer" as MeasureComputer { 
+agent "Measure Source" as MeasureSourced3e522
+agent "Measure Definition Consumer" as MeasureDefinitionConsumerd3e522
+}
+MeasureIntermediary -[hidden]- MeasureComputer
 @enduml

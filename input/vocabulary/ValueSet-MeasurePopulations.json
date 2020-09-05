@@ -1,0 +1,20 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MeasurePopulations",
+  "id": "MeasurePopulations",
+  "title": "Measure Populations",
+  "description": "Measure Populations defined by The SANER Project",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasurePopulations",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+      },
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/special-values"
+      }
+    ]
+  }
+}

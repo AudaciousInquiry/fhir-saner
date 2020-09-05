@@ -5,7 +5,7 @@ CodeSystem: MeasurePopulationSystem
 Title: "Measure Population System"
 Description: "A Code System for Populations defined by The SANER Project"
 * #numTotBeds                   "All Hospital Beds" "Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients"
-* #numBeds                      "Hospital Inpatient Beds" "Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients"
+* #numbeds                      "Hospital Inpatient Beds" "Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients"
 * #numBedsOcc                   "Hospital Inpatient Bed Occupancy" "Total number of staffed inpatient beds that are occupied"
 * #numICUBeds                   "ICU Beds" "Total number of staffed inpatient intensive care unit (ICU) beds"
 * #numICUBedsOcc                "ICU Bed Occupancy" "Total number of staffed inpatient ICU beds that are occupied"
@@ -103,6 +103,8 @@ ValueSet: MeasurePopulations
 Title: "Measure Populations"
 Description: "Measure Populations defined by The SANER Project"
 * codes from system MeasurePopulationSystem
+* codes from system http://terminology.hl7.org/CodeSystem/special-values
+
 
 ValueSet: MeasureStatus
 Title: "Measure Status Values"
@@ -114,9 +116,9 @@ Description: "Allowed Status Values for Saner Measures"
 CodeSystem: MeasureRateAggregation
 Title: "Measure Rate Aggregation Coding System"
 Description: "This Coding System Identifies methods of rate aggregation"
-* #aggregable-by-period "Aggregable" "Rates can be accumulated over consecutive periods"
-* #point-in-time "Point in Time" "Rates are point in time measures during the reporting period"
-* #cumulative "Cumulative" "Rates are point in time measures showing cumulative values over all reporting periods"
+* #aggregable-by-period "Aggregable" "Rates can be summed over consecutive periods"
+* #point-in-time "Point in Time" "Rates are point in time measures during the reporting period, the most recent measure is retained in an aggregate"
+* #cumulative "Cumulative" "Rates are point in time measures showing cumulative values over all reporting periods, the most recent measure is retained in an aggregate"
 
 ValueSet: MeasureRateAggregationValues
 Title: "Measure Rate Aggregation Value Set"

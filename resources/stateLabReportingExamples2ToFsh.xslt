@@ -11,11 +11,11 @@
     xmlns:f="http://hl7.org/fhir" version="2.0">
     <xsl:output indent="yes" method="xml" omit-xml-declaration="yes"/>
     <xsl:strip-space elements="*"/>
-    
+
     <!-- Limit the number of rows to convert, set to 0 to convert everything -->
     <xsl:param name='count' select='2000'/>
     <!-- set to the name of the mapping file
-        
+
         The mapping file should have the names of the CSV file columns in the first column
         and the codes that they map to in the column row.  Headers should for the first
         row should be column,item  e.g.:
@@ -32,32 +32,32 @@
         numVentUse,numVentUse
         -->
     <xsl:param name="mapping" select="'Mapping.csv'"/>
-    
+
     <!-- Specifies the source of the input data.  The first row
         must be column names for the data.  The second and subsequent
         rows should be the data to convert to measurements -->
     <xsl:param name="csvInputData" select="'njSampleData.csv'"/>
-    
+
     <!-- Set to the output format:
         fsh  To generate sushi output
         xml  To generate xml output
         json Will also generate XML output, sorry, we aren't there yet.
     -->
     <xsl:param name="format" select="'xml'"/>
-    
+
     <!-- Set to the name of the measure to generate from the CSV input data file
-        This must be the name of a file from which the Measure resource can be 
+        This must be the name of a file from which the Measure resource can be
         read so relevant material can be copied from it.
     -->
     <!--xsl:param name='measureResource' select='"Measure-CDCPatientImpactAndHospitalCapacity.xml"' /-->
     <xsl:param name='measureResource' select='"Measure-FEMADailyHospitalCOVID19Reporting.xml"'/>
-    
+
     <!-- Load up some geodata for states (for generating example output) -->
     <xsl:variable name="geo" select="document('US-States-Geocenters.xml')"/>
-    
+
     <!-- Set the BASE URL for saner IG artifacts (we changed it once) -->
     <xsl:variable name="base" select="'http://hl7.org/fhir/us/saner/'"/>
-    
+
     <!-- Load up the mapping file and convert to XML for XSLT processing -->
     <xsl:variable name="map">
         <xsl:call-template name="getSheetAsXML">
@@ -67,17 +67,20 @@
             <xsl:with-param name="pathToCSV" select="$mapping"/>
         </xsl:call-template>
     </xsl:variable>
-    
-    
+
+
     <!-- Load up the Measure definition resource -->
     <xsl:variable name="def" select='document($measureResource)'/>
-    
+
     <!-- Import CSV to XML utilities -->
     <xsl:import href="CSVtoXML.xslt"/>
-    
+
     <!-- Import UUID Generation utilities -->
     <xsl:import href="uuid.xslt"/>
-    
+
+    <!-- Import FSH Support Functions -->
+    <xsl:import href="fsh.xslt"/>
+
     <!-- Process the input -->
     <xsl:template match="/">
         <!-- Load the CSV file to process -->
@@ -91,14 +94,14 @@
         </xsl:variable>
         <!-- One could also load data from an XML file in a regular format -->
         <!-- xsl:variable name="res" select="document('stateLabReportingData.xml')" /-->
-        
+
         <!-- iterator over rows -->
         <xsl:for-each select="distinct-values($res/results/result[$count = 0 or position() &lt; $count]/state/@value)">
             <xsl:variable name="state" select="."/>
             <!-- Load the geographic data for the state -->
             <xsl:variable name="geoData" select="$geo/states/state[@PostalCode = $state]"/>
-            
-            <!-- NOTE: For conversion, these should come from 
+
+            <!-- NOTE: For conversion, these should come from
                 existing Location and Organization records
             -->
             <!-- Generate State Record body -->
@@ -110,7 +113,7 @@
                     )"/>
                 <xsl:if test='$geoData/@Lat and $geoData/@Long'>
                     <xsl:copy-of select="s:wrap('position',
-                        (s:name(('position.latitude'), ($geoData/@Lat)), 
+                        (s:name(('position.latitude'), ($geoData/@Lat)),
                          s:name(('position.longitude'), ($geoData/@Long))
                         )
                     )"/>
@@ -119,32 +122,32 @@
             <!-- Generate the record -->
             <xsl:if test='$format = "fsh"'>
                 <xsl:copy-of
-                    select="s:instance(concat('states-', $state), 'Location', concat('Example Location for the State of ', $geoData/@Name), 
+                    select="s:instance(concat('states-', $state), 'Location', concat('Example Location for the State of ', $geoData/@Name),
                      (s:string(('id'), ('states-',$state)),
                       s:wrap('identifier',(
                          s:string(('identifier.system'), 'https://www.census.gov/geographies'),
                          s:string(('identifier.value'), $res/results/result[state/@value=$state][fips][1]/fips/@value))),
                       s:wrap('position',
-                         (s:name(('position.latitude'), ($geoData/@Lat)), 
+                         (s:name(('position.latitude'), ($geoData/@Lat)),
                           s:name(('position.longitude'), ($geoData/@Long))
                          )
                       )
                      ), 'Location'
                     )"/>
-    
+
                 <xsl:copy-of
-                    select="s:instance(concat($state, '-DPH'), 'Organization', concat('Example Organization for the ', $geoData/@Name, ' Department of Public Health'), 
+                    select="s:instance(concat($state, '-DPH'), 'Organization', concat('Example Organization for the ', $geoData/@Name, ' Department of Public Health'),
                     (s:string(('id'), ($state,'-DPH')), s:string(('name'), ($geoData/@Name, ' Department of Public Health'))), 'Organization'
                     )"/>
             </xsl:if>
         </xsl:for-each>
         <xsl:apply-templates select="$res/results/result[position() &lt; $count]"/>
     </xsl:template>
-    
+
     <xsl:template match="result">
         <xsl:call-template name="result"/>
     </xsl:template>
-    
+
     <xsl:function name="s:name">
         <xsl:param name="f"/>
         <xsl:param name="v"/>
@@ -164,7 +167,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    
+
     <xsl:function name="s:string">
         <xsl:param name="f"/>
         <xsl:param name="v"/>
@@ -248,10 +251,10 @@
     </xsl:function>
 
     <xsl:template name="result">
-        
+
         <!-- Take the data row, and compute some values into it -->
-        <!-- NOTE: We should be able to automate for 
-            (numerator - sum(numerator-exclusion))/(denominator - sum(denominator-exclusion)) 
+        <!-- NOTE: We should be able to automate for
+            (numerator - sum(numerator-exclusion))/(denominator - sum(denominator-exclusion))
             -->
         <xsl:variable name="data">
             <result xmlns="">
@@ -268,8 +271,8 @@
                 </xsl:if>
             </result>
         </xsl:variable>
-        
-        
+
+
         <!-- Generate Instance -->
         <xsl:call-template name="createMeasureReportHeader">
             <xsl:with-param name="state" select="state/@value"/>
@@ -282,9 +285,9 @@
                 </xsl:apply-templates>
             </xsl:with-param>
         </xsl:call-template>
-        
+
     </xsl:template>
-    
+
     <xsl:function name="s:wrap">
         <xsl:param name="elemName"/>
         <xsl:param name="body"/>
@@ -299,21 +302,21 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    
+
     <xsl:template name="createMeasureReportHeader">
         <xsl:param name="state"/>
         <xsl:param name="date"/>
         <xsl:param name="def"/>
         <xsl:param name="fips"/>
         <xsl:param name="body"/>
-        
+
         <xsl:variable name="measure" select="$def/f:Measure/f:id/@value"/>
         <xsl:variable name="geoData" select="$geo/states/state[@PostalCode = $state]"/>
         <xsl:variable name="exampleName" select="concat('Example', $state, '-', $date, '-', $measure)"/>
-        
+
         <xsl:variable name='measureBody'>
             <xsl:if test='$format="fsh"'>
-                <xsl:copy-of select="s:def('Mixins', 'NJExamplesFEMA')"/>
+                <xsl:text>* insert NJExamplesFEMA&#xA;</xsl:text>
             </xsl:if>
             <!--xsl:value-of select="s:def('Usage', '#inline')"/-->
             <xsl:copy-of select="s:string(('id'), ($exampleName))"/>
@@ -322,7 +325,7 @@
                 (s:string(('identifier.system'), 'urn:ietf:rfc:3986'),
                      s:string(('identifier.value'), concat('urn:uuid:', lower-case(uuid:get-uuid($body))))
                     ))"/>
-            
+
             <xsl:copy-of
                 select="s:string(('date'), (substring($date, 1, 4), '-', substring($date, 5, 2), '-', substring($date, 7, 2)))"/>
             <xsl:copy-of select="s:wrap('period',
@@ -333,12 +336,12 @@
         </xsl:variable>
         <xsl:copy-of
             select="s:instance(
-                ($exampleName), 
-                'PublicHealthMeasureReport', 
-                ('Example MeasureReport of ', $measure, ' for ', $state, ' on ', (substring($date, 5, 2), '/', substring($date, 7, 2), '/', substring($date, 1, 4))), 
+                ($exampleName),
+                'PublicHealthMeasureReport',
+                ('Example MeasureReport of ', $measure, ' for ', $state, ' on ', (substring($date, 5, 2), '/', substring($date, 7, 2), '/', substring($date, 1, 4))),
                 $measureBody, 'MeasureReport')"/>
-        
-        
+
+
         <!--xsl:choose>
             <xsl:when test="$format='fsh'">
                 <xsl:copy-of select="$header"/>
@@ -352,7 +355,7 @@
             </xsl:otherwise>
         </xsl:choose-->
     </xsl:template>
-    
+
     <xsl:function name="s:getName">
         <xsl:param name="s"/>
         <xsl:if test="lower-case(substring(local-name($s),1,1)) = substring(local-name($s),1,1)">
@@ -369,7 +372,7 @@
             </xsl:if>
         </xsl:if>
     </xsl:function>
-    
+
     <xsl:template match="@value" mode="copyMeasureToReport">
         <xsl:variable name="name" select="s:getName(..)"/>
         <xsl:choose>
@@ -393,7 +396,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <xsl:template match="@url" mode="copyMeasureToReport">
         <xsl:choose>
             <xsl:when test="$format='fsh'">
@@ -404,12 +407,12 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <xsl:template match='f:extension[@url="http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"]' mode="copyMeasureToReport">
         <!-- Skip this extension, it's not needed in the report, just the measure -->
     </xsl:template>
-    
-    <!-- f:code[not(../f:coding)] | f:coding  | f:text | --> 
+
+    <!-- f:code[not(../f:coding)] | f:coding  | f:text | -->
     <xsl:template
         match="f:group | f:population | (f:group|f:population)/f:code | f:stratifier | f:value | f:extension | f:valueCodeableConcept | f:valueString"
         mode="copyMeasureToReport">
@@ -427,12 +430,12 @@
                         </xsl:apply-templates>
                     </xsl:otherwise>
                 </xsl:choose>
-                
+
                 <!-- If this is a group|population, we may need to output a measure score|count -->
                 <xsl:if test="self::f:group | self::f:population">
                     <xsl:variable name="score" select="f:code/f:coding[starts-with(f:system/@value, 'http://hl7.org/fhir/us/saner/CodeSystem')]/f:code/@value"/>
                     <xsl:variable name="mappedScore" select="$map/maps/map[item/@value=$score]/column/@value"/>
-                    
+
                     <xsl:variable name="v" select="$values/result/*[local-name()=string($mappedScore)]"/>
                     <!-- If this is a group, and the group reports a score and the score has a value -->
                     <xsl:variable name="n" select="s:getName(.)"/>
@@ -465,9 +468,9 @@
                                     </xsl:choose>
                                 </xsl:when>
                                 <xsl:when test="$format='fsh'">
-                                    <xsl:copy-of 
+                                    <xsl:copy-of
                                         select="s:string(($n, '.measureScore.value.extension.url'), 'http://hl7.org/fhir/StructureDefinition/data-absent-reason')"/>
-                                    <xsl:copy-of select="s:name(($n, '.measureScore.value.extension.valueCode'), 
+                                    <xsl:copy-of select="s:name(($n, '.measureScore.value.extension.valueCode'),
                                         concat('http://terminology.hl7.org/CodeSystem/data-absent-reason#',if (not($mappedScore)) then 'unsupported' else 'unknown'))"/>
                                 </xsl:when>
                                 <xsl:otherwise>

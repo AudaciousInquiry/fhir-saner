@@ -1,0 +1,3282 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.us.saner",
+  "url": "http://hl7.org/fhir/us/saner/ImplementationGuide/hl7.fhir.us.saner",
+  "version": "0.1.0",
+  "name": "SituationalAwarenessforNovelEpidemicResponse",
+  "title": "Situational Awareness for Novel Epidemic Response",
+  "status": "active",
+  "contact": [
+    {
+      "name": "HL7 Patient Administration Workgroup",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "name": "Audacious Inquiry",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://ainq.com"
+        }
+      ]
+    },
+    {
+      "name": "Keith W. Boone",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "The Situational Awareness for Novel Epidemic Response Implementation Guide enables transmission of high level situational awareness information from inpatient facilities to centralized data repositories to support the treatment of novel influenza-like illness.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "hl7.fhir.us.saner",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.us.core",
+      "version": "3.1.0",
+      "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+      "id": "hl7_fhir_us_core"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event-delete"
+        },
+        "name": "Audit Event Delete Profile",
+        "description": "Defines constraints on the AuditEvent Resource to record when a resource has been deleted.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event-read"
+        },
+        "name": "Audit Event Read",
+        "description": "Defines constraints on the AuditEvent Resource to record when a record has been Read.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event-search"
+        },
+        "name": "Audit Event Search",
+        "description": "Defines constraints on the AuditEvent Resource to record when a record has been queried.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event-update"
+        },
+        "name": "Audit Event Update Profile",
+        "description": "Defines constraints on the AuditEvent Resource to record when a resource has been updated.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event-write"
+        },
+        "name": "Audit Event Write Profile",
+        "description": "Defines constraints on the AuditEvent Resource to record when a resource has been written.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CapabilityStatementWithSlices"
+        },
+        "name": "Capability Statements with Slices",
+        "description": "A Capability Statement with slicing defined",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MeasureCriteria"
+        },
+        "name": "MeasureCriteria",
+        "description": "Constraints on documentation for the evaluation of a Measure",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MeasureReportingTiming"
+        },
+        "name": "Recommended Measure Reporting Times",
+        "description": "Provides the timing for measure  reporting",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MeasuredItemDescription"
+        },
+        "name": "Saner Measured Item Description",
+        "description": "A CodeableConcept describing the item to be counted in terms of the type of FHIR Resource to count, and subtype of item identified by that resource",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PreciseDateTime"
+        },
+        "name": "Precise Date Time",
+        "description": "A dateTime value that contains seconds and a timezone",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PublicHealthMeasure"
+        },
+        "name": "Saner Public Health Measure",
+        "description": "Profile Saner Public Health Measure\nThe Public Health Measure Profile ensures that Measures are very well defined as an aid to automation\nof measures.  These are developed by The Saner Project team to ensure that the measure is well understood\nand computation of it can be automated from systems that have the measure data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PublicHealthMeasureLibrary"
+        },
+        "name": "Public Health Measure Library",
+        "description": "A Public Health Measure Library contains essential ConceptMap, ValueSet, CodingSystem,\nNamingSystem, SearchParameter, CQL definitions or other resources for measure evaluation.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PublicHealthMeasureMetadataAttachments"
+        },
+        "name": "PublicHealthMeasureMetadataAttachments",
+        "description": "Attachments providing resources containing essential content supporting a measure definition",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PublicHealthMeasureReport"
+        },
+        "name": "Saner Public Health Measure Report",
+        "description": "Profile Saner Public Health Measure Report\n\nThe Public Health Measure Report Profile ensures that MeasureReports conforms to the minimal content required to properly interpret\na report of a Public Health Measure.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PublicHealthMeasureStratifier"
+        },
+        "name": "Saner Public Health Measure Stratifier",
+        "description": "Profile Saner Public Health Measure Stratifier\n\nA stratifier is effecitively a mixin that can be used with an existing measure\nto add stratification detail to that measure.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/saner-resource-location"
+        },
+        "name": "Resource Location Profile",
+        "description": "Defines constraints on the Location Resource describing the location of resources (Beds and Devices).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-event"
+        },
+        "name": "General Audit Event Requirements",
+        "description": "Defines general constraints on the AuditEvent Resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/saner-supporting-device"
+        },
+        "name": "Supporting Device Profile",
+        "description": "Defines constraints on the Device Resource for data communicating about supporting devices.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/measure-expectation"
+        },
+        "name": "MeasureExpection",
+        "description": "Enables definitions to identify components that are required, recommended or optional",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MeasureGroupAttributes"
+        },
+        "name": "Attributes describing a group of measures",
+        "description": "Attributes describing the group of measures",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MeasurePopulationAlternateCriteria"
+        },
+        "name": "Alternate criteria for performing a measure",
+        "description": "Provides Alternate criteria for performing a measure, (e.g., CQL, Drools, et cetera)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ReportingPeriod"
+        },
+        "name": "Enables specification of proposed measure reporting",
+        "description": "The timing used for measure reporting",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/BedLocationOperationalStatus"
+        },
+        "name": "Bed Location Operational Status",
+        "description": "This Value Set is used to indicate whether a bed is in use (O), available for use (U), or not available (C) for use.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/BedLocationTypes"
+        },
+        "name": "Bed Location Types",
+        "description": "Codes used to identify types of service locations for beds",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19Antibody"
+        },
+        "name": "COVID19Antibody",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19DXICD10"
+        },
+        "name": "COVID19DXICD10",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19DXSNOMED"
+        },
+        "name": "COVID19DXSNOMED",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19DiagnosticTest"
+        },
+        "name": "COVID-19 Diagnostic Test",
+        "description": "Codes for COVID-19 Diagnostic Tests",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19Exposure"
+        },
+        "name": "COVID19Exposure",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/COVID19Organism"
+        },
+        "name": "COVID19Organism",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ConfirmedCOVID19Diagnosis"
+        },
+        "name": "Confirmed COVID-19 Diagnosis",
+        "description": "Codes confirming COVID-19 Diagnostic Test Result",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ConfirmedCOVID19DiagnosisValues"
+        },
+        "name": "Confirmed COVID-19 Diagnosis Values",
+        "description": "Codes for result values confirming COVID-19 Diagnostic Test Result",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/DecadeAgeBrackets"
+        },
+        "name": "Age Brackets By Decade",
+        "description": "A Value Set of age groups generally by decade except youth (under 20), or over 80, commonly used for stratification in public health dashboards",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/EDorOverflowLocations"
+        },
+        "name": "ED or Overflow Locations",
+        "description": "Codes used for ED or Overflow locations",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/EventContext"
+        },
+        "name": "Event Context",
+        "description": "This Value Set enables classification of environmental events for categorizing measures.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/HealthcareServiceLocation"
+        },
+        "name": "HealthcareServiceLocation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ICULocations"
+        },
+        "name": "ICU Locations",
+        "description": "Codes used for ICU locations",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/InpatientLocations"
+        },
+        "name": "Inpatient Locations",
+        "description": "Codes used for inpatient locations",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MeasureGroups"
+        },
+        "name": "Measure Groups",
+        "description": "Measure Groups defined by the SANER Project",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MeasurePopulations"
+        },
+        "name": "Measure Populations",
+        "description": "Measure Populations defined by The SANER Project",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MeasureRateAggregationValues"
+        },
+        "name": "Measure Rate Aggregation Value Set",
+        "description": "This Value Set Identifies methods of rate aggregation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/MeasureStatus"
+        },
+        "name": "Measure Status Values",
+        "description": "Allowed Status Values for Saner Measures",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/OccupiedBed"
+        },
+        "name": "Occupied Bed",
+        "description": "Codes used for Occupied Beds",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PatientDied"
+        },
+        "name": "Patient Died",
+        "description": "Codes used to identify that a patient has died",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PatientsOnVentilator"
+        },
+        "name": "Observations for Patients on a Ventilator",
+        "description": "This Value Set identifies patients currently on a ventilator",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PublicHealthMeasureAttachmentTypes"
+        },
+        "name": "Public Health Measure Attachment Types",
+        "description": "Preferred Mime Types for use with Public Health Measure Definitions",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/Remdesivir"
+        },
+        "name": "Remdesivir",
+        "description": "This Value Set identifies Remdesivir",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SARSCoV2GeneticLabs"
+        },
+        "name": "SARSCoV2 Genetic Labs",
+        "description": "This Value Set Labs which gene-based testing instead of other methods (e.g., Antibody testing)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SARSCoV2Labs"
+        },
+        "name": "SARSCoV2Labs",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ScoreAgeBrackets"
+        },
+        "name": "Age Brackets By Score (20)",
+        "description": "A Value Set of age groups in 20 year increments used in some public health dashboards",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SuspectedCOVID19"
+        },
+        "name": "SuspectedCOVID19",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/SuspectedOrDiagnosedCOVID19"
+        },
+        "name": "Suspected Or Diagnosed COVID-19",
+        "description": "Coded identifying suspected or confirmed COVID-19",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/VentilatorDevices"
+        },
+        "name": "Ventilator Devices",
+        "description": "Codes used for Ventilator Devices",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/VentilatorDevicesWithTracheostomy"
+        },
+        "name": "Ventilator Devices when used with Tracheostomy",
+        "description": "Codes used for Devices that support Ventilation with a Tracheostomy",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/IHE-ADX-agerange"
+        },
+        "name": "Age Range Coding System",
+        "description": "The description below includes text from CP-QRPH-238. The normative text describing this code system can be found at\nhttps://www.ihe.net/uploadedFiles/Documents/QRPH/IHE_QRPH_Suppl_ADX.pdf#page=78\n\nThe representation of age group ranges code should be unambiguous, human readable and machine-readable. There being no commonly\navailable coding system or convention for expressing or representing age ranges for aggregate data exchange, ADX expresses an\nage group band through two simple durations as defined in the ISO 8601. The definition below provides the grammar for a coding\nsystem.  The URL for this Coding System is [http://profiles.ihe.net/fhir/CodeSystem/IHE_ADX_agerange](./CodeSystem-IHE-ADX-agerange.html) (for use in HL7® FHIR®),\nand the OID is 1.3.6.1.4.1.19376.1.7.3.1.1.29.1 (for use in HL7® CDA® and Version 3 standards).\n\nADX describes an age group range as two durations:  <duration1> -- <duration2>. Where duration1 specifies the beginning of the\nage group band (everyone who is this age and above) and duration2 signify the upper bound of the age group band.\nTherefore, age groups like \"1-9 years\" means everyone who is at least one year old and less than 10 years old represented as\nP1Y--P10Y,age group like \"10-14 years\" means everyone who is at least 10 years old and less than 15 years old is represented\nas P10Y--P15Y.\n\nDurations define the amount if an intervening time between two time points. These durations are represented in the\nform P[n]Y[n]M[n]DT[n]H[n]M[n]S or P[n]W. The [n] is replaced by the value for each of the time elements that follow\nthe [n] and the letters have the meaning:\n\n* P is the duration designator (for period) placed at the start of the duration representation.\n* Y is the year designator that follows the value for the number of years.\n* M is the month designator that follows the value for the number of months.\n* W is the week designator that follows the value for the number of weeks.\n* D is the day designator that follows the value for the number of days.\n* T is the time designator that precedes the time components of the representation.\n* H is the hour designator that follows the value for the number of hours.\n* M is the minute designator that follows the value for the number of minutes.\n* S is the second designator that follows the value for the number of seconds.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MeasureGroupSystem"
+        },
+        "name": "Measure Group System",
+        "description": "A Code System for Groups defined by The SANER Project",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MeasurePopulationSystem"
+        },
+        "name": "Measure Population System",
+        "description": "A Code System for Populations defined by The SANER Project",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MeasureRateAggregation"
+        },
+        "name": "Measure Rate Aggregation Coding System",
+        "description": "This Coding System Identifies methods of rate aggregation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Measure/CDCHealthcareSupplyPathway"
+        },
+        "name": "CDC Healthcare Supply Pathway",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "Measure/CDCHealthcareWorkerStaffingPathway"
+        },
+        "name": "CDCHealthcareWorkerStaffingPathway",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "Measure/CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "CDC Patient Impact and Hospital Capacity",
+        "description": "This measure demonstrates reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "Measure/ComputableCDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "Computable CDC Patient Impact and Hospital Capacity",
+        "description": "This measure demonstrates reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "Measure/ComputableFEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "Computable FEMA Laboratory Orders and Results Daily Increase Reporting",
+        "description": "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts.",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/ComputeMeasure-evaluate-measure"
+        },
+        "name": "ComputeMeasure-evaluate-measure",
+        "description": "Create or update a MeasureReport for the given time period. If a report already exists for the subject and reporter for the given time period, it is updated.\n                            Otherwise, a new report is created.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/04/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/04/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/05/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/05/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/06/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/06/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/07/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/07/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/08/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/08/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/09/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/09/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/10/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/10/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/11/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/11/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/12/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/12/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/13/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/13/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/14/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/14/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/15/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/15/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/16/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/16/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/17/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/17/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/18/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/18/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/19/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/19/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/20/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/20/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/21/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/21/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/22/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/22/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/23/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/23/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/24/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/24/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity"
+        },
+        "name": "ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity",
+        "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/25/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting",
+        "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/25/2020",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      },
+      {
+        "reference": {
+          "reference": "Measure/FEMADailyHospitalCOVID19Reporting"
+        },
+        "name": "FEMA Laboratory Orders and Results Daily Increase Reporting",
+        "description": "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts.",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      },
+      {
+        "reference": {
+          "reference": "Library/FEMAMeasureLibrary"
+        },
+        "name": "FEMAMeasureLibrary",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/HAvBED2toFHIR"
+        },
+        "name": "HAvBED2 to FHIR Concept Map",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureComputer"
+        },
+        "name": "MeasureComputer",
+        "description": "Defines the requirements for the Measure Computer.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureComputer-ComputeMeasure"
+        },
+        "name": "MeasureComputer-ComputeMeasure",
+        "description": "Defines the requirements for the Measure Computer implementing the Compute Measure transaction.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-API-Pull"
+        },
+        "name": "MeasureConsumer-API-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-API-Pull-Questionnaire"
+        },
+        "name": "MeasureConsumer-API-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option, the Pull Option, and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-API-Push"
+        },
+        "name": "MeasureConsumer-API-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-Aggregate"
+        },
+        "name": "MeasureConsumer-Aggregate",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Aggregate Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-CSV-Pull"
+        },
+        "name": "MeasureConsumer-CSV-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the CSV Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-CSV-Push"
+        },
+        "name": "MeasureConsumer-CSV-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the CSV Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-ProduceMeasure-API-Push"
+        },
+        "name": "MeasureConsumer-ProduceMeasure-API-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Produce Measure transaction with the API Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-ProduceMeasure-CSV-Push"
+        },
+        "name": "MeasureConsumer-ProduceMeasure-CSV-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Produce Measure transaction with the CSV Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull"
+        },
+        "name": "MeasureConsumer-QueryMeasure-API-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the API Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull-Questionnaire"
+        },
+        "name": "MeasureConsumer-QueryMeasure-API-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the API Option, the Pull Option, and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-CSV-Pull"
+        },
+        "name": "MeasureConsumer-QueryMeasure-CSV-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the CSV Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureDefinitionConsumer"
+        },
+        "name": "MeasureDefinitionConsumer",
+        "description": "Defines the requirements for the Measure Definition Consumer.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureDefinitionConsumer-QueryMeasureDefinition"
+        },
+        "name": "MeasureDefinitionConsumer-QueryMeasureDefinition",
+        "description": "Defines the requirements for the Measure Definition Consumer implementing the Query Measure Definition transaction.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureDefinitionSource"
+        },
+        "name": "MeasureDefinitionSource",
+        "description": "Defines the requirements for the Measure Definition Source.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureDefinitionSource-QueryMeasureDefinition"
+        },
+        "name": "MeasureDefinitionSource-QueryMeasureDefinition",
+        "description": "Defines the requirements for the Measure Definition Source implementing the Query Measure Definition transaction.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-API-Pull"
+        },
+        "name": "MeasureSource-API-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the API Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-API-Pull-Questionnaire"
+        },
+        "name": "MeasureSource-API-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Source implementing the API Option, the Pull Option, and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-API-Push"
+        },
+        "name": "MeasureSource-API-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the API Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-Aggregate"
+        },
+        "name": "MeasureSource-Aggregate",
+        "description": "Defines the additional requirements for the Measure Source implementing the Aggregate Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-CSV-Pull"
+        },
+        "name": "MeasureSource-CSV-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the CSV Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-CSV-Push"
+        },
+        "name": "MeasureSource-CSV-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the CSV Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-ProduceMeasure-API-Push"
+        },
+        "name": "MeasureSource-ProduceMeasure-API-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the Produce Measure transaction with the API Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-ProduceMeasure-CSV-Push"
+        },
+        "name": "MeasureSource-ProduceMeasure-CSV-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the Produce Measure transaction with the CSV Option and the Push Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-API-Pull"
+        },
+        "name": "MeasureSource-QueryMeasure-API-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the API Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-API-Pull-Questionnaire"
+        },
+        "name": "MeasureSource-QueryMeasure-API-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the API Option, the Pull Option, and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-CSV-Pull"
+        },
+        "name": "MeasureSource-QueryMeasure-CSV-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the CSV Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Library/NHSNMeasureLibrary"
+        },
+        "name": "NHSNMeasureLibrary",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+      },
+      {
+        "reference": {
+          "reference": "Organization/NJ-DPH"
+        },
+        "name": "NJ-DPH",
+        "description": "Example Organization for the New Jersey Department of Public Health",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/ProduceMeasure-aggregate"
+        },
+        "name": "ProduceMeasure-aggregate",
+        "description": "This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.\nThe MeasureReport to be aggregated can be provided in the measure-report parameter, or the caller can indicate which measures **should** be aggregated by\nspecifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources\nbeing aggregated must reference the same Measure resource defining the MeasureReport to generate.\n                        ",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/ProduceMeasure-report-csv"
+        },
+        "name": "ProduceMeasure-report-csv",
+        "description": "Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.\nOtherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/QueryMeasure-read-csv"
+        },
+        "name": "QueryMeasure-read-csv",
+        "description": "Read a given MeasureReport using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/QueryMeasure-search-csv"
+        },
+        "name": "QueryMeasure-search-csv",
+        "description": "Search Measure Report resources using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/SearchParameter-code"
+        },
+        "name": "Search by Code in Definitions and Instances",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/SearchParameter-definition-text"
+        },
+        "name": "Search by Text in Definitions",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/SearchParameter-disposition"
+        },
+        "name": "Search by hospitalization.dispositionCode in Encounters",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/states-NJ"
+        },
+        "name": "states-NJ",
+        "description": "Example Location for the State of New Jersey",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-381"
+        },
+        "name": "FHIR-381",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-384"
+        },
+        "name": "FHIR-384",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-387"
+        },
+        "name": "FHIR-387",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140008"
+        },
+        "name": "Loc-X140008",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140008"
+        },
+        "name": "X140008",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-309"
+        },
+        "name": "FHIR-309",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-312"
+        },
+        "name": "FHIR-312",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-315"
+        },
+        "name": "FHIR-315",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140010"
+        },
+        "name": "Loc-X140010",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140010"
+        },
+        "name": "X140010",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-462"
+        },
+        "name": "FHIR-462",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-465"
+        },
+        "name": "FHIR-465",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-468"
+        },
+        "name": "FHIR-468",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140048"
+        },
+        "name": "Loc-X140048",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140048"
+        },
+        "name": "X140048",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-210"
+        },
+        "name": "FHIR-210",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-213"
+        },
+        "name": "FHIR-213",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-216"
+        },
+        "name": "FHIR-216",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140049"
+        },
+        "name": "Loc-X140049",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140049"
+        },
+        "name": "X140049",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-48"
+        },
+        "name": "FHIR-48",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-51"
+        },
+        "name": "FHIR-51",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-54"
+        },
+        "name": "FHIR-54",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140054"
+        },
+        "name": "Loc-X140054",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140054"
+        },
+        "name": "X140054",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-129"
+        },
+        "name": "FHIR-129",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-132"
+        },
+        "name": "FHIR-132",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-135"
+        },
+        "name": "FHIR-135",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140062"
+        },
+        "name": "Loc-X140062",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140062"
+        },
+        "name": "X140062",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-489"
+        },
+        "name": "FHIR-489",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-492"
+        },
+        "name": "FHIR-492",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-495"
+        },
+        "name": "FHIR-495",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140063"
+        },
+        "name": "Loc-X140063",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140063"
+        },
+        "name": "X140063",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-435"
+        },
+        "name": "FHIR-435",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-438"
+        },
+        "name": "FHIR-438",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-441"
+        },
+        "name": "FHIR-441",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140065"
+        },
+        "name": "Loc-X140065",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140065"
+        },
+        "name": "X140065",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-255"
+        },
+        "name": "FHIR-255",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-258"
+        },
+        "name": "FHIR-258",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-261"
+        },
+        "name": "FHIR-261",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140068"
+        },
+        "name": "Loc-X140068",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140068"
+        },
+        "name": "X140068",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-111"
+        },
+        "name": "FHIR-111",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-114"
+        },
+        "name": "FHIR-114",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-117"
+        },
+        "name": "FHIR-117",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140080"
+        },
+        "name": "Loc-X140080",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140080"
+        },
+        "name": "X140080",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-174"
+        },
+        "name": "FHIR-174",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-177"
+        },
+        "name": "FHIR-177",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-180"
+        },
+        "name": "FHIR-180",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140082"
+        },
+        "name": "Loc-X140082",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140082"
+        },
+        "name": "X140082",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-354"
+        },
+        "name": "FHIR-354",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-357"
+        },
+        "name": "FHIR-357",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-360"
+        },
+        "name": "FHIR-360",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140083"
+        },
+        "name": "Loc-X140083",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140083"
+        },
+        "name": "X140083",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-237"
+        },
+        "name": "FHIR-237",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-240"
+        },
+        "name": "FHIR-240",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-243"
+        },
+        "name": "FHIR-243",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140088"
+        },
+        "name": "Loc-X140088",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140088"
+        },
+        "name": "X140088",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-408"
+        },
+        "name": "FHIR-408",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-411"
+        },
+        "name": "FHIR-411",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-414"
+        },
+        "name": "FHIR-414",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140095"
+        },
+        "name": "Loc-X140095",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140095"
+        },
+        "name": "X140095",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-291"
+        },
+        "name": "FHIR-291",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-294"
+        },
+        "name": "FHIR-294",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-297"
+        },
+        "name": "FHIR-297",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140103"
+        },
+        "name": "Loc-X140103",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140103"
+        },
+        "name": "X140103",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-471"
+        },
+        "name": "FHIR-471",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-474"
+        },
+        "name": "FHIR-474",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-477"
+        },
+        "name": "FHIR-477",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140114"
+        },
+        "name": "Loc-X140114",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140114"
+        },
+        "name": "X140114",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-336"
+        },
+        "name": "FHIR-336",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-339"
+        },
+        "name": "FHIR-339",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-342"
+        },
+        "name": "FHIR-342",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140115"
+        },
+        "name": "Loc-X140115",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140115"
+        },
+        "name": "X140115",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-228"
+        },
+        "name": "FHIR-228",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-231"
+        },
+        "name": "FHIR-231",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-234"
+        },
+        "name": "FHIR-234",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140117"
+        },
+        "name": "Loc-X140117",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140117"
+        },
+        "name": "X140117",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-399"
+        },
+        "name": "FHIR-399",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-402"
+        },
+        "name": "FHIR-402",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-405"
+        },
+        "name": "FHIR-405",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140119"
+        },
+        "name": "Loc-X140119",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140119"
+        },
+        "name": "X140119",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-390"
+        },
+        "name": "FHIR-390",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-393"
+        },
+        "name": "FHIR-393",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-396"
+        },
+        "name": "FHIR-396",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140124"
+        },
+        "name": "Loc-X140124",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140124"
+        },
+        "name": "X140124",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-426"
+        },
+        "name": "FHIR-426",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-429"
+        },
+        "name": "FHIR-429",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-432"
+        },
+        "name": "FHIR-432",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140133"
+        },
+        "name": "Loc-X140133",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140133"
+        },
+        "name": "X140133",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-246"
+        },
+        "name": "FHIR-246",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-249"
+        },
+        "name": "FHIR-249",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-252"
+        },
+        "name": "FHIR-252",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140150"
+        },
+        "name": "Loc-X140150",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140150"
+        },
+        "name": "X140150",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-120"
+        },
+        "name": "FHIR-120",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-123"
+        },
+        "name": "FHIR-123",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-126"
+        },
+        "name": "FHIR-126",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140158"
+        },
+        "name": "Loc-X140158",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140158"
+        },
+        "name": "X140158",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-480"
+        },
+        "name": "FHIR-480",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-483"
+        },
+        "name": "FHIR-483",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-486"
+        },
+        "name": "FHIR-486",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140177"
+        },
+        "name": "Loc-X140177",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140177"
+        },
+        "name": "X140177",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-453"
+        },
+        "name": "FHIR-453",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-456"
+        },
+        "name": "FHIR-456",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-459"
+        },
+        "name": "FHIR-459",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140179"
+        },
+        "name": "Loc-X140179",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140179"
+        },
+        "name": "X140179",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-273"
+        },
+        "name": "FHIR-273",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-276"
+        },
+        "name": "FHIR-276",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-279"
+        },
+        "name": "FHIR-279",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140180"
+        },
+        "name": "Loc-X140180",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140180"
+        },
+        "name": "X140180",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-363"
+        },
+        "name": "FHIR-363",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-366"
+        },
+        "name": "FHIR-366",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-369"
+        },
+        "name": "FHIR-369",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140181"
+        },
+        "name": "Loc-X140181",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140181"
+        },
+        "name": "X140181",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-327"
+        },
+        "name": "FHIR-327",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-330"
+        },
+        "name": "FHIR-330",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-333"
+        },
+        "name": "FHIR-333",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140182"
+        },
+        "name": "Loc-X140182",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140182"
+        },
+        "name": "X140182",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-372"
+        },
+        "name": "FHIR-372",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-375"
+        },
+        "name": "FHIR-375",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-378"
+        },
+        "name": "FHIR-378",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140191"
+        },
+        "name": "Loc-X140191",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140191"
+        },
+        "name": "X140191",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-201"
+        },
+        "name": "FHIR-201",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-204"
+        },
+        "name": "FHIR-204",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-207"
+        },
+        "name": "FHIR-207",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140197"
+        },
+        "name": "Loc-X140197",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140197"
+        },
+        "name": "X140197",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-345"
+        },
+        "name": "FHIR-345",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-348"
+        },
+        "name": "FHIR-348",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-351"
+        },
+        "name": "FHIR-351",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140206"
+        },
+        "name": "Loc-X140206",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140206"
+        },
+        "name": "X140206",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-183"
+        },
+        "name": "FHIR-183",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-186"
+        },
+        "name": "FHIR-186",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-189"
+        },
+        "name": "FHIR-189",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140208"
+        },
+        "name": "Loc-X140208",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140208"
+        },
+        "name": "X140208",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-282"
+        },
+        "name": "FHIR-282",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-285"
+        },
+        "name": "FHIR-285",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-288"
+        },
+        "name": "FHIR-288",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140223"
+        },
+        "name": "Loc-X140223",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140223"
+        },
+        "name": "X140223",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-318"
+        },
+        "name": "FHIR-318",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-321"
+        },
+        "name": "FHIR-321",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-324"
+        },
+        "name": "FHIR-324",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140224"
+        },
+        "name": "Loc-X140224",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140224"
+        },
+        "name": "X140224",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-417"
+        },
+        "name": "FHIR-417",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-420"
+        },
+        "name": "FHIR-420",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-423"
+        },
+        "name": "FHIR-423",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140240"
+        },
+        "name": "Loc-X140240",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140240"
+        },
+        "name": "X140240",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-192"
+        },
+        "name": "FHIR-192",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-195"
+        },
+        "name": "FHIR-195",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-198"
+        },
+        "name": "FHIR-198",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140250"
+        },
+        "name": "Loc-X140250",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140250"
+        },
+        "name": "X140250",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-21"
+        },
+        "name": "FHIR-21",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-24"
+        },
+        "name": "FHIR-24",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-27"
+        },
+        "name": "FHIR-27",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140251"
+        },
+        "name": "Loc-X140251",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140251"
+        },
+        "name": "X140251",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-300"
+        },
+        "name": "FHIR-300",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-303"
+        },
+        "name": "FHIR-303",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-306"
+        },
+        "name": "FHIR-306",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140252"
+        },
+        "name": "Loc-X140252",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140252"
+        },
+        "name": "X140252",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-93"
+        },
+        "name": "FHIR-93",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-96"
+        },
+        "name": "FHIR-96",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-99"
+        },
+        "name": "FHIR-99",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140258"
+        },
+        "name": "Loc-X140258",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140258"
+        },
+        "name": "X140258",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-84"
+        },
+        "name": "FHIR-84",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-87"
+        },
+        "name": "FHIR-87",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-90"
+        },
+        "name": "FHIR-90",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140276"
+        },
+        "name": "Loc-X140276",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140276"
+        },
+        "name": "X140276",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-147"
+        },
+        "name": "FHIR-147",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-150"
+        },
+        "name": "FHIR-150",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-153"
+        },
+        "name": "FHIR-153",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140281"
+        },
+        "name": "Loc-X140281",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140281"
+        },
+        "name": "X140281",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-66"
+        },
+        "name": "FHIR-66",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-69"
+        },
+        "name": "FHIR-69",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-72"
+        },
+        "name": "FHIR-72",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140290"
+        },
+        "name": "Loc-X140290",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140290"
+        },
+        "name": "X140290",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-75"
+        },
+        "name": "FHIR-75",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-78"
+        },
+        "name": "FHIR-78",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-81"
+        },
+        "name": "FHIR-81",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140300"
+        },
+        "name": "Loc-X140300",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X140300"
+        },
+        "name": "X140300",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-264"
+        },
+        "name": "FHIR-264",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-267"
+        },
+        "name": "FHIR-267",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-270"
+        },
+        "name": "FHIR-270",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X143300"
+        },
+        "name": "Loc-X143300",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X143300"
+        },
+        "name": "X143300",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-30"
+        },
+        "name": "FHIR-30",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-33"
+        },
+        "name": "FHIR-33",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-36"
+        },
+        "name": "FHIR-36",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X143302"
+        },
+        "name": "Loc-X143302",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X143302"
+        },
+        "name": "X143302",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-156"
+        },
+        "name": "FHIR-156",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-159"
+        },
+        "name": "FHIR-159",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-162"
+        },
+        "name": "FHIR-162",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410004"
+        },
+        "name": "Loc-X410004",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410004"
+        },
+        "name": "X410004",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-12"
+        },
+        "name": "FHIR-12",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-15"
+        },
+        "name": "FHIR-15",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-18"
+        },
+        "name": "FHIR-18",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410005"
+        },
+        "name": "Loc-X410005",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410005"
+        },
+        "name": "X410005",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-39"
+        },
+        "name": "FHIR-39",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-42"
+        },
+        "name": "FHIR-42",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-45"
+        },
+        "name": "FHIR-45",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410006"
+        },
+        "name": "Loc-X410006",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410006"
+        },
+        "name": "X410006",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-57"
+        },
+        "name": "FHIR-57",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-60"
+        },
+        "name": "FHIR-60",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-63"
+        },
+        "name": "FHIR-63",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410007"
+        },
+        "name": "Loc-X410007",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410007"
+        },
+        "name": "X410007",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-219"
+        },
+        "name": "FHIR-219",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-222"
+        },
+        "name": "FHIR-222",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-225"
+        },
+        "name": "FHIR-225",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410008"
+        },
+        "name": "Loc-X410008",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410008"
+        },
+        "name": "X410008",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-444"
+        },
+        "name": "FHIR-444",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-447"
+        },
+        "name": "FHIR-447",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-450"
+        },
+        "name": "FHIR-450",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410009"
+        },
+        "name": "Loc-X410009",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410009"
+        },
+        "name": "X410009",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-165"
+        },
+        "name": "FHIR-165",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-168"
+        },
+        "name": "FHIR-168",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-171"
+        },
+        "name": "FHIR-171",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410010"
+        },
+        "name": "Loc-X410010",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410010"
+        },
+        "name": "X410010",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-102"
+        },
+        "name": "FHIR-102",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-105"
+        },
+        "name": "FHIR-105",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-108"
+        },
+        "name": "FHIR-108",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410011"
+        },
+        "name": "Loc-X410011",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410011"
+        },
+        "name": "X410011",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-138"
+        },
+        "name": "FHIR-138",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-141"
+        },
+        "name": "FHIR-141",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-144"
+        },
+        "name": "FHIR-144",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410013"
+        },
+        "name": "Loc-X410013",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/X410013"
+        },
+        "name": "X410013",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "overview.html",
+          "title": "Overview",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "situational_awareness_measures.html",
+              "title": "Situational Awareness Measures",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "measure_aggregation.html",
+              "title": "Aggregatating Measure Reports",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "measure_automation.html",
+              "title": "Computing Measures",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "phrase_book.html",
+              "title": "Creating Measures Supporting Automation",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "measures.html",
+              "title": "Example Measures",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "use_cases.html",
+              "title": "Use Cases",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "technology_environment.html",
+              "title": "Technology Environment",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "security_considerations.html",
+              "title": "Security Considerations",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "architecture.html",
+              "title": "Architecture",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "actors.html",
+              "title": "Actors",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "transactions.html",
+              "title": "Transactions",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "transaction-1.html",
+                  "title": "Query Measure",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "transaction-2.html",
+                  "title": "Produce Measure",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "transaction-3.html",
+                  "title": "Query Measure Definition",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "transaction-4.html",
+                  "title": "Compute Measure",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "transaction-5.html",
+                  "title": "Communicate Results",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "CSV_Conversion.html",
+                  "title": "CSV Conversion",
+                  "generation": "markdown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nameUrl": "profiles.html",
+          "title": "Profiles and Extensions",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "vocabulary.html",
+          "title": "Vocabulary",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "test_plan.html",
+          "title": "Test Plan",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "examples.html",
+              "title": "Examples",
+              "generation": "markdown"
+            }
+          ]
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      },
+      {
+        "code": "usage-stats-opt-out",
+        "value": "true"
+      },
+      {
+        "code": "path-history",
+        "value": "http://hl7.org/fhir/us/saner/history.html"
+      }
+    ]
+  }
+}

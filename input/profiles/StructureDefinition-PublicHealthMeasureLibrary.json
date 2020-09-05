@@ -1,0 +1,177 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PublicHealthMeasureLibrary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Management"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary",
+  "version": "0.1.0",
+  "name": "PublicHealthMeasureLibrary",
+  "title": "Public Health Measure Library",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "A Public Health Measure Library contains essential ConceptMap, ValueSet, CodingSystem,\nNamingSystem, SearchParameter, CQL definitions or other resources for measure evaluation.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Library",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Library",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Library.url",
+        "path": "Library.url",
+        "short": "Each resource must have a url.",
+        "comment": "The url for resource defined in The Situation Awareness for Novel Epidemic Response IG will follow IG URL naming conventions.",
+        "min": 1
+      },
+      {
+        "id": "Library.version",
+        "path": "Library.version",
+        "short": "Resources are versioned like IG's 0.1.0 = first development version, 0.2.0 - first published for review version, 1.0.0 first official version ...",
+        "min": 1
+      },
+      {
+        "id": "Library.name",
+        "path": "Library.name",
+        "short": "Each resource must have a name.",
+        "comment": "The name should be in PascalCase, and should represent the Author's title of the resource.  Identify the Author to clarify",
+        "min": 1
+      },
+      {
+        "id": "Library.status",
+        "path": "Library.status",
+        "short": "draft | active | retired",
+        "comment": "draft - The resource is still in development. active - The resource is ready for piloting or normal use.  retired - resource has been deprecated or replaced.",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus"
+        }
+      },
+      {
+        "id": "Library.experimental",
+        "path": "Library.experimental",
+        "short": "A resource must indicate its experimental status",
+        "comment": "true - development, testing or pilots, false - production use",
+        "min": 1
+      },
+      {
+        "id": "Library.publisher",
+        "path": "Library.publisher",
+        "short": "The name of the organization publishing this resource",
+        "min": 1
+      },
+      {
+        "id": "Library.contact",
+        "path": "Library.contact",
+        "short": "The contact information for whom to contact about this resource",
+        "comment": "At least one contact shall be an email",
+        "min": 1
+      },
+      {
+        "id": "Library.useContext",
+        "path": "Library.useContext",
+        "short": "The ISO 3166 code for use context",
+        "min": 1
+      },
+      {
+        "id": "Library.author",
+        "path": "Library.author",
+        "short": "The original author of the measure content, may be same as publisher, when otherwise, must include a relatedArtifact for the original author's publication",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Library.author.name",
+        "path": "Library.author.name",
+        "short": "The author must be identified by name. Can be the name of an individual or an organization.",
+        "min": 1
+      },
+      {
+        "id": "Library.author.telecom",
+        "path": "Library.author.telecom",
+        "short": "There must be contact information for the author.",
+        "comment": "At least on author contact should be an email address.",
+        "min": 1
+      },
+      {
+        "id": "Library.relatedArtifact",
+        "path": "Library.relatedArtifact",
+        "short": "There must be at least one artifact describing the measure in human readable form.",
+        "min": 1
+      },
+      {
+        "id": "Library.content",
+        "path": "Library.content",
+        "min": 1,
+        "type": [
+          {
+            "code": "Attachment",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureMetadataAttachments"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

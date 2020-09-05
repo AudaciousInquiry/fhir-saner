@@ -1,0 +1,329 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PublicHealthMeasureReport",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Specialized.Quality Reporting &amp; Testing"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport",
+  "version": "0.1.0",
+  "name": "PublicHealthMeasureReport",
+  "title": "Saner Public Health Measure Report",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Profile Saner Public Health Measure Report\n\nThe Public Health Measure Report Profile ensures that MeasureReports conforms to the minimal content required to properly interpret\na report of a Public Health Measure.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MeasureReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MeasureReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MeasureReport",
+        "path": "MeasureReport",
+        "constraint": [
+          {
+            "key": "dom-2",
+            "severity": "error",
+            "human": "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
+            "expression": "contained.contained.empty()",
+            "xpath": "not(parent::f:contained and f:contained)",
+            "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "key": "dom-3",
+            "severity": "error",
+            "human": "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource",
+            "expression": "contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()",
+            "xpath": "not(exists(for $id in f:contained/*/f:id/@value return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))",
+            "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "key": "dom-4",
+            "severity": "error",
+            "human": "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
+            "expression": "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
+            "xpath": "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
+            "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "key": "dom-5",
+            "severity": "error",
+            "human": "If a resource is contained in another resource, it SHALL NOT have a security label",
+            "expression": "contained.meta.security.empty()",
+            "xpath": "not(exists(f:contained/*/f:meta/f:security))",
+            "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice",
+                "valueBoolean": true
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation",
+                "valueMarkdown": "When a resource has no narrative, only systems that fully understand the data can display the resource to a human safely. Including a human readable representation in the resource makes for a much more robust eco-system and cheaper handling of resources by intermediary systems. Some ecosystems restrict distribution of resources to only those systems that do fully understand the resources, and as a consequence implementers may believe that the narrative is superfluous. However experience shows that such eco-systems often open up to new participants over time."
+              }
+            ],
+            "key": "dom-6",
+            "severity": "warning",
+            "human": "A resource should have narrative for robust management",
+            "expression": "text.`div`.exists()",
+            "xpath": "exists(f:text/h:div)",
+            "source": "http://hl7.org/fhir/StructureDefinition/DomainResource"
+          },
+          {
+            "key": "mrp-1",
+            "severity": "error",
+            "human": "Measure Reports used for data collection SHALL NOT communicate group and score information",
+            "expression": "(type != 'data-collection') or group.exists().not()",
+            "xpath": "not(f:kind/@value='data-collection') or not(exists(f:group))"
+          },
+          {
+            "key": "mrp-2",
+            "severity": "error",
+            "human": "Stratifiers SHALL be either a single criteria or a set of criteria components",
+            "expression": "group.stratifier.stratum.all(value.exists() xor component.exists())",
+            "xpath": "not(f:kind/@value='data-collection') or not(exists(f:group))"
+          },
+          {
+            "key": "ReporterPresentInCompleteReport",
+            "severity": "error",
+            "human": "A reporter must be present in a complete report.",
+            "expression": "MeasureReport.status != 'completed' or MeasureReport.reporter.exists()",
+            "xpath": "/f:MeasureReport/f:status != 'completed' or /f:MeasureReport/f:reporter",
+            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.status",
+        "path": "MeasureReport.status",
+        "comment": "complete - The MeasureReport is complete and can be transmitted to others.\n\npending - The MeasureReport is a partial report, and must be aggregated with other information into a new report in order to be complete.\n\nerror - MeasureReport was determined to be in error.",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/measure-report-status"
+        }
+      },
+      {
+        "id": "MeasureReport.type",
+        "path": "MeasureReport.type",
+        "short": "MeasureReports generated conforming to this profile are always summary reports",
+        "comment": "Other profiles may support collection of subject-list data (e.g., for contact tracing)",
+        "patternCode": "summary"
+      },
+      {
+        "id": "MeasureReport.measure",
+        "path": "MeasureReport.measure",
+        "short": "Each MeasureReport resource must document the measure it is reporting for."
+      },
+      {
+        "id": "MeasureReport.subject",
+        "path": "MeasureReport.subject",
+        "short": "The subject of a report is a location, e.g., a facility, region, service area, state or other geographic region",
+        "comment": "The report is about a site or larger geographic region.  Individual measures within the report may be related to other subjects, but the report itself describes information about a location.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.subject.identifier",
+        "path": "MeasureReport.subject.identifier",
+        "short": "The subject shall have an identifier which uniquely identifies the subject to the recepient.",
+        "comment": "Requiring subject.identifier allows reports to be queried by locations using a well-known identifier.",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.date",
+        "path": "MeasureReport.date",
+        "short": "The date the report was generated must be specified, and must be precise to the second",
+        "comment": "Since report generation is being automated, reporting to the second should not be a significant burden",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.period",
+        "path": "MeasureReport.period",
+        "short": "A period must be present"
+      },
+      {
+        "id": "MeasureReport.period.start",
+        "path": "MeasureReport.period.start",
+        "short": "The end time of the period must be present, be precise to the second, and have a time zone",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.period.end",
+        "path": "MeasureReport.period.end",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.group.code",
+        "path": "MeasureReport.group.code",
+        "short": "The code for each group must be present to enable matching to the measure, and a value must be present that matches the required binding codes in the Measure",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureGroups"
+        }
+      },
+      {
+        "id": "MeasureReport.group.population",
+        "path": "MeasureReport.group.population",
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "HasValueOrDataAbsentReason",
+            "severity": "error",
+            "human": "A population.count must have a value, or .extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'",
+            "expression": "count.exists() or extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'",
+            "xpath": "f:count or f:extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason']",
+            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.group.population.code",
+        "path": "MeasureReport.group.population.code",
+        "short": "The code for each population must be present to enable matching to the measure, and a value must be present that matches the required binding codes in the Measure",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasurePopulations"
+        }
+      },
+      {
+        "id": "MeasureReport.group.population.count",
+        "path": "MeasureReport.group.population.count",
+        "short": "A count must be present for each population. Unknown values may be reported using the http://hl7.org/fhir/StructureDefinition/data-absent-reason extension."
+      },
+      {
+        "id": "MeasureReport.group.stratifier.code",
+        "path": "MeasureReport.group.stratifier.code",
+        "short": "A stratifier must have a code when present",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum",
+        "path": "MeasureReport.group.stratifier.stratum",
+        "short": "There must be at least one stratum reported",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum.value",
+        "path": "MeasureReport.group.stratifier.stratum.value",
+        "short": "Strata are not identified using value, see stratum.component below",
+        "max": "0"
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum.population",
+        "path": "MeasureReport.group.stratifier.stratum.population",
+        "short": "At least one stratum population must be present",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum.population.code",
+        "path": "MeasureReport.group.stratifier.stratum.population.code",
+        "short": "The population code must be present",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.group.stratifier.stratum.population.count",
+        "path": "MeasureReport.group.stratifier.stratum.population.count",
+        "short": "The population code count be present",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.evaluatedResource",
+        "path": "MeasureReport.evaluatedResource",
+        "short": "Include references to MeasureReport or QuestionnaireResponse resources used to compute an aggregated report",
+        "comment": "When a MeasureReport is prepared by translation of a QuestionnaireReponse, or through aggregation of other MeasureReports (e.g., over time,\nor geographic area), this element can be used to include references to the resources used to create the aggregated or translated\nMeasureReeport.",
+        "mustSupport": true
+      }
+    ]
+  }
+}

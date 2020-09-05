@@ -8,7 +8,7 @@ Profile: PreciseDateTime
 Parent: dateTime
 Title: "Precise Date Time"
 Description: "A dateTime value that contains seconds and a timezone"
-Mixins: SanerStructureDefinitionContent
+* insert SanerStructureDefinitionContent
 * value obeys DateTimePreciseToSecond
 
 Invariant: ReporterPresentInCompleteReport
@@ -26,12 +26,12 @@ Severity: #error
 Profile:        PublicHealthMeasureReport
 Parent:         MeasureReport
 Title:          "Saner Public Health Measure Report"
-Mixins: SanerStructureDefinitionContent
 Description:    """Profile Saner Public Health Measure Report
 
 The Public Health Measure Report Profile ensures that MeasureReports conforms to the minimal content required to properly interpret
 a report of a Public Health Measure.
 """
+* insert SanerStructureDefinitionContent
 * obeys ReporterPresentInCompleteReport
 * ^jurisdiction = urn:iso:std:iso:3166#US
 * status from MeasureReportStatus
@@ -76,7 +76,6 @@ error - MeasureReport was determined to be in error."""
 * group.population.code 1..1
 * group.population.code from MeasurePopulations (required)
 * group.population.code ^short = "The code for each population must be present to enable matching to the measure, and a value must be present that matches the required binding codes in the Measure"
-//* group.population.count 1..1
 * group.population obeys HasValueOrDataAbsentReason
 * group.population.count ^short = "A count must be present for each population. Unknown values may be reported using the http://hl7.org/fhir/StructureDefinition/data-absent-reason extension."
 
@@ -99,3 +98,8 @@ error - MeasureReport was determined to be in error."""
 * evaluatedResource MS
 * evaluatedResource 0..*
 * evaluatedResource ^short = "Include references to MeasureReport or QuestionnaireResponse resources used to compute an aggregated report"
+* evaluatedResource ^comment = """
+When a MeasureReport is prepared by translation of a QuestionnaireReponse, or through aggregation of other MeasureReports (e.g., over time,
+or geographic area), this element can be used to include references to the resources used to create the aggregated or translated
+MeasureReeport.
+"""

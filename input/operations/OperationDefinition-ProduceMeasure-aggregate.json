@@ -1,0 +1,148 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "ProduceMeasure-aggregate",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "kind": "operation",
+  "code": "aggregate",
+  "resource": [
+    "MeasureReport"
+  ],
+  "system": false,
+  "type": false,
+  "instance": true,
+  "name": "AggregatetwoormoremoreMessureReportresourcesintoasingleMeasureReport.",
+  "title": "Aggregate two or more more Messure Report resources into a single MeasureReport.",
+  "description": "This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.\nThe MeasureReport to be aggregated can be provided in the measure-report parameter, or the caller can indicate which measures **should** be aggregated by\nspecifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources\nbeing aggregated must reference the same Measure resource defining the MeasureReport to generate.",
+  "url": "http://hl7.org/fhir/us/saner/OperationDefinition/ProduceMeasure-aggregate",
+  "parameter": [
+    {
+      "name": "_id",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "string",
+      "type": "string"
+    },
+    {
+      "name": "measure",
+      "use": "in",
+      "min": 1,
+      "max": "1",
+      "searchType": "uri",
+      "type": "string"
+    },
+    {
+      "name": "measure-report",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "documentation": "The MeasureReport resources to aggregate.",
+      "type": "MeasureReport"
+    },
+    {
+      "name": "measure.title",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "searchType": "string",
+      "type": "string"
+    },
+    {
+      "name": "period",
+      "use": "in",
+      "min": 1,
+      "max": "2",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "reporter",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "reporter:identifier",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "token",
+      "type": "string"
+    },
+    {
+      "name": "result-reporter",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "A reference or identifier of the reporter for the MeasureReport. May be omitted if all MeasureReport resources\nbeing aggregated have a common reporter. A server may determine the reporter based on business rules (e.g., based on the identity of the sender of the request).",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "result-subject",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "A reference or identifier of the subject for the MeasureReport. May be omitted if all MeasureReport resources\nbeing aggregated have a common subject.",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "subject",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "subject:identifier",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "token",
+      "type": "string"
+    },
+    {
+      "name": "return",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "documentation": "The result of the aggregation operation.",
+      "type": "MeasureReport"
+    }
+  ]
+}

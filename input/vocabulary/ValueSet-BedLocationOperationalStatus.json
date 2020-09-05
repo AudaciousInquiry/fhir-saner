@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BedLocationOperationalStatus",
+  "id": "BedLocationOperationalStatus",
+  "title": "Bed Location Operational Status",
+  "description": "This Value Set is used to indicate whether a bed is in use (O), available for use (U), or not available (C) for use.",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/BedLocationOperationalStatus",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+        "concept": [
+          {
+            "code": "C"
+          },
+          {
+            "code": "O"
+          },
+          {
+            "code": "U"
+          }
+        ]
+      }
+    ]
+  }
+}

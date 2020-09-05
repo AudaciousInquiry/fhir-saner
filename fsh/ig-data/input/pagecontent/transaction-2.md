@@ -6,6 +6,10 @@ The Produce Measure transaction allows an Measure Source to
 periodically report on availability of resources to a Measure Consumer.
 
 
+This transaction defines the create and update operations that a MeasureConsumer and
+MeasureSource actor must support.
+
+
 ### Actors Roles
 
 ![Figure 2.2-1: Produce Measure Use Case Diagram](transaction-2-uc.svg "Figure 2.2-1: Produce Measure Use Case Diagram")
@@ -15,10 +19,10 @@ periodically report on availability of resources to a Measure Consumer.
 <table border='1' borderspacing='0'>
 <caption><b>Table 2.2-1: Actor Roles</b></caption>
 <thead><tr><th>Actor</th><th>Role</th></tr></thead>
-<tbody><tr><td><a href="actors_and_transactions.html#measure-source">Measure Source</a></td>
+<tbody><tr><td><a href="actors.html#measure-source">Measure Source</a></td>
 <td>Periodically generates data for a Measure Consumer.</td>
 </tr>
-        <tr><td><a href="actors_and_transactions.html#measure-consumer">Measure Consumer</a></td>
+        <tr><td><a href="actors.html#measure-consumer">Measure Consumer</a></td>
 <td>Collects data for reporting</td>
 </tr>
         
@@ -76,6 +80,8 @@ writes the MeasureReport data to external storage specified by the Measure Consu
 
 
 
+###### 
+
 ###### The Measure Consumer Accepts Resource
 
 When the API option is used, the Measure Consumer reports
@@ -86,3 +92,9 @@ used, the Measure Consumer reports success using the native protocols for the ex
 
 
 
+
+
+### Conformance
+See the following CapabilityStatement resources for conformance requirements:
+
+        

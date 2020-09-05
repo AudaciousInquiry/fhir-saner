@@ -1,0 +1,12 @@
+@startuml
+
+agent "Measure Source" as MeasureSource
+
+agent "Measure Consumer" as MeasureConsumer
+
+agent "Measure Computer" as MeasureComputer
+usecase (Compute Measure) as (COMPUTE-MX)
+MeasureSource --> (COMPUTE-MX)
+MeasureConsumer --> (COMPUTE-MX)
+MeasureComputer --> (COMPUTE-MX)
+@enduml

@@ -1,7 +1,11 @@
 @startuml
 hide footbox
-participant "Measure Consumer" as MeasureConsumer
-activate "MeasureConsumer"
-"MeasureConsumer" -> "MeasureConsumer" : 1. Communicate Measure
-deactivate "MeasureConsumer"
+participant "Measure Definition Consumer" as MeasureDefinitionConsumer
+participant "Measure Definition Source" as MeasureDefinitionSource
+"MeasureDefinitionConsumer" -> "MeasureDefinitionSource" : 1. Search Request
+activate "MeasureDefinitionConsumer"
+activate "MeasureDefinitionSource"
+"MeasureDefinitionSource" --> "MeasureDefinitionConsumer" : 2. Search Response
+deactivate "MeasureDefinitionConsumer"
+deactivate "MeasureDefinitionSource"
 @enduml

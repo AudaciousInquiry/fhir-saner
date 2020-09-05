@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification url="http://hl7.org/fhir/us/fhir-saner" defaultWorkgroup="pa" defaultVersion="0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd">
+  <version code="0.1"/>
+  <artifactPageExtension value="-definitions"/>
+  <artifactPageExtension value="-examples"/>
+  <artifactPageExtension value="-mappings"/>
+  <artifact name="AuditEventRead" key="AuditEventRead" id="StructureDefinition/audit-event-read"/>
+  <artifact name="AuditEventWrite" key="AuditEventWrite" id="StructureDefinition/Audit-event-write"/>
+  <artifact name="ResourceLocation" key="ResourceLocation" id="StructureDefinition/saner-resource-location"/>
+  <artifact name="PublicHealthMeasure" key="PublicHealthMeasure" id="StructureDefinition/PublicHealthMeasure"/>
+  <artifact name="PublicHealthMeasureStratifier" key="PublicHealthMeasureStratifier" id="StructureDefinition/PublicHealthMeasureStratifier"/>
+  <artifact name="SupportingDevice" key="SupportingDevice" id="StructureDefinition/saner-supporting-device"/>
+  <artifact name="GeoLocation" key="GeoLocation" id="StructureDefinition/GeoLocation"/>
+  <artifact name="MeasureGroupAttributes" key="MeasureGroupAttributes" id="StructureDefinition/MeasureGroupAttributes"/>
+  <artifact name="MeasurePopulationAlternateCriteria" key="MeasurePopulationAlternateCriteria" id="StructureDefinition/MeasurePopulationAlternateCriteria"/>
+  <page name="(NA)" key="NA"/>
+  <page name="(many)" key="many"/>
+  <page name="(profiles)" key="profiles"/>
+  <page name="Home" key="Home" />
+  <page name="Overview" key="Overview" />
+  <page name="Use Cases" key="UseCases" />
+  <page name="Actors and Transactions" key="ActorsandTransactions" />
+  <page name="Security Considerations" key="SecurityConsiderations" />
+  <page name="Technology Environment" key="Technology Environment" />
+  <page name="Architecture" key="Architecture" />
+  <page name="Definitions" key="Definitions" />
+  <page name="Measures" key="Measures" />
+  <page name="Vocabulary" key="Vocabulary" />
+  <page name="Transactions" key="Transactions" />
+  <page name="Profiles" key="Profiles" />
+  <page name="Examples" key="Examples" />
+  <page name="Testplan" key="Testplan" />
+  <page name="Transaction 1" key="Transaction1" />
+  <page name="Transaction 2" key="Transaction2" />
+  <page name="Transaction 3" key="Transaction3" />
+</specification>

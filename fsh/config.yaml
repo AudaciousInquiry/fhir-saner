@@ -1,0 +1,168 @@
+# ╭────────────────────────────────────────────────────────────────────────────────────────────────╮
+# │  ACTION REQUIRED: REVIEW AND EDIT THIS FILE TO ENSURE IT ACCURATELY REFLECTS YOUR PROJECT!     │
+# │                                                                                                │
+# │  This file was generated from your existing project files and will be used for SUSHI           │
+# │  configuration from now on. You may delete your package.json as it is no longer needed.        │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+# ╭───────────────────────────ImplementationGuide-hl7.fhir.us.saner.json───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: hl7.fhir.us.saner
+canonical: http://hl7.org/fhir/us/saner
+version: 0.1.0
+name: SituationalAwarenessforNovelEpidemicResponse
+title: Situational Awareness for Novel Epidemic Response
+status: active
+publisher: HL7 International
+contact:
+  - name: HL7 Patient Administration Workgroup
+    telecom:
+      - system: url
+        value: http://hl7.org/Special/committees/pafm/index.cfm
+  - name: Audacious Inquiry
+    telecom:
+      - system: url
+        value: http://ainq.com
+  - name: Keith W. Boone
+    telecom:
+      - system: email
+        value: mailto:kboone@ainq.com
+description: The Situational Awareness for Novel Epidemic Response Implementation Guide
+  enables transmission of high level situational awareness information from
+  inpatient facilities to centralized data repositories to support the treatment
+  of novel influenza-like illness.
+jurisdiction: "urn:iso:std:iso:3166#US"
+license: CC0-1.0
+fhirVersion: 4.0.1
+dependencies:
+  hl7.fhir.us.core: 3.1.0
+parameters:
+  show-inherited-invariants: false
+  usage-stats-opt-out: true
+copyrightYear: 2020+
+releaseLabel: CI Build
+
+# ╭───────────────────────────────────────package-list.json────────────────────────────────────────╮
+# │  To use a provided ig-data/package-list.json file, delete the "history" property below.        │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+history:
+  current: http://build.fhir.org/ig/example/example-ig
+  0.0.1:
+    fhirversion: 4.0.1
+    date: 2099-01-01
+    desc: Initial STU ballot (Mmm yyyy Ballot)
+    path: http://example.org/fhir/STU1
+    status: ballot
+    sequence: STU 1
+    current: true
+
+# ╭─────────────────────────────────────────────ig.ini─────────────────────────────────────────────╮
+# │  To control the ig.ini using this config, uncomment and set the "template" property.           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# template: "#ig-template"
+
+pages:
+  index.md:
+    title: Home
+    generation: markdown
+  overview.md:
+    title: Overview
+    generation: markdown
+    situational_awareness_measures.md:
+      title: Situational Awareness Measures
+      generation: markdown
+    measure_aggregation.md:
+      title: Aggregatating Measure Reports
+      generation: markdown
+    measure_automation.md:
+      title: Computing Measures
+      generation: markdown
+    phrase_book.md:
+      title: Creating Measures Supporting Automation
+      generation: markdown
+    measures.md:
+      title: Example Measures
+      generation: markdown
+
+    use_cases.md:
+      title: Use Cases
+      generation: markdown
+    technology_environment.md:
+      title: Technology Environment
+      generation: markdown
+    security_considerations.md:
+      title: Security Considerations
+      generation: markdown
+    architecture.md:
+      title: Architecture
+      generation: markdown
+    actors.md:
+      title: Actors
+      generation: markdown
+    transactions.md:
+      title: Transactions
+      generation: markdown
+      transaction-1.md:
+        title: Query Measure
+        generation: markdown
+      transaction-2.md:
+        title: Produce Measure
+        generation: markdown
+      transaction-3.md:
+        title: Query Measure Definition
+        generation: markdown
+      transaction-4.md:
+        title: Compute Measure
+        generation: markdown
+      transaction-5.md:
+        title: Communicate Results
+        generation: markdown
+      CSV_Conversion.md:
+        title: CSV Conversion
+        generation: markdown
+  profiles.md:
+    title: Profiles and Extensions
+    generation: markdown
+  vocabulary.md:
+    title: Vocabulary
+    generation: markdown
+  test_plan.md:
+    title: Test Plan
+    generation: markdown
+    examples.md:
+      title: Examples
+      generation: markdown
+#  definitions.md:
+#    title: Definitions
+#    generation: markdown
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To control the menu.xml using this config, uncomment and set the "menu" property.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  IG Home: index.html
+  Table of Contents: toc.html
+  SANER IG Content:
+    Overview: overview.html
+    Technology Environment: technology_environment.html
+    Architecture: architecture.html
+    Security Considerations: security_considerations.html
+    Use Cases: use_cases.html
+    Actors: actors.html
+    Measures used for Reporting: measures.html
+  Transactions:
+    Transaction Overview: transactions.html
+    Query Measure: transaction-1.html
+    Produce Measure: transaction-2.html
+    Report Measure: transaction-3.html
+    Compute Measure: transaction-4.html
+    Communicate Results: transaction-5.html
+
+  Conformance and Testing:
+    Profiles and Extensions: profiles.html
+    Vocabulary: vocabulary.html
+    Testing and Examples:
+    Examples: examples.html
+  Artifact Index: artifacts.html

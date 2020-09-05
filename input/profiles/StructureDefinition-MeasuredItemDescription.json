@@ -1,0 +1,121 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeasuredItemDescription",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasuredItemDescription",
+  "version": "0.1.0",
+  "name": "MeasuredItemDescription",
+  "title": "Saner Measured Item Description",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "A CodeableConcept describing the item to be counted in terms of the type of FHIR Resource to count, and subtype of item identified by that resource",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "orim",
+      "uri": "http://hl7.org/orim",
+      "name": "Ontological RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "CodeableConcept",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CodeableConcept",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CodeableConcept.coding",
+        "path": "CodeableConcept.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the component.code pattern"
+        },
+        "min": 2
+      },
+      {
+        "id": "CodeableConcept.coding:ResourceType",
+        "path": "CodeableConcept.coding",
+        "sliceName": "ResourceType",
+        "short": "Describe the FHIR resource type that should be counted for the measure",
+        "min": 1,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+        }
+      },
+      {
+        "id": "CodeableConcept.coding:Snomed",
+        "path": "CodeableConcept.coding",
+        "sliceName": "Snomed",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CodeableConcept.coding:Snomed.system",
+        "path": "CodeableConcept.coding.system",
+        "short": "Further clarify the type of resource using SNOMED",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "CodeableConcept.coding:Other",
+        "path": "CodeableConcept.coding",
+        "sliceName": "Other",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CodeableConcept.text",
+        "path": "CodeableConcept.text",
+        "short": "Supply human readable text describing what is enumerated/counted for the measure",
+        "min": 1
+      }
+    ]
+  }
+}

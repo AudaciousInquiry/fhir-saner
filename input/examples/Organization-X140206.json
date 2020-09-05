@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "X140206",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "value": "X140206"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "BRIN HOSPITAL",
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "latitude",
+              "valueDecimal": 41.900481
+            },
+            {
+              "url": "longitude",
+              "valueDecimal": -87.699288
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "work",
+      "type": "both",
+      "line": [
+        "1044 N FRANCISCO AVE"
+      ],
+      "city": "CHICAGO",
+      "district": "COOK",
+      "state": "IL",
+      "postalCode": "60622",
+      "country": "USA"
+    }
+  ]
+}

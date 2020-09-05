@@ -1,0 +1,68 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "MeasureSource-CSV-Push",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+    ]
+  },
+  "rest": [
+    {
+      "mode": "client",
+      "resource": [
+        {
+          "type": "Measure",
+          "operation": [
+            {
+              "name": "report-csv",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/ProduceMeasure-report-csv",
+              "documentation": "Create or update a MeasureReport from CSV Format"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "name": "MeasureSource_CSV_Push",
+  "title": "Measure Source implementing the CSV Option and the Push Option.",
+  "date": "2020-09-04T23:05:22.903075-04:00",
+  "kind": "requirements",
+  "description": "Defines the additional requirements for the Measure Source implementing the CSV Option and the Push Option.",
+  "format": [
+    "xml",
+    "json"
+  ],
+  "fhirVersion": "4.0.1"
+}

@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeasurePopulationAlternateCriteria",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasurePopulationAlternateCriteria",
+  "version": "0.1.0",
+  "name": "MeasurePopulationAlternateCriteria",
+  "title": "Alternate criteria for performing a measure",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Provides Alternate criteria for performing a measure, (e.g., CQL, Drools, et cetera)",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasurePopulationAlternateCriteria"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Expression"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueExpression",
+        "path": "Extension.valueExpression",
+        "short": "Instructions for how to automatically count this population",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Expression",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureCriteria"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

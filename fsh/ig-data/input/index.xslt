@@ -44,11 +44,11 @@ This guide is organized into four main sections:
    2. [Architecture](architecture.html) - Illustrates the Microservice Architecture
    3. [Security Considerations](security_considerations.html) - Documents security concerns and mitigations
    4. [Use Cases](use_cases.html) - Illustrates key use cases
-   5. [Actors and Transactions](actors_and_transactions.html) - Provides an overview of technical components
+   5. [Actors](actors.html) - Provides an overview of technical components
    6. [Measures used for Reporting](measures.html) - Defines measures used by CDC and FEMA as FHIR Measure resources
    7. [Using Group Resources (deprecated)](using_group_resources.html) - Explains the use of group in this guide
 <xsl:if test="/ig:profile/ig:transaction">
-2. Volume II: Transactions
+2. Volume II: [Transactions](transactions.html)
 <xsl:for-each select="/ig:profile/ig:transaction">
     <xsl:text>   </xsl:text><xsl:value-of select='position()'/><xsl:text>. [</xsl:text>
     <xsl:value-of select="ig:name"/>

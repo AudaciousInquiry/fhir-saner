@@ -1,27 +1,7 @@
-Instance: states-NJ
-InstanceOf: Location
-Description: "Example Location for the State of New Jersey"
-* id = "states-NJ"
-* identifier.system = "https://www.census.gov/geographies"
-* identifier.value = "34"
-* position.latitude = 40.1907
-* position.longitude = 74.6728
-
-Instance: NJ-DPH
-InstanceOf: Organization
-Description: "Example Organization for the New Jersey Department of Public Health"
-* id = "NJ-DPH"
-* name = "New Jersey Department of Public Health"
-
 RuleSet: NJExamplesFEMA
    * status = #complete
    * type = #summary
    * measure = "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting"
-   * subject.extension.url = "http://hl7.org/fhir/us/saner/StructureDefinition/GeoLocation"
-   * subject.extension.extension[0].url = "latitude"
-   * subject.extension.extension[0].valueDecimal = 40.1907
-   * subject.extension.extension[1].url = "longitude"
-   * subject.extension.extension[1].valueDecimal = 74.6728
    * subject.identifier.system = "https://www.census.gov/geographies"
    * subject.identifier.value = "34"
    * subject.reference = "Location/states-NJ"
@@ -31,25 +11,11 @@ RuleSet: NJExamplesFEMA
    * reporter.display = "New Jersey Department of Public Health"
 
 
-Instance: states-NJ
-InstanceOf: Location
-Description : "Example Location for the State of New Jersey"
-* id = "states-NJ"
-* identifier.system = "https://www.census.gov/geographies"
-* identifier.value = "34"
-* position.latitude = 40.1907
-* position.longitude = 74.6728
-
-Instance: NJ-DPH
-InstanceOf: Organization
-Description : "Example Organization for the New Jersey Department of Public Health"
-* id = "NJ-DPH"
-* name = "New Jersey Department of Public Health"
 
 Instance: ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/04/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3957-9219-11ea-1863-09173f13e4c5"
@@ -94,7 +60,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/05/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c396d-9219-11ea-1863-09173f13e4c5"
@@ -139,7 +105,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/06/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3982-9219-11ea-1863-09173f13e4c5"
@@ -184,7 +150,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/07/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3997-9219-11ea-1863-09173f13e4c5"
@@ -229,7 +195,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/08/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c39ac-9219-11ea-1863-09173f13e4c5"
@@ -274,7 +240,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/09/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c39c1-9219-11ea-1863-09173f13e4c5"
@@ -319,7 +285,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/10/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c39d6-9219-11ea-1863-09173f13e4c5"
@@ -364,7 +330,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/11/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c39eb-9219-11ea-1863-09173f13e4c5"
@@ -409,7 +375,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/12/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a00-9219-11ea-1863-09173f13e4c5"
@@ -454,7 +420,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/13/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a15-9219-11ea-1863-09173f13e4c5"
@@ -499,7 +465,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/14/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a2a-9219-11ea-1863-09173f13e4c5"
@@ -544,7 +510,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/15/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a3f-9219-11ea-1863-09173f13e4c5"
@@ -589,7 +555,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/16/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a54-9219-11ea-1863-09173f13e4c5"
@@ -634,7 +600,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/17/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a69-9219-11ea-1863-09173f13e4c5"
@@ -679,7 +645,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/18/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a7e-9219-11ea-1863-09173f13e4c5"
@@ -724,7 +690,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/19/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3a93-9219-11ea-1863-09173f13e4c5"
@@ -769,7 +735,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/20/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3aa8-9219-11ea-1863-09173f13e4c5"
@@ -814,7 +780,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/21/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3abd-9219-11ea-1863-09173f13e4c5"
@@ -859,7 +825,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/22/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3ad2-9219-11ea-1863-09173f13e4c5"
@@ -904,7 +870,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/23/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3ae7-9219-11ea-1863-09173f13e4c5"
@@ -949,7 +915,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/24/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3afc-9219-11ea-1863-09173f13e4c5"
@@ -994,7 +960,7 @@ Mixins: NJExamplesFEMA
 Instance: ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting
 InstanceOf: PublicHealthMeasureReport
 Description : "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/25/2020"
-Mixins: NJExamplesFEMA
+* insert NJExamplesFEMA
 * id = "ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:375c3b11-9219-11ea-1863-09173f13e4c5"

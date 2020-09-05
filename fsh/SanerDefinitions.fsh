@@ -38,3 +38,4 @@ RuleSet: SanerCapabilityStatementContent
  * format[0] = #json
  * format[1] = #xml
  * implementationGuide = "http://hl7.org/fhir/us/saner/ImplementationGuide/hl7.fhir.us.saner"
+

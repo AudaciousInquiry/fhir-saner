@@ -1,0 +1,29 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MeasureRateAggregation",
+  "id": "MeasureRateAggregation",
+  "title": "Measure Rate Aggregation Coding System",
+  "description": "This Coding System Identifies methods of rate aggregation",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureRateAggregation",
+  "concept": [
+    {
+      "code": "aggregable-by-period",
+      "display": "Aggregable",
+      "definition": "Rates can be summed over consecutive periods"
+    },
+    {
+      "code": "point-in-time",
+      "display": "Point in Time",
+      "definition": "Rates are point in time measures during the reporting period, the most recent measure is retained in an aggregate"
+    },
+    {
+      "code": "cumulative",
+      "display": "Cumulative",
+      "definition": "Rates are point in time measures showing cumulative values over all reporting periods, the most recent measure is retained in an aggregate"
+    }
+  ],
+  "count": 3
+}

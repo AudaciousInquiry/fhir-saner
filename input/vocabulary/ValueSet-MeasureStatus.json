@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MeasureStatus",
+  "id": "MeasureStatus",
+  "title": "Measure Status Values",
+  "description": "Allowed Status Values for Saner Measures",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/publication-status",
+        "concept": [
+          {
+            "code": "active"
+          },
+          {
+            "code": "draft"
+          },
+          {
+            "code": "retired"
+          }
+        ]
+      }
+    ]
+  }
+}

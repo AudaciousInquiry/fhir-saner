@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                url="http://hl7.org/fhir/us/saner"
-               ciUrl="http://hl7.org/fhir/us/saner"
+               ciUrl="http://build.fhir.org/ig/example/example-ig"
                defaultWorkgroup=""
                defaultVersion="current"
                xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
-               ballotUrl="http://hl7.org/fhir/us/saner">
-   <version code="current" url="http://hl7.org/fhir/us/saner"/>
-   <version code="0.1.0" url="http://hl7.org/fhir/us/saner"/>
+               ballotUrl="http://example.org/fhir/STU1">
+   <version code="current" url="http://build.fhir.org/ig/example/example-ig"/>
+   <version code="0.0.1" url="http://example.org/fhir/STU1"/>
    <artifactPageExtension value="-definitions"/>
    <artifactPageExtension value="-examples"/>
    <artifactPageExtension value="-mappings"/>
+   <artifact name="Audit Event Read"
+             key="StructureDefinition-audit-event-read"
+             id="StructureDefinition/audit-event-read"/>
    <artifact name="Audit Event Write Profile"
              key="StructureDefinition-audit-event-write"
              id="StructureDefinition/audit-event-write"/>
+   <artifact name="Capability Statements with Slices"
+             key="StructureDefinition-CapabilityStatementWithSlices"
+             id="StructureDefinition/CapabilityStatementWithSlices"/>
    <artifact name="MeasureCriteria"
              key="StructureDefinition-MeasureCriteria"
              id="StructureDefinition/MeasureCriteria"/>
@@ -23,9 +29,6 @@
    <artifact name="Precise Date Time"
              key="StructureDefinition-PreciseDateTime"
              id="StructureDefinition/PreciseDateTime"/>
-   <artifact name="Audit Event Read"
-             key="StructureDefinition-audit-event-read"
-             id="StructureDefinition/audit-event-read"/>
    <artifact name="Saner Public Health Measure"
              key="StructureDefinition-PublicHealthMeasure"
              id="StructureDefinition/PublicHealthMeasure"/>
@@ -41,9 +44,9 @@
    <artifact name="Supporting Device Profile"
              key="StructureDefinition-saner-supporting-device"
              id="StructureDefinition/saner-supporting-device"/>
-   <artifact name="Extension Attributes to associate with a Location Reference to simplify Geographic search"
-             key="StructureDefinition-GeoLocation"
-             id="StructureDefinition/GeoLocation"/>
+   <artifact name="DefinitionExpection"
+             key="StructureDefinition-definition-expectation"
+             id="StructureDefinition/definition-expectation"/>
    <artifact name="Attributes describing a group of measures"
              key="StructureDefinition-MeasureGroupAttributes"
              id="StructureDefinition/MeasureGroupAttributes"/>
@@ -132,12 +135,12 @@
    <artifact name="Ventilator Devices when used with Tracheostomy"
              key="ValueSet-VentilatorDevicesWithTracheostomy"
              id="ValueSet/VentilatorDevicesWithTracheostomy"/>
-   <artifact name="Age Bracket System"
-             key="CodeSystem-AgeBracket"
-             id="CodeSystem/AgeBracket"/>
    <artifact name="Bed Type Coding System"
              key="CodeSystem-BedType"
              id="CodeSystem/BedType"/>
+   <artifact name="Age Range Coding System"
+             key="CodeSystem-IHE-ADX-agerange"
+             id="CodeSystem/IHE-ADX-agerange"/>
    <artifact name="Measure Group System"
              key="CodeSystem-MeasureGroupSystem"
              id="CodeSystem/MeasureGroupSystem"/>
@@ -153,7 +156,7 @@
    <artifact name="Resource Fields for Location"
              key="CodeSystem-ResourceFieldsForLocation"
              id="CodeSystem/ResourceFieldsForLocation"/>
-   <artifact name="CDCHealthcareSupplyPathway"
+   <artifact name="CDC Healthcare Supply Pathway"
              key="Measure-CDCHealthcareSupplyPathway"
              id="Measure/CDCHealthcareSupplyPathway"/>
    <artifact name="CDCHealthcareWorkerStaffingPathway"
@@ -306,19 +309,76 @@
    <artifact name="HAvBED2 to FHIR Concept Map"
              key="ConceptMap-HAvBED2toFHIR"
              id="ConceptMap/HAvBED2toFHIR"/>
-   <artifact name="Measure Consumer - Pull Option (Client)"
-             key="CapabilityStatement-MeasureConsumerPull"
-             id="CapabilityStatement/MeasureConsumerPull"/>
-   <artifact name="Measure Consumer - Push Option (Server)"
-             key="CapabilityStatement-MeasureConsumerPush"
-             id="CapabilityStatement/MeasureConsumerPush"/>
-   <artifact name="Measure Source - Pull Option (Server)"
-             key="CapabilityStatement-MeasureSourcePull"
-             id="CapabilityStatement/MeasureSourcePull"/>
-   <artifact name="Measure Source - Push Option (Client)"
-             key="CapabilityStatement-MeasureSourcePush"
-             id="CapabilityStatement/MeasureSourcePush"/>
+   <artifact name="MeasureConsumer-API-Pull"
+             key="CapabilityStatement-MeasureConsumer-API-Pull"
+             id="CapabilityStatement/MeasureConsumer-API-Pull"/>
+   <artifact name="MeasureConsumer-API-Pull-Questionnaire"
+             key="CapabilityStatement-MeasureConsumer-API-Pull-Questionnaire"
+             id="CapabilityStatement/MeasureConsumer-API-Pull-Questionnaire"/>
+   <artifact name="MeasureConsumer-API-Push"
+             key="CapabilityStatement-MeasureConsumer-API-Push"
+             id="CapabilityStatement/MeasureConsumer-API-Push"/>
+   <artifact name="MeasureConsumer-CSV-Pull"
+             key="CapabilityStatement-MeasureConsumer-CSV-Pull"
+             id="CapabilityStatement/MeasureConsumer-CSV-Pull"/>
+   <artifact name="MeasureConsumer-CSV-Push"
+             key="CapabilityStatement-MeasureConsumer-CSV-Push"
+             id="CapabilityStatement/MeasureConsumer-CSV-Push"/>
+   <artifact name="MeasureConsumer-ProduceMeasure-API-Push"
+             key="CapabilityStatement-MeasureConsumer-ProduceMeasure-API-Push"
+             id="CapabilityStatement/MeasureConsumer-ProduceMeasure-API-Push"/>
+   <artifact name="MeasureConsumer-ProduceMeasure-CSV-Push"
+             key="CapabilityStatement-MeasureConsumer-ProduceMeasure-CSV-Push"
+             id="CapabilityStatement/MeasureConsumer-ProduceMeasure-CSV-Push"/>
+   <artifact name="MeasureConsumer-QueryMeasure-API-Pull"
+             key="CapabilityStatement-MeasureConsumer-QueryMeasure-API-Pull"
+             id="CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull"/>
+   <artifact name="MeasureConsumer-QueryMeasure-API-Pull-Questionnaire"
+             key="CapabilityStatement-MeasureConsumer-QueryMeasure-API-Pull-Questionnaire"
+             id="CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull-Questionnaire"/>
+   <artifact name="MeasureConsumer-QueryMeasure-CSV-Pull"
+             key="CapabilityStatement-MeasureConsumer-QueryMeasure-CSV-Pull"
+             id="CapabilityStatement/MeasureConsumer-QueryMeasure-CSV-Pull"/>
+   <artifact name="MeasureSource-API-Pull"
+             key="CapabilityStatement-MeasureSource-API-Pull"
+             id="CapabilityStatement/MeasureSource-API-Pull"/>
+   <artifact name="MeasureSource-API-Pull-Questionnaire"
+             key="CapabilityStatement-MeasureSource-API-Pull-Questionnaire"
+             id="CapabilityStatement/MeasureSource-API-Pull-Questionnaire"/>
+   <artifact name="MeasureSource-API-Push"
+             key="CapabilityStatement-MeasureSource-API-Push"
+             id="CapabilityStatement/MeasureSource-API-Push"/>
+   <artifact name="MeasureSource-CSV-Pull"
+             key="CapabilityStatement-MeasureSource-CSV-Pull"
+             id="CapabilityStatement/MeasureSource-CSV-Pull"/>
+   <artifact name="MeasureSource-CSV-Push"
+             key="CapabilityStatement-MeasureSource-CSV-Push"
+             id="CapabilityStatement/MeasureSource-CSV-Push"/>
+   <artifact name="MeasureSource-ProduceMeasure-API-Push"
+             key="CapabilityStatement-MeasureSource-ProduceMeasure-API-Push"
+             id="CapabilityStatement/MeasureSource-ProduceMeasure-API-Push"/>
+   <artifact name="MeasureSource-ProduceMeasure-CSV-Push"
+             key="CapabilityStatement-MeasureSource-ProduceMeasure-CSV-Push"
+             id="CapabilityStatement/MeasureSource-ProduceMeasure-CSV-Push"/>
+   <artifact name="MeasureSource-QueryMeasure-API-Pull"
+             key="CapabilityStatement-MeasureSource-QueryMeasure-API-Pull"
+             id="CapabilityStatement/MeasureSource-QueryMeasure-API-Pull"/>
+   <artifact name="MeasureSource-QueryMeasure-API-Pull-Questionnaire"
+             key="CapabilityStatement-MeasureSource-QueryMeasure-API-Pull-Questionnaire"
+             id="CapabilityStatement/MeasureSource-QueryMeasure-API-Pull-Questionnaire"/>
+   <artifact name="MeasureSource-QueryMeasure-CSV-Pull"
+             key="CapabilityStatement-MeasureSource-QueryMeasure-CSV-Pull"
+             id="CapabilityStatement/MeasureSource-QueryMeasure-CSV-Pull"/>
    <artifact name="NJ-DPH" key="Organization-NJ-DPH" id="Organization/NJ-DPH"/>
+   <artifact name="ProduceMeasure-report-csv"
+             key="OperationDefinition-ProduceMeasure-report-csv"
+             id="OperationDefinition/ProduceMeasure-report-csv"/>
+   <artifact name="QueryMeasure-read-csv"
+             key="OperationDefinition-QueryMeasure-read-csv"
+             id="OperationDefinition/QueryMeasure-read-csv"/>
+   <artifact name="QueryMeasure-search-csv"
+             key="OperationDefinition-QueryMeasure-search-csv"
+             id="OperationDefinition/QueryMeasure-search-csv"/>
    <artifact name="Search by Code in Definitions and Instances"
              key="SearchParameter-SearchParameter-code"
              id="SearchParameter/SearchParameter-code"/>
@@ -326,18 +386,6 @@
              key="SearchParameter-SearchParameter-definition-text"
              id="SearchParameter/SearchParameter-definition-text"/>
    <artifact name="states-NJ" key="Location-states-NJ" id="Location/states-NJ"/>
-   <artifact name="CDCHealthcareSupplyPathway"
-             key="Questionnaire-CDCHealthcareSupplyPathway"
-             id="Questionnaire/CDCHealthcareSupplyPathway"/>
-   <artifact name="CDCHealthcareWorkerStaffingPathway"
-             key="Questionnaire-CDCHealthcareWorkerStaffingPathway"
-             id="Questionnaire/CDCHealthcareWorkerStaffingPathway"/>
-   <artifact name="CDCPatientImpactAndHospitalCapacity"
-             key="Questionnaire-CDCPatientImpactAndHospitalCapacity"
-             id="Questionnaire/CDCPatientImpactAndHospitalCapacity"/>
-   <artifact name="FEMADailyHospitalCOVID19Reporting"
-             key="Questionnaire-FEMADailyHospitalCOVID19Reporting"
-             id="Questionnaire/FEMADailyHospitalCOVID19Reporting"/>
    <artifact name="FHIR-381"
              key="MeasureReport-FHIR-381"
              id="MeasureReport/FHIR-381"/>
@@ -1045,20 +1093,24 @@
    <page name="Table of Contents" key="toc"/>
    <page name="Home" key="index"/>
    <page name="Overview" key="overview"/>
-   <page name="Use Cases" key="use_cases"/>
-   <page name="Actors and Transactions" key="actors_and_transactions"/>
-   <page name="Security Considerations" key="security_considerations"/>
    <page name="Technology Environment" key="technology_environment"/>
    <page name="Architecture" key="architecture"/>
-   <page name="Definitions" key="definitions"/>
-   <page name="Measures" key="measures"/>
-   <page name="Vocabulary" key="vocabulary"/>
+   <page name="Security Considerations" key="security_considerations"/>
+   <page name="Use Cases" key="use_cases"/>
+   <page name="Actors" key="actors"/>
    <page name="Transactions" key="transactions"/>
-   <page name="Profiles" key="profiles"/>
+   <page name="Query Measure" key="transaction-1"/>
+   <page name="Produce Measure" key="transaction-2"/>
+   <page name="Communicate Results" key="transaction-3"/>
+   <page name="CSV Conversion" key="CSV_Conversion"/>
+   <page name="Example Measures" key="measures"/>
+   <page name="Measure Creation" key="measure_creation"/>
+   <page name="Measure Computation" key="measure_computation"/>
+   <page name="Measure Aggregation" key="measure_aggregation"/>
+   <page name="Definitions" key="definitions"/>
+   <page name="Profiles and Extensions" key="profiles"/>
+   <page name="Vocabulary" key="vocabulary"/>
+   <page name="Test Plan" key="test_plan"/>
    <page name="Examples" key="examples"/>
-   <page name="Testplan" key="testplan"/>
-   <page name="Transaction 1" key="transaction-1"/>
-   <page name="Transaction 2" key="transaction-2"/>
-   <page name="Transaction 3" key="transaction-3"/>
    <page name="Artifacts Summary" key="artifacts"/>
 </specification>

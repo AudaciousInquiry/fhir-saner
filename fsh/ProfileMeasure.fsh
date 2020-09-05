@@ -1,20 +1,26 @@
-Extension: GeoLocation
-Title: "Extension Attributes to associate with a Location Reference to simplify Geographic search"
-Mixins: SanerStructureDefinitionContent
-Description: """This is essentially a database denormalization that facilitates search by Geographics coordinates on a location.
-It enables a FHIR Server to implement search on a MeasureReport by GeoLocation using an extension.
-The extension is purposefully designed to duplicate the existing [FHIR GeoLocation Extension](http://hl7.org/fhir/StructureDefinition/geolocation)
-in the hope that it could eventually be absorbed by that extension."""
-* extension contains latitude 1..1 and longitude 1..1
-* extension[latitude] ^short = "Like [geolocation:latitude](http://hl7.org/fhir/extension-geolocation-definitions.html#geolocation.Extension.extension:latitude)"
-* extension[latitude].value[x] only decimal
-* extension[longitude] ^short = "Like [geolocation:longitude](http://hl7.org/fhir/extension-geolocation-definitions.html#geolocation.Extension.extension:longitude)"
-* extension[longitude].value[x] only decimal
+Extension: MeasureExpection
+Id: measure-expectation
+Description: "Enables definitions to identify components that are required, recommended or optional"
+* insert SanerStructureDefinitionContent
+* ^context[0].type = #element
+* ^context[0].expression = "Measure.group"
+* ^context[0].type = #element
+* ^context[0].expression = "Measure.group.population"
+* ^context[0].type = #element
+* ^context[0].expression = "Measure.group.stratifier"
+* ^context[0].type = #element
+
+* value[x] only code
+* valueCode 1..1
+* valueCode from http://hl7.org/fhir/ValueSet/conformance-expectation
+* valueCode ^short = "SHALL | SHOULD | MAY | SHOULD-NOT"
+* valueCode ^comment = "Defines the level of expectation associated with a resource using this definition."
+
 
 Extension: MeasureGroupAttributes
 Title: "Attributes describing a group of measures"
 Description: "Attributes describing the group of measures"
-Mixins: SanerStructureDefinitionContent
+* insert SanerStructureDefinitionContent
 * extension contains
     scoring 0..1 and
     compositeScoring 0..1 and
@@ -51,8 +57,8 @@ Mixins: SanerStructureDefinitionContent
 
 Profile: MeasureCriteria
 Parent: Expression
-Mixins: SanerStructureDefinitionContent
 Description: "Constraints on documentation for the evaluation of a Measure"
+* insert SanerStructureDefinitionContent
 
 * name 1..1
 * name ^short = "name should align with code."
@@ -69,8 +75,8 @@ Description: "Constraints on documentation for the evaluation of a Measure"
 
 Extension: MeasurePopulationAlternateCriteria
 Title: "Alternate criteria for performing a measure"
-Description: "Provides Alternate criteria for performing a measure, (e.g., CQL, Drules, et cetera)"
-Mixins: SanerStructureDefinitionContent
+Description: "Provides Alternate criteria for performing a measure, (e.g., CQL, Drools, et cetera)"
+* insert SanerStructureDefinitionContent
 * value[x] only Expression
 * valueExpression only MeasureCriteria
 * valueExpression 1..1
@@ -80,7 +86,7 @@ Profile:        MeasuredItemDescription
 Parent:         CodeableConcept
 Title:          "Saner Measured Item Description"
 Description:    "A CodeableConcept describing the item to be counted in terms of the type of FHIR Resource to count, and subtype of item identified by that resource"
-Mixins: SanerStructureDefinitionContent
+* insert SanerStructureDefinitionContent
 
 * coding ^slicing.discriminator.type = #pattern
 * coding ^slicing.discriminator.path = "system"
@@ -97,34 +103,25 @@ Mixins: SanerStructureDefinitionContent
 * text 1..1
 * text ^short = "Supply human readable text describing what is enumerated/counted for the measure"
 
-Profile:        PublicHealthMeasure
-Parent:         Measure
-Title:          "Saner Public Health Measure"
-Description:    """Profile Saner Public Health Measure
-The Public Health Measure Profile ensures that Measures are very well defined as an aid to automation
-of measures.  These are developed by The Saner Project team to ensure that the measure is well understood
-and computation of it can be automated from systems that have the measure data.
-"""
-Mixins: SanerStructureDefinitionContent
-
+RuleSet: PublicHealthMeasureMetadata
 * name 1..1
-* name ^short = "Each measure must have a name."
-* name ^comment = "The name should be in PascalCase, and should represent the Author's title of the Measure.  Identify the Author to clarify"
+* name ^short = "Each resource must have a name."
+* name ^comment = "The name should be in PascalCase, and should represent the Author's title of the resource.  Identify the Author to clarify"
 * url 1..1
-* url ^short = "Each measure must have a url."
-* url ^comment = "The url for measures defined in The Situation Awareness for Novel Epidemic Response IG will follow IG URL naming conventions."
+* url ^short = "Each resource must have a url."
+* url ^comment = "The url for resource defined in The Situation Awareness for Novel Epidemic Response IG will follow IG URL naming conventions."
 * status from MeasureStatus
 * status ^short = "draft | active | retired"
-* status ^comment = "draft - The Measure is still in development or ballot. active - The Measure is ready for piloting or normal use.  retired - Measure has been deprecated or replaced."
+* status ^comment = "draft - The resource is still in development. active - The resource is ready for piloting or normal use.  retired - resource has been deprecated or replaced."
 * experimental 1..1
-* experimental ^short = "A measure must indicate its experimental status"
+* experimental ^short = "A resource must indicate its experimental status"
 * experimental ^comment = "true - development, testing or pilots, false - production use"
-* version ^short = "Measure resources are versioned like IG's 0.1.0 = first development version, 0.2.0 - first published for review version, 1.0.0 first official version ..."
+* version ^short = "Resources are versioned like IG's 0.1.0 = first development version, 0.2.0 - first published for review version, 1.0.0 first official version ..."
 * version 1..1
 * publisher 1..1
-* publisher ^short = "The name of the organization publishing this Measure resource"
+* publisher ^short = "The name of the organization publishing this resource"
 * contact 1..*
-* contact ^short = "The contact information for whom to contact about this Measure resource"
+* contact ^short = "The contact information for whom to contact about this resource"
 * contact ^comment = "At least one contact shall be an email"
 * useContext 1..*
 * useContext ^short = "The ISO 3166 code for use context"
@@ -136,7 +133,60 @@ Mixins: SanerStructureDefinitionContent
 * author.telecom ^short = "There must be contact information for the author."
 * author.telecom ^comment = "At least on author contact should be an email address."
 * relatedArtifact 1..*
-* relatedArtifact ^short = "There must be at least one artifact describing the measure in human readable form.  This does not include software generated pages from the IG-Builder."
+* relatedArtifact ^short = "There must be at least one artifact describing the measure in human readable form."
+
+Profile:        PublicHealthMeasureMetadataAttachments
+Parent:         Attachment
+Title:          "PublicHealthMeasureMetadataAttachments"
+Description:    "Attachments providing resources containing essential content supporting a measure definition"
+* id 1..1   // ID is required to support references
+* contentType 1..1
+* contentType ^short = "application/fhir+xml | application/fhir+json | text/cql | application/gzip"
+* contentType ^definition = """FHIR Resources should use application/fhir+xml or application/fhir+json, CQL source files should use text/cql, and FHIR Packages
+should use application/gzip.
+"""
+* contentType from PublicHealthMeasureAttachmentTypes (required)
+* data 0..1     // for now, we have no good way to generate this SO
+* url 1..1      // we require a url
+* title 1..1
+
+ValueSet: PublicHealthMeasureAttachmentTypes
+Title: "Public Health Measure Attachment Types"
+Description: "Preferred Mime Types for use with Public Health Measure Definitions"
+* http://tools.ietf.org/html/bcp13#application/fhir+xml
+* http://tools.ietf.org/html/bcp13#application/fhir+json
+* http://tools.ietf.org/html/bcp13#text/cql
+* http://tools.ietf.org/html/bcp13#application/gzip
+
+
+Profile:        PublicHealthMeasureLibrary
+Parent:         Library
+Title:          "Public Health Measure Library"
+Description:    """A Public Health Measure Library contains essential ConceptMap, ValueSet, CodingSystem,
+NamingSystem, SearchParameter, CQL definitions or other resources for measure evaluation.
+"""
+* insert SanerStructureDefinitionContent
+* insert PublicHealthMeasureMetadata
+* content only PublicHealthMeasureMetadataAttachments
+* content 1..*
+
+
+Profile:        PublicHealthMeasure
+Parent:         Measure
+Title:          "Saner Public Health Measure"
+Description:    """Profile Saner Public Health Measure
+The Public Health Measure Profile ensures that Measures are very well defined as an aid to automation
+of measures.  These are developed by The Saner Project team to ensure that the measure is well understood
+and computation of it can be automated from systems that have the measure data.
+"""
+* insert SanerStructureDefinitionContent
+* insert PublicHealthMeasureMetadata
+
+* subject[x] only CodeableConcept
+* subjectCodeableConcept = http://hl7.org/fhir/resource-types#Location
+* extension contains ReportingPeriod named measureTiming 1..1
+* library ^type.targetProfile = Canonical(PublicHealthMeasureLibrary)
+* library 1..*
 
 * group.extension contains MeasureGroupAttributes named groupAtts 0..1
 * group.extension[groupAtts] ^short = "Describes the attributes of one or more sections of the measure (form) being reported"
@@ -248,12 +298,12 @@ cumulative
 Profile:        PublicHealthMeasureStratifier
 Parent:         Measure
 Title:          "Saner Public Health Measure Stratifier"
-Mixins: SanerStructureDefinitionContent
 Description:    """Profile Saner Public Health Measure Stratifier
 
 A stratifier is effecitively a mixin that can be used with an existing measure
 to add stratification detail to that measure.
 """
+ * insert SanerStructureDefinitionContent
  * group.stratifier 0..*
  * group.stratifier ^short = "A group may have none, some or many strata"
  * group.stratifier.code 1..1

@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "X140258",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "value": "X140258"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "SIMAK FAMILY MEDICAL CENTER",
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "latitude",
+              "valueDecimal": 42.003705
+            },
+            {
+              "url": "longitude",
+              "valueDecimal": -88.014996
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "work",
+      "type": "both",
+      "line": [
+        "800 BIESTERFIELD RD"
+      ],
+      "city": "ELK GROVE VLG",
+      "district": "COOK",
+      "state": "IL",
+      "postalCode": "60007",
+      "country": "USA"
+    }
+  ]
+}

@@ -20,12 +20,12 @@
     </xsl:template>
 
     <xsl:template name="overview" match="/" mode="overview">
-        <xsl:param name="dest" select="'pagecontent/1_overview.md'"/>
-        <xsl:result-document href="pagecontent/1_overview.md" method="text">
+        <xsl:param name="dest" select="'pagecontent/overview.md'"/>
+        <xsl:result-document href="pagecontent/overview.md" method="text">
 <xsl:apply-templates select="/ig:profile/ig:description|/ig:profile/ig:overview"/>
 
 <xsl:if test="/ig:profile/ig:usecase">
-<xsl:result-document href="pagecontent/2_use_cases.md">
+<xsl:result-document href="pagecontent/use_cases.md">
 The sections below describe the use cases supported by the
 <xsl:value-of select="string-join(($org, /ig:profile/@id),' ')"/> Implementation Guide.
 

@@ -1,0 +1,62 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-definition-text",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-definition-text",
+  "description": "This SearchParameter enables definition resources used in The SANER Project to be discovered from text used in the resource definition.",
+  "name": "definition-text",
+  "code": "definition-text",
+  "base": [
+    "Measure",
+    "Questionnaire",
+    "ValueSet",
+    "CodeSystem",
+    "ConceptMap",
+    "SearchParameter",
+    "OperationDefinition",
+    "StructureDefinition",
+    "CapabilityStatement"
+  ],
+  "type": "string",
+  "expression": "Measure.title | Measure.subtitle | Measure.publisher | Measure.description | Measure.purpose | Measure.usage |\nMeasure.riskAdjustment | Measure.rateAggregation | Measure.clinicalRecommendationStatement | Measure.definition | Measure.guideance |\nQuestionnaire.title | Questionnaire.publisher | Questionnaire.description | Questionnaire.purpose |\nValueSet.title | ValueSet.publisher | ValueSet.description | ValueSet.purpose |\nCodeSystem.title | CodeSystem.publisher | CodeSystem.description | CodeSystem.purpose |\nConceptMap.title | ConceptMap.publisher | ConceptMap.description | ConceptMap.purpose |\nSearchParameter.title | SearchParameter.publisher | SearchParameter.description | SearchParameter.purpose |\nOperationDefinition.title | OperationDefinition.publisher | OperationDefinition.description | OperationDefinition.purpose |\nStructureDefinition.title | StructureDefinition.publisher | StructureDefinition.description | StructureDefinition.purpose |\nCapabilityStatement.title | CapabilityStatement.publisher | CapabilityStatement.description | CapabilityStatement.purpose",
+  "xpath": "f:Measure/f:title | f:Measure/f:subtitle | f:Measure/f:publisher | f:Measure/f:description | f:Measure/f:purpose | f:Measure/f:usage |\nf:Measure/f:riskAdjustment | f:Measure/f:rateAggregation | f:Measure/f:clinicalRecommendationStatement | f:Measure/f:definition | f:Measure/f:guideance |\nf:Questionnaire/f:title | f:Questionnaire/f:publisher | f:Questionnaire/f:description | f:Questionnaire/f:purpose |\nf:ValueSet/f:title | f:ValueSet/f:publisher | f:ValueSet/f:description | f:ValueSet/f:purpose |\nf:CodeSystem/f:title | f:CodeSystem/f:publisher | f:CodeSystem/f:description | f:CodeSystem/f:purpose |\nf:ConceptMap/f:title | f:ConceptMap/f:publisher | f:ConceptMap/f:description | f:ConceptMap/f:purpose |\nf:SearchParameter/f:title | f:SearchParameter/f:publisher | f:SearchParameter/f:description | f:SearchParameter/f:purpose |\nf:OperationDefinition/f:title | f:OperationDefinition/f:publisher | f:OperationDefinition/f:description | f:OperationDefinition/f:purpose |\nf:StructureDefinition/f:title | f:StructureDefinition/f:publisher | f:StructureDefinition/f:description | f:StructureDefinition/f:purpose |\nf:CapabilityStatement/f:title | f:CapabilityStatement/f:publisher | f:CapabilityStatement/f:description | f:CapabilityStatement/f:purpose",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true,
+  "modifier": [
+    "missing",
+    "exact",
+    "contains"
+  ]
+}

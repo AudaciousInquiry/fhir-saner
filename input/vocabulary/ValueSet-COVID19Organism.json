@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "COVID19Organism",
+  "id": "COVID19Organism",
+  "version": "20200716",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1143",
+  "date": "2020-07-16T01:00:25-04:00",
+  "publisher": "CSTE Steward",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "840533007",
+            "display": "Severe acute respiratory syndrome coronavirus 2 (organism)"
+          },
+          {
+            "code": "840536004",
+            "display": "Antigen of severe acute respiratory syndrome coronavirus 2 (substance)"
+          }
+        ]
+      }
+    ]
+  }
+}

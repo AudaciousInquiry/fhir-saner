@@ -1,0 +1,218 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "CapabilityStatementWithSlices",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Conformance"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices",
+  "version": "0.1.0",
+  "name": "CapabilityStatementWithSlices",
+  "title": "Capability Statements with Slices",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "A Capability Statement with slicing defined",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CapabilityStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CapabilityStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CapabilityStatement.rest",
+        "path": "CapabilityStatement.rest",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "mode"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the rest.mode pattern"
+        }
+      },
+      {
+        "id": "CapabilityStatement.rest.resource",
+        "path": "CapabilityStatement.rest.resource",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the rest.resource.type pattern"
+        }
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:LocationSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "LocationSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:LocationSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "Location"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:OrganizationSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "OrganizationSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:OrganizationSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "Organization"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:MeasureSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "MeasureSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:MeasureSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "Measure"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:MeasureReportSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "MeasureReportSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:MeasureReportSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "MeasureReport"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:QuestionnaireSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "QuestionnaireSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:QuestionnaireSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "Questionnaire"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:QuestionnaireResponseSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "QuestionnaireResponseSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:QuestionnaireResponseSlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "QuestionnaireResponse"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:LibrarySlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "LibrarySlice",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:LibrarySlice.type",
+        "path": "CapabilityStatement.rest.resource.type",
+        "fixedCode": "Library"
+      },
+      {
+        "id": "CapabilityStatement.rest:clientSlice",
+        "path": "CapabilityStatement.rest",
+        "sliceName": "clientSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:clientSlice.mode",
+        "path": "CapabilityStatement.rest.mode",
+        "fixedCode": "client"
+      },
+      {
+        "id": "CapabilityStatement.rest:serverSlice",
+        "path": "CapabilityStatement.rest",
+        "sliceName": "serverSlice",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:serverSlice.mode",
+        "path": "CapabilityStatement.rest.mode",
+        "fixedCode": "server"
+      }
+    ]
+  }
+}

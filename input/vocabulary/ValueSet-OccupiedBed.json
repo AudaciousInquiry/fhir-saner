@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "OccupiedBed",
+  "id": "OccupiedBed",
+  "title": "Occupied Bed",
+  "description": "Codes used for Occupied Beds",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/OccupiedBed"
+}

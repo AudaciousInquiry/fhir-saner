@@ -1,6 +1,7 @@
 Instance:  HAvBED2toFHIR
 Title: "HAvBED2 to FHIR Concept Map"
 InstanceOf: http://hl7.org/fhir/StructureDefinition/ConceptMap
+ * insert SanerDefinitionContent
  * description = "This Concept Map provides mappings from terms used in the HAvBED2 specification to HL7 FHIR"
  * name = "HAvBED2toFHIR"
  * status = #draft

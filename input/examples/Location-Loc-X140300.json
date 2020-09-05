@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "id": "Loc-X140300",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "name": "STEPHENSON HOSPITAL OF CHEF COUNTY Building",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HOSP"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "latitude",
+            "valueDecimal": 41.802158
+          },
+          {
+            "url": "longitude",
+            "valueDecimal": -87.614193
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+      }
+    ],
+    "use": "work",
+    "type": "both",
+    "line": [
+      "500 E 51ST ST"
+    ],
+    "city": "CHICAGO",
+    "district": "COOK",
+    "state": "IL",
+    "postalCode": "60615",
+    "country": "USA"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si"
+      }
+    ]
+  },
+  "position": {
+    "longitude": -87.614193,
+    "latitude": 41.802158
+  },
+  "managingOrganization": {
+    "reference": "Organization/X140300"
+  }
+}

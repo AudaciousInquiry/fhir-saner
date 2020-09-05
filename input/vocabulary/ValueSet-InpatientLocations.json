@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "InpatientLocations",
+  "id": "InpatientLocations",
+  "title": "Inpatient Locations",
+  "description": "Codes used for inpatient locations",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/InpatientLocations"
+}

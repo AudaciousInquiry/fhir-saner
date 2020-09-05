@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "X140250",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "value": "X140250"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "ST LEIBOWITZ HOSPITAL",
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "latitude",
+              "valueDecimal": 41.566922
+            },
+            {
+              "url": "longitude",
+              "valueDecimal": -87.694399
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "work",
+      "type": "both",
+      "line": [
+        "17800 KEDZIE AVE"
+      ],
+      "city": "HAZEL CREST",
+      "district": "COOK",
+      "state": "IL",
+      "postalCode": "60429",
+      "country": "USA"
+    }
+  ]
+}

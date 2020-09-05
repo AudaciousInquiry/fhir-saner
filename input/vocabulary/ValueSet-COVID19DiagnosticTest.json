@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "COVID19DiagnosticTest",
+  "id": "COVID19DiagnosticTest",
+  "title": "COVID-19 Diagnostic Test",
+  "description": "Codes for COVID-19 Diagnostic Tests",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/COVID19DiagnosticTest"
+}

@@ -15,7 +15,7 @@
       "definition": "Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients"
     },
     {
-      "code": "numBeds",
+      "code": "numbeds",
       "display": "Hospital Inpatient Beds",
       "definition": "Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients"
     },

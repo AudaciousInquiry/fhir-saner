@@ -1,0 +1,79 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeasureCriteria",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureCriteria",
+  "version": "0.1.0",
+  "name": "MeasureCriteria",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "description": "Constraints on documentation for the evaluation of a Measure",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Expression",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Expression",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Expression.description",
+        "path": "Expression.description",
+        "short": "Describe what the criterion does to a human (non-engineer)",
+        "min": 1
+      },
+      {
+        "id": "Expression.name",
+        "path": "Expression.name",
+        "short": "name should align with code.",
+        "min": 1
+      },
+      {
+        "id": "Expression.language",
+        "path": "Expression.language",
+        "short": "Provide the language for the criterion"
+      },
+      {
+        "id": "Expression.expression",
+        "path": "Expression.expression",
+        "short": "A measure must describe how to automate the computation in an expression that can be evaluated in the specified language",
+        "min": 1
+      }
+    ]
+  }
+}

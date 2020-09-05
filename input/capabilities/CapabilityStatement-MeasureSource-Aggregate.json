@@ -1,0 +1,68 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "MeasureSource-Aggregate",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+    ]
+  },
+  "rest": [
+    {
+      "mode": "client",
+      "resource": [
+        {
+          "type": "MeasureReport",
+          "operation": [
+            {
+              "name": "aggregate",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/ProduceMeasure-aggregate",
+              "documentation": "Aggregate two or more more Messure Report resources into a single MeasureReport."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "name": "MeasureSource_Aggregate",
+  "title": "Measure Source implementing the Aggregate Option.",
+  "date": "2020-09-04T23:05:22.903075-04:00",
+  "kind": "requirements",
+  "description": "Defines the additional requirements for the Measure Source implementing the Aggregate Option.",
+  "format": [
+    "xml",
+    "json"
+  ],
+  "fhirVersion": "4.0.1"
+}

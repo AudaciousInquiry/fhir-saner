@@ -157,11 +157,11 @@ above.
 
 <table class='grid'><thead><tr><th>Resource</th><th>Maturity Level</th></tr></thead>
 <tbody>
-<tr><td><a href="https://hl7.org/fhir/device.html">Device</a></td><td>2</td></tr>
-<tr><td><a href="https://hl7.org/fhir/group.html">Group</a></td><td>1</td></tr>
-<tr><td><a href="https://hl7.org/fhir/location.html">Location</a></td><td>3</td></tr>
-<tr><td><a href="https://hl7.org/fhir/measurereport.html">MeasureReport</a></td><td>2</td></tr>
-<tr><td><a href="https://hl7.org/fhir/questionnaireresponse.html">QuestionnaireResponse</a></td><td>3</td></tr>
+<tr><td><a href="http://hl7.org/fhir/device.html">Device</a></td><td>2</td></tr>
+<tr><td><a href="http://hl7.org/fhir/group.html">Group</a></td><td>1</td></tr>
+<tr><td><a href="http://hl7.org/fhir/location.html">Location</a></td><td>3</td></tr>
+<tr><td><a href="http://hl7.org/fhir/measurereport.html">MeasureReport</a></td><td>2</td></tr>
+<tr><td><a href="http://hl7.org/fhir/questionnaireresponse.html">QuestionnaireResponse</a></td><td>3</td></tr>
 </tbody>
 </table>
 

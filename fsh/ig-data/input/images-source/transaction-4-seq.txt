@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+participant "Measure Computer" as MeasureComputer
+participant "Measure Source" as MeasureSource
+participant "Measure Consumer" as MeasureConsumer
+"MeasureComputer" -> "MeasureComputer" : 1. Compute Measure
+activate "MeasureComputer"
+deactivate "MeasureComputer"
+"MeasureSource" -> "MeasureConsumer" : 2. Report Measure
+activate "MeasureSource"
+activate "MeasureConsumer"
+return
+deactivate "MeasureSource"
+deactivate "MeasureConsumer"
+"MeasureConsumer" -> "MeasureSource" : 3. Query Measure
+activate "MeasureConsumer"
+activate "MeasureSource"
+return
+deactivate "MeasureConsumer"
+deactivate "MeasureSource"
+@enduml

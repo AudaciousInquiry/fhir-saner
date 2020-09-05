@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "id": "Loc-X140010",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "name": "VINGE UNIVERSITY HOSPITAL Building",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HOSP"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "latitude",
+            "valueDecimal": 42.0653
+          },
+          {
+            "url": "longitude",
+            "valueDecimal": -87.683293
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+      }
+    ],
+    "use": "work",
+    "type": "both",
+    "line": [
+      "2650 RIDGE AVE"
+    ],
+    "city": "EVANSTON",
+    "district": "COOK",
+    "state": "IL",
+    "postalCode": "60201",
+    "country": "USA"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si"
+      }
+    ]
+  },
+  "position": {
+    "longitude": -87.683293,
+    "latitude": 42.0653
+  },
+  "managingOrganization": {
+    "reference": "Organization/X140010"
+  }
+}

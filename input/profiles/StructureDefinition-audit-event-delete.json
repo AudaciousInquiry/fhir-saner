@@ -1,0 +1,117 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "audit-event-delete",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Security"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/audit-event-delete",
+  "version": "0.1.0",
+  "name": "AuditEventDelete",
+  "title": "Audit Event Delete Profile",
+  "status": "active",
+  "description": "Defines constraints on the AuditEvent Resource to record when a resource has been deleted.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "dicom",
+      "uri": "http://nema.org/dicom",
+      "name": "DICOM Tag Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    },
+    {
+      "identity": "fhirprovenance",
+      "uri": "http://hl7.org/fhir/provenance",
+      "name": "FHIR Provenance Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "AuditEvent",
+  "baseDefinition": "http://hl7.org/fhir/us/saner/StructureDefinition/audit-event",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "AuditEvent.type",
+        "path": "AuditEvent.type",
+        "patternCoding": {
+          "code": "110105",
+          "system": "http://dicom.nema.org/resources/ontology/DCM"
+        }
+      },
+      {
+        "id": "AuditEvent.type.display",
+        "path": "AuditEvent.type.display",
+        "patternString": "DICOM Study Deleted"
+      },
+      {
+        "id": "AuditEvent.subtype",
+        "path": "AuditEvent.subtype",
+        "patternCoding": {
+          "code": "delete",
+          "system": "http://hl7.org/fhir/restful-interaction"
+        }
+      },
+      {
+        "id": "AuditEvent.subtype.display",
+        "path": "AuditEvent.subtype.display",
+        "patternString": "Delete"
+      },
+      {
+        "id": "AuditEvent.action",
+        "path": "AuditEvent.action",
+        "patternCode": "D"
+      },
+      {
+        "id": "AuditEvent.entity.what",
+        "path": "AuditEvent.entity.what",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.entity.role",
+        "path": "AuditEvent.entity.role",
+        "patternCoding": {
+          "code": "3",
+          "system": "http://terminology.hl7.org/CodeSystem/object-role",
+          "display": "Report"
+        }
+      }
+    ]
+  }
+}

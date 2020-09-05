@@ -1,0 +1,68 @@
+{
+  "resourceType": "Location",
+  "id": "Loc-X140150",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "status": "active",
+  "name": "CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL Building",
+  "mode": "instance",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "HOSP"
+        }
+      ]
+    }
+  ],
+  "address": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "latitude",
+            "valueDecimal": 41.869224
+          },
+          {
+            "url": "longitude",
+            "valueDecimal": -87.670529
+          }
+        ],
+        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+      }
+    ],
+    "use": "work",
+    "type": "both",
+    "line": [
+      "1740 W TAYLOR ST STE 1400"
+    ],
+    "city": "CHICAGO",
+    "district": "COOK",
+    "state": "IL",
+    "postalCode": "60612",
+    "country": "USA"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si"
+      }
+    ]
+  },
+  "position": {
+    "longitude": -87.670529,
+    "latitude": 41.869224
+  },
+  "managingOrganization": {
+    "reference": "Organization/X140150"
+  }
+}

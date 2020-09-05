@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PublicHealthMeasureMetadataAttachments",
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureMetadataAttachments",
+  "version": "0.1.0",
+  "name": "PublicHealthMeasureMetadataAttachments",
+  "title": "PublicHealthMeasureMetadataAttachments",
+  "status": "active",
+  "description": "Attachments providing resources containing essential content supporting a measure definition",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Attachment",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Attachment",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Attachment.id",
+        "path": "Attachment.id",
+        "min": 1
+      },
+      {
+        "id": "Attachment.contentType",
+        "path": "Attachment.contentType",
+        "short": "application/fhir+xml | application/fhir+json | text/cql | application/gzip",
+        "definition": "FHIR Resources should use application/fhir+xml or application/fhir+json, CQL source files should use text/cql, and FHIR Packages\nshould use application/gzip.",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/PublicHealthMeasureAttachmentTypes"
+        }
+      },
+      {
+        "id": "Attachment.url",
+        "path": "Attachment.url",
+        "min": 1
+      },
+      {
+        "id": "Attachment.title",
+        "path": "Attachment.title",
+        "min": 1
+      }
+    ]
+  }
+}

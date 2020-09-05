@@ -5,187 +5,365 @@ Description: "This Value Set is used to indicate whether a bed is in use (O), av
 * http://terminology.hl7.org/CodeSystem/v2-0116#O
 * http://terminology.hl7.org/CodeSystem/v2-0116#U
 
-CodeSystem: BedType
-Title: "Bed Type Coding System"
-Description: "This Coding System fills gaps describing types of care services that a bed can support."
-* #ROOM "Top level category for rooms" "Rooms used for treatment of inpatient or ambulatory patients"
-*    #OR "Operating Room" "Operating Rooms used for surgical procedures. When a room is used for both surgical andnon-surgical procedures, it should be classified as an operating room."
-*    #PR "Procedure Room" "Procedure Rooms are those rooms used for non-surgical procedures"
-*    #RR "Recovery Room" "Recovery Rooms"
-*    #EX "Examination Room" "Rooms used for principally for patient examination and minor procedures"
-*    #DIALR "Dialysis Treatment Room" "Room used for dialysis treatment"
-*    #NURSERY "Nursery" "Room used for Nursery"
+ValueSet: PatientsOnVentilator
+Title: "Observations for Patients on a Ventilator"
+Description: "This Value Set identifies patients currently on a ventilator"
 
-* #BURNU "Burn Unit" "Beds in a Burn Unit"
+* http://loinc.org#19835-8 // Breath rate setting Ventilator synchronized intermittent mandatory
+* http://loinc.org#19994-3 // Oxygen/Inspired gas setting [Volume Fraction] Ventilator
+* http://loinc.org#20077-4 // Positive end expiratory pressure setting Ventilator
+* http://loinc.org#20079-0 // Pressure support setting Ventilator
+* http://loinc.org#20103-8 // Tidal volume expired/Plateau pressure --post 1.5-2.0 seconds inspiratory hold on ventilator
+* http://loinc.org#20112-9 // Tidal volume setting Ventilator
+* http://loinc.org#20115-2 // Tidal volume.spontaneous/Body weight [Volume/mass] --on ventilator
+* http://loinc.org#33438-3 // Breath rate mechanical --on ventilator
+* http://loinc.org#57655-3 // Tidal volume.exhaled maximum setting Ventilator alarm
+* http://loinc.org#76530-5 // Mean pressure Respiratory system airway --on ventilator
+* http://loinc.org#19839-0 // Breath rate spontaneous --on ventilator
 
-* #NEGISO "Negative Pressure Isolation Unit" "Beds in a negative pressure isolation environment"
-* #OTHISO "Other Isolation Unit" "Beds in an other (non-negative pressure) isolation environment"
-* #NONISO "Non-isolating unit" "Bed in a unit that does not support isolation"
+ValueSet: Remdsivir
+Title: "Remdesivir"
+Description: "This Value Set identifies Remdesivir"
+* ^name = "Remdesivir"
+* ^id = "Remdesivir"
 
-* #NEONATAL "Neonatal Patient use"      "Resources designated for neonatal use"
-* #ADULT  "Adult Patient use"           "Resources designated for adult patient use"
-* #PEDIATRIC "Pediatric Patient use"    "Resources designated for pediatric patient use"
+* http://www.nlm.nih.gov/research/umls/rxnorm#2284718 // remdesivir
+* http://www.nlm.nih.gov/research/umls/rxnorm#2284957 // remdesivir 100 MG
+* http://www.nlm.nih.gov/research/umls/rxnorm#2284958 // remdesivir Injectable Product
+* http://www.nlm.nih.gov/research/umls/rxnorm#2284959 // remdesivir Injection
+* http://www.nlm.nih.gov/research/umls/rxnorm#2284960 // remdesivir 100 MG Injection
+* http://www.nlm.nih.gov/research/umls/rxnorm#2367757 // remdesivir 5 MG/ML
+* http://snomed.info/sct#870592005 // Remdesivir
+* http://snomed.info/sct#870519002 // Remdesivir only product
+* http://snomed.info/sct#870600003 // Administration of remdesivir
+* http://snomed.info/sct#870518005 // Product containing remdesivir
+* http://snomed.info/sct#870521007 // Product containing only remdesivir in parenteral dose form
+* http://snomed.info/sct#870520008 // Product containing remdesivir in parenteral dose form
+* http://snomed.info/sct#870522000 // Product containing precisely remdesivir 100 milligram/1 vial powder for conventional release solution for injection
 
-* #PHYSICAL "Total Physical Resources"  "Total physical resources, whether licensed, staffed, or otherwise"
-*   #LICENSED "Licensed Resources"      "Maximum licensed resources"
-*   #OVERFLOW "Overflow Resources"      "Overflow / Surge resources that can be or have been added to add capacity"
+// The following value sets are expansions from VSAC
+ValueSet: COVID19Organism
+ * ^version = "20200716"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1143"
+ * ^status = #active
+ * ^date = "2020-07-16T01:00:25-04:00"
+ * ^publisher = "CSTE Steward"
+ * http://snomed.info/sct#840533007 "Severe acute respiratory syndrome coronavirus 2 (organism)"
+ * http://snomed.info/sct#840536004 "Antigen of severe acute respiratory syndrome coronavirus 2 (substance)"
 
-*   #STAFFED "Staffed Resources"        "Resources for which staff is available to provide support"
-*   #UNSTAFFED "Unstaffed Resources"    "Resources that can be used but which are not staffed"
+ValueSet: COVID19Antibody
+ * ^version = "20200430"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1155"
+ * ^status = #active
+ * ^date = "2020-04-30T01:00:18-04:00"
+ * ^publisher = "CSTE Steward"
+ * http://snomed.info/sct#840535000 "Antibody to severe acute respiratory syndrome coronavirus 2 (substance)"
 
-* #INUSE "This resource is in use"  "Resources that are currently in use"
-* #AVAILABLE "This resource is available for use"  "Resources that are available for use"
-* #NOTAVAIL "This resource is not available for use" "Resources that are not available and are not in use"
+ValueSet: COVID19DXICD10
+ * ^version = "20200516"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1123"
+ * ^status = #active
+ * ^date = "2020-05-16T01:00:22-04:00"
+ * ^publisher = "CSTE Steward"
+ * http://hl7.org/fhir/sid/icd-10-cm#B34.2 "Coronavirus infection, unspecified"
+ * http://hl7.org/fhir/sid/icd-10-cm#B97.2 "Coronavirus as the cause of diseases classified elsewhere"
+ * http://hl7.org/fhir/sid/icd-10-cm#B97.29 "Other coronavirus as the cause of diseases classified elsewhere"
+ * http://hl7.org/fhir/sid/icd-10-cm#U07.1 "COVID-19"
 
-ValueSet: BedTypeOfCare
-Title: "Bed Type of Care"
-Description: "This Value Set describes the types of care services that a bed can support."
-* http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
-*   http://terminology.hl7.org/CodeSystem/v3-RoleCode#ICU
-*   http://terminology.hl7.org/CodeSystem/v3-RoleCode#ER
-* BedType#OR
-* BedType#NURSERY
-* BedType#BURNU
+ValueSet: COVID19DXSNOMED
+ * ^version = "Draft"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1124"
+ * ^status = #draft
+ * ^date = "2020-08-12T17:36:54-04:00"
+ * ^publisher = "CSTE Steward"
+ * http://snomed.info/sct#186747009 "Coronavirus infection (disorder)"
+ * http://snomed.info/sct#713084008 "Pneumonia caused by Human coronavirus (disorder)"
+ * http://snomed.info/sct#840539006 "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+ * http://snomed.info/sct#840544004 "Suspected disease caused by severe acute respiratory coronavirus 2 (situation)"
 
-ValueSet: BedProperty
-Title: "Bed Property"
-Description: "This value set describes other properties of a bed, such as the ability to support isolation."
-* BedType#NEGISO
-* BedType#OTHISO
-* BedType#NONISO
+ValueSet: COVID19Exposure
+ * ^version = "20200604"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1203"
+ * ^status = #active
+ * ^date = "2020-06-04T01:00:20-04:00"
+ * ^publisher = "CSTE Steward"
+ * http://snomed.info/sct#840546002 "Exposure to severe acute respiratory syndrome coronavirus 2 (event)"
 
-CodeSystem: ResourceFieldsForLocation
-Title: "Resource Fields for Location"
-Description: "This Coding System identifies legal field names in a FHIR R4 Location Resource."
-//* ^url = "http://hl7.org/fhir/R4/StructureDefinition/Device"
-* ^status = #active
-* ^content = #complete
-* #Location
-* #Location.id
-* #Location.meta
-* #Location.implicitRules
-* #Location.language
-* #Location.text
-* #Location.contained
-* #Location.extension
-* #Location.modifierExtension
-* #Location.identifier
-* #Location.status
-* #Location.operationalStatus
-* #Location.name
-* #Location.alias
-* #Location.description
-* #Location.mode
-* #Location.type
-* #Location.telecom
-* #Location.address
-* #Location.physicalType
-* #Location.position
-* #Location.position.id
-* #Location.position.extension
-* #Location.position.modifierExtension
-* #Location.position.longitude
-* #Location.position.latitude
-* #Location.position.altitude
-* #Location.managingOrganization
-* #Location.partOf
-* #Location.hoursOfOperation
-* #Location.hoursOfOperation.id
-* #Location.hoursOfOperation.extension
-* #Location.hoursOfOperation.modifierExtension
-* #Location.hoursOfOperation.daysOfWeek
-* #Location.hoursOfOperation.allDay
-* #Location.hoursOfOperation.openingTime
-* #Location.hoursOfOperation.closingTime
-* #Location.availabilityExceptions
-* #Location.endpoint
+ValueSet: HealthcareServiceLocation
+ * ^version = "20200604"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.20275"
+ * ^status = #active
+ * ^date = "2019-08-30T01:00:18-04:00"
+ * ^publisher = "HL7 Terminology"
+ * urn:oid:2.16.840.1.113883.6.259#1005-8 "Cardiac Catheterization Room/Suite"
+ * urn:oid:2.16.840.1.113883.6.259#1007-4 "Endoscopy Suite"
+ * urn:oid:2.16.840.1.113883.6.259#1008-2 "Radiology"
+ * urn:oid:2.16.840.1.113883.6.259#1009-0 "Pulmonary Function Testing"
+ * urn:oid:2.16.840.1.113883.6.259#1010-8 "General Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1011-6 "Clinical Chemistry Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1012-4 "Hematology Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1013-2 "Histology-Surgical Pathology Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1014-0 "Microbiology Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1015-7 "Serology Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1016-5 "Virology Laboratory"
+ * urn:oid:2.16.840.1.113883.6.259#1017-3 "Hyperbaric Oxygen Center"
+ * urn:oid:2.16.840.1.113883.6.259#1018-1 "Infusion Center"
+ * urn:oid:2.16.840.1.113883.6.259#1019-9 "Specimen Collection Area (Healthcare)"
+ * urn:oid:2.16.840.1.113883.6.259#1020-7 "Sleep Study Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1025-6 "Trauma Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1026-4 "Burn Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1027-2 "Medical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1028-0 "Medical Cardiac Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1029-8 "Medical-Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1030-6 "Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1031-4 "Neurosurgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1032-2 "Surgical Cardiothoracic Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1033-0 "Respiratory Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1034-8 "Prenatal Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1035-5 "Neurologic Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1038-9 "Well Baby Nursery (Level I)"
+ * urn:oid:2.16.840.1.113883.6.259#1039-7 "Neonatal Critical Care(Level II/III)"
+ * urn:oid:2.16.840.1.113883.6.259#1040-5 "Neonatal Critical Care (Level III)"
+ * urn:oid:2.16.840.1.113883.6.259#1041-3 "Step down Neonatal Nursery (Level II)"
+ * urn:oid:2.16.840.1.113883.6.259#1042-1 "Pediatric Burn Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1043-9 "Pediatric Cardiothoracic Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1044-7 "Pediatric Medical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1045-4 "Pediatric Medical-Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1046-2 "Pediatric Neurosurgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1047-0 "Pediatric Respiratory Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1048-8 "Pediatric Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1049-6 "Pediatric Trauma Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1051-2 "Behavioral Health/Psych Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1052-0 "Burn Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1053-8 "Ear, Nose, Throat Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1054-6 "Gastrointestinal Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1055-3 "Genitourinary Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1056-1 "Gerontology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1057-9 "Gynecology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1058-7 "Labor and Delivery Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1059-5 "Labor, Delivery, Recovery, Postpartum Suite"
+ * urn:oid:2.16.840.1.113883.6.259#1060-3 "Medical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1061-1 "Medical-Surgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1062-9 "Neurology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1063-7 "Neurosurgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1064-5 "Ophthalmology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1065-2 "Orthopedic Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1066-0 "Orthopedic Trauma Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1067-8 "Plastic Surgery Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1068-6 "Postpartum Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1069-4 "Pulmonary Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1070-2 "Rehabilitation Ward (within Acute Care Hospital)"
+ * urn:oid:2.16.840.1.113883.6.259#1071-0 "Stroke (Acute) Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1072-8 "Surgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1073-6 "Vascular Surgery Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1075-1 "Adolescent Behavioral Hefalth Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1076-9 "Pediatric Medical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1077-7 "Pediatric Behavioral Health Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1078-5 "Pediatric Burn Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1079-3 "Pediatric Ear, Nose, Throat Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1080-1 "Pediatric Genitourinary Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1081-9 "Pediatric Medical-Surgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1082-7 "Pediatric Neurology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1083-5 "Pediatric Neurosurgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1084-3 "Pediatric Orthopedic Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1085-0 "Pediatric Rehabilitation Ward (within Acute Care Hospital)"
+ * urn:oid:2.16.840.1.113883.6.259#1086-8 "Pediatric Surgical Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1091-8 "Pediatric Dialysis Specialty Care Area"
+ * urn:oid:2.16.840.1.113883.6.259#1092-6 "Solid Organ Transplant Specialty Care Area"
+ * urn:oid:2.16.840.1.113883.6.259#1093-4 "Pediatric Solid Organ Transplant Specialty Care Area"
+ * urn:oid:2.16.840.1.113883.6.259#1095-9 "Cesarean Section Room/Suite"
+ * urn:oid:2.16.840.1.113883.6.259#1096-7 "Operating Room/Suite"
+ * urn:oid:2.16.840.1.113883.6.259#1097-5 "Post-Anesthesia Care Unit/Recovery Room"
+ * urn:oid:2.16.840.1.113883.6.259#1099-1 "Adult Step Down Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1100-7 "Pediatric Step Down Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1102-3 "Chronic Care Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1103-1 "Chronic Alzheimer's Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1104-9 "Chronic Behavioral Health/Psych Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1105-6 "Chronic Rehabilitation Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1106-4 "Assisted Living Area"
+ * urn:oid:2.16.840.1.113883.6.259#1108-0 "Emergency Department"
+ * urn:oid:2.16.840.1.113883.6.259#1109-8 "Pediatric Emergency Department"
+ * urn:oid:2.16.840.1.113883.6.259#1110-6 "Allergy Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1112-2 "Cardiac Rehabilitation Center"
+ * urn:oid:2.16.840.1.113883.6.259#1113-0 "Cardiology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1115-5 "Dermatology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1116-3 "Diabetes-Endocrinology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1117-1 "Family Medicine Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1118-9 "Gastrointestinal Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1119-7 "Pediatric Gastrointestinal Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1120-5 "Medical Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1121-3 "Gynecology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1122-1 "Genetics Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1123-9 "Neurology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1124-7 "Ophthalmology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1125-4 "Orthopedic Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1126-2 "Ear, Nose, Throat Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1127-0 "Pain Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1128-8 "Pediatric Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1129-6 "Pediatric Cardiology Center"
+ * urn:oid:2.16.840.1.113883.6.259#1130-4 "Pediatric Dental Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1131-2 "Pediatric Dermatology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1132-0 "Pediatric Diabetes-Endocrinology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1133-8 "Pediatric Orthopedic Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1134-6 "Pediatric Scoliosis Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1136-1 "Pediatric Hematology-Oncology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1137-9 "Pediatric Nephrology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1138-7 "Pediatric Rheumatology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1139-5 "Well Baby Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1140-3 "Podiatry Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1141-1 "Physician's Office"
+ * urn:oid:2.16.840.1.113883.6.259#1142-9 "Rheumatology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1143-7 "Surgical Services Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1144-5 "Wound Center"
+ * urn:oid:2.16.840.1.113883.6.259#1145-2 "Behavioral Health Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1146-0 "Pediatric Behavioral Health Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1147-8 "Blood Collection Center"
+ * urn:oid:2.16.840.1.113883.6.259#1148-6 "Continence Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1149-4 "Ostomy Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1150-2 "Dental Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1151-0 "Occupational Health Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1152-8 "Occupational Therapy Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1153-6 "Outpatient Hemodialysis Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1154-4 "HIV Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1155-1 "Rehabilitation Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1156-9 "Prenatal Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1157-7 "Pulmonary Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1158-5 "Speech Therapy Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1159-3 "Wound Ostomy Continence Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1160-1 "Urgent Care Center"
+ * urn:oid:2.16.840.1.113883.6.259#1161-9 "Holistic Medicine Center"
+ * urn:oid:2.16.840.1.113883.6.259#1162-7 "24-Hour Observation Area"
+ * urn:oid:2.16.840.1.113883.6.259#1164-3 "Ventilator Dependent Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1165-0 "Inpatient Hospice"
+ * urn:oid:2.16.840.1.113883.6.259#1169-2 "Post-Anesthesia Care Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1170-0 "School or Prison Infirmary"
+ * urn:oid:2.16.840.1.113883.6.259#1171-8 "Jail Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1172-6 "School Infirmary"
+ * urn:oid:2.16.840.1.113883.6.259#1174-2 "Mobile Emergency Services/EMS"
+ * urn:oid:2.16.840.1.113883.6.259#1175-9 "Mobile MRI/CT"
+ * urn:oid:2.16.840.1.113883.6.259#1176-7 "Mobile Blood Collection center"
+ * urn:oid:2.16.840.1.113883.6.259#1178-3 "Transport Service"
+ * urn:oid:2.16.840.1.113883.6.259#1179-1 "Pharmacy"
+ * urn:oid:2.16.840.1.113883.6.259#1180-9 "Public Area in Facility"
+ * urn:oid:2.16.840.1.113883.6.259#1181-7 "Physical Plant Operations Center"
+ * urn:oid:2.16.840.1.113883.6.259#1182-5 "Housekeeping/Environmental Services"
+ * urn:oid:2.16.840.1.113883.6.259#1183-3 "Laundry Room"
+ * urn:oid:2.16.840.1.113883.6.259#1184-1 "Administrative Areas"
+ * urn:oid:2.16.840.1.113883.6.259#1185-8 "Blood Bank"
+ * urn:oid:2.16.840.1.113883.6.259#1186-6 "Central Sterile Supply"
+ * urn:oid:2.16.840.1.113883.6.259#1187-4 "Central Trash Area"
+ * urn:oid:2.16.840.1.113883.6.259#1188-2 "Facility Grounds"
+ * urn:oid:2.16.840.1.113883.6.259#1189-0 "Morgue/Autopsy Room"
+ * urn:oid:2.16.840.1.113883.6.259#1190-8 "Soiled Utility Area"
+ * urn:oid:2.16.840.1.113883.6.259#1192-4 "Home Care"
+ * urn:oid:2.16.840.1.113883.6.259#1194-0 "Home-based Hospice"
+ * urn:oid:2.16.840.1.113883.6.259#1195-7 "Blood Collection (Blood Drive Campaign)"
+ * urn:oid:2.16.840.1.113883.6.259#1196-5 "Specimen Collection Area (Community)"
+ * urn:oid:2.16.840.1.113883.6.259#1198-1 "Dialysis Specialty Care Area"
+ * urn:oid:2.16.840.1.113883.6.259#1200-5 "Hematology-Oncology Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1202-1 "Physical Therapy Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1203-9 "Interventional Radiology"
+ * urn:oid:2.16.840.1.113883.6.259#1204-7 "Location outside facility"
+ * urn:oid:2.16.840.1.113883.6.259#1205-4 "Antenatal Care Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1207-0 "Therapeutic Apheresis Clinic"
+ * urn:oid:2.16.840.1.113883.6.259#1208-8 "Telemetry Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1209-6 "Treatment Room"
+ * urn:oid:2.16.840.1.113883.6.259#1210-4 "Adult Mixed Acuity Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1211-2 "Pediatric Mixed Acuity Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1212-0 "Mixed Age Mixed Acuity Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1214-6 "Long Term Acute Care Pediatric Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1217-9 "Rehabilitation Ward (freestanding Inpatient Rehabilitation Facility)"
+ * urn:oid:2.16.840.1.113883.6.259#1218-7 "Rehabilitation Pediatric Ward (freestanding Inpatient Rehabilitation Facility)"
+ * urn:oid:2.16.840.1.113883.6.259#1220-3 "Long Term Acute Care Intensive Care Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1221-1 "Long Term Acute Care Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1222-9 "Long Term Acute Care Pediatric Intensive Care Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1223-7 "Oncology Medical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1224-5 "Oncology Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1225-2 "Oncology Medical-Surgical Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1226-0 "Oncology Leukemia Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1227-8 "Oncology Step Down Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1228-6 "Oncology Lymphoma Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1229-4 "Oncology Leukemia-Lymphoma Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1230-2 "Oncology Solid Tumor Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1231-0 "Oncology Hematopoietic Stem Cell Transplant Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1232-8 "Oncology General Hematology-Oncology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1233-6 "Oncology Pediatric Critical Care"
+ * urn:oid:2.16.840.1.113883.6.259#1234-4 "Oncology Pediatric Hematopoietic Stem Cell Transplant Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1235-1 "Oncology Pediatric General Hematology-Oncology Ward"
+ * urn:oid:2.16.840.1.113883.6.259#1236-9 "Oncology Mixed Acuity Unit (all ages)"
+ * urn:oid:2.16.840.1.113883.6.259#1242-7 "Outpatient Operating Room/Suite (Attached)"
+ * urn:oid:2.16.840.1.113883.6.259#1243-5 "Ambulatory Surgery Center"
+ * urn:oid:2.16.840.1.113883.6.259#1244-3 "Outpatient Operating Room/Suite (Detached)"
+ * urn:oid:2.16.840.1.113883.6.259#1245-0 "Ambulatory Surgery Recovery Room"
+ * urn:oid:2.16.840.1.113883.6.259#1246-8 "Outpatient Ambulatory Pediatric Surgery Center"
+ * urn:oid:2.16.840.1.113883.6.259#1247-6 "Outpatient Ambulatory Plastic Surgery Center"
+ * urn:oid:2.16.840.1.113883.6.259#1248-4 "Pediatric Outpatient Operating Room/Suite (Attached)"
+ * urn:oid:2.16.840.1.113883.6.259#1249-2 "Pediatric Outpatient Operating Room/Suite (Detached)"
+ * urn:oid:2.16.840.1.113883.6.259#1254-2 "Long Term Care Facility Inpatient Hospice Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1255-9 "Long Term Care Facility Dementia Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1256-7 "Long Term Care Facility Psychiatric Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1257-5 "Long Term Care Facility Skilled Nursing-Short Term Rehabilitation Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1258-3 "Long Term Care Facility General Nursing Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1259-1 "Long Term Care Facility Ventilator Dependent Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1260-9 "Long Term Care Facility Bariatric Unit"
+ * urn:oid:2.16.840.1.113883.6.259#1261-7 "Centralized Transfusion Service"
+ * urn:oid:2.16.840.1.113883.6.259#1262-1 "Home Hemodialysis"
+ * urn:oid:2.16.840.1.113883.6.259#1268-2 "Outpatient Hemodialysis Clinic - Acute Kidney Injury"
 
-CodeSystem: ResourceFieldsForDevice
-Title: "Resource Fields for Device"
-Description: "This Coding System identifies legal field names in a FHIR R4 Device Resource."
-//* ^url = "http://hl7.org/fhir/R4/StructureDefinition/Device"
-* ^status = #active
-* ^content = #complete
-* #Device
-* #Device.id
-* #Device.meta
-* #Device.implicitRules
-* #Device.language
-* #Device.text
-* #Device.contained
-* #Device.extension
-* #Device.modifierExtension
-* #Device.identifier
-* #Device.definition
-* #Device.udiCarrier
-* #Device.udiCarrier.id
-* #Device.udiCarrier.extension
-* #Device.udiCarrier.modifierExtension
-* #Device.udiCarrier.deviceIdentifier
-* #Device.udiCarrier.issuer
-* #Device.udiCarrier.jurisdiction
-* #Device.udiCarrier.carrierAIDC
-* #Device.udiCarrier.carrierHRF
-* #Device.udiCarrier.entryType
-* #Device.status
-* #Device.statusReason
-* #Device.distinctIdentifier
-* #Device.manufacturer
-* #Device.manufactureDate
-* #Device.expirationDate
-* #Device.lotNumber
-* #Device.serialNumber
-* #Device.deviceName
-* #Device.deviceName.id
-* #Device.deviceName.extension
-* #Device.deviceName.modifierExtension
-* #Device.deviceName.name
-* #Device.deviceName.type
-* #Device.modelNumber
-* #Device.partNumber
-* #Device.type
-* #Device.specialization
-* #Device.specialization.id
-* #Device.specialization.extension
-* #Device.specialization.modifierExtension
-* #Device.specialization.systemType
-* #Device.specialization.version
-* #Device.version
-* #Device.version.id
-* #Device.version.extension
-* #Device.version.modifierExtension
-* #Device.version.type
-* #Device.version.component
-* #Device.version.value
-* #Device.property
-* #Device.property.id
-* #Device.property.extension
-* #Device.property.modifierExtension
-* #Device.property.type
-* #Device.property.valueQuantity
-* #Device.property.valueCode
-* #Device.patient
-* #Device.owner
-* #Device.contact
-* #Device.location
-* #Device.url
-* #Device.note
-* #Device.safety
-* #Device.parent
+ValueSet: SARSCoV2Labs
+ * ^version = "20200417"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.109"
+ * ^status = #active
+ * ^date = "2020-04-17T01:00:20-04:00"
+ * ^publisher = "MITRE Steward"
+ * http://loinc.org#94307-6 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N1"
+ * http://loinc.org#94308-4 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N2"
+ * http://loinc.org#94309-2 "SARS-CoV-2 (COVID-19) RNA [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94310-0 "SARS-like coronavirus N gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94314-2 "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94315-9 "SARS-related coronavirus E gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94316-7 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94500-6 "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94533-7 "SARS-CoV-2 (COVID-19) N gene [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94534-5 "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94558-4 "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+ * http://loinc.org#94559-2 "SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection"
 
-ValueSet: FieldsForLocation
-Title: "Resource Fields for Location"
-Description: "Field names in the Location Resource"
-* codes from system ResourceFieldsForLocation
+ValueSet: SARSCoV2GeneticLabs
+Title: "SARSCoV2 Genetic Labs"
+Description: "This Value Set Labs which gene-based testing instead of other methods (e.g., Antibody testing)"
+ * ^version = "20200904"
+ * ^status = #active
+ * ^publisher = "HL7"
+ * http://loinc.org#94307-6 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N1"
+ * http://loinc.org#94308-4 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N2"
+ * http://loinc.org#94309-2 "SARS-CoV-2 (COVID-19) RNA [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94310-0 "SARS-like coronavirus N gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94314-2 "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94315-9 "SARS-related coronavirus E gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94316-7 "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by NAA with probe detection"
+ * http://loinc.org#94500-6 "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94533-7 "SARS-CoV-2 (COVID-19) N gene [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94534-5 "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Respiratory specimen by NAA with probe detection"
+ * http://loinc.org#94559-2 "SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection"
 
-ValueSet: FieldsForDevice
-Title: "Resource Fields for Device"
-Description: "Field names in the Device Resource"
-* codes from system ResourceFieldsForDevice
-
-ValueSet: Fields
-Title: "Resource Fields"
-Description: "This value set describes fields used to stratify groups in a report"
-* codes from valueset FieldsForDevice
-* codes from valueset FieldsForLocation
-
+ValueSet: SuspectedCOVID19
+ * ^version = "20200410"
+ * ^url = "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.116"
+ * ^status = #active
+ * ^date = "2020-04-10T01:00:18-04:00"
+ * ^publisher = "MITRE Steward"
+ * http://hl7.org/fhir/sid/icd-10-cm#A41.89 "Other specified sepsis"
+ * http://hl7.org/fhir/sid/icd-10-cm#B34.2 "Coronavirus infection, unspecified"
+ * http://hl7.org/fhir/sid/icd-10-cm#J12.8 "Other viral pneumonia"
+ * http://hl7.org/fhir/sid/icd-10-cm#J12.89 "Other viral pneumonia"
+ * http://hl7.org/fhir/sid/icd-10-cm#J20.8 "Acute bronchitis due to other specified organisms"
+ * http://hl7.org/fhir/sid/icd-10-cm#J22 "Unspecified acute lower respiratory infection"
+ * http://hl7.org/fhir/sid/icd-10-cm#J40 "Bronchitis, not specified as acute or chronic"
+ * http://hl7.org/fhir/sid/icd-10-cm#J80 "Acute respiratory distress syndrome"
+ * http://hl7.org/fhir/sid/icd-10-cm#J98.8 "Other specified respiratory disorders"
+ * http://hl7.org/fhir/sid/icd-10-cm#R05 "Cough"
+ * http://hl7.org/fhir/sid/icd-10-cm#R06.0 "Dyspnea"
+ * http://hl7.org/fhir/sid/icd-10-cm#R06.02 "Shortness of breath"
+ * http://hl7.org/fhir/sid/icd-10-cm#R50.9 "Fever, unspecified"
+ * http://snomed.info/sct#840544004 "Suspected disease caused by severe acute respiratory coronavirus 2 (situation)"

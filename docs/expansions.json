@@ -1445,7 +1445,7 @@
         },
         {
           "system" : "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-          "code" : "numBeds",
+          "code" : "numbeds",
           "display" : "Hospital Inpatient Beds"
         },
         {

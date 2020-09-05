@@ -2,11 +2,6 @@ RuleSet: NJExamplesNHSN
    * status = #complete
    * type = #summary
    * measure = "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity"
-   * subject.extension.url = "http://hl7.org/fhir/us/saner/StructureDefinition/GeoLocation"
-   * subject.extension.extension[0].url = "latitude"
-   * subject.extension.extension[0].valueDecimal = 40.1907
-   * subject.extension.extension[1].url = "longitude"
-   * subject.extension.extension[1].valueDecimal = 74.6728
    * subject.identifier.system = "https://www.census.gov/geographies"
    * subject.identifier.value = "34"
    * subject.reference = "Location/states-NJ"
@@ -17,8 +12,8 @@ RuleSet: NJExamplesNHSN
 
 Instance: ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/04/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8777-876e-11ea-1639-09173f13e4c5"
@@ -29,7 +24,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -79,8 +74,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/05/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d87a0-876e-11ea-1639-09173f13e4c5"
@@ -91,7 +86,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -141,8 +136,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/06/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d87c8-876e-11ea-1639-09173f13e4c5"
@@ -153,7 +148,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -200,8 +195,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/07/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d87f0-876e-11ea-1639-09173f13e4c5"
@@ -212,7 +207,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -259,8 +254,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/08/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8818-876e-11ea-1639-09173f13e4c5"
@@ -271,7 +266,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -318,8 +313,9 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/09/2020"
+
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8840-876e-11ea-1639-09173f13e4c5"
@@ -330,7 +326,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -377,8 +373,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/10/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8868-876e-11ea-1639-09173f13e4c5"
@@ -389,7 +385,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -436,8 +432,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/11/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8890-876e-11ea-1639-09173f13e4c5"
@@ -448,7 +444,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -495,8 +491,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/12/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d88b8-876e-11ea-1639-09173f13e4c5"
@@ -507,7 +503,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -554,8 +550,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/13/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d88e0-876e-11ea-1639-09173f13e4c5"
@@ -566,7 +562,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -613,8 +609,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/14/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8908-876e-11ea-1639-09173f13e4c5"
@@ -625,7 +621,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -672,8 +668,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/15/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8930-876e-11ea-1639-09173f13e4c5"
@@ -684,7 +680,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -731,8 +727,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/16/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8958-876e-11ea-1639-09173f13e4c5"
@@ -743,7 +739,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -790,8 +786,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/17/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8980-876e-11ea-1639-09173f13e4c5"
@@ -802,7 +798,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -849,8 +845,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/18/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d89a8-876e-11ea-1639-09173f13e4c5"
@@ -861,7 +857,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -908,8 +904,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/19/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d89d0-876e-11ea-1639-09173f13e4c5"
@@ -920,7 +916,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -967,8 +963,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/20/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d89f8-876e-11ea-1639-09173f13e4c5"
@@ -979,7 +975,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -1026,8 +1022,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/21/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8a20-876e-11ea-1639-09173f13e4c5"
@@ -1038,7 +1034,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -1085,8 +1081,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/22/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8a48-876e-11ea-1639-09173f13e4c5"
@@ -1097,7 +1093,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -1144,8 +1140,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/23/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8a70-876e-11ea-1639-09173f13e4c5"
@@ -1156,7 +1152,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -1203,8 +1199,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/24/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8a98-876e-11ea-1639-09173f13e4c5"
@@ -1215,7 +1211,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc
@@ -1262,8 +1258,8 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 
 Instance: ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity
 InstanceOf: PublicHealthMeasureReport
-Mixins: NJExamplesNHSN
 Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/25/2020"
+* insert NJExamplesNHSN
 * id = "ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:f87d8ac0-876e-11ea-1639-09173f13e4c5"
@@ -1274,7 +1270,7 @@ Description: "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for N
 * group.population.code.coding = MeasurePopulationSystem#numTotBeds
 * group.population.code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
 * group.population.count = 20000
-* group.population[1].code.coding = MeasurePopulationSystem#numBeds
+* group.population[1].code.coding = MeasurePopulationSystem#numbeds
 * group.population[1].code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#measure-population
 * group.population[1].count = 15000
 * group.population[2].code.coding = MeasurePopulationSystem#numBedsOcc

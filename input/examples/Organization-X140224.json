@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "X140224",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "value": "X140224"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "SAINT VERNOR HOSPITAL",
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "latitude",
+              "valueDecimal": 41.933928
+            },
+            {
+              "url": "longitude",
+              "valueDecimal": -87.636418
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "work",
+      "type": "both",
+      "line": [
+        "2900 N LAKE SHORE DR"
+      ],
+      "city": "CHICAGO",
+      "district": "COOK",
+      "state": "IL",
+      "postalCode": "60657",
+      "country": "USA"
+    }
+  ]
+}

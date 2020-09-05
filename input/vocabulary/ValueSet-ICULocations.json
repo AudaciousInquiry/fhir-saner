@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ICULocations",
+  "id": "ICULocations",
+  "title": "ICU Locations",
+  "description": "Codes used for ICU locations",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/ICULocations"
+}

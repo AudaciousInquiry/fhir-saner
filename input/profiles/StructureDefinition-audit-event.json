@@ -1,0 +1,239 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "audit-event",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Security"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/audit-event",
+  "version": "0.1.0",
+  "name": "SanerAuditEvent",
+  "title": "General Audit Event Requirements",
+  "status": "active",
+  "description": "Defines general constraints on the AuditEvent Resource.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "dicom",
+      "uri": "http://nema.org/dicom",
+      "name": "DICOM Tag Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    },
+    {
+      "identity": "fhirprovenance",
+      "uri": "http://hl7.org/fhir/provenance",
+      "name": "FHIR Provenance Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "AuditEvent",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/AuditEvent",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "AuditEvent.subtype",
+        "path": "AuditEvent.subtype",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AuditEvent.subtype.system",
+        "path": "AuditEvent.subtype.system",
+        "patternUri": "http://hl7.org/fhir/restful-interaction"
+      },
+      {
+        "id": "AuditEvent.action",
+        "path": "AuditEvent.action",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.period",
+        "path": "AuditEvent.period",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent",
+        "path": "AuditEvent.agent",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "role"
+            },
+            {
+              "type": "pattern",
+              "path": "requestor"
+            }
+          ],
+          "rules": "openAtEnd",
+          "ordered": false,
+          "description": "Slice based on the component.code pattern"
+        },
+        "min": 2
+      },
+      {
+        "id": "AuditEvent.agent:Source",
+        "path": "AuditEvent.agent",
+        "sliceName": "Source",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AuditEvent.agent:Source.role",
+        "path": "AuditEvent.agent.role",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "110153",
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "display": "Source"
+            }
+          ]
+        }
+      },
+      {
+        "id": "AuditEvent.agent:Source.who",
+        "path": "AuditEvent.agent.who",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:Source.name",
+        "path": "AuditEvent.agent.name",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:Source.requestor",
+        "path": "AuditEvent.agent.requestor",
+        "patternBoolean": false
+      },
+      {
+        "id": "AuditEvent.agent:HumanRequestor",
+        "path": "AuditEvent.agent",
+        "sliceName": "HumanRequestor",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "AuditEvent.agent:HumanRequestor.role",
+        "path": "AuditEvent.agent.role",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AuditEvent.agent:HumanRequestor.who",
+        "path": "AuditEvent.agent.who",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:HumanRequestor.name",
+        "path": "AuditEvent.agent.name",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:HumanRequestor.requestor",
+        "path": "AuditEvent.agent.requestor",
+        "patternBoolean": true
+      },
+      {
+        "id": "AuditEvent.agent:Destination",
+        "path": "AuditEvent.agent",
+        "sliceName": "Destination",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AuditEvent.agent:Destination.role",
+        "path": "AuditEvent.agent.role",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "110152",
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "display": "Destination"
+            }
+          ]
+        }
+      },
+      {
+        "id": "AuditEvent.agent:Destination.who",
+        "path": "AuditEvent.agent.who",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:Destination.name",
+        "path": "AuditEvent.agent.name",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.agent:Destination.requestor",
+        "path": "AuditEvent.agent.requestor",
+        "patternBoolean": false
+      },
+      {
+        "id": "AuditEvent.source.site",
+        "path": "AuditEvent.source.site",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.source.type",
+        "path": "AuditEvent.source.type",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "AuditEvent.entity",
+        "path": "AuditEvent.entity",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.entity.role",
+        "path": "AuditEvent.entity.role",
+        "min": 1
+      },
+      {
+        "id": "AuditEvent.entity.role.system",
+        "path": "AuditEvent.entity.role.system",
+        "patternUri": "http://terminology.hl7.org/CodeSystem/object-role"
+      }
+    ]
+  }
+}

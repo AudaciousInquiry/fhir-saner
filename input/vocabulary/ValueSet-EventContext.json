@@ -1,0 +1,91 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "EventContext",
+  "id": "EventContext",
+  "title": "Event Context",
+  "description": "This Value Set enables classification of environmental events for categorizing measures.",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/EventContext",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "82145005",
+            "display": "Avalanche"
+          },
+          {
+            "code": "48071004",
+            "display": "Cyclone"
+          },
+          {
+            "code": "8766005",
+            "display": "Earthquake"
+          },
+          {
+            "code": "255710008",
+            "display": "Environmental stimuli"
+          },
+          {
+            "code": "20936008",
+            "display": "Fire storm"
+          },
+          {
+            "code": "111056004",
+            "display": "Flood"
+          },
+          {
+            "code": "256236005",
+            "display": "Fog"
+          },
+          {
+            "code": "461861000124101",
+            "display": "Ice storm"
+          },
+          {
+            "code": "49061008",
+            "display": "Landslide"
+          },
+          {
+            "code": "5193003",
+            "display": "Lightning"
+          },
+          {
+            "code": "102410009",
+            "display": "Pollution"
+          },
+          {
+            "code": "257451007",
+            "display": "Running water"
+          },
+          {
+            "code": "59262002",
+            "display": "Snowstorm"
+          },
+          {
+            "code": "257494002",
+            "display": "Thunder"
+          },
+          {
+            "code": "19224001",
+            "display": "Tidal wave"
+          },
+          {
+            "code": "24454008",
+            "display": "Torrential rain"
+          },
+          {
+            "code": "90978007",
+            "display": "Volcanic eruption"
+          },
+          {
+            "code": "90569008",
+            "display": "Wind"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ScoreAgeBrackets",
+  "id": "ScoreAgeBrackets",
+  "title": "Age Brackets By Score (20)",
+  "description": "A Value Set of age groups in 20 year increments used in some public health dashboards",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/ScoreAgeBrackets",
+  "compose": {
+    "include": [
+      {
+        "system": "http://profiles.ihe.net/fhir/CodeSystem/IHE_ADX_agerange",
+        "concept": [
+          {
+            "code": "P0Y--P20Y"
+          },
+          {
+            "code": "P20Y--P40Y"
+          },
+          {
+            "code": "P40Y--P60Y"
+          },
+          {
+            "code": "P60Y--P80Y"
+          },
+          {
+            "code": "P80Y--P9999Y"
+          }
+        ]
+      }
+    ]
+  }
+}

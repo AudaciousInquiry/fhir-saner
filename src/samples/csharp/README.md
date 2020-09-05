@@ -1,0 +1,1 @@
+This folder contains sample code that can be used to support integration or testing of SANER IG Components.

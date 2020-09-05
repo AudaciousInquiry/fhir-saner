@@ -1,6 +1,9 @@
 @startuml
 
-agent "Measure Consumer" as MeasureConsumer
-usecase (Communicate Results) as (REPORT-TX)
-MeasureConsumer --> (REPORT-TX)
+agent "Measure Definition Source" as MeasureDefinitionSource
+
+agent "Measure Definition Consumer" as MeasureDefinitionConsumer
+usecase (Query Measure Definition) as (PULL-MX)
+MeasureDefinitionSource --> (PULL-MX)
+MeasureDefinitionConsumer --> (PULL-MX)
 @enduml

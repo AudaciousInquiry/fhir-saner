@@ -1,0 +1,60 @@
+{
+  "resourceType": "Organization",
+  "id": "X140158",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "value": "X140158"
+    }
+  ],
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "POHL HOSPITAL AND MEDICAL CENTER",
+  "address": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "latitude",
+              "valueDecimal": 41.847053
+            },
+            {
+              "url": "longitude",
+              "valueDecimal": -87.623583
+            }
+          ],
+          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+        }
+      ],
+      "use": "work",
+      "type": "both",
+      "line": [
+        "2525 S MICHIGAN AVE"
+      ],
+      "city": "CHICAGO",
+      "district": "COOK",
+      "state": "IL",
+      "postalCode": "60616",
+      "country": "USA"
+    }
+  ]
+}
