@@ -8,4 +8,4 @@
 * ig-data\input\includes\CapabilityStatement-MeasureSource-API-Pull-Questionnaire-intro.md *
 ********************************************************************************************
 {% endcomment %} -->
-See <a href='actors.html#measure-source'>Measure Source</a> and the <a href='actors.html#api-option'>API</a>, <a href='actors.html#pull-option'>Pull</a>, and  <a href='actors.html#questionnaire-option'>Questionnaire</a>options in Actors for details.
+See <a href='actors.html#measure-source'>Measure Source</a> and the <a href='actors.html#pull-option'>Pull</a> and  <a href='actors.html#questionnaire-option'>Questionnaire</a>options in Actors for details.

@@ -42,16 +42,6 @@ Description: "This Value Set describes the types of care services that a bed can
 * http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP
 *   http://terminology.hl7.org/CodeSystem/v3-RoleCode#ICU
 *   http://terminology.hl7.org/CodeSystem/v3-RoleCode#ER
-* BedType#OR
-* BedType#NURSERY
-* BedType#BURNU
-
-ValueSet: BedProperty
-Title: "Bed Property"
-Description: "This value set describes other properties of a bed, such as the ability to support isolation."
-* BedType#NEGISO
-* BedType#OTHISO
-* BedType#NONISO
 
 CodeSystem: LocationFields
 Title: "Location Resource Field Names"

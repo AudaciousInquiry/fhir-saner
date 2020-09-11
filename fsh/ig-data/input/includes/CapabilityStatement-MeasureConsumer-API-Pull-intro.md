@@ -1,1 +1,1 @@
-See <a href='actors.html#measure-consumer'>Measure Consumer</a> and the <a href='actors.html#api-option'>API</a> and <a href='actors.html#pull-option'>Pull</a>options in Actors for details.
+See <a href='actors.html#measure-consumer'>Measure Consumer</a> and the <a href='actors.html#pull-option'>Pull</a>option in Actors for details.

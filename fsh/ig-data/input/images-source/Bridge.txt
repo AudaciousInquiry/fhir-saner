@@ -1,10 +1,9 @@
 @startuml
-title Public Health Adapts FHIR Server to Hospital Owned Storage
+title Bridging between Push and Pull with a FHIR Server
 rectangle "Hospital EHR System" as Hospital {
 agent "Measure Source" as MeasureSource
 }
 rectangle Bridge {
-storage "External Storage" as ExternalStorage
 agent "Measure Intermediary" as MeasureIntermediary
 }
 rectangle "Public Health Agency" as Agency {
@@ -12,9 +11,8 @@ agent "Measure Consumer\n(FHIR Server)" as MeasureConsumer
 }
 
 
-MeasureSource -> ExternalStorage : Push with Dump
-ExternalStorage <- MeasureIntermediary : Pull with Dump
-MeasureIntermediary -> MeasureConsumer : Push with API
+MeasureSource -> MeasureIntermediary : Push
+MeasureIntermediary -> MeasureConsumer : Pull
 
 
 @enduml

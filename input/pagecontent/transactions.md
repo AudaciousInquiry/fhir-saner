@@ -52,7 +52,7 @@ For more details see the detailed [transaction description](transaction-3.html)
 The Compute Measure transaction describes the behavior of the Measure Computer actor in periodically computing and reporting on measures.
 
 
-This transaction enables automatic computing of measure reports.
+This transaction enables automatic computing of measure reports and manual retriggering of report generation for diagnostics or error recovery.
 
 
 For more details see the detailed [transaction description](transaction-4.html)

@@ -15,7 +15,7 @@
           "operation": [
             {
               "name": "evaluate-measure",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/ComputeMeasure-evaluate-measure",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure",
               "documentation": "Evaluate the measure"
             }
           ]
@@ -30,7 +30,7 @@
           "operation": [
             {
               "name": "evaluate-measure",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/ComputeMeasure-evaluate-measure",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure",
               "documentation": "Evaluate the measure"
             }
           ]
@@ -44,14 +44,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -72,7 +74,7 @@
   ],
   "name": "MeasureComputer_ComputeMeasure",
   "title": "Measure Computer implementing the Compute Measure transaction.",
-  "date": "2020-09-04T23:05:22.903075-04:00",
+  "date": "2020-09-10T18:17:35.860932-04:00",
   "kind": "requirements",
   "description": "Defines the requirements for the Measure Computer implementing the Compute Measure transaction.",
   "format": [

@@ -36,13 +36,13 @@
 <polygon fill="none" stroke="black" points="913,-96 913,-171 1069,-171 1069,-96 913,-96"/>
 <text text-anchor="middle" x="991" y="-155.8" font-family="SansSerif" font-size="14.00">ICU</text>
 </g>
-<g id="clust13" class="cluster"><title>cluster_ED</title>
-<polygon fill="none" stroke="black" points="738,-96 738,-171 905,-171 905,-96 738,-96"/>
-<text text-anchor="middle" x="821.5" y="-155.8" font-family="SansSerif" font-size="14.00">Emergency Department</text>
-</g>
 <g id="clust11" class="cluster"><title>cluster_LDD</title>
-<polygon fill="none" stroke="black" points="556,-96 556,-171 730,-171 730,-96 556,-96"/>
-<text text-anchor="middle" x="643" y="-155.8" font-family="SansSerif" font-size="14.00">Labor and Delivery</text>
+<polygon fill="none" stroke="black" points="731,-96 731,-171 905,-171 905,-96 731,-96"/>
+<text text-anchor="middle" x="818" y="-155.8" font-family="SansSerif" font-size="14.00">Labor and Delivery</text>
+</g>
+<g id="clust13" class="cluster"><title>cluster_ED</title>
+<polygon fill="none" stroke="black" points="556,-96 556,-171 723,-171 723,-96 556,-96"/>
+<text text-anchor="middle" x="639.5" y="-155.8" font-family="SansSerif" font-size="14.00">Emergency Department</text>
 </g>
 <g id="clust10" class="cluster"><title>cluster_Laboratory</title>
 <polygon fill="none" stroke="black" points="350,-96 350,-171 548,-171 548,-96 350,-96"/>
@@ -141,22 +141,22 @@
 <!-- EHR -->
 <g id="node10" class="node"><title>EHR</title>
 <g id="a_node10"><a xlink:href="technology_environment.html#ehr-systems" xlink:title="EHR Systems" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="686,-290 600,-290 600,-254 686,-254 686,-290"/>
-<text text-anchor="middle" x="643" y="-268.9" font-family="SansSerif" font-size="12.00">EHR Systems</text>
+<polygon fill="#fefece" stroke="#a80036" points="682,-290 596,-290 596,-254 682,-254 682,-290"/>
+<text text-anchor="middle" x="639" y="-268.9" font-family="SansSerif" font-size="12.00">EHR Systems</text>
 </a>
 </g>
 </g>
 <!-- DS -->
 <g id="node11" class="node"><title>DS</title>
 <g id="a_node11"><a xlink:href="technology_environment.html#departmental-systems" xlink:title="Departmental System" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="708,-215 578,-215 578,-179 708,-179 708,-215"/>
-<text text-anchor="middle" x="643" y="-193.9" font-family="SansSerif" font-size="12.00">Departmental System</text>
+<polygon fill="#fefece" stroke="#a80036" points="704,-215 574,-215 574,-179 704,-179 704,-215"/>
+<text text-anchor="middle" x="639" y="-193.9" font-family="SansSerif" font-size="12.00">Departmental System</text>
 </a>
 </g>
 </g>
 <!-- DS&#45;&gt;EHR -->
 <g id="edge6" class="edge"><title>DS&#45;&gt;EHR</title>
-<path fill="none" stroke="#a80036" d="M643,-215.3C643,-226.937 643,-242.213 643,-253.824"/>
+<path fill="none" stroke="#a80036" d="M639,-215.3C639,-226.937 639,-242.213 639,-253.824"/>
 </g>
 <!-- ICM -->
 <g id="node12" class="node"><title>ICM</title>
@@ -168,8 +168,8 @@
 </g>
 <!-- ICM&#45;&gt;DS -->
 <g id="edge4" class="edge"><title>ICM&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M967.915,-140.218C952.162,-151.004 930.354,-164.121 909,-171 874.793,-182.02 784.534,-188.859 718.616,-192.541"/>
-<polygon fill="none" stroke="#a80036" points="718.052,-189.066 708.257,-193.105 718.433,-196.056 718.052,-189.066"/>
+<path fill="none" stroke="#a80036" d="M967.918,-140.228C952.166,-151.018 930.358,-164.136 909,-171 873.991,-182.252 781.155,-189.081 714.111,-192.695"/>
+<polygon fill="none" stroke="#a80036" points="713.804,-189.206 704.001,-193.226 714.171,-196.197 713.804,-189.206"/>
 </g>
 <!-- LIS -->
 <g id="node13" class="node"><title>LIS</title>
@@ -181,21 +181,21 @@
 </g>
 <!-- LIS&#45;&gt;DS -->
 <g id="edge2" class="edge"><title>LIS&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M481.798,-140.01C501.742,-149.915 527.927,-162.155 552,-171 557.19,-172.907 562.594,-174.746 568.064,-176.501"/>
-<polygon fill="none" stroke="#a80036" points="567.363,-179.948 577.951,-179.567 569.436,-173.262 567.363,-179.948"/>
+<path fill="none" stroke="#a80036" d="M482.297,-140.135C502.196,-149.965 528.164,-162.083 552,-171 556.457,-172.667 561.077,-174.29 565.759,-175.855"/>
+<polygon fill="none" stroke="#a80036" points="564.832,-179.234 575.424,-178.983 566.988,-172.574 564.832,-179.234"/>
 </g>
 <!-- LnD -->
 <g id="node14" class="node"><title>LnD</title>
 <g id="a_node14"><a xlink:href="technology_environment.html#labor-and-delivery-systems" xlink:title="Labor and Delivery System" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="722,-140 564,-140 564,-104 722,-104 722,-140"/>
-<text text-anchor="middle" x="643" y="-118.9" font-family="SansSerif" font-size="12.00">Labor and Delivery System</text>
+<polygon fill="#fefece" stroke="#a80036" points="897,-140 739,-140 739,-104 897,-104 897,-140"/>
+<text text-anchor="middle" x="818" y="-118.9" font-family="SansSerif" font-size="12.00">Labor and Delivery System</text>
 </a>
 </g>
 </g>
 <!-- LnD&#45;&gt;DS -->
 <g id="edge3" class="edge"><title>LnD&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M643,-140.3C643,-148.755 643,-159.131 643,-168.627"/>
-<polygon fill="none" stroke="#a80036" points="639.5,-168.824 643,-178.824 646.5,-168.824 639.5,-168.824"/>
+<path fill="none" stroke="#a80036" d="M789.231,-140.161C771.684,-150.121 748.554,-162.364 727,-171 722.824,-172.673 718.494,-174.283 714.096,-175.821"/>
+<polygon fill="none" stroke="#a80036" points="712.761,-172.577 704.392,-179.075 714.986,-179.214 712.761,-172.577"/>
 </g>
 <!-- PACS -->
 <g id="node15" class="node"><title>PACS</title>
@@ -219,21 +219,21 @@
 </g>
 <!-- RIS&#45;&gt;DS -->
 <g id="edge1" class="edge"><title>RIS&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M246.904,-140.016C274.428,-150.716 311.803,-163.813 346,-171 420.317,-186.618 507.034,-192.545 567.51,-194.76"/>
-<polygon fill="none" stroke="#a80036" points="567.621,-198.266 577.735,-195.108 567.86,-191.27 567.621,-198.266"/>
+<path fill="none" stroke="#a80036" d="M246.906,-140.003C274.432,-150.697 311.807,-163.794 346,-171 418.96,-186.376 504.038,-192.345 563.659,-194.636"/>
+<polygon fill="none" stroke="#a80036" points="563.625,-198.136 573.744,-194.997 563.876,-191.141 563.625,-198.136"/>
 </g>
 <!-- ED -->
 <g id="node17" class="node"><title>ED</title>
 <g id="a_node17"><a xlink:href="technology_environment.html#emergency-department-systems" xlink:title="ED System" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="820,-140 746,-140 746,-104 820,-104 820,-140"/>
-<text text-anchor="middle" x="783" y="-118.9" font-family="SansSerif" font-size="12.00">ED System</text>
+<polygon fill="#fefece" stroke="#a80036" points="676,-140 602,-140 602,-104 676,-104 676,-140"/>
+<text text-anchor="middle" x="639" y="-118.9" font-family="SansSerif" font-size="12.00">ED System</text>
 </a>
 </g>
 </g>
 <!-- ED&#45;&gt;DS -->
 <g id="edge5" class="edge"><title>ED&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M769.241,-140.362C760.231,-150.651 747.629,-163.168 734,-171 728.904,-173.929 723.449,-176.528 717.836,-178.831"/>
-<polygon fill="none" stroke="#a80036" points="716.398,-175.633 708.276,-182.436 718.867,-182.183 716.398,-175.633"/>
+<path fill="none" stroke="#a80036" d="M639,-140.3C639,-148.755 639,-159.131 639,-168.627"/>
+<polygon fill="none" stroke="#a80036" points="635.5,-168.824 639,-178.824 642.5,-168.824 635.5,-168.824"/>
 </g>
 </g>
 </svg>

@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PatientDeaths",
+  "id": "PatientDeaths",
+  "title": "Patient Died",
+  "description": "Codes used to identify that a patient has died",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientDeaths",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+        "concept": [
+          {
+            "code": "exp",
+            "display": "Expired"
+          }
+        ]
+      }
+    ]
+  }
+}

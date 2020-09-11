@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MeasureScoring",
+  "id": "MeasureScoring",
+  "description": "All codes from the Public Health Measure Scoring System",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureScoring",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/saner/CodeSystem/PublicHealthMeasureScoring"
+      },
+      {
+        "valueSet": [
+          "http://hl7.org/fhir/ValueSet/measure-scoring"
+        ]
+      }
+    ]
+  }
+}

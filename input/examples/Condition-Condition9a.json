@@ -1,0 +1,21 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition9a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Condition",
+      "value": "Con556677"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "233604007",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient9c"
+  }
+}

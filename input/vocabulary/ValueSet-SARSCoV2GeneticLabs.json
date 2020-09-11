@@ -1,13 +1,14 @@
 {
   "resourceType": "ValueSet",
-  "status": "active",
+  "status": "draft",
   "name": "SARSCoV2GeneticLabs",
   "id": "SARSCoV2GeneticLabs",
   "title": "SARSCoV2 Genetic Labs",
-  "description": "This Value Set Labs which gene-based testing instead of other methods (e.g., Antibody testing)",
+  "description": "This Value Set identifies Lab tests using gene-based testing instead of other methods (e.g., Antibody testing)",
   "version": "20200904",
   "url": "http://hl7.org/fhir/us/saner/ValueSet/SARSCoV2GeneticLabs",
   "publisher": "HL7",
+  "copyright": "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc",
   "compose": {
     "include": [
       {

@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation14b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Observation",
+      "value": "Obs234567-1"
+    }
+  ],
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/Encounter4b"
+  },
+  "subject": {
+    "reference": "Patient/Patient4b"
+  },
+  "effectiveDateTime": "2020-08-25",
+  "code": {
+    "coding": [
+      {
+        "code": "94759-8",
+        "system": "http://loinc.org",
+        "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "260373001",
+        "system": "http://snomed.info/sct",
+        "display": "Detected"
+      }
+    ]
+  }
+}

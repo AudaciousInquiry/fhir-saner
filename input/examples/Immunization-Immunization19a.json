@@ -1,0 +1,23 @@
+{
+  "resourceType": "Immunization",
+  "id": "Immunization19a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Immunization",
+      "value": "556677"
+    }
+  ],
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "code": "346524008",
+        "system": "http://SCT"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/Patient9c"
+  },
+  "occurrenceDateTime": "2020-09-09"
+}

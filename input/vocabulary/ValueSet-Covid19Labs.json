@@ -1,0 +1,77 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Covid19Labs",
+  "id": "Covid19Labs",
+  "title": "COVID-19 Diagnostic Test",
+  "description": "Codes for COVID-19 Diagnostic Tests",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/Covid19Labs",
+  "copyright": "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at LOINC/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc",
+  "compose": {
+    "include": [
+      {
+        "valueSet": [
+          "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.109"
+        ]
+      },
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "94307-6",
+            "display": "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N1"
+          },
+          {
+            "code": "94308-4",
+            "display": "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by Nucleic acid amplification using CDC primer-probe set N2"
+          },
+          {
+            "code": "94309-2",
+            "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Unspecified specimen by NAA with probe detection"
+          },
+          {
+            "code": "94310-0",
+            "display": "SARS-like coronavirus N gene [Presence] in Unspecified specimen by NAA with probe detection"
+          },
+          {
+            "code": "94314-2",
+            "display": "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Unspecified specimen by NAA with probe detection"
+          },
+          {
+            "code": "94315-9",
+            "display": "SARS-related coronavirus E gene [Presence] in Unspecified specimen by NAA with probe detection"
+          },
+          {
+            "code": "94316-7",
+            "display": "SARS-CoV-2 (COVID-19) N gene [Presence] in Unspecified specimen by NAA with probe detection"
+          },
+          {
+            "code": "94500-6",
+            "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+          },
+          {
+            "code": "94533-7",
+            "display": "SARS-CoV-2 (COVID-19) N gene [Presence] in Respiratory specimen by NAA with probe detection"
+          },
+          {
+            "code": "94534-5",
+            "display": "SARS-CoV-2 (COVID-19) RdRp gene [Presence] in Respiratory specimen by NAA with probe detection"
+          },
+          {
+            "code": "94559-2",
+            "display": "SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection"
+          },
+          {
+            "code": "94759-8",
+            "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection"
+          },
+          {
+            "code": "94558-4",
+            "display": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+          }
+        ]
+      }
+    ]
+  }
+}

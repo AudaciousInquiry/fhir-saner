@@ -18,20 +18,373 @@
       }
     }
   ],
+  "group": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "ServiceRequest"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "252318005",
+                    "display": "Immunology laboratory test (procedure)"
+                  }
+                ],
+                "text": "COVID-19 Diagnostic Testing"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "outcome",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "decrease",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "cumulative"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "positiveIncreasePercent",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "display": "Percent Positive among Newly Resulted Tests"
+          }
+        ],
+        "text": "# of new positive test results released / # of total new tests released for previous date queried"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalOrdersIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "New Diagnostic Tests Ordered/Received"
+              },
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "Midnight to midnight cutoff, tests ordered on previous date queried"
+          },
+          "description": "Enter the number of new Diagnostic Tests Ordered/Received during the reporting period.",
+          "criteria": {
+            "name": "totalOrdersIncrease",
+            "description": "Orders initiated during %reportingPeriod",
+            "language": "text/fhirpath",
+            "expression": "ServiceRequest.where(\n    authoredOn.toDate() = %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('active', 'completed')\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalTestResultsIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "New Tests Resulted"
+              },
+              {
+                "code": "denominator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "Midnight to midnight cutoff, test results released on previous date queried"
+          },
+          "description": "nter the number of results recieved/generated during the reporting period.\nDo not include results where the test could not be completed because the specimen\nwas rejected or a positive/negative result could not be established",
+          "criteria": {
+            "name": "totalTestResultsIncrease",
+            "description": "Results recieved during reporting period",
+            "language": "text/fhirpath",
+            "expression": "DiagnosticReport.where(\n    issued.toDate() = %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('final, 'amended', 'corrected', 'appended')\n)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "positiveIncrease",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "New Positive COVID-19 Tests"
+              },
+              {
+                "code": "numerator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "Midnight to midnight cutoff, positive test results released on previous date queried"
+          },
+          "description": "Enter the number of positive test results released during the reporting period.",
+          "criteria": {
+            "name": "positiveIncrease",
+            "description": "Result is positive with respect to COVID-19",
+            "language": "text/fhirpath",
+            "expression": "DiagnosticReport.where($this in %totalTestResultsIncrease and conclusionCode in %ValueSet-ConfirmedCOVID19Diagnosis)"
+          }
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "scoring",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "continuous-variable",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "subject",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/resource-types",
+                    "code": "ServiceRequest"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "252318005",
+                    "display": "Immunology laboratory test (procedure)"
+                  }
+                ],
+                "text": "COVID-19 Cumulative Diagnostic Testing"
+              }
+            },
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "outcome",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "improvementNotation",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "code": "decrease",
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "rateAggregation",
+              "valueString": "cumulative"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "positivePercent",
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "display": "Cumulative Percent Positive among Resulted Tests"
+          }
+        ],
+        "text": "# of total positive results to released date / # of total tests results released to date"
+      },
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalOrders",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "Cumulative Diagnostic Tests Ordered/Received"
+              },
+              {
+                "code": "initial-population",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "All tests ordered to date."
+          },
+          "description": "Enter the cumulative number of tests ordered to date.",
+          "criteria": {
+            "name": "totalOrders",
+            "description": "Report all active or completed test orders for a COVID-19 test authored during the reporting period",
+            "language": "text/fhirpath",
+            "expression": "ServiceRequest.where(\n    authoredOn.toDate() <= %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('active', 'completed')\n    and code in %ValueSet-COVID19DiagnosticTest\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "rejected",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "Cumulative Specimens Rejected"
+              },
+              {
+                "code": "denominator-exclusion",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "All specimens rejected for testing to date"
+          },
+          "description": "Enter the cumulative number of specimens rejected for testing to date.",
+          "criteria": {
+            "name": "rejected",
+            "description": "DiagnosticReport for COVID-19 where the report is unavailable because the measurement was not started or not completed.",
+            "language": "text/fhirpath",
+            "expression": "DiagnosticReport.where(status = 'cancelled' and code in %ValueSet-COVID19DiagnosticTest)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "totalTestResults",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "Cumulative Tests Performed"
+              },
+              {
+                "code": "denominator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "All tests with results released to date"
+          },
+          "description": "nter the total number tests with results released to date. Do not include tests where a\npositive/negative result could not be determined (e.g., because the specimen was inadequate).",
+          "criteria": {
+            "name": "totalTestResults",
+            "description": "Report all active or completed test orders for a COVID-19 test authored during or prior to the end of the reporting period that have had results released.",
+            "language": "text/fhirpath",
+            "expression": "ServiceRequest.where(\n    status in ('active', 'completed')\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "positive",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "Cumulative Positive COVID-19 Tests"
+              },
+              {
+                "code": "numerator",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
+              }
+            ],
+            "text": "All positive test results released to date"
+          },
+          "description": "Enter the total number of positive test results release to date.",
+          "criteria": {
+            "name": "positive",
+            "description": "The result is positive for COVID-19",
+            "language": "text/fhirpath",
+            "expression": "DiagnosticReport.where($this in %totalTestResults and conclusionCode in %ValueSet-ConfirmedCOVID19Diagnosis)"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "allReports",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "All Laboratory Reports for any Order"
+              }
+            ],
+            "text": "Reports to date including corrected, amended and canceled reports"
+          },
+          "criteria": {
+            "name": "allReports",
+            "description": "Diagnostic Reports provided in response to totalOrders",
+            "language": "text/fhirpath",
+            "expression": "DiagnosticReport.where(basedOn in %totalOrders)"
+          },
+          "description": "This is in intermediate population used to simplify calculations"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "latestReports",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "display": "Most Recent Laboratory Reports for any Order"
+              }
+            ],
+            "text": "Latest Reports to date for each order"
+          },
+          "criteria": {
+            "name": "latestReports",
+            "description": "Most recent diagnostic reports provided in response to totalOrders",
+            "language": "text/fhirpath",
+            "expression": "TBD"
+          },
+          "description": "This is in intermediate population used to simplify calculations"
+        }
+      ]
+    }
+  ],
   "status": "draft",
   "experimental": true,
   "version": "0.1.0",
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -50,6 +403,8 @@
       ]
     }
   ],
+  "name": "FEMADailyHospitalCOVID19Reporting",
+  "url": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
   "author": [
     {
       "name": "HL7 Public Health Workgroup",
@@ -99,7 +454,7 @@
       ]
     }
   ],
-  "rateAggregation": "aggregable-by-period",
+  "rateAggregation": "count",
   "relatedArtifact": [
     {
       "type": "documentation",
@@ -128,198 +483,5 @@
   ],
   "library": [
     "http://hl7.org/fhir/us/saner/StructureDefinition/FEMAMeasureLibrary"
-  ],
-  "name": "FEMADailyHospitalCOVID19Reporting",
-  "url": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
-  "group": [
-    {
-      "code": {
-        "coding": [
-          {
-            "code": "positiveIncreasePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-            "display": "Percent Positive among Newly Resulted Tests"
-          }
-        ],
-        "text": "# of new positive test results released / # of total new tests released for previous date queried"
-      },
-      "population": [
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "totalOrdersIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "New Diagnostic Tests Ordered/Received"
-              },
-              {
-                "code": "initial-population",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "Midnight to midnight cutoff, tests ordered on previous date queried"
-          },
-          "description": "Enter the number of new Diagnostic Tests Ordered/Received during the reporting period.",
-          "criteria": {
-            "name": "totalOrdersIncrease",
-            "description": "Orders initiated during %reportingPeriod",
-            "language": "text/fhirpath",
-            "expression": "ServiceRequest.where(\n    authoredOn.toDate() = %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('active', 'completed')\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
-          }
-        },
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "totalTestResultsIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "New Tests Resulted"
-              },
-              {
-                "code": "denominator",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "Midnight to midnight cutoff, test results released on previous date queried"
-          },
-          "description": "nter the number of results recieved/generated during the reporting period.\nDo not include results where the test could not be completed because the specimen\nwas rejected or a positive/negative result could not be established",
-          "criteria": {
-            "name": "totalTestResultsIncrease",
-            "description": "Results recieved during reporting period",
-            "language": "text/fhirpath",
-            "expression": "DiagnosticReport.where(\n    issued.toDate() = %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('final, 'amended', 'corrected', 'appended')\n)"
-          }
-        },
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "positiveIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "New Positive COVID-19 Tests"
-              },
-              {
-                "code": "numerator",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "Midnight to midnight cutoff, positive test results released on previous date queried"
-          },
-          "description": "Enter the number of positive test results released during the reporting period.",
-          "criteria": {
-            "name": "positiveIncrease",
-            "description": "Result is positive with respect to COVID-19",
-            "language": "text/fhirpath",
-            "expression": "DiagnosticReport.where($this in %totalTestResultsIncrease and conclusionCode in %ValueSet-ConfirmedCOVID19Diagnosis)"
-          }
-        }
-      ]
-    },
-    {
-      "code": {
-        "coding": [
-          {
-            "code": "positivePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-            "display": "Cumulative Percent Positive among Resulted Tests"
-          }
-        ],
-        "text": "# of total positive results to released date / # of total tests results released to date"
-      },
-      "population": [
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "totalOrders",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "Cumulative Diagnostic Tests Ordered/Received"
-              },
-              {
-                "code": "initial-population",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "All tests ordered to date."
-          },
-          "description": "Enter the cumulative number of tests ordered to date.",
-          "criteria": {
-            "name": "totalOrders",
-            "description": "Report all active or completed test orders for a COVID-19 test authored during the reporting period",
-            "language": "text/fhirpath",
-            "expression": "ServiceRequest.where(\n    authoredOn.toDate() <= %reportingPeriod /* May need to change logic to support ranges for reportingPeriod */\n    and status in ('active', 'completed')\n    and code in %ValueSet-COVID19DiagnosticTest\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
-          }
-        },
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "rejected",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "Cumulative Specimens Rejected"
-              },
-              {
-                "code": "denominator-exclusion",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "All specimens rejected for testing to date"
-          },
-          "description": "Enter the cumulative number of specimens rejected for testing to date.",
-          "criteria": {
-            "name": "rejected",
-            "description": "DiagnosticReport for COVID-19 where the report is unavailable because the measurement was not started or not completed.",
-            "language": "text/fhirpath",
-            "expression": "DiagnosticReport.where(status = 'cancelled' and code in %ValueSet-COVID19DiagnosticTest)"
-          }
-        },
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "totalTestResults",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "Cumulative Tests Performed"
-              },
-              {
-                "code": "denominator",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "All tests with results released to date"
-          },
-          "description": "nter the total number tests with results released to date. Do not include tests where a\npositive/negative result could not be determined (e.g., because the specimen was inadequate).",
-          "criteria": {
-            "name": "totalTestResults",
-            "description": "Report all active or completed test orders for a COVID-19 test authored during or prior to the end of the reporting period that have had results released.",
-            "language": "text/fhirpath",
-            "expression": "ServiceRequest.where(\n    status in ('active', 'completed')\n    and intent in ('order', 'orginal-order', 'reflex-order', 'filler-order', 'instance-order')\n)"
-          }
-        },
-        {
-          "code": {
-            "coding": [
-              {
-                "code": "positive",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                "display": "Cumulative Positive COVID-19 Tests"
-              },
-              {
-                "code": "numerator",
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population"
-              }
-            ],
-            "text": "All positive test results released to date"
-          },
-          "description": "Enter the total number of positive test results release to date.",
-          "criteria": {
-            "name": "positive",
-            "description": "The result is positive for COVID-19",
-            "language": "text/fhirpath",
-            "expression": "DiagnosticReport.where($this in %totalTestResults and conclusionCode in %ValueSet-ConfirmedCOVID19Diagnosis)"
-          }
-        }
-      ]
-    }
   ]
 }

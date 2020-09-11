@@ -8,4 +8,4 @@
 * ig-data\input\includes\CapabilityStatement-MeasureSource-API-Push-intro.md            *
 *****************************************************************************************
 {% endcomment %} -->
-See <a href='actors.html#measure-source'>Measure Source</a> and the <a href='actors.html#api-option'>API</a> and <a href='actors.html#push-option'>Push</a> options in Actors for details.
+See <a href='actors.html#measure-source'>Measure Source</a> and the <a href='actors.html#push-option'>Push</a> option in Actors for details.

@@ -1,0 +1,86 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "MeasureConsumer-Push",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+    ]
+  },
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "MeasureReport",
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          ],
+          "interaction": [
+            {
+              "code": "create",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "update",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "name": "HL7 Public Health Workgroup",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
+        }
+      ]
+    },
+    {
+      "name": "Keith W. Boone",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "name": "MeasureConsumer_Push",
+  "title": "Measure Consumer implementing the Push Option.",
+  "date": "2020-09-10T18:17:35.860932-04:00",
+  "kind": "requirements",
+  "description": "Defines the additional requirements for the Measure Consumer implementing the Push Option.",
+  "format": [
+    "xml",
+    "json"
+  ],
+  "fhirVersion": "4.0.1"
+}

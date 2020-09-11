@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "VentilatorProcedures",
+  "id": "VentilatorProcedures",
+  "title": "Ventilator Procedures",
+  "description": "Codes used to report a ventilation procedure",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorProcedures"
+}

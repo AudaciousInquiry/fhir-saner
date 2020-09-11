@@ -1,0 +1,23 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition2b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Condition",
+      "value": "Con555555"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/Patient2b"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "882784691000119100",
+        "system": "http://snomed.info/sct",
+        "display": "Pneumonia caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
+      }
+    ]
+  },
+  "onsetDateTime": "2020-09-08"
+}

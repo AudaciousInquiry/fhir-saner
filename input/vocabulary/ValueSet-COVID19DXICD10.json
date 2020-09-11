@@ -3,6 +3,7 @@
   "status": "active",
   "name": "COVID19DXICD10",
   "id": "COVID19DXICD10",
+  "description": "This Value Set includes codes describing COVID-19 illness from ICD-10-CM",
   "version": "20200516",
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1123",
   "date": "2020-05-16T01:00:22-04:00",

@@ -1,0 +1,30 @@
+{
+  "resourceType": "Location",
+  "id": "Location8c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Location",
+      "value": "Loc44082"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1108-0",
+          "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+          "display": "Emergency Department"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "ER",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "display": "Emergency room"
+        }
+      ]
+    }
+  ]
+}

@@ -13,31 +13,6 @@ to support the treatment of novel influenza-like illness.
     <!-- overview is optional -->
     <overview file="SANER-overview.md"/>
     <!-- option is optional and repeatable -->
-    <option id="Dump">
-        <name>Storage Option</name>
-        <description>An actor implementing the Storage Option supports the ability to exchange FHIR Resources through
-various means of simple data transfer, rather than directly through a FHIR API call. This include mechanisms such
-as SFTP, S3 Blob Storage, Azure Blob Storage, a Message Queue, https: File Download, File System dumps, or Direct Messages with a
-data payload. Supported formats include JSON, XML and NDJSON.
-        </description>
-        <participant actor='MeasureSource'>
-            <description>A <ref actor='MeasureSource'/> actor implementing the Storage Option uses external storage to communicate data.</description>
-        </participant>
-        <participant actor='MeasureConsumer'>
-            <description>A <ref actor='MeasureConsumer'/> actor implementing the Storage Option uses external storage to communicate data.</description>
-        </participant>
-    </option>
-    <option id="API">
-        <name>API Option</name>
-        <description>An actor implementing the API Option supports the
-ability to exchange FHIR Resources using [FHIR RESTful APIs](http://hl7.org/fhir/R4/http.html).</description>
-        <participant actor='MeasureSource'>
-            <description>A <ref actor='MeasureSource'/> actor implementing the API option uses FHIR RESTful APIs to communicate data.</description>
-        </participant>
-        <participant actor='MeasureConsumer'>
-            <description>A <ref actor='MeasureConsumer'/> actor implementing the API option uses FHIR RESTful APIs to communicate data.</description>
-        </participant>
-    </option>
     <option id="CSV">
         <name>CSV Option</name>
         <description>An actor implementing the CSV Option supports the ability to exchange
@@ -84,8 +59,7 @@ describing the current status of selected health delivery resources.</descriptio
         <name>Questionnaire Option</name>
         <description>An actor implementing the Questionnaire Option supports the use of Questionnaire
 and QuestionnaireResponse resources to determine the current status of selected
-health delivery resources. Implementers of this option must also implement
-the API option.</description>
+health delivery resources.</description>
         <overview/>
         <participant actor='MeasureSource'>
             <description>A Measure Source implementing the Questionnaire Option will interact
@@ -260,7 +234,7 @@ focus (e.g., wider or smaller region).</description>
     <!--  Other Use Cases can describe options -->
     <actor id="MeasureSource">
         <name>Measure Source</name>
-        <description>The Measure Source Actor reports results Meor a single facility, collection of facilities or aggregated data for a region.</description>
+        <description>The Measure Source Actor reports results Measures for a single facility, collection of facilities or aggregated data for a region.</description>
         <!-- overview is optional -->
         <overview>
 In a single facility, or organization, the Measure Source Actor will compile data directly from the facility
@@ -281,8 +255,8 @@ A Measure Source provides the FHIR data that is used by a Measure Consumer.
         <requires id="SOURCE-R1" at-least-one="Pull Push">
             <description>The Measure Source **shall** implement either the Pull Option or the Push Option.</description>
         </requires>
-        <requires id="SOURCE-Capability" implementing="API Pull">
-            <description>A Measure Source that implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
+        <requires id="SOURCE-Capability" implementing="Pull">
+            <description>A Measure Source that implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
     </actor>
 
@@ -309,8 +283,8 @@ or varying levels of granularity using data extracted from a Measure Source.
         <requires id="CONSUMER-R1" at-least-one="Pull Push">
             <description>The Measure Consumer **shall** implement either the Pull Option or the Push Option.</description>
         </requires>
-        <requires id="CONSUMER-Capability" implementing="API Push">
-            <description>A Measure Consumer that implements the API and Push Options **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
+        <requires id="CONSUMER-Capability" implementing="Push">
+            <description>A Measure Consumer that implements the Push Option **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
     </actor>
 
@@ -320,12 +294,7 @@ or varying levels of granularity using data extracted from a Measure Source.
         <overview>This actor represents the composition of a <ref actor='MeasureSource'/> with a <ref actor='MeasureSource'/>.
 
 The Measure Intermediary role can aggregate data from multiple Measure Sources.  Data from Measure Sources may
-be pulled in by the Intermediary, pushed to the Intermediary by the Measure Source, or may be pushed from a
-Measure Source via a dump.
-
-Using the Dump option with a Measure Intermediary provides a Push or Pull mechanism to transfer
-non-FHIR data or FHIR bulk data.  The Measure Intermediary can then convert the dump data into FHIR data that can be
-served up to Measure Consumers in a format that is compliant with the requirements of a Measure Source.
+be pulled in by the Intermediary, or pushed to the Intermediary by the Measure Source.
 
 The Measure Intermediary may also provide the capabilities of a Measure Consumer to enable data to be
 reported at an aggregated level.
@@ -343,21 +312,14 @@ is exposing a Measure Source capability this method allows data to be aggregated
 In networking parlance, a Bridge is a system that connects between different protocols.  The different options in this Implementation Guide
 can create incompatibilities, but these can be bridged by an Intermediary.
 
-For example, a Measure Intermediary that implements the Dump and Pull Options in the Measure Consumer, that groups with a Measure Source
-implementing the Push and API Options can bridge bridge between a Measure Source implementing the Dump and Push options to enable
-communication with a Measure Consumer implementing the API and Push options.
+For example, a Measure Intermediary that implements the Push Option in the Measure Consumer, that groups with a Measure Source
+implementing the Push Option can bridge between a Measure Source implementing the Pull option to enable
+communication with a Measure Consumer implementing the Pull option.
 
-![Bridge](Bridge.svg)
-
-#### Measure Repository
-A Measure Respository is simply a FHIR Server.  A FHIR Server that supports CRUD operations on MeasureReport and Measure effectively implements both the Measure Consumer with the API and Push Options
-and the Measure Source actor implementing the Pull and API Options.
+In this example, the Bridge is simply a FHIR Server.  A FHIR Server that supports CRUD operations on MeasureReport and Measure effectively implements both the Measure Consumer with the Push Option
+and the Measure Source actor implementing the Pull Option.
 
 ![FHIR Server](FHIRServer.svg)
-
-A multi-level data aggregation and reporting hierarchy using Measure Intermediaries is shown here:
-
-![Multi-Level Aggregation and Reporting](ActorsMultilevelReporting.svg)
         </overview>
         <supports-tx transaction="PULL-TX" as="client" required-with-options="Pull">
             <role>Collects data for reporting</role>
@@ -371,26 +333,25 @@ A multi-level data aggregation and reporting hierarchy using Measure Intermediar
         <supports-tx transaction="PUSH-TX" as="client" required-with-options="Push">
             <role>Periodically generates data for a Measure Consumer.</role>
         </supports-tx>
-        <requires id="CONSUMER-Capability" implementing="API Push">
-            <description>A Measure Intermediary whose Consumer implements the API and Push Options **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
+        <requires id="CONSUMER-Capability" implementing="Push">
+            <description>A Measure Intermediary whose Consumer implements the Push Option **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
-        <requires id="SOURCE-Capability" implementing="API Pull">
-            <description>A Measure Intermediary whose Source implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
+        <requires id="SOURCE-Capability" implementing="Pull">
+            <description>A Measure Intermediary whose Source implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
     </actor>
     <actor id="MeasureDefinitionSource">
         <name>Measure Definition Source</name>
         <description>The Measure Definition Source Actor provides access to Measures defined by public health and emergency response authorities.</description>
         <!-- overview is optional -->
-        <overview>
-            The Measure Definition Source actor is responsible for maintaining measures for systems that are using this
-            implementation guide to automate measure reporting.
+        <overview>The Measure Definition Source actor is responsible for maintaining measures for systems that are using this
+implementation guide to automate measure reporting.
         </overview>
         <requires-tx transaction="PULL-MX" as="server">
             <role>Reports on available measures in response to a query.</role>
         </requires-tx>
         <!-- requirement is optional and can repeat -->
-        <requires id="DEFINITION-Capability" implementing="API Pull">
+        <requires id="DEFINITION-Capability" implementing="Pull">
             <description>A Measure Definition Source **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
     </actor>
@@ -398,9 +359,7 @@ A multi-level data aggregation and reporting hierarchy using Measure Intermediar
         <name>Measure Definition Consumer</name>
         <description>The Measure Definition Consumer Actor accesses Measures defined by public health and emergency response authorities.</description>
         <!-- overview is optional -->
-        <overview>
-            The Measure Definition Consumer actor is responsible for retrieving measures from publishing systems to automate measure reporting.
-        </overview>
+        <overview>The Measure Definition Consumer actor is responsible for retrieving measures from publishing systems to automate measure reporting.</overview>
         <requires-tx transaction="PULL-MX" as="client">
             <role>Queries for available measures and components.</role>
         </requires-tx>
@@ -425,8 +384,8 @@ A multi-level data aggregation and reporting hierarchy using Measure Intermediar
         <requires id="COMPUTER-R1" at-least-one="Pull Push">
             <description>The Measure Computer **shall** implement either the Pull Option or the Push Option.</description>
         </requires>
-        <requires id="COMPUTER-Capability" implementing="API Pull">
-            <description>A Measure Computer that implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
+        <requires id="COMPUTER-Capability" implementing="Pull">
+            <description>A Measure Computer that implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.</description>
         </requires>
     </actor>
     <transaction id="PULL-TX" standards="FHIR-R4 RFC-7230 NDJSON">
@@ -441,15 +400,15 @@ and the read operations that must be supported.</overview>
             <name>Search Request</name>
             <description></description>
             <trigger id="TRIGGER1">
-                <name>Periodic Reporting Interval Elapsed, or a Query is Initiated by User/System</name>
+                <name>Reporting Period Elapsed</name>
+                <description>The current reporting period has elapsed.</description>
+                <overview>See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension</overview>
             </trigger>
             <semantics>
-                <description>If the API Option is supported, the Measure Consumer sends a query
+                <description>The Measure Consumer sends a query
 using an HTTP GET or POST transaction to the Measure Source requesting information on
 available resources.
-
-If the Storage Option is supported, the Measure Consumer will read resources from external storage
-using appropriate operations for the storage in use (e.g., SFTP/S3/Blob/File).</description>
+                </description>
                 <interaction protocol='fhir' options='Pull'>
                     <!-- Common parameter requirements -->
                     <!-- Servers must support standard values for format, clients may use Accept header or _format -->
@@ -514,7 +473,7 @@ the client expected.  Thus, these are not recommended.</overview>
 
                         Each operation describes one possible interaction.
                      -->
-                    <operation options='API' name='read' resources='Location MeasureReport Measure Organization' expect='shall'>
+                    <operation  name='read' resources='Location MeasureReport Measure Organization' expect='shall'>
                         <name>Read on Required Resources</name>
                         <description>A client must be able to read individual resources that are returned or referenced within resources
 returned by a query.  Since MeasureReport references at the very least, Measure, Organization, and Location
@@ -548,7 +507,7 @@ these must all be able to be read.</description>
                             <parameter name='return' use='out' type='Binary' min="1" max="1"/>
                         </group>
                     </operation>
-                    <operation options='API' name='search' resources='Location MeasureReport Measure Organization' expect='shall'>
+                    <operation  name='search' resources='Location MeasureReport Measure Organization' expect='shall'>
                         <name>Search by _id on Required Resources</name>
                         <group>
                             <name>Search by _id</name>
@@ -559,7 +518,7 @@ selected resource. This can be accomplished by using a search with an _id parame
                             <parameter name='_id' min='1' max='*' type='token' expect='shall'/>
                         </group>
                      </operation>
-                     <operation options='API' name='search' resources='Location Organization' expect='shall'>
+                     <operation  name='search' resources='Location Organization' expect='shall'>
                         <name>Search by name or identifier on Referenced Resources</name>
                         <group>
                             <name>Search by name or identifier</name>
@@ -569,7 +528,7 @@ returned by a query by name or identifier.</description>
                             <parameter name='identifier' min='0' max='*' type='token' expect='shall'/>
                         </group>
                     </operation>
-                    <operation options='API' id='search-for-measure-definition' name='search' resources='Measure' expect='shall'>
+                    <operation  id='search-for-measure-definition' name='search' resources='Measure' expect='shall'>
                         <name>Search on Definition Resources</name>
                         <description>A client system must be able to retrieve the data they need, be it about beds,
 ventilators, PPE, or other measure.</description>
@@ -600,12 +559,12 @@ of the &lt;a href='SearchParameter-SearchParameter-definition-text.html'>definit
                             <parameter name='code:in' min='0' max='*' type='token' expect='should'/>
                         </group>
                      </operation>
-                    <operation name='read' resources='Questionnaire QuestionnaireResponse' expect='shall' options='API Questionnaire'>
+                    <operation name='read' resources='Questionnaire QuestionnaireResponse' expect='shall' options='Questionnaire'>
                         <name>Read on Questionnaire and QuestionnaireResponse Resources</name>
                         <description>Questionnaire and QuestionnaireResponse are being considered because some data is being requested
 via forms that better fit a QuestionnaireResponse approach (e.g., free form answers).</description>
                      </operation>
-                    <operation name='search' resources="Questionnaire QuestionnaireResponse" expect='shall' options='API Questionnaire'>
+                    <operation name='search' resources="Questionnaire QuestionnaireResponse" expect='shall' options='Questionnaire'>
                         <name>Search by _id</name>
                         <description>A client must be able to read individual resources returned in a query</description>
                         <overview>We are still experimenting with QuestionnaireResponse, but expect to adopt it.</overview>
@@ -626,7 +585,7 @@ of the &lt;a href='SearchParameter-SearchParameter-definition-text.html'>definit
                             <parameter name='code:in' min='0' max='*' type='token' expect='should'/>
                         </group>
                      </operation>
-                     <operation name='search' resources='QuestionnaireResponse' expect='shall' client='shall' options="API Questionnaire">
+                     <operation name='search' resources='QuestionnaireResponse' expect='shall' client='shall' options="Questionnaire">
                          <name>Search by Date and Questionnaire</name>
                          <description>A client must be able to search for responses by Questionnaire for relevant dates,
 e.g., the date of _lastUpdate of a previously retrieved resource to see if it has changed (e.g., in cases
@@ -659,7 +618,7 @@ and gt **should** be sufficient to specify date ranges.</overview>
                              <parameter name='author:identifier' min='0' max='*' type='token' expect='shall'/>
                          </group>
                      </operation>
-                     <operation options='API' name='search' resources='MeasureReport' expect='shall' client='shall'>
+                     <operation  name='search' resources='MeasureReport' expect='shall' client='shall'>
                         <name>Search on Required Resources</name>
                         <!-- Parameter describes each parameter that must be supported in the interaction
                              To require support for multiple parameters, list each that can be used
@@ -711,11 +670,11 @@ and gt **should** be sufficient to specify date ranges.</overview>
                 </interaction>
             </semantics>
             <action by="MeasureConsumer">
-                <name>Measure Consumer requests data from a Measure Source.</name>
-                <description>When the API Option is implemented, the Measure Consumer performs a FHIR Search operation
-to retrieve the selected resources.  When the Storage Option is implemented, the Measure Consumer reads resources from external
-storage specified by the Measure Source.
-                </description>
+                <name>Search for MeasureReport</name>
+                <description>Measure Consumer requests data from a Measure Source.</description>
+                <overview>The Measure Consumer performs a FHIR Search operation
+to retrieve the selected resources.
+                </overview>
             </action>
             <result>
                 <name>Search Response</name>
@@ -727,19 +686,18 @@ storage specified by the Measure Source.
                     <description>The Measure Source responds with requested resources.</description>
                     <overview>The resources will conform to the profiles for the
 MeasureReport, Location or Organization described elsewhere in this Implementation Guide</overview>
-                </semantics>
-                <action by="MeasureSource">
-                    <name>Measure Source returns Resources</name>
-                    <description>The Measure Source returns the requested resource.</description>
-                    <interaction protocol='fhir' options='API'>
-                        <description>When the API Option is used, the Measure Source will return the selected resources and
-an appropriate success response in a FHIR resource following the protocol for the read or search operation requested.  When the Dump
-option is used, the Measure Source will return all resources requested by the Measure Consumer.
+                    <interaction protocol='fhir'>
+                        <description>The Measure Source will return the selected resources and
+                            an appropriate success response in a FHIR resource following the protocol for the read or search operation requested.
                         </description>
                         <content profiles='PublicHealthMeasure PublicHealthMeasureReport
                             http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
                             http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization' expect='shall'/>
                     </interaction>
+                </semantics>
+                <action by="MeasureSource">
+                    <name>Returns Matching Resources</name>
+                    <description>The Measure Source returns the requested resource.</description>
                 </action>
             </result>
         </message>
@@ -755,26 +713,25 @@ MeasureSource actor must support.</overview>
             <name>Push Measure</name>
             <description></description>
             <trigger id="TRIGGER2">
-                <name>Periodic Reporting Interval elapsed</name>
-                <description>brief description (markdown)</description>
-                <overview>more detailed description (markdown)</overview>
+                <name>Reporting Period Elapsed</name>
+                <description>The current reporting period has elapsed, or the operation is triggered by automation (e.g. for manual testing, diagnostics or error recovery).</description>
+                <overview>See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension.</overview>
             </trigger>
-            <action by="MeasureSource">
-                <name>Measure Source reports a Resource</name>
-                <description>The Measure Source creates resources and sends them to a Measure Consumer</description>
-                <overview>When the API option is implemented, the Measure Source performs the FHIR create
-operation on the MeasureReport resource at a Measure Consumer.  When the Dump option is implemented, the Measure Source
-writes the MeasureReport data to external storage specified by the Measure Consumer.
-</overview>
+            <semantics>
+                <description>A MeasureReport is created or updated by the MeasureSource on the MeasureConsumer.</description>
+                <overview>The MeasureReport sends a MeasureReport to the MeasureConsumer using the FHIR
+[create](https://www.hl7.org/fhir/http.html#create) or [update](https://www.hl7.org/fhir/http.html#update) interactions.
+A MeasureSource supporting the CSV option sends the CSV file to the MeasureConsumer using the $report-csv operation.
+                </overview>
                 <interaction protocol='fhir' options='Push'>
                     <!-- what about xml+fhir and json+fhir variants? -->
-                    <operation options='API' name='create' resources='MeasureReport' expect='shall'>
+                    <operation  name='create' resources='MeasureReport' expect='shall'>
                         <parameter name='_format' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shall'/>
                         <parameter name='_format' min='0' max='1' values='xml json text/xml application/json application/xml application xml+fhir application/json+fhir' expect='should'/>
                         <parameter name='Content-Type:' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shal1'/>
                         <parameter name='Content-Type:' min='0' max='1' values='xml json text/xml application/json application/xml application/xml+fhir application/json+fhir' expect='should'/>
                     </operation>
-                    <operation options='API' name='update' resources='MeasureReport' expect='shall'>
+                    <operation  name='update' resources='MeasureReport' expect='shall'>
                         <parameter name='_format' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shal1'/>
                         <parameter name='_format' min='0' max='1' values='xml json text/xml application/json application/xml application/xml+fhir application/json+fhir' expect='should'/>
                         <parameter name='Content-Type:' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shal1'/>
@@ -783,7 +740,7 @@ writes the MeasureReport data to external storage specified by the Measure Consu
                     <operation options='CSV' name='$report-csv' invoke='instance' resources="Measure" expect="shall" client='shall'>
                         <name>Create or update a MeasureReport from CSV Format</name>
                         <description>Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.
-Otherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.</description>
+                            Otherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.</description>
                         <group>
                             <name>Create or Update a MeasureReport Instance</name>
                             <parameter name='input' use='in' type='Binary' min="1" max="1">
@@ -800,11 +757,11 @@ Otherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) fo
                             </parameter>
                             <parameter name='reporter' use='in' type='reference' min="0" max="1">
                                 <description>A reference or identifier of the reporter for the MeasureReport. If unspecified,
-the server may determine the reporter based on business rules (e.g., based on the identity of the sender).</description>
+                                    the server may determine the reporter based on business rules (e.g., based on the identity of the sender).</description>
                             </parameter>
                             <parameter name='subject' use='in' type='reference' min="0" max="1">
                                 <description>A reference or identifier of the subject for the MeasureReport. If unspecified,
-the server may determine the subject based on business rules (e.g., based on the identity of the sender).</description>
+                                    the server may determine the subject based on business rules (e.g., based on the identity of the sender).</description>
                             </parameter>
                             <parameter name='return' use='out' type='Bundle' content='PublicHealthMeasureReport' min="0" max="1">
                                 <description>The result of the reporting operation</description>
@@ -812,8 +769,16 @@ the server may determine the subject based on business rules (e.g., based on the
                         </group>
                     </operation>
                 </interaction>
+            </semantics>
+            <action by="MeasureSource">
+                <name>Send MeasureReport Resource</name>
+                <description>The Measure Source creates resources and sends them to a Measure Consumer</description>
+                <overview>The Measure Source performs the FHIR create
+operation on the MeasureReport resource at a Measure Consumer.
+</overview>
             </action>
             <action by="MeasureIntermediary">
+                <name>Aggregate MeasureReport Resources</name>
                 <operation options='Aggregate' name='$aggregate' invoke='instance' resources="MeasureReport" expect="shall" client='shall'>
                         <name>Aggregate two or more more Messure Report resources into a single MeasureReport.</name>
                         <description>This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.
@@ -850,11 +815,10 @@ being aggregated have a common subject.</description>
                     </operation>
                 </action>
             <action by="MeasureConsumer">
-                <name>The Measure Consumer Accepts Resource</name>
-                <description>When the API option is used, the Measure Consumer reports
-success using 200 OK, 201 Created, or 204 No Content to indicate a successful update.  When the Dump option is
-used, the Measure Consumer reports success using the native protocols for the external storage subsytem.
-</description>
+                <name>Accept Resource</name>
+                <description>The Measure Consumer reports
+success using 200 OK, 201 Created, or 204 No Content to indicate a successful update.
+                </description>
                 <overview/>
             </action>
         </message>
@@ -968,7 +932,7 @@ of the &lt;a href='SearchParameter-SearchParameter-definition-text.html'>definit
             </semantics>
 
             <action by="MeasureDefinitionConsumer">
-                <name>Measure Definition Consumer requests measures from a Measure Definition Source.</name>
+                <name>Search for Measure</name>
                 <description>The Measure Definition Consumer performs a FHIR Search operation
 to retrieve the selected measures.</description>
             </action>
@@ -982,16 +946,16 @@ to retrieve the selected measures.</description>
                     <description>The Measure Definition Source responds with requested resources.</description>
                     <overview>The resources will conform to the profile for the
 Public Health Measure described elsewhere in this Implementation Guide</overview>
-                </semantics>
-                <action by="MeasureDefinitionSource">
-                    <name>Measure Definition Source returns Resources</name>
-                    <description>The Measure Definition Source returns the requested resource.</description>
                     <interaction protocol='fhir'>
                         <description>The Measure Definition Source will return the selected resources and
-an appropriate success response in a FHIR resource following the protocol for the read or search operation requested.
+                            an appropriate success response in a FHIR resource following the protocol for the read or search operation requested.
                         </description>
                         <content profiles='PublicHealthMeasure' expect='shall'/>
                     </interaction>
+                </semantics>
+                <action by="MeasureDefinitionSource">
+                    <name>Returns Matching Measure Resources</name>
+                    <description>The Measure Definition Source returns the requested resource.</description>
                 </action>
             </result>
         </message>
@@ -1000,13 +964,14 @@ an appropriate success response in a FHIR resource following the protocol for th
     <transaction id="COMPUTE-MX" standards="FHIR-R4 RFC-7230 NDJSON">
         <name>Compute Measure</name>
         <description>The Compute Measure transaction describes the behavior of the Measure Computer actor in periodically computing and reporting on measures.</description>
-        <overview>This transaction enables automatic computing of measure reports.</overview>
+        <overview>This transaction enables automatic computing of measure reports and manual retriggering of report generation for diagnostics or error recovery.</overview>
         <message from="MeasureComputer" to="MeasureComputer">
             <name>Compute Measure</name>
             <description>The Measure Computer computes the measure report for the current reporting period.</description>
             <trigger id="CTRIGGER1">
-                <name>The current reporting period has elapsed.</name>
-                <description>See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension</description>
+                <name>Reporting Period Elapsed</name>
+                <description>The current reporting period has elapsed, or the operation is triggered by automation (e.g. for manual testing, diagnostics or error recovery).</description>
+                <overview>See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension</overview>
             </trigger>
             <semantics>
                 <description>The Measure Computer prepares a Measure Report.</description>
@@ -1024,34 +989,61 @@ an appropriate success response in a FHIR resource following the protocol for th
                                 <description>The end of the measurement period.</description>
                             </parameter>
                             <parameter name='report' use='in' type='string' min="1" max="1" values='true false'>
-                                <description>If report is true, then the created measure report will be created or updated in the system.  If report is false,
-the computed MeasureReport will simply be returned to the caller.
+                                <description>If report is true, then the created measure report will be created or updated in the system.
+If report is false or omitted, the computed MeasureReport will simply be returned to the caller.
                                 </description>
+                            </parameter>
+                            <parameter name='return' use='out' type='MeasureReport' min='1' max='1'>
+                                <description>The computed MeasureReport</description>
                             </parameter>
                         </group>
                     </operation>
                 </interaction>
             </semantics>
+            <action by='MeasureComputer'>
+                <name>Compute Measure</name>
+                <description>When the reporting period has elapsed, or the operation is externally triggered, a MeasureReport for the
+specified Measure is computed from available data and the grouped MeasureSource is invoked below to store the created or updated
+MeasureReport resource</description>
+            </action>
         </message>
         <message from="MeasureSource" to="MeasureConsumer" see="PUSH-TX">
             <name>Report Measure</name>
             <description>The Measure Computer reports the newly computed measure for the current reporting period.</description>
-            <trigger id="CTRIGGER1">
-                <name>A new MeasureReport resource is available for reporting.</name>
+            <trigger id="CTRIGGER2">
+                <name>MeasureReport Available</name>
+                <description>A new MeasureReport resource is available for reporting.</description>
             </trigger>
             <semantics>
                 <description>The Measure Computer reports the computed result via the grouped MeasureSource actor.</description>
             </semantics>
+            <action by='MeasureSource'>
+                <name>Send MeasureReport Resource</name>
+                <description>The MeasureSource stores the MeasureReport by creating or updating it on the MeasureConsumer</description>
+            </action>
+            <action by='MeasureConsumer'>
+                <name>Accept MeasureReport Resource</name>
+                <description>The MeasureConsumer processes the MeasureReport given in the create/update interaction.</description>
+            </action>
         </message>
         <message from="MeasureConsumer" to="MeasureSource" see="PULL-TX">
             <name>Query Measure</name>
             <description>The Measure Computer responds to a query for a Measure Report with the newly computed report for the current reporting period.</description>
-            <trigger id="CTRIGGER1">
-                <name>The Measure Consumer has requested measure reports with criteria matching the newly created report.</name>
+            <trigger id="CTRIGGER3">
+                <name>MeasureReport Requested</name>
+                <description>The Measure Consumer has requested measure reports with criteria matching the newly created report.</description>
             </trigger>
             <semantics>
                 <description>The Measure Computer reports the computed result via the grouped MeasureSource actor.</description>
             </semantics>
+            <action by='MeasureSource'>
+                <name>Store MeasureReport Resource</name>
+                <description>The MeasureSource stores the MeasureReport and is prepared to respond to queries for the MeasureReport resource by the MeasureConsumer</description>
+            </action>
+            <action by='MeasureConsumer'>
+                <name>Query for MeasureReport Resource</name>
+                <description>The MeasureConsumer queries for the MeasureReport from the MeasureSource</description>
+            </action>
         </message>
     </transaction>
 

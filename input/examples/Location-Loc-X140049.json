@@ -4,9 +4,8 @@
   "meta": {
     "security": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "code": "HTEST",
-        "display": "test health data"
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
       }
     ]
   },
@@ -17,28 +16,13 @@
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "code": "HOSP"
+          "code": "HOSP",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
         }
       ]
     }
   ],
   "address": {
-    "extension": [
-      {
-        "extension": [
-          {
-            "url": "latitude",
-            "valueDecimal": 41.89184
-          },
-          {
-            "url": "longitude",
-            "valueDecimal": -87.777471
-          }
-        ],
-        "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-      }
-    ],
     "use": "work",
     "type": "both",
     "line": [
@@ -53,8 +37,8 @@
   "physicalType": {
     "coding": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-        "code": "si"
+        "code": "si",
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type"
       }
     ]
   },

@@ -1,0 +1,33 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "MedicationRequest17b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/MedicationRequest",
+      "value": "Med223344"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "Remdesivir"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient7b"
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2020-09-08"
+          }
+        }
+      }
+    }
+  ]
+}

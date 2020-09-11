@@ -15,7 +15,7 @@ This section describes the COMPUTE-MX of this guide. This transaction is used by
 The Compute Measure transaction describes the behavior of the Measure Computer actor in periodically computing and reporting on measures.
 
 
-This transaction enables automatic computing of measure reports.
+This transaction enables automatic computing of measure reports and manual retriggering of report generation for diagnostics or error recovery.
 
 
 ### Actors Roles
@@ -68,7 +68,10 @@ This transaction enables automatic computing of measure reports.
 The Measure Computer computes the measure report for the current reporting period.
 
 
-##### Trigger Event - The current reporting period has elapsed.
+##### Trigger Event - Reporting Period Elapsed
+
+The current reporting period has elapsed, or the operation is triggered by automation (e.g. for manual testing, diagnostics or error recovery).
+
 
 See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension
 
@@ -80,13 +83,23 @@ The Measure Computer prepares a Measure Report.
 
 ##### Expected Actions
 
+###### Compute Measure
+
+When the reporting period has elapsed, or the operation is externally triggered, a MeasureReport for the
+specified Measure is computed from available data and the grouped MeasureSource is invoked below to store the created or updated
+MeasureReport resource
+
+
 #### Report Measure
 
 
 The Measure Computer reports the newly computed measure for the current reporting period.
 
 
-##### Trigger Event - A new MeasureReport resource is available for reporting.
+##### Trigger Event - MeasureReport Available
+
+A new MeasureReport resource is available for reporting.
+
 
 ##### Message Semantics
 
@@ -94,6 +107,16 @@ The Measure Computer reports the computed result via the grouped MeasureSource a
 
 
 ##### Expected Actions
+
+###### Send MeasureReport Resource
+
+The MeasureSource stores the MeasureReport by creating or updating it on the MeasureConsumer
+
+
+###### Accept MeasureReport Resource
+
+The MeasureConsumer processes the MeasureReport given in the create/update interaction.
+
 
 #### Query Measure
 
@@ -101,7 +124,10 @@ The Measure Computer reports the computed result via the grouped MeasureSource a
 The Measure Computer responds to a query for a Measure Report with the newly computed report for the current reporting period.
 
 
-##### Trigger Event - The Measure Consumer has requested measure reports with criteria matching the newly created report.
+##### Trigger Event - MeasureReport Requested
+
+The Measure Consumer has requested measure reports with criteria matching the newly created report.
+
 
 ##### Message Semantics
 
@@ -109,6 +135,16 @@ The Measure Computer reports the computed result via the grouped MeasureSource a
 
 
 ##### Expected Actions
+
+###### Store MeasureReport Resource
+
+The MeasureSource stores the MeasureReport and is prepared to respond to queries for the MeasureReport resource by the MeasureConsumer
+
+
+###### Query for MeasureReport Resource
+
+The MeasureConsumer queries for the MeasureReport from the MeasureSource
+
 
 
 ### Conformance

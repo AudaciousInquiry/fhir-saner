@@ -10,7 +10,7 @@
   "url": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureRateAggregation",
   "concept": [
     {
-      "code": "aggregable-by-period",
+      "code": "count",
       "display": "Aggregable",
       "definition": "Rates can be summed over consecutive periods"
     },

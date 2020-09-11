@@ -4,15 +4,14 @@
   "meta": {
     "security": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "code": "HTEST",
-        "display": "test health data"
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
       }
     ]
   },
   "identifier": [
     {
-      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "system": "http://sanerproject.org/connectathon/hospitals",
       "value": "X140252"
     }
   ],
@@ -21,8 +20,8 @@
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-          "code": "prov"
+          "code": "prov",
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type"
         }
       ]
     }
@@ -30,21 +29,6 @@
   "name": "PELL COMMUNITY HOSPITAL",
   "address": [
     {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "latitude",
-              "valueDecimal": 42.066604
-            },
-            {
-              "url": "longitude",
-              "valueDecimal": -87.992951
-            }
-          ],
-          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-        }
-      ],
       "use": "work",
       "type": "both",
       "line": [

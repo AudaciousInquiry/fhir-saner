@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation47a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Observation",
+      "value": "112233-4"
+    }
+  ],
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/Encounter7a"
+  },
+  "subject": {
+    "reference": "Patient/Patient7a"
+  },
+  "effectiveDateTime": "2020-09-09",
+  "code": {
+    "coding": [
+      {
+        "code": "20077-4",
+        "system": "http://loinc.org",
+        "display": "Positive end expiratory pressure setting Ventilator"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "value": 5,
+    "code": "cm[H20]",
+    "system": "http://unitsofmeasure.org"
+  }
+}

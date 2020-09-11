@@ -10,6 +10,9 @@
   "compose": {
     "include": [
       {
+        "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+      },
+      {
         "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
       },
       {

@@ -10,9 +10,8 @@ agent "Measure Consumer" as MeasureConsumer
 }
 
 
-MeasureSource -> ExternalStorage : Push with Dump
-ExternalStorage <- MeasureIntermediary : Pull with Dump
-MeasureIntermediary <- MeasureConsumer : Pull with API
-
+MeasureSource -> ExternalStorage : Push
+ExternalStorage <- MeasureIntermediary : Pull
+MeasureIntermediary <- MeasureConsumer : Pull
 
 @enduml

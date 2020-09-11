@@ -1,0 +1,53 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ConfirmedCOVID19Diagnoses",
+  "id": "ConfirmedCOVID19Diagnoses",
+  "title": "Confirmed COVID-19 Diagnosis Values",
+  "description": "Codes confirming a COVID-19 diagnosis",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/ConfirmedCOVID19Diagnoses",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "concept": [
+          {
+            "code": "B34.2",
+            "display": "Coronavirus infection, unspecified"
+          },
+          {
+            "code": "B97.2",
+            "display": "Coronavirus as the cause of diseases classified elsewhere"
+          },
+          {
+            "code": "B97.29",
+            "display": "Other coronavirus as the cause of diseases classified elsewhere"
+          },
+          {
+            "code": "U07.1",
+            "display": "COVID-19"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "186747009",
+            "display": "Coronavirus infection (disorder)"
+          },
+          {
+            "code": "713084008",
+            "display": "Pneumonia caused by Human coronavirus (disorder)"
+          },
+          {
+            "code": "840539006",
+            "display": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

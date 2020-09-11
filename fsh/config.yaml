@@ -81,12 +81,32 @@ pages:
       title: Computing Measures
       generation: markdown
     phrase_book.md:
-      title: Creating Measures Supporting Automation
+      title: A Phrase Book for Measures Supporting Automation
       generation: markdown
-    measures.md:
-      title: Example Measures
+    measure_creation.md:
+      title: Creating an Example Measure
       generation: markdown
-
+      measure_group_covid19_patients.md:
+        title: Creating the Patients with COVID 19 Group
+        generation: markdown
+      measure_group_hospital_acquired_covid19_patients.md:
+        title: Creating the Hospital Acquired COVID 19 Group
+        generation: markdown
+      measure_group_covid19_deaths.md:
+        title: Creating the COVID 19 Deaths Group
+        generation: markdown
+      measure_group_ventilators.md:
+        title: Creating the Ventilator Avaiability Group
+        generation: markdown
+      measure_group_beds.md:
+        title: Creating the Bed Avaiability Group
+        generation: markdown
+      measure_library.md:
+        title: Sample Measure Library
+        generation: markdown
+  architecture.md:
+    title: Architecture
+    generation: markdown
     use_cases.md:
       title: Use Cases
       generation: markdown
@@ -96,33 +116,30 @@ pages:
     security_considerations.md:
       title: Security Considerations
       generation: markdown
-    architecture.md:
-      title: Architecture
-      generation: markdown
     actors.md:
       title: Actors
       generation: markdown
-    transactions.md:
-      title: Transactions
+  transactions.md:
+    title: Transactions
+    generation: markdown
+    transaction-1.md:
+      title: Query Measure
       generation: markdown
-      transaction-1.md:
-        title: Query Measure
-        generation: markdown
-      transaction-2.md:
-        title: Produce Measure
-        generation: markdown
-      transaction-3.md:
-        title: Query Measure Definition
-        generation: markdown
-      transaction-4.md:
-        title: Compute Measure
-        generation: markdown
-      transaction-5.md:
-        title: Communicate Results
-        generation: markdown
-      CSV_Conversion.md:
-        title: CSV Conversion
-        generation: markdown
+    transaction-2.md:
+      title: Produce Measure
+      generation: markdown
+    transaction-3.md:
+      title: Query Measure Definition
+      generation: markdown
+    transaction-4.md:
+      title: Compute Measure
+      generation: markdown
+    transaction-5.md:
+      title: Communicate Results
+      generation: markdown
+    CSV_Conversion.md:
+      title: CSV Conversion
+      generation: markdown
   profiles.md:
     title: Profiles and Extensions
     generation: markdown
@@ -146,12 +163,25 @@ menu:
   Table of Contents: toc.html
   SANER IG Content:
     Overview: overview.html
-    Technology Environment: technology_environment.html
+    Situational Awareness Measures: situational_awareness_measures.html
+    Aggregatating Measure Reports: measure_aggregation.html
+    Computing Measures: measure_automation.html
+    Phrase Book for Measure Creation: phrase_book.html
+  Creating an Example Measure:
+    Measure Creation: measure_creation.html
+    Creating the Patients with COVID 19 Group: measure_group_covid19_patients.html
+    Creating the Hospital Acquired COVID 19 Group: measure_group_hospital_acquired_covid19_patients.html
+    Creating the COVID 19 Deaths Group: measure_group_covid19_deaths.html
+    Creating the Ventilator Avaiability Group: measure_group_ventilators.html
+    Creating the Bed Avaiability Group: measure_group_beds.html
+    Sample Measure Library: measure_library.html
+  Technology:
     Architecture: architecture.html
-    Security Considerations: security_considerations.html
     Use Cases: use_cases.html
+    Technology Environment: technology_environment.html
+    Security Considerations: security_considerations.html
     Actors: actors.html
-    Measures used for Reporting: measures.html
+
   Transactions:
     Transaction Overview: transactions.html
     Query Measure: transaction-1.html
@@ -163,6 +193,7 @@ menu:
   Conformance and Testing:
     Profiles and Extensions: profiles.html
     Vocabulary: vocabulary.html
-    Testing and Examples:
+    Testing: test_plan.html
     Examples: examples.html
+
   Artifact Index: artifacts.html

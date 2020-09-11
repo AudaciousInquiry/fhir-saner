@@ -10,14 +10,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -72,7 +74,7 @@
               "path": "system"
             }
           ],
-          "rules": "open",
+          "rules": "openAtEnd",
           "description": "Slice based on the component.code pattern"
         },
         "min": 2
@@ -83,18 +85,20 @@
         "sliceName": "ResourceType",
         "short": "Describe the FHIR resource type that should be counted for the measure",
         "min": 1,
-        "max": "1",
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
-        }
+        "max": "1"
+      },
+      {
+        "id": "CodeableConcept.coding:ResourceType.system",
+        "path": "CodeableConcept.coding.system",
+        "min": 1,
+        "patternUri": "http://hl7.org/fhir/resource-types"
       },
       {
         "id": "CodeableConcept.coding:Snomed",
         "path": "CodeableConcept.coding",
         "sliceName": "Snomed",
         "min": 1,
-        "max": "1"
+        "max": "*"
       },
       {
         "id": "CodeableConcept.coding:Snomed.system",
@@ -102,13 +106,6 @@
         "short": "Further clarify the type of resource using SNOMED",
         "min": 1,
         "patternUri": "http://snomed.info/sct"
-      },
-      {
-        "id": "CodeableConcept.coding:Other",
-        "path": "CodeableConcept.coding",
-        "sliceName": "Other",
-        "min": 0,
-        "max": "*"
       },
       {
         "id": "CodeableConcept.text",

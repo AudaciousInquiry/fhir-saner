@@ -1,18 +1,19 @@
-The overall SANER is an API between [three actors](actors.html#actor-options), and four different
+The overall SANER is an API between [multiple actors](actors.html#actor-options), and
 [Transactions types](transactions.html). The tests that can be executed are limited to the functionality
 of the system-under-test (SUT), and the transaction type it implements. Where that SUT has a specific
 function, it can be tested.
-
 
 ### Test Plan
 
 The following is the overall test plan for SANER alone:
 * Unit Tests -- automation of testing of the actor alone using a simulator and validator tool
   * [Measure Source](actors.html#measure-source) publishes content
-  * [Measure Recipient](actors.html#measure-consumer) consumes content
+  * [Measure Consumer](actors.html#measure-consumer) consumes content
+  * [Measure Computer](actors.html#measure-computer) automates creation of content
+  * [Measure Definition Source](actors.html#measure-definition-source) provides Measure resource content
+  * [Measure Definition Consumer](actors.html#measure-definition-consumer) consumes Measure resource content
 * Integration Tests -- automation of actors interacting through defined communications mechanism
   * [Measure Intermediary](actors.html#measure-intermediary) consumes and publishes
-  * [API Option](actors.html#api-option) transaction method exercised
   * [Push Option](actors.html#push-option) transaction method exercised
   * [Pull Option](actors.html#pull-option) transaction method exercised
 * Validation Tests -- user expectation based testing
@@ -28,13 +29,9 @@ to validate only a message encoding. Some reference implementations may be able 
 StructureDefinition profile, but often these do not include sufficient constraints given the
 overall actor conformance criteria.
 
-The Unit Test is done using the [Storage Option](actors.html#storage-option) transaction method. The result
-is that the actor is tested as is the storage option.
-
 #### Measure Source
 
-Unit Tests for Measure Storage actor test that it can produce valid content. Given that storage option
-is used, there is a presumption that security is addressed external to the test procedure.
+Unit Tests for Measure Source actor test that it can produce valid content.
 
 ##### Positive Test Scenarios
 * Provide a CapabilityStatement resource with indications of support of the SANER Measure Source actor
@@ -51,16 +48,12 @@ is used, there is a presumption that security is addressed external to the test 
 Negative tests are deliberate deviations from "happy path". They would not all be failure-modes. They must
 all be handled gracefully in a way appropriate to the SUT functionality.
 * Measure Intermediary or Measure Consumer returns failure-mode, Measure Consumer handles failure gracefully
-* TBD
-
 
 #### Measure Consumer
-
-Unit Tests for Measure Consumer actor test that it can consume valid and invalid content robustly. Given
-the storage option is used, there is a presumption that security is addressed external to the test procedure.
+Unit Tests for Measure Consumer actor test that it can consume valid and invalid content robustly.
 
 ##### Postive Test Scenarios
-* provide CapabilityStatement with indicatinos of support of the SANER Measure Consumer actor
+* provide CapabilityStatement indicating support of the SANER Measure Consumer actor
 * submit sample measures from SANER examples are consumed and made available in the Measure Consumer as expected by SUT functionality
   * [Public Health Measure Examples](StructureDefinition-PublicHealthMeasure-examples.html)
   * [Public Health Measure Report Examples](StructureDefinition-PublicHealthMeasureReport.html)

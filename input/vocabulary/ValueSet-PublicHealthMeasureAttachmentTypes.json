@@ -10,7 +10,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://tools.ietf.org/html/bcp13",
+        "system": "urn:ietf:bcp:13",
         "concept": [
           {
             "code": "application/fhir+xml"

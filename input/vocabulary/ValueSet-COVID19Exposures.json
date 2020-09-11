@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "COVID19Exposures",
+  "id": "COVID19Exposures",
+  "description": "This Value Set includes codes describing COVID-19 exposure from SNOMED-CT",
+  "version": "20200604",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1203",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
+  "date": "2020-06-04T01:00:20-04:00",
+  "publisher": "CSTE Steward",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "840546002",
+            "display": "Exposure to severe acute respiratory syndrome coronavirus 2 (event)"
+          }
+        ]
+      }
+    ]
+  }
+}

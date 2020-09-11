@@ -175,14 +175,6 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/PublicHealthMeasureStratifier"
-        },
-        "name": "Saner Public Health Measure Stratifier",
-        "description": "Profile Saner Public Health Measure Stratifier\n\nA stratifier is effecitively a mixin that can be used with an existing measure\nto add stratification detail to that measure.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/saner-resource-location"
         },
         "name": "Resource Location Profile",
@@ -247,17 +239,10 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/BedLocationTypes"
-        },
-        "name": "Bed Location Types",
-        "description": "Codes used to identify types of service locations for beds",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/COVID19Antibody"
         },
         "name": "COVID19Antibody",
+        "description": "This Value Set includes codes describing SARS COV-2 antibodies detected during testing",
         "exampleBoolean": false
       },
       {
@@ -265,6 +250,7 @@
           "reference": "ValueSet/COVID19DXICD10"
         },
         "name": "COVID19DXICD10",
+        "description": "This Value Set includes codes describing COVID-19 illness from ICD-10-CM",
         "exampleBoolean": false
       },
       {
@@ -272,21 +258,15 @@
           "reference": "ValueSet/COVID19DXSNOMED"
         },
         "name": "COVID19DXSNOMED",
+        "description": "This Value Set includes codes describing COVID-19 illness from SNOMED-CT",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/COVID19DiagnosticTest"
+          "reference": "ValueSet/COVID19Exposures"
         },
-        "name": "COVID-19 Diagnostic Test",
-        "description": "Codes for COVID-19 Diagnostic Tests",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/COVID19Exposure"
-        },
-        "name": "COVID19Exposure",
+        "name": "COVID19Exposures",
+        "description": "This Value Set includes codes describing COVID-19 exposure from SNOMED-CT",
         "exampleBoolean": false
       },
       {
@@ -294,22 +274,23 @@
           "reference": "ValueSet/COVID19Organism"
         },
         "name": "COVID19Organism",
+        "description": "This Value Set identifies codes describing SARS COV2 Related Substances detected during testing",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/ConfirmedCOVID19Diagnosis"
-        },
-        "name": "Confirmed COVID-19 Diagnosis",
-        "description": "Codes confirming COVID-19 Diagnostic Test Result",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/ConfirmedCOVID19DiagnosisValues"
+          "reference": "ValueSet/ConfirmedCOVID19Diagnoses"
         },
         "name": "Confirmed COVID-19 Diagnosis Values",
-        "description": "Codes for result values confirming COVID-19 Diagnostic Test Result",
+        "description": "Codes confirming a COVID-19 diagnosis",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/Covid19Labs"
+        },
+        "name": "COVID-19 Diagnostic Test",
+        "description": "Codes for COVID-19 Diagnostic Tests",
         "exampleBoolean": false
       },
       {
@@ -318,14 +299,6 @@
         },
         "name": "Age Brackets By Decade",
         "description": "A Value Set of age groups generally by decade except youth (under 20), or over 80, commonly used for stratification in public health dashboards",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/EDorOverflowLocations"
-        },
-        "name": "ED or Overflow Locations",
-        "description": "Codes used for ED or Overflow locations",
         "exampleBoolean": false
       },
       {
@@ -341,6 +314,7 @@
           "reference": "ValueSet/HealthcareServiceLocation"
         },
         "name": "HealthcareServiceLocation",
+        "description": "This Value Set includes codes describing Service Locations in a healthcare facility",
         "exampleBoolean": false
       },
       {
@@ -385,6 +359,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/MeasureScoring"
+        },
+        "name": "MeasureScoring",
+        "description": "All codes from the Public Health Measure Scoring System",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/MeasureStatus"
         },
         "name": "Measure Status Values",
@@ -393,15 +375,15 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/OccupiedBed"
+          "reference": "ValueSet/NegativeResults"
         },
-        "name": "Occupied Bed",
-        "description": "Codes used for Occupied Beds",
+        "name": "COVID-19 Not Detected",
+        "description": "Codes for a negative COVID-19 Diagnostic Test Result",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/PatientDied"
+          "reference": "ValueSet/PatientDeaths"
         },
         "name": "Patient Died",
         "description": "Codes used to identify that a patient has died",
@@ -413,6 +395,14 @@
         },
         "name": "Observations for Patients on a Ventilator",
         "description": "This Value Set identifies patients currently on a ventilator",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PositiveResults"
+        },
+        "name": "Confirmed COVID-19 Diagnosis",
+        "description": "Codes for a positive COVID-19 Diagnostic Test Result",
         "exampleBoolean": false
       },
       {
@@ -436,7 +426,7 @@
           "reference": "ValueSet/SARSCoV2GeneticLabs"
         },
         "name": "SARSCoV2 Genetic Labs",
-        "description": "This Value Set Labs which gene-based testing instead of other methods (e.g., Antibody testing)",
+        "description": "This Value Set identifies Lab tests using gene-based testing instead of other methods (e.g., Antibody testing)",
         "exampleBoolean": false
       },
       {
@@ -444,6 +434,7 @@
           "reference": "ValueSet/SARSCoV2Labs"
         },
         "name": "SARSCoV2Labs",
+        "description": "This Value Set identifies Lab tests related to detection of current or prior COVID-19 infection.",
         "exampleBoolean": false
       },
       {
@@ -456,17 +447,18 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/SuspectedCOVID19"
+          "reference": "ValueSet/SuspectedCOVID19Diagnoses"
         },
-        "name": "SuspectedCOVID19",
+        "name": "SuspectedCOVID19Diagnoses",
+        "description": "This Value Set identifies conditions that may be related to COVID-19",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/SuspectedOrDiagnosedCOVID19"
+          "reference": "ValueSet/SuspectedOrConfirmedCOVID19Diagnoses"
         },
         "name": "Suspected Or Diagnosed COVID-19",
-        "description": "Coded identifying suspected or confirmed COVID-19",
+        "description": "Codes identifying suspected or confirmed COVID-19",
         "exampleBoolean": false
       },
       {
@@ -474,15 +466,31 @@
           "reference": "ValueSet/VentilatorDevices"
         },
         "name": "Ventilator Devices",
-        "description": "Codes used for Ventilator Devices",
+        "description": "Codes used for Ventilator Devices [Populate VentilatorDevices](#todo)",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "ValueSet/VentilatorDevicesWithTracheostomy"
+          "reference": "ValueSet/VentilatorObservations"
+        },
+        "name": "Ventilator Observations",
+        "description": "Codes used to report ventilation activity",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/VentilatorProcedures"
+        },
+        "name": "Ventilator Procedures",
+        "description": "Codes used to report a ventilation procedure",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/VentilatorWithTracheostomyDevices"
         },
         "name": "Ventilator Devices when used with Tracheostomy",
-        "description": "Codes used for Devices that support Ventilation with a Tracheostomy",
+        "description": "Codes used for Devices that support Ventilation with a Tracheostomy [Populate VentilatorWithTracheostomyDevices](#todo)",
         "exampleBoolean": false
       },
       {
@@ -505,8 +513,8 @@
         "reference": {
           "reference": "CodeSystem/MeasurePopulationSystem"
         },
-        "name": "Measure Population System",
-        "description": "A Code System for Populations defined by The SANER Project",
+        "name": "Situationa Awareness Measure Populations",
+        "description": "A Code System for Situation Awareness Measure Populations defined by The SANER Project",
         "exampleBoolean": false
       },
       {
@@ -515,6 +523,22 @@
         },
         "name": "Measure Rate Aggregation Coding System",
         "description": "This Coding System Identifies methods of rate aggregation",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/MeasuredValues"
+        },
+        "name": "Measured Values in Sample Measures",
+        "description": "A Code System for Populations in Sample Measures defined by The SANER Project",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PublicHealthMeasureScoring"
+        },
+        "name": "Public Health Measure Scoring",
+        "description": "A code system describing types of measure scoring used for situational awareness measures",
         "exampleBoolean": false
       },
       {
@@ -544,24 +568,351 @@
           "reference": "Measure/ComputableCDCPatientImpactAndHospitalCapacity"
         },
         "name": "Computable CDC Patient Impact and Hospital Capacity",
-        "description": "This measure demonstrates reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
+        "description": "This measure demonstrates automated reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
         "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
-          "reference": "Measure/ComputableFEMADailyHospitalCOVID19Reporting"
+          "reference": "Library/ComputableNHSNMeasureLibrary"
         },
-        "name": "Computable FEMA Laboratory Orders and Results Daily Increase Reporting",
-        "description": "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts.",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "name": "ComputableNHSNMeasureLibrary",
+        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
       },
       {
         "reference": {
-          "reference": "OperationDefinition/ComputeMeasure-evaluate-measure"
+          "reference": "Condition/Condition1a"
         },
-        "name": "ComputeMeasure-evaluate-measure",
-        "description": "Create or update a MeasureReport for the given time period. If a report already exists for the subject and reporter for the given time period, it is updated.\n                            Otherwise, a new report is created.",
-        "exampleBoolean": false
+        "name": "Condition1a",
+        "description": "Condition for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition1b"
+        },
+        "name": "Condition1b",
+        "description": "Condition for 1b",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition1c"
+        },
+        "name": "Condition1c",
+        "description": "Condition for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition2a"
+        },
+        "name": "Condition2a",
+        "description": "Condition for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition2b"
+        },
+        "name": "Condition2b",
+        "description": "Condition for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition3b"
+        },
+        "name": "Condition3b",
+        "description": "Condition for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition4b"
+        },
+        "name": "Condition4b",
+        "description": "Condition for 4b",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition4c"
+        },
+        "name": "Condition4c",
+        "description": "Condition for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition5a"
+        },
+        "name": "Condition5a",
+        "description": "Condition for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition5c"
+        },
+        "name": "Condition5c",
+        "description": "Condition for Test Case 5c: Positives collected T-13 and T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition6a"
+        },
+        "name": "Condition6a",
+        "description": "Condition for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition6c"
+        },
+        "name": "Condition6c",
+        "description": "Condition for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition7a"
+        },
+        "name": "Condition7a",
+        "description": "Condition for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition7b"
+        },
+        "name": "Condition7b",
+        "description": "Condition for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition8a"
+        },
+        "name": "Condition8a",
+        "description": "Condition for 8a",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition9a"
+        },
+        "name": "Condition9a",
+        "description": "Condition for 9a",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition9b"
+        },
+        "name": "Condition9b",
+        "description": "Condition for 9b",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition9c"
+        },
+        "name": "Condition9c",
+        "description": "Condition for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter1a"
+        },
+        "name": "Encounter1a",
+        "description": "Encounter for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter1b"
+        },
+        "name": "Encounter1b",
+        "description": "Encounter for Test Case 1b: Admission date =T-1 w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter1c"
+        },
+        "name": "Encounter1c",
+        "description": "Encounter for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter2a"
+        },
+        "name": "Encounter2a",
+        "description": "Encounter for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter2b"
+        },
+        "name": "Encounter2b",
+        "description": "Encounter for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter3a"
+        },
+        "name": "Encounter3a",
+        "description": "Encounter for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter3b"
+        },
+        "name": "Encounter3b",
+        "description": "Encounter for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter4a"
+        },
+        "name": "Encounter4a",
+        "description": "Encounter for Test Case 4a: T-1 w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter4b"
+        },
+        "name": "Encounter4b",
+        "description": "Encounter for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter4c"
+        },
+        "name": "Encounter4c",
+        "description": "Encounter for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter5a"
+        },
+        "name": "Encounter5a",
+        "description": "Encounter for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter5b"
+        },
+        "name": "Encounter5b",
+        "description": "Encounter for Test Case 5b: Only positive collected T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter5c"
+        },
+        "name": "Encounter5c",
+        "description": "Encounter for Test Case 5c: Positives collected T-13 and T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter6a"
+        },
+        "name": "Encounter6a",
+        "description": "Encounter for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter6b"
+        },
+        "name": "Encounter6b",
+        "description": "Encounter for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter6c"
+        },
+        "name": "Encounter6c",
+        "description": "Encounter for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter7a"
+        },
+        "name": "Encounter7a",
+        "description": "Encounter for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter7b"
+        },
+        "name": "Encounter7b",
+        "description": "Encounter for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter8a"
+        },
+        "name": "Encounter8a",
+        "description": "Encounter for Test Case 8a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter8b"
+        },
+        "name": "Encounter8b",
+        "description": "Encounter for Test Case 8b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter8c"
+        },
+        "name": "Encounter8c",
+        "description": "Encounter for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter9a"
+        },
+        "name": "Encounter9a",
+        "description": "Encounter for Test Case 9a: Diagnosis of Suspected COVID-19 WITHOUT positive viral test w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter9b"
+        },
+        "name": "Encounter9b",
+        "description": "Encounter for Test Case 9b: No Diagnosis of Suspected  COVID-19 nor positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/Encounter9c"
+        },
+        "name": "Encounter9c",
+        "description": "Encounter for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -932,10 +1283,1994 @@
       },
       {
         "reference": {
+          "reference": "MeasureReport/FHIR-102"
+        },
+        "name": "FHIR-102",
+        "description": "CDCPatientImpactAndHospitalCapacity for NORTH COUNTY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-105"
+        },
+        "name": "FHIR-105",
+        "description": "CDCPatientImpactAndHospitalCapacity for NORTH COUNTY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-108"
+        },
+        "name": "FHIR-108",
+        "description": "CDCPatientImpactAndHospitalCapacity for NORTH COUNTY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-111"
+        },
+        "name": "FHIR-111",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT LOIS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-114"
+        },
+        "name": "FHIR-114",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT LOIS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-117"
+        },
+        "name": "FHIR-117",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT LOIS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-12"
+        },
+        "name": "FHIR-12",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT JOHN HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-120"
+        },
+        "name": "FHIR-120",
+        "description": "CDCPatientImpactAndHospitalCapacity for POHL HOSPITAL AND MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-123"
+        },
+        "name": "FHIR-123",
+        "description": "CDCPatientImpactAndHospitalCapacity for POHL HOSPITAL AND MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-126"
+        },
+        "name": "FHIR-126",
+        "description": "CDCPatientImpactAndHospitalCapacity for POHL HOSPITAL AND MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-129"
+        },
+        "name": "FHIR-129",
+        "description": "CDCPatientImpactAndHospitalCapacity for GIBSON COMMUNITY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-132"
+        },
+        "name": "FHIR-132",
+        "description": "CDCPatientImpactAndHospitalCapacity for GIBSON COMMUNITY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-135"
+        },
+        "name": "FHIR-135",
+        "description": "CDCPatientImpactAndHospitalCapacity for GIBSON COMMUNITY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-138"
+        },
+        "name": "FHIR-138",
+        "description": "CDCPatientImpactAndHospitalCapacity for WASHINGTON COUNTY MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-141"
+        },
+        "name": "FHIR-141",
+        "description": "CDCPatientImpactAndHospitalCapacity for WASHINGTON COUNTY MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-144"
+        },
+        "name": "FHIR-144",
+        "description": "CDCPatientImpactAndHospitalCapacity for WASHINGTON COUNTY MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-147"
+        },
+        "name": "FHIR-147",
+        "description": "CDCPatientImpactAndHospitalCapacity for FOUNDATION HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-15"
+        },
+        "name": "FHIR-15",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT JOHN HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-150"
+        },
+        "name": "FHIR-150",
+        "description": "CDCPatientImpactAndHospitalCapacity for FOUNDATION HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-153"
+        },
+        "name": "FHIR-153",
+        "description": "CDCPatientImpactAndHospitalCapacity for FOUNDATION HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-156"
+        },
+        "name": "FHIR-156",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHARLES D WARD MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-159"
+        },
+        "name": "FHIR-159",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHARLES D WARD MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-162"
+        },
+        "name": "FHIR-162",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHARLES D WARD MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-165"
+        },
+        "name": "FHIR-165",
+        "description": "CDCPatientImpactAndHospitalCapacity for MISKATONIC UNIVERSITY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-168"
+        },
+        "name": "FHIR-168",
+        "description": "CDCPatientImpactAndHospitalCapacity for MISKATONIC UNIVERSITY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-171"
+        },
+        "name": "FHIR-171",
+        "description": "CDCPatientImpactAndHospitalCapacity for MISKATONIC UNIVERSITY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-174"
+        },
+        "name": "FHIR-174",
+        "description": "CDCPatientImpactAndHospitalCapacity for PAUL FRENCH MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-177"
+        },
+        "name": "FHIR-177",
+        "description": "CDCPatientImpactAndHospitalCapacity for PAUL FRENCH MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-18"
+        },
+        "name": "FHIR-18",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT JOHN HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-180"
+        },
+        "name": "FHIR-180",
+        "description": "CDCPatientImpactAndHospitalCapacity for PAUL FRENCH MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-183"
+        },
+        "name": "FHIR-183",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLIFTON MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-186"
+        },
+        "name": "FHIR-186",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLIFTON MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-189"
+        },
+        "name": "FHIR-189",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLIFTON MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-192"
+        },
+        "name": "FHIR-192",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST LEIBOWITZ HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-195"
+        },
+        "name": "FHIR-195",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST LEIBOWITZ HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-198"
+        },
+        "name": "FHIR-198",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST LEIBOWITZ HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-201"
+        },
+        "name": "FHIR-201",
+        "description": "CDCPatientImpactAndHospitalCapacity for MCINTYRE HOSPITAL OF CHEF COUNTY Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-204"
+        },
+        "name": "FHIR-204",
+        "description": "CDCPatientImpactAndHospitalCapacity for MCINTYRE HOSPITAL OF CHEF COUNTY Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-207"
+        },
+        "name": "FHIR-207",
+        "description": "CDCPatientImpactAndHospitalCapacity for MCINTYRE HOSPITAL OF CHEF COUNTY Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-21"
+        },
+        "name": "FHIR-21",
+        "description": "CDCPatientImpactAndHospitalCapacity for HERBERT MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-210"
+        },
+        "name": "FHIR-210",
+        "description": "CDCPatientImpactAndHospitalCapacity for JEMISIN MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-213"
+        },
+        "name": "FHIR-213",
+        "description": "CDCPatientImpactAndHospitalCapacity for JEMISIN MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-216"
+        },
+        "name": "FHIR-216",
+        "description": "CDCPatientImpactAndHospitalCapacity for JEMISIN MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-219"
+        },
+        "name": "FHIR-219",
+        "description": "CDCPatientImpactAndHospitalCapacity for CIMMERIAN FOUNDATION HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-222"
+        },
+        "name": "FHIR-222",
+        "description": "CDCPatientImpactAndHospitalCapacity for CIMMERIAN FOUNDATION HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-225"
+        },
+        "name": "FHIR-225",
+        "description": "CDCPatientImpactAndHospitalCapacity for CIMMERIAN FOUNDATION HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-228"
+        },
+        "name": "FHIR-228",
+        "description": "CDCPatientImpactAndHospitalCapacity for KEATS MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-231"
+        },
+        "name": "FHIR-231",
+        "description": "CDCPatientImpactAndHospitalCapacity for KEATS MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-234"
+        },
+        "name": "FHIR-234",
+        "description": "CDCPatientImpactAndHospitalCapacity for KEATS MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-237"
+        },
+        "name": "FHIR-237",
+        "description": "CDCPatientImpactAndHospitalCapacity for DAHL UNIVERSITY MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-24"
+        },
+        "name": "FHIR-24",
+        "description": "CDCPatientImpactAndHospitalCapacity for HERBERT MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-240"
+        },
+        "name": "FHIR-240",
+        "description": "CDCPatientImpactAndHospitalCapacity for DAHL UNIVERSITY MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-243"
+        },
+        "name": "FHIR-243",
+        "description": "CDCPatientImpactAndHospitalCapacity for DAHL UNIVERSITY MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-246"
+        },
+        "name": "FHIR-246",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-249"
+        },
+        "name": "FHIR-249",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-252"
+        },
+        "name": "FHIR-252",
+        "description": "CDCPatientImpactAndHospitalCapacity for CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-255"
+        },
+        "name": "FHIR-255",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILLIS COMMUNITY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-258"
+        },
+        "name": "FHIR-258",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILLIS COMMUNITY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-261"
+        },
+        "name": "FHIR-261",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILLIS COMMUNITY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-264"
+        },
+        "name": "FHIR-264",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER CHILDRENS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-267"
+        },
+        "name": "FHIR-267",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER CHILDRENS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-27"
+        },
+        "name": "FHIR-27",
+        "description": "CDCPatientImpactAndHospitalCapacity for HERBERT MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-270"
+        },
+        "name": "FHIR-270",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER CHILDRENS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-273"
+        },
+        "name": "FHIR-273",
+        "description": "CDCPatientImpactAndHospitalCapacity for ARES MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-276"
+        },
+        "name": "FHIR-276",
+        "description": "CDCPatientImpactAndHospitalCapacity for ARES MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-279"
+        },
+        "name": "FHIR-279",
+        "description": "CDCPatientImpactAndHospitalCapacity for ARES MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-282"
+        },
+        "name": "FHIR-282",
+        "description": "CDCPatientImpactAndHospitalCapacity for BLISH GENERAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-285"
+        },
+        "name": "FHIR-285",
+        "description": "CDCPatientImpactAndHospitalCapacity for BLISH GENERAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-288"
+        },
+        "name": "FHIR-288",
+        "description": "CDCPatientImpactAndHospitalCapacity for BLISH GENERAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-291"
+        },
+        "name": "FHIR-291",
+        "description": "CDCPatientImpactAndHospitalCapacity for LABRADOR HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-294"
+        },
+        "name": "FHIR-294",
+        "description": "CDCPatientImpactAndHospitalCapacity for LABRADOR HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-297"
+        },
+        "name": "FHIR-297",
+        "description": "CDCPatientImpactAndHospitalCapacity for LABRADOR HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-30"
+        },
+        "name": "FHIR-30",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE CHILDRENS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-300"
+        },
+        "name": "FHIR-300",
+        "description": "CDCPatientImpactAndHospitalCapacity for PELL COMMUNITY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-303"
+        },
+        "name": "FHIR-303",
+        "description": "CDCPatientImpactAndHospitalCapacity for PELL COMMUNITY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-306"
+        },
+        "name": "FHIR-306",
+        "description": "CDCPatientImpactAndHospitalCapacity for PELL COMMUNITY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-309"
+        },
+        "name": "FHIR-309",
+        "description": "CDCPatientImpactAndHospitalCapacity for VINGE UNIVERSITY HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-312"
+        },
+        "name": "FHIR-312",
+        "description": "CDCPatientImpactAndHospitalCapacity for VINGE UNIVERSITY HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-315"
+        },
+        "name": "FHIR-315",
+        "description": "CDCPatientImpactAndHospitalCapacity for VINGE UNIVERSITY HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-318"
+        },
+        "name": "FHIR-318",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT VERNOR HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-321"
+        },
+        "name": "FHIR-321",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT VERNOR HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-324"
+        },
+        "name": "FHIR-324",
+        "description": "CDCPatientImpactAndHospitalCapacity for SAINT VERNOR HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-327"
+        },
+        "name": "FHIR-327",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER FAMILY MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-33"
+        },
+        "name": "FHIR-33",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE CHILDRENS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-330"
+        },
+        "name": "FHIR-330",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER FAMILY MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-333"
+        },
+        "name": "FHIR-333",
+        "description": "CDCPatientImpactAndHospitalCapacity for LEIBER FAMILY MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-336"
+        },
+        "name": "FHIR-336",
+        "description": "CDCPatientImpactAndHospitalCapacity for LECKIE HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-339"
+        },
+        "name": "FHIR-339",
+        "description": "CDCPatientImpactAndHospitalCapacity for LECKIE HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-342"
+        },
+        "name": "FHIR-342",
+        "description": "CDCPatientImpactAndHospitalCapacity for LECKIE HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-345"
+        },
+        "name": "FHIR-345",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRIN HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-348"
+        },
+        "name": "FHIR-348",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRIN HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-351"
+        },
+        "name": "FHIR-351",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRIN HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-354"
+        },
+        "name": "FHIR-354",
+        "description": "CDCPatientImpactAndHospitalCapacity for FARMERS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-357"
+        },
+        "name": "FHIR-357",
+        "description": "CDCPatientImpactAndHospitalCapacity for FARMERS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-36"
+        },
+        "name": "FHIR-36",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE CHILDRENS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-360"
+        },
+        "name": "FHIR-360",
+        "description": "CDCPatientImpactAndHospitalCapacity for FARMERS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-363"
+        },
+        "name": "FHIR-363",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILSON HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-366"
+        },
+        "name": "FHIR-366",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILSON HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-369"
+        },
+        "name": "FHIR-369",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILSON HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-372"
+        },
+        "name": "FHIR-372",
+        "description": "CDCPatientImpactAndHospitalCapacity for ZELAZNY MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-375"
+        },
+        "name": "FHIR-375",
+        "description": "CDCPatientImpactAndHospitalCapacity for ZELAZNY MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-378"
+        },
+        "name": "FHIR-378",
+        "description": "CDCPatientImpactAndHospitalCapacity for ZELAZNY MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-381"
+        },
+        "name": "FHIR-381",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-384"
+        },
+        "name": "FHIR-384",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-387"
+        },
+        "name": "FHIR-387",
+        "description": "CDCPatientImpactAndHospitalCapacity for CLARKE MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-39"
+        },
+        "name": "FHIR-39",
+        "description": "CDCPatientImpactAndHospitalCapacity for INNSMOUTH HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-390"
+        },
+        "name": "FHIR-390",
+        "description": "CDCPatientImpactAndHospitalCapacity for URSULA KROEBER HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-393"
+        },
+        "name": "FHIR-393",
+        "description": "CDCPatientImpactAndHospitalCapacity for URSULA KROEBER HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-396"
+        },
+        "name": "FHIR-396",
+        "description": "CDCPatientImpactAndHospitalCapacity for URSULA KROEBER HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-399"
+        },
+        "name": "FHIR-399",
+        "description": "CDCPatientImpactAndHospitalCapacity for LAKESIDE MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-402"
+        },
+        "name": "FHIR-402",
+        "description": "CDCPatientImpactAndHospitalCapacity for LAKESIDE MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-405"
+        },
+        "name": "FHIR-405",
+        "description": "CDCPatientImpactAndHospitalCapacity for LAKESIDE MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-408"
+        },
+        "name": "FHIR-408",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST ROBERT HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-411"
+        },
+        "name": "FHIR-411",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST ROBERT HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-414"
+        },
+        "name": "FHIR-414",
+        "description": "CDCPatientImpactAndHospitalCapacity for ST ROBERT HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-417"
+        },
+        "name": "FHIR-417",
+        "description": "CDCPatientImpactAndHospitalCapacity for KOWEL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-42"
+        },
+        "name": "FHIR-42",
+        "description": "CDCPatientImpactAndHospitalCapacity for INNSMOUTH HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-420"
+        },
+        "name": "FHIR-420",
+        "description": "CDCPatientImpactAndHospitalCapacity for KOWEL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-423"
+        },
+        "name": "FHIR-423",
+        "description": "CDCPatientImpactAndHospitalCapacity for KOWEL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-426"
+        },
+        "name": "FHIR-426",
+        "description": "CDCPatientImpactAndHospitalCapacity for SELENE HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-429"
+        },
+        "name": "FHIR-429",
+        "description": "CDCPatientImpactAndHospitalCapacity for SELENE HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-432"
+        },
+        "name": "FHIR-432",
+        "description": "CDCPatientImpactAndHospitalCapacity for SELENE HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-435"
+        },
+        "name": "FHIR-435",
+        "description": "CDCPatientImpactAndHospitalCapacity for BESTER MEMORIAL HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-438"
+        },
+        "name": "FHIR-438",
+        "description": "CDCPatientImpactAndHospitalCapacity for BESTER MEMORIAL HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-441"
+        },
+        "name": "FHIR-441",
+        "description": "CDCPatientImpactAndHospitalCapacity for BESTER MEMORIAL HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-444"
+        },
+        "name": "FHIR-444",
+        "description": "CDCPatientImpactAndHospitalCapacity for DUNWICH MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-447"
+        },
+        "name": "FHIR-447",
+        "description": "CDCPatientImpactAndHospitalCapacity for DUNWICH MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-45"
+        },
+        "name": "FHIR-45",
+        "description": "CDCPatientImpactAndHospitalCapacity for INNSMOUTH HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-450"
+        },
+        "name": "FHIR-450",
+        "description": "CDCPatientImpactAndHospitalCapacity for DUNWICH MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-453"
+        },
+        "name": "FHIR-453",
+        "description": "CDCPatientImpactAndHospitalCapacity for GENERAL PRODUCTS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-456"
+        },
+        "name": "FHIR-456",
+        "description": "CDCPatientImpactAndHospitalCapacity for GENERAL PRODUCTS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-459"
+        },
+        "name": "FHIR-459",
+        "description": "CDCPatientImpactAndHospitalCapacity for GENERAL PRODUCTS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-462"
+        },
+        "name": "FHIR-462",
+        "description": "CDCPatientImpactAndHospitalCapacity for VALENTINE HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-465"
+        },
+        "name": "FHIR-465",
+        "description": "CDCPatientImpactAndHospitalCapacity for VALENTINE HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-468"
+        },
+        "name": "FHIR-468",
+        "description": "CDCPatientImpactAndHospitalCapacity for VALENTINE HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-471"
+        },
+        "name": "FHIR-471",
+        "description": "CDCPatientImpactAndHospitalCapacity for WALTON HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-474"
+        },
+        "name": "FHIR-474",
+        "description": "CDCPatientImpactAndHospitalCapacity for WALTON HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-477"
+        },
+        "name": "FHIR-477",
+        "description": "CDCPatientImpactAndHospitalCapacity for WALTON HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-48"
+        },
+        "name": "FHIR-48",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILHELM HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-480"
+        },
+        "name": "FHIR-480",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRUNNER GROVE HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-483"
+        },
+        "name": "FHIR-483",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRUNNER GROVE HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-486"
+        },
+        "name": "FHIR-486",
+        "description": "CDCPatientImpactAndHospitalCapacity for BRUNNER GROVE HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-489"
+        },
+        "name": "FHIR-489",
+        "description": "CDCPatientImpactAndHospitalCapacity for ROBERT GALBRAITH HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-492"
+        },
+        "name": "FHIR-492",
+        "description": "CDCPatientImpactAndHospitalCapacity for ROBERT GALBRAITH HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-495"
+        },
+        "name": "FHIR-495",
+        "description": "CDCPatientImpactAndHospitalCapacity for ROBERT GALBRAITH HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-51"
+        },
+        "name": "FHIR-51",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILHELM HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-54"
+        },
+        "name": "FHIR-54",
+        "description": "CDCPatientImpactAndHospitalCapacity for WILHELM HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-57"
+        },
+        "name": "FHIR-57",
+        "description": "CDCPatientImpactAndHospitalCapacity for NEW CYPRUS HOSPITAL Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-60"
+        },
+        "name": "FHIR-60",
+        "description": "CDCPatientImpactAndHospitalCapacity for NEW CYPRUS HOSPITAL Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-63"
+        },
+        "name": "FHIR-63",
+        "description": "CDCPatientImpactAndHospitalCapacity for NEW CYPRUS HOSPITAL Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-66"
+        },
+        "name": "FHIR-66",
+        "description": "CDCPatientImpactAndHospitalCapacity for SITKA MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-69"
+        },
+        "name": "FHIR-69",
+        "description": "CDCPatientImpactAndHospitalCapacity for SITKA MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-72"
+        },
+        "name": "FHIR-72",
+        "description": "CDCPatientImpactAndHospitalCapacity for SITKA MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-75"
+        },
+        "name": "FHIR-75",
+        "description": "CDCPatientImpactAndHospitalCapacity for STEPHENSON HOSPITAL OF CHEF COUNTY Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-78"
+        },
+        "name": "FHIR-78",
+        "description": "CDCPatientImpactAndHospitalCapacity for STEPHENSON HOSPITAL OF CHEF COUNTY Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-81"
+        },
+        "name": "FHIR-81",
+        "description": "CDCPatientImpactAndHospitalCapacity for STEPHENSON HOSPITAL OF CHEF COUNTY Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-84"
+        },
+        "name": "FHIR-84",
+        "description": "CDCPatientImpactAndHospitalCapacity for HALDEMAN UNIVERSITY MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-87"
+        },
+        "name": "FHIR-87",
+        "description": "CDCPatientImpactAndHospitalCapacity for HALDEMAN UNIVERSITY MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-90"
+        },
+        "name": "FHIR-90",
+        "description": "CDCPatientImpactAndHospitalCapacity for HALDEMAN UNIVERSITY MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-93"
+        },
+        "name": "FHIR-93",
+        "description": "CDCPatientImpactAndHospitalCapacity for SIMAK FAMILY MEDICAL CENTER Building on May 11, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-96"
+        },
+        "name": "FHIR-96",
+        "description": "CDCPatientImpactAndHospitalCapacity for SIMAK FAMILY MEDICAL CENTER Building on May 12, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MeasureReport/FHIR-99"
+        },
+        "name": "FHIR-99",
+        "description": "CDCPatientImpactAndHospitalCapacity for SIMAK FAMILY MEDICAL CENTER Building on May 13, 2020",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ConceptMap/HAvBED2toFHIR"
         },
         "name": "HAvBED2 to FHIR Concept Map",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization11c"
+        },
+        "name": "Immunization11c",
+        "description": "Immunization for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization12a"
+        },
+        "name": "Immunization12a",
+        "description": "Immunization for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization12b"
+        },
+        "name": "Immunization12b",
+        "description": "Immunization for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization16c"
+        },
+        "name": "Immunization16c",
+        "description": "Immunization for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization19a"
+        },
+        "name": "Immunization19a",
+        "description": "Immunization for Immunization1-9a",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Immunization/Immunization19b"
+        },
+        "name": "Immunization19b",
+        "description": "Immunization for Test Case 9b: No Diagnosis of Suspected  COVID-19 nor positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140008"
+        },
+        "name": "Loc-X140008",
+        "description": "Description for CLARKE MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140010"
+        },
+        "name": "Loc-X140010",
+        "description": "Description for VINGE UNIVERSITY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140048"
+        },
+        "name": "Loc-X140048",
+        "description": "Description for VALENTINE HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140049"
+        },
+        "name": "Loc-X140049",
+        "description": "Description for JEMISIN MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140054"
+        },
+        "name": "Loc-X140054",
+        "description": "Description for WILHELM HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140062"
+        },
+        "name": "Loc-X140062",
+        "description": "Description for GIBSON COMMUNITY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140063"
+        },
+        "name": "Loc-X140063",
+        "description": "Description for ROBERT GALBRAITH HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140065"
+        },
+        "name": "Loc-X140065",
+        "description": "Description for BESTER MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140068"
+        },
+        "name": "Loc-X140068",
+        "description": "Description for WILLIS COMMUNITY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140080"
+        },
+        "name": "Loc-X140080",
+        "description": "Description for SAINT LOIS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140082"
+        },
+        "name": "Loc-X140082",
+        "description": "Description for PAUL FRENCH MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140083"
+        },
+        "name": "Loc-X140083",
+        "description": "Description for FARMERS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140088"
+        },
+        "name": "Loc-X140088",
+        "description": "Description for DAHL UNIVERSITY MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140095"
+        },
+        "name": "Loc-X140095",
+        "description": "Description for ST ROBERT HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140103"
+        },
+        "name": "Loc-X140103",
+        "description": "Description for LABRADOR HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140114"
+        },
+        "name": "Loc-X140114",
+        "description": "Description for WALTON HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140115"
+        },
+        "name": "Loc-X140115",
+        "description": "Description for LECKIE HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140117"
+        },
+        "name": "Loc-X140117",
+        "description": "Description for KEATS MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140119"
+        },
+        "name": "Loc-X140119",
+        "description": "Description for LAKESIDE MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140124"
+        },
+        "name": "Loc-X140124",
+        "description": "Description for URSULA KROEBER HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140133"
+        },
+        "name": "Loc-X140133",
+        "description": "Description for SELENE HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140150"
+        },
+        "name": "Loc-X140150",
+        "description": "Description for CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140158"
+        },
+        "name": "Loc-X140158",
+        "description": "Description for POHL HOSPITAL AND MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140177"
+        },
+        "name": "Loc-X140177",
+        "description": "Description for BRUNNER GROVE HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140179"
+        },
+        "name": "Loc-X140179",
+        "description": "Description for GENERAL PRODUCTS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140180"
+        },
+        "name": "Loc-X140180",
+        "description": "Description for ARES MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140181"
+        },
+        "name": "Loc-X140181",
+        "description": "Description for WILSON HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140182"
+        },
+        "name": "Loc-X140182",
+        "description": "Description for LEIBER FAMILY MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140191"
+        },
+        "name": "Loc-X140191",
+        "description": "Description for ZELAZNY MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140197"
+        },
+        "name": "Loc-X140197",
+        "description": "Description for MCINTYRE HOSPITAL OF CHEF COUNTY Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140206"
+        },
+        "name": "Loc-X140206",
+        "description": "Description for BRIN HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140208"
+        },
+        "name": "Loc-X140208",
+        "description": "Description for CLIFTON MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140223"
+        },
+        "name": "Loc-X140223",
+        "description": "Description for BLISH GENERAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140224"
+        },
+        "name": "Loc-X140224",
+        "description": "Description for SAINT VERNOR HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140240"
+        },
+        "name": "Loc-X140240",
+        "description": "Description for KOWEL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140250"
+        },
+        "name": "Loc-X140250",
+        "description": "Description for ST LEIBOWITZ HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140251"
+        },
+        "name": "Loc-X140251",
+        "description": "Description for HERBERT MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140252"
+        },
+        "name": "Loc-X140252",
+        "description": "Description for PELL COMMUNITY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140258"
+        },
+        "name": "Loc-X140258",
+        "description": "Description for SIMAK FAMILY MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140276"
+        },
+        "name": "Loc-X140276",
+        "description": "Description for HALDEMAN UNIVERSITY MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140281"
+        },
+        "name": "Loc-X140281",
+        "description": "Description for FOUNDATION HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140290"
+        },
+        "name": "Loc-X140290",
+        "description": "Description for SITKA MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X140300"
+        },
+        "name": "Loc-X140300",
+        "description": "Description for STEPHENSON HOSPITAL OF CHEF COUNTY Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X143300"
+        },
+        "name": "Loc-X143300",
+        "description": "Description for LEIBER CHILDRENS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X143302"
+        },
+        "name": "Loc-X143302",
+        "description": "Description for CLARKE CHILDRENS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410004"
+        },
+        "name": "Loc-X410004",
+        "description": "Location for CHARLES D WARD MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410005"
+        },
+        "name": "Loc-X410005",
+        "description": "Location for SAINT JOHN HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410006"
+        },
+        "name": "Loc-X410006",
+        "description": "Location for INNSMOUTH HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410007"
+        },
+        "name": "Loc-X410007",
+        "description": "Location for NEW CYPRUS HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410008"
+        },
+        "name": "Loc-X410008",
+        "description": "Location for CIMMERIAN FOUNDATION HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410009"
+        },
+        "name": "Loc-X410009",
+        "description": "Location for DUNWICH MEDICAL CENTER Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410010"
+        },
+        "name": "Loc-X410010",
+        "description": "Location for MISKATONIC UNIVERSITY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410011"
+        },
+        "name": "Loc-X410011",
+        "description": "Location for NORTH COUNTY HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Loc-X410013"
+        },
+        "name": "Loc-X410013",
+        "description": "Location for WASHINGTON COUNTY MEMORIAL HOSPITAL Building",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location1a"
+        },
+        "name": "Location1a",
+        "description": "Location for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location1b"
+        },
+        "name": "Location1b",
+        "description": "Location for Test Case 1b: Admission date =T-1 w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location1c"
+        },
+        "name": "Location1c",
+        "description": "Location for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location2a"
+        },
+        "name": "Location2a",
+        "description": "Location for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location2b"
+        },
+        "name": "Location2b",
+        "description": "Location for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location3a"
+        },
+        "name": "Location3a",
+        "description": "Location for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location3b"
+        },
+        "name": "Location3b",
+        "description": "Location for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location4a"
+        },
+        "name": "Location4a",
+        "description": "Location for Test Case 4a: T-1 w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location4b"
+        },
+        "name": "Location4b",
+        "description": "Location for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location4c"
+        },
+        "name": "Location4c",
+        "description": "Location for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location5a"
+        },
+        "name": "Location5a",
+        "description": "Location for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location5b"
+        },
+        "name": "Location5b",
+        "description": "Location for Test Case 5b: Only positive collected T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location5c"
+        },
+        "name": "Location5c",
+        "description": "Location for Test Case 5c: Positives collected T-13 and T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location6a"
+        },
+        "name": "Location6a",
+        "description": "Location for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location6b"
+        },
+        "name": "Location6b",
+        "description": "Location for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location6c"
+        },
+        "name": "Location6c",
+        "description": "Location for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location7a"
+        },
+        "name": "Location7a",
+        "description": "Location for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location7b"
+        },
+        "name": "Location7b",
+        "description": "Location for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location8a"
+        },
+        "name": "Location8a",
+        "description": "Location for Test Case 8a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location8b"
+        },
+        "name": "Location8b",
+        "description": "Location for Test Case 8b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location8c"
+        },
+        "name": "Location8c",
+        "description": "Location for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location9a"
+        },
+        "name": "Location9a",
+        "description": "Location for Test Case 9a: Diagnosis of Suspected COVID-19 WITHOUT positive viral test w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location9b"
+        },
+        "name": "Location9b",
+        "description": "Location for Test Case 9b: No Diagnosis of Suspected  COVID-19 nor positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/Location9c"
+        },
+        "name": "Location9c",
+        "description": "Location for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/Measure-evaluate-measure"
+        },
+        "name": "Measure-evaluate-measure",
+        "description": "Create or update a MeasureReport for the given time period. If a report already exists for the subject and reporter for the given time period, it is updated.\n                            Otherwise, a new report is created.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/Measure-report-csv"
+        },
+        "name": "Measure-report-csv",
+        "description": "Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.\n                            Otherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.",
+        "exampleBoolean": false
       },
       {
         "reference": {
@@ -951,30 +3286,6 @@
         },
         "name": "MeasureComputer-ComputeMeasure",
         "description": "Defines the requirements for the Measure Computer implementing the Compute Measure transaction.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-API-Pull"
-        },
-        "name": "MeasureConsumer-API-Pull",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option and the Pull Option.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-API-Pull-Questionnaire"
-        },
-        "name": "MeasureConsumer-API-Pull-Questionnaire",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option, the Pull Option, and the Questionnaire Option.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-API-Push"
-        },
-        "name": "MeasureConsumer-API-Push",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the API Option and the Push Option.",
         "exampleBoolean": false
       },
       {
@@ -1003,14 +3314,6 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-ProduceMeasure-API-Push"
-        },
-        "name": "MeasureConsumer-ProduceMeasure-API-Push",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the Produce Measure transaction with the API Option and the Push Option.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CapabilityStatement/MeasureConsumer-ProduceMeasure-CSV-Push"
         },
         "name": "MeasureConsumer-ProduceMeasure-CSV-Push",
@@ -1019,18 +3322,34 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull"
+          "reference": "CapabilityStatement/MeasureConsumer-ProduceMeasure-Push"
         },
-        "name": "MeasureConsumer-QueryMeasure-API-Pull",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the API Option and the Pull Option.",
+        "name": "MeasureConsumer-ProduceMeasure-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Produce Measure transaction with the Push Option.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-API-Pull-Questionnaire"
+          "reference": "CapabilityStatement/MeasureConsumer-Pull"
         },
-        "name": "MeasureConsumer-QueryMeasure-API-Pull-Questionnaire",
-        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the API Option, the Pull Option, and the Questionnaire Option.",
+        "name": "MeasureConsumer-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-Pull-Questionnaire"
+        },
+        "name": "MeasureConsumer-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Pull Option and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-Push"
+        },
+        "name": "MeasureConsumer-Push",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Push Option.",
         "exampleBoolean": false
       },
       {
@@ -1039,6 +3358,22 @@
         },
         "name": "MeasureConsumer-QueryMeasure-CSV-Pull",
         "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the CSV Option and the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-Pull"
+        },
+        "name": "MeasureConsumer-QueryMeasure-Pull",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureConsumer-QueryMeasure-Pull-Questionnaire"
+        },
+        "name": "MeasureConsumer-QueryMeasure-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Consumer implementing the Query Measure transaction with the Pull Option and the Questionnaire Option.",
         "exampleBoolean": false
       },
       {
@@ -1075,26 +3410,26 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-API-Pull"
+          "reference": "OperationDefinition/MeasureReport-aggregate"
         },
-        "name": "MeasureSource-API-Pull",
-        "description": "Defines the additional requirements for the Measure Source implementing the API Option and the Pull Option.",
+        "name": "MeasureReport-aggregate",
+        "description": "This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.\nThe MeasureReport to be aggregated can be provided in the measure-report parameter, or the caller can indicate which measures **should** be aggregated by\nspecifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources\nbeing aggregated must reference the same Measure resource defining the MeasureReport to generate.\n                        ",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-API-Pull-Questionnaire"
+          "reference": "OperationDefinition/MeasureReport-read-csv"
         },
-        "name": "MeasureSource-API-Pull-Questionnaire",
-        "description": "Defines the additional requirements for the Measure Source implementing the API Option, the Pull Option, and the Questionnaire Option.",
+        "name": "MeasureReport-read-csv",
+        "description": "Read a given MeasureReport using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-API-Push"
+          "reference": "OperationDefinition/MeasureReport-search-csv"
         },
-        "name": "MeasureSource-API-Push",
-        "description": "Defines the additional requirements for the Measure Source implementing the API Option and the Push Option.",
+        "name": "MeasureReport-search-csv",
+        "description": "Search Measure Report resources using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
         "exampleBoolean": false
       },
       {
@@ -1123,14 +3458,6 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-ProduceMeasure-API-Push"
-        },
-        "name": "MeasureSource-ProduceMeasure-API-Push",
-        "description": "Defines the additional requirements for the Measure Source implementing the Produce Measure transaction with the API Option and the Push Option.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CapabilityStatement/MeasureSource-ProduceMeasure-CSV-Push"
         },
         "name": "MeasureSource-ProduceMeasure-CSV-Push",
@@ -1139,18 +3466,34 @@
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-API-Pull"
+          "reference": "CapabilityStatement/MeasureSource-ProduceMeasure-Push"
         },
-        "name": "MeasureSource-QueryMeasure-API-Pull",
-        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the API Option and the Pull Option.",
+        "name": "MeasureSource-ProduceMeasure-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the Produce Measure transaction with the Push Option.",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-API-Pull-Questionnaire"
+          "reference": "CapabilityStatement/MeasureSource-Pull"
         },
-        "name": "MeasureSource-QueryMeasure-API-Pull-Questionnaire",
-        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the API Option, the Pull Option, and the Questionnaire Option.",
+        "name": "MeasureSource-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-Pull-Questionnaire"
+        },
+        "name": "MeasureSource-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Source implementing the Pull Option and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-Push"
+        },
+        "name": "MeasureSource-Push",
+        "description": "Defines the additional requirements for the Measure Source implementing the Push Option.",
         "exampleBoolean": false
       },
       {
@@ -1160,6 +3503,150 @@
         "name": "MeasureSource-QueryMeasure-CSV-Pull",
         "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the CSV Option and the Pull Option.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-Pull"
+        },
+        "name": "MeasureSource-QueryMeasure-Pull",
+        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the Pull Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/MeasureSource-QueryMeasure-Pull-Questionnaire"
+        },
+        "name": "MeasureSource-QueryMeasure-Pull-Questionnaire",
+        "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the Pull Option and the Questionnaire Option.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest11a"
+        },
+        "name": "MedicationRequest11a",
+        "description": "MedicationRequest for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest11b"
+        },
+        "name": "MedicationRequest11b",
+        "description": "MedicationRequest for Test Case 1b: Admission date =T-1 w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest12b"
+        },
+        "name": "MedicationRequest12b",
+        "description": "MedicationRequest for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest13a"
+        },
+        "name": "MedicationRequest13a",
+        "description": "MedicationRequest for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest14b"
+        },
+        "name": "MedicationRequest14b",
+        "description": "MedicationRequest for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest14c"
+        },
+        "name": "MedicationRequest14c",
+        "description": "MedicationRequest for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest15a"
+        },
+        "name": "MedicationRequest15a",
+        "description": "MedicationRequest for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest15b"
+        },
+        "name": "MedicationRequest15b",
+        "description": "MedicationRequest for Test Case 5b: Only positive collected T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest16b"
+        },
+        "name": "MedicationRequest16b",
+        "description": "MedicationRequest for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest16c"
+        },
+        "name": "MedicationRequest16c",
+        "description": "MedicationRequest for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest17a"
+        },
+        "name": "MedicationRequest17a",
+        "description": "MedicationRequest for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest17b"
+        },
+        "name": "MedicationRequest17b",
+        "description": "MedicationRequest for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest18a"
+        },
+        "name": "MedicationRequest18a",
+        "description": "MedicationRequest for Test Case 8a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest18b"
+        },
+        "name": "MedicationRequest18b",
+        "description": "MedicationRequest for Test Case 8b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest18c"
+        },
+        "name": "MedicationRequest18c",
+        "description": "MedicationRequest for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationRequest/MedicationRequest19c"
+        },
+        "name": "MedicationRequest19c",
+        "description": "MedicationRequest for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1178,35 +3665,523 @@
       },
       {
         "reference": {
-          "reference": "OperationDefinition/ProduceMeasure-aggregate"
+          "reference": "Observation/Observation11a"
         },
-        "name": "ProduceMeasure-aggregate",
-        "description": "This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.\nThe MeasureReport to be aggregated can be provided in the measure-report parameter, or the caller can indicate which measures **should** be aggregated by\nspecifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources\nbeing aggregated must reference the same Measure resource defining the MeasureReport to generate.\n                        ",
-        "exampleBoolean": false
+        "name": "Observation11a",
+        "description": "Observation-1 for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "OperationDefinition/ProduceMeasure-report-csv"
+          "reference": "Observation/Observation11b"
         },
-        "name": "ProduceMeasure-report-csv",
-        "description": "Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.\nOtherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details.",
-        "exampleBoolean": false
+        "name": "Observation11b",
+        "description": "Observation-1 for Test Case 1b: Admission date =T-1 w/ outcome = Yes/No",
+        "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "OperationDefinition/QueryMeasure-read-csv"
+          "reference": "Observation/Observation11c"
         },
-        "name": "QueryMeasure-read-csv",
-        "description": "Read a given MeasureReport using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
-        "exampleBoolean": false
+        "name": "Observation11c",
+        "description": "Observation-1 for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "OperationDefinition/QueryMeasure-search-csv"
+          "reference": "Observation/Observation12a"
         },
-        "name": "QueryMeasure-search-csv",
-        "description": "Search Measure Report resources using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
-        "exampleBoolean": false
+        "name": "Observation12a",
+        "description": "Observation-1 for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation12b"
+        },
+        "name": "Observation12b",
+        "description": "Observation-1 for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation13a"
+        },
+        "name": "Observation13a",
+        "description": "Observation-1 for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation13b"
+        },
+        "name": "Observation13b",
+        "description": "Observation-1 for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation14a"
+        },
+        "name": "Observation14a",
+        "description": "Observation-1 for Test Case 4a: T-1 w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation14b"
+        },
+        "name": "Observation14b",
+        "description": "Observation-1 for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation14c"
+        },
+        "name": "Observation14c",
+        "description": "Observation-1 for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation15a"
+        },
+        "name": "Observation15a",
+        "description": "Observation-1 for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation15b"
+        },
+        "name": "Observation15b",
+        "description": "Observation-1 for Test Case 5b: Only positive collected T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation15c"
+        },
+        "name": "Observation15c",
+        "description": "Observation-1 for Test Case 5c: Positives collected T-13 and T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation16a"
+        },
+        "name": "Observation16a",
+        "description": "Observation-1 for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation16b"
+        },
+        "name": "Observation16b",
+        "description": "Observation-1 for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation16c"
+        },
+        "name": "Observation16c",
+        "description": "Observation-1 for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation17a"
+        },
+        "name": "Observation17a",
+        "description": "Observation-1 for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation17b"
+        },
+        "name": "Observation17b",
+        "description": "Observation-1 for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation18a"
+        },
+        "name": "Observation18a",
+        "description": "Observation-1 for Test Case 8a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation18b"
+        },
+        "name": "Observation18b",
+        "description": "Observation-1 for Test Case 8b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation18c"
+        },
+        "name": "Observation18c",
+        "description": "Observation-1 for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation19c"
+        },
+        "name": "Observation19c",
+        "description": "Observation-1 for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation31c"
+        },
+        "name": "Observation31c",
+        "description": "Observation-3 for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation33b"
+        },
+        "name": "Observation33b",
+        "description": "Observation-3 for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation34a"
+        },
+        "name": "Observation34a",
+        "description": "Observation-3 for Test Case 4a: T-1 w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation34b"
+        },
+        "name": "Observation34b",
+        "description": "Observation-3 for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation34c"
+        },
+        "name": "Observation34c",
+        "description": "Observation-3 for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation36a"
+        },
+        "name": "Observation36a",
+        "description": "Observation-3 for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation36b"
+        },
+        "name": "Observation36b",
+        "description": "Observation-3 for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation36c"
+        },
+        "name": "Observation36c",
+        "description": "Observation-3 for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation37a"
+        },
+        "name": "Observation37a",
+        "description": "Observation-3 for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation38c"
+        },
+        "name": "Observation38c",
+        "description": "Observation-3 for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation39c"
+        },
+        "name": "Observation39c",
+        "description": "Observation-3 for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation41c"
+        },
+        "name": "Observation41c",
+        "description": "Observation-4 for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation42b"
+        },
+        "name": "Observation42b",
+        "description": "Observation-4 for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation43a"
+        },
+        "name": "Observation43a",
+        "description": "Observation-4 for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation46b"
+        },
+        "name": "Observation46b",
+        "description": "Observation-4 for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation46c"
+        },
+        "name": "Observation46c",
+        "description": "Observation-4 for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation47a"
+        },
+        "name": "Observation47a",
+        "description": "Observation-4 for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation48c"
+        },
+        "name": "Observation48c",
+        "description": "Observation-4 for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation49b"
+        },
+        "name": "Observation49b",
+        "description": "Observation-4 for Test Case 9b: No Diagnosis of Suspected  COVID-19 nor positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient1a"
+        },
+        "name": "Patient1a",
+        "description": "Patient for Test Case 1a: Admission date =Today (T) w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient1b"
+        },
+        "name": "Patient1b",
+        "description": "Patient for Test Case 1b: Admission date =T-1 w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient1c"
+        },
+        "name": "Patient1c",
+        "description": "Patient for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient2a"
+        },
+        "name": "Patient2a",
+        "description": "Patient for Test Case 2a: Positive test result w/ outcome = Yes/No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient2b"
+        },
+        "name": "Patient2b",
+        "description": "Patient for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient3a"
+        },
+        "name": "Patient3a",
+        "description": "Patient for Test Case 3a: Neither Adm diagnosis or Problem list  doument COVID w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient3b"
+        },
+        "name": "Patient3b",
+        "description": "Patient for Test Case 3b: Adm diagnosis documents COVID but problem list does not w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient4a"
+        },
+        "name": "Patient4a",
+        "description": "Patient for Test Case 4a: T-1 w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient4b"
+        },
+        "name": "Patient4b",
+        "description": "Patient for Test Case 4b: T-15 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient4c"
+        },
+        "name": "Patient4c",
+        "description": "Patient for Test Case 4c: T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient5a"
+        },
+        "name": "Patient5a",
+        "description": "Patient for Test Case 5a: Only positive collected today w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient5b"
+        },
+        "name": "Patient5b",
+        "description": "Patient for Test Case 5b: Only positive collected T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient5c"
+        },
+        "name": "Patient5c",
+        "description": "Patient for Test Case 5c: Positives collected T-13 and T w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient6a"
+        },
+        "name": "Patient6a",
+        "description": "Patient for Test Case 6a: Ventilator (intubation) start date = T-1 and no stop (extubation) date w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient6b"
+        },
+        "name": "Patient6b",
+        "description": "Patient for Test Case 6b: Ventilator (intubation)start date = T-3 and stop (extubation) date = T  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient6c"
+        },
+        "name": "Patient6c",
+        "description": "Patient for Test Case 6c: Ventilator (intubation) start date = T-6 and stop date (extubation) =T-1 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient7a"
+        },
+        "name": "Patient7a",
+        "description": "Patient for Test Case 7a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient7b"
+        },
+        "name": "Patient7b",
+        "description": "Patient for Test Case 7b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient8a"
+        },
+        "name": "Patient8a",
+        "description": "Patient for Test Case 8a: No w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient8b"
+        },
+        "name": "Patient8b",
+        "description": "Patient for Test Case 8b: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient8c"
+        },
+        "name": "Patient8c",
+        "description": "Patient for Test Case 8c: Yes w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient9a"
+        },
+        "name": "Patient9a",
+        "description": "Patient for Test Case 9a: Diagnosis of Suspected COVID-19 WITHOUT positive viral test w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient9b"
+        },
+        "name": "Patient9b",
+        "description": "Patient for Test Case 9b: No Diagnosis of Suspected  COVID-19 nor positive viral test w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient9c"
+        },
+        "name": "Patient9c",
+        "description": "Patient for Test Case 9c: Diagnosis of Suspected COVID-19 AND ALSO  positive viral test w/ outcome = No",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1231,73 +4206,10 @@
       },
       {
         "reference": {
-          "reference": "Location/states-NJ"
-        },
-        "name": "states-NJ",
-        "description": "Example Location for the State of New Jersey",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-381"
-        },
-        "name": "FHIR-381",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-384"
-        },
-        "name": "FHIR-384",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-387"
-        },
-        "name": "FHIR-387",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140008"
-        },
-        "name": "Loc-X140008",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Organization/X140008"
         },
         "name": "X140008",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-309"
-        },
-        "name": "FHIR-309",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-312"
-        },
-        "name": "FHIR-312",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-315"
-        },
-        "name": "FHIR-315",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140010"
-        },
-        "name": "Loc-X140010",
+        "description": "Description for CLARKE MEMORIAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1305,34 +4217,7 @@
           "reference": "Organization/X140010"
         },
         "name": "X140010",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-462"
-        },
-        "name": "FHIR-462",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-465"
-        },
-        "name": "FHIR-465",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-468"
-        },
-        "name": "FHIR-468",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140048"
-        },
-        "name": "Loc-X140048",
+        "description": "Description for VINGE UNIVERSITY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1340,34 +4225,7 @@
           "reference": "Organization/X140048"
         },
         "name": "X140048",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-210"
-        },
-        "name": "FHIR-210",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-213"
-        },
-        "name": "FHIR-213",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-216"
-        },
-        "name": "FHIR-216",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140049"
-        },
-        "name": "Loc-X140049",
+        "description": "Description for VALENTINE HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1375,34 +4233,7 @@
           "reference": "Organization/X140049"
         },
         "name": "X140049",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-48"
-        },
-        "name": "FHIR-48",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-51"
-        },
-        "name": "FHIR-51",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-54"
-        },
-        "name": "FHIR-54",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140054"
-        },
-        "name": "Loc-X140054",
+        "description": "Description for JEMISIN MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -1410,34 +4241,7 @@
           "reference": "Organization/X140054"
         },
         "name": "X140054",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-129"
-        },
-        "name": "FHIR-129",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-132"
-        },
-        "name": "FHIR-132",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-135"
-        },
-        "name": "FHIR-135",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140062"
-        },
-        "name": "Loc-X140062",
+        "description": "Description for WILHELM HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1445,34 +4249,7 @@
           "reference": "Organization/X140062"
         },
         "name": "X140062",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-489"
-        },
-        "name": "FHIR-489",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-492"
-        },
-        "name": "FHIR-492",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-495"
-        },
-        "name": "FHIR-495",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140063"
-        },
-        "name": "Loc-X140063",
+        "description": "Description for GIBSON COMMUNITY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1480,34 +4257,7 @@
           "reference": "Organization/X140063"
         },
         "name": "X140063",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-435"
-        },
-        "name": "FHIR-435",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-438"
-        },
-        "name": "FHIR-438",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-441"
-        },
-        "name": "FHIR-441",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140065"
-        },
-        "name": "Loc-X140065",
+        "description": "Description for ROBERT GALBRAITH HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1515,34 +4265,7 @@
           "reference": "Organization/X140065"
         },
         "name": "X140065",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-255"
-        },
-        "name": "FHIR-255",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-258"
-        },
-        "name": "FHIR-258",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-261"
-        },
-        "name": "FHIR-261",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140068"
-        },
-        "name": "Loc-X140068",
+        "description": "Description for BESTER MEMORIAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1550,34 +4273,7 @@
           "reference": "Organization/X140068"
         },
         "name": "X140068",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-111"
-        },
-        "name": "FHIR-111",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-114"
-        },
-        "name": "FHIR-114",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-117"
-        },
-        "name": "FHIR-117",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140080"
-        },
-        "name": "Loc-X140080",
+        "description": "Description for WILLIS COMMUNITY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1585,34 +4281,7 @@
           "reference": "Organization/X140080"
         },
         "name": "X140080",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-174"
-        },
-        "name": "FHIR-174",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-177"
-        },
-        "name": "FHIR-177",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-180"
-        },
-        "name": "FHIR-180",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140082"
-        },
-        "name": "Loc-X140082",
+        "description": "Description for SAINT LOIS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1620,34 +4289,7 @@
           "reference": "Organization/X140082"
         },
         "name": "X140082",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-354"
-        },
-        "name": "FHIR-354",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-357"
-        },
-        "name": "FHIR-357",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-360"
-        },
-        "name": "FHIR-360",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140083"
-        },
-        "name": "Loc-X140083",
+        "description": "Description for PAUL FRENCH MEMORIAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1655,34 +4297,7 @@
           "reference": "Organization/X140083"
         },
         "name": "X140083",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-237"
-        },
-        "name": "FHIR-237",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-240"
-        },
-        "name": "FHIR-240",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-243"
-        },
-        "name": "FHIR-243",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140088"
-        },
-        "name": "Loc-X140088",
+        "description": "Description for FARMERS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1690,34 +4305,7 @@
           "reference": "Organization/X140088"
         },
         "name": "X140088",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-408"
-        },
-        "name": "FHIR-408",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-411"
-        },
-        "name": "FHIR-411",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-414"
-        },
-        "name": "FHIR-414",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140095"
-        },
-        "name": "Loc-X140095",
+        "description": "Description for DAHL UNIVERSITY MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -1725,34 +4313,7 @@
           "reference": "Organization/X140095"
         },
         "name": "X140095",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-291"
-        },
-        "name": "FHIR-291",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-294"
-        },
-        "name": "FHIR-294",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-297"
-        },
-        "name": "FHIR-297",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140103"
-        },
-        "name": "Loc-X140103",
+        "description": "Description for ST ROBERT HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1760,34 +4321,7 @@
           "reference": "Organization/X140103"
         },
         "name": "X140103",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-471"
-        },
-        "name": "FHIR-471",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-474"
-        },
-        "name": "FHIR-474",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-477"
-        },
-        "name": "FHIR-477",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140114"
-        },
-        "name": "Loc-X140114",
+        "description": "Description for LABRADOR HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1795,34 +4329,7 @@
           "reference": "Organization/X140114"
         },
         "name": "X140114",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-336"
-        },
-        "name": "FHIR-336",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-339"
-        },
-        "name": "FHIR-339",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-342"
-        },
-        "name": "FHIR-342",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140115"
-        },
-        "name": "Loc-X140115",
+        "description": "Description for WALTON HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1830,34 +4337,7 @@
           "reference": "Organization/X140115"
         },
         "name": "X140115",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-228"
-        },
-        "name": "FHIR-228",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-231"
-        },
-        "name": "FHIR-231",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-234"
-        },
-        "name": "FHIR-234",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140117"
-        },
-        "name": "Loc-X140117",
+        "description": "Description for LECKIE HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1865,34 +4345,7 @@
           "reference": "Organization/X140117"
         },
         "name": "X140117",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-399"
-        },
-        "name": "FHIR-399",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-402"
-        },
-        "name": "FHIR-402",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-405"
-        },
-        "name": "FHIR-405",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140119"
-        },
-        "name": "Loc-X140119",
+        "description": "Description for KEATS MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -1900,34 +4353,7 @@
           "reference": "Organization/X140119"
         },
         "name": "X140119",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-390"
-        },
-        "name": "FHIR-390",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-393"
-        },
-        "name": "FHIR-393",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-396"
-        },
-        "name": "FHIR-396",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140124"
-        },
-        "name": "Loc-X140124",
+        "description": "Description for LAKESIDE MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -1935,34 +4361,7 @@
           "reference": "Organization/X140124"
         },
         "name": "X140124",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-426"
-        },
-        "name": "FHIR-426",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-429"
-        },
-        "name": "FHIR-429",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-432"
-        },
-        "name": "FHIR-432",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140133"
-        },
-        "name": "Loc-X140133",
+        "description": "Description for URSULA KROEBER HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -1970,34 +4369,7 @@
           "reference": "Organization/X140133"
         },
         "name": "X140133",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-246"
-        },
-        "name": "FHIR-246",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-249"
-        },
-        "name": "FHIR-249",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-252"
-        },
-        "name": "FHIR-252",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140150"
-        },
-        "name": "Loc-X140150",
+        "description": "Description for SELENE HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2005,34 +4377,7 @@
           "reference": "Organization/X140150"
         },
         "name": "X140150",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-120"
-        },
-        "name": "FHIR-120",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-123"
-        },
-        "name": "FHIR-123",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-126"
-        },
-        "name": "FHIR-126",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140158"
-        },
-        "name": "Loc-X140158",
+        "description": "Description for CHEF COUNTY ACADEMY OF SCIENCES HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2040,34 +4385,7 @@
           "reference": "Organization/X140158"
         },
         "name": "X140158",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-480"
-        },
-        "name": "FHIR-480",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-483"
-        },
-        "name": "FHIR-483",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-486"
-        },
-        "name": "FHIR-486",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140177"
-        },
-        "name": "Loc-X140177",
+        "description": "Description for POHL HOSPITAL AND MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2075,34 +4393,7 @@
           "reference": "Organization/X140177"
         },
         "name": "X140177",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-453"
-        },
-        "name": "FHIR-453",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-456"
-        },
-        "name": "FHIR-456",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-459"
-        },
-        "name": "FHIR-459",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140179"
-        },
-        "name": "Loc-X140179",
+        "description": "Description for BRUNNER GROVE HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2110,34 +4401,7 @@
           "reference": "Organization/X140179"
         },
         "name": "X140179",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-273"
-        },
-        "name": "FHIR-273",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-276"
-        },
-        "name": "FHIR-276",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-279"
-        },
-        "name": "FHIR-279",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140180"
-        },
-        "name": "Loc-X140180",
+        "description": "Description for GENERAL PRODUCTS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2145,34 +4409,7 @@
           "reference": "Organization/X140180"
         },
         "name": "X140180",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-363"
-        },
-        "name": "FHIR-363",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-366"
-        },
-        "name": "FHIR-366",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-369"
-        },
-        "name": "FHIR-369",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140181"
-        },
-        "name": "Loc-X140181",
+        "description": "Description for ARES MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2180,34 +4417,7 @@
           "reference": "Organization/X140181"
         },
         "name": "X140181",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-327"
-        },
-        "name": "FHIR-327",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-330"
-        },
-        "name": "FHIR-330",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-333"
-        },
-        "name": "FHIR-333",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140182"
-        },
-        "name": "Loc-X140182",
+        "description": "Description for WILSON HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2215,34 +4425,7 @@
           "reference": "Organization/X140182"
         },
         "name": "X140182",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-372"
-        },
-        "name": "FHIR-372",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-375"
-        },
-        "name": "FHIR-375",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-378"
-        },
-        "name": "FHIR-378",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140191"
-        },
-        "name": "Loc-X140191",
+        "description": "Description for LEIBER FAMILY MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2250,34 +4433,7 @@
           "reference": "Organization/X140191"
         },
         "name": "X140191",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-201"
-        },
-        "name": "FHIR-201",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-204"
-        },
-        "name": "FHIR-204",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-207"
-        },
-        "name": "FHIR-207",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140197"
-        },
-        "name": "Loc-X140197",
+        "description": "Description for ZELAZNY MEMORIAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2285,34 +4441,7 @@
           "reference": "Organization/X140197"
         },
         "name": "X140197",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-345"
-        },
-        "name": "FHIR-345",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-348"
-        },
-        "name": "FHIR-348",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-351"
-        },
-        "name": "FHIR-351",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140206"
-        },
-        "name": "Loc-X140206",
+        "description": "Description for MCINTYRE HOSPITAL OF CHEF COUNTY",
         "exampleBoolean": true
       },
       {
@@ -2320,34 +4449,7 @@
           "reference": "Organization/X140206"
         },
         "name": "X140206",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-183"
-        },
-        "name": "FHIR-183",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-186"
-        },
-        "name": "FHIR-186",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-189"
-        },
-        "name": "FHIR-189",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140208"
-        },
-        "name": "Loc-X140208",
+        "description": "Description for BRIN HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2355,34 +4457,7 @@
           "reference": "Organization/X140208"
         },
         "name": "X140208",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-282"
-        },
-        "name": "FHIR-282",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-285"
-        },
-        "name": "FHIR-285",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-288"
-        },
-        "name": "FHIR-288",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140223"
-        },
-        "name": "Loc-X140223",
+        "description": "Description for CLIFTON MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2390,34 +4465,7 @@
           "reference": "Organization/X140223"
         },
         "name": "X140223",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-318"
-        },
-        "name": "FHIR-318",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-321"
-        },
-        "name": "FHIR-321",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-324"
-        },
-        "name": "FHIR-324",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140224"
-        },
-        "name": "Loc-X140224",
+        "description": "Description for BLISH GENERAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2425,34 +4473,7 @@
           "reference": "Organization/X140224"
         },
         "name": "X140224",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-417"
-        },
-        "name": "FHIR-417",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-420"
-        },
-        "name": "FHIR-420",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-423"
-        },
-        "name": "FHIR-423",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140240"
-        },
-        "name": "Loc-X140240",
+        "description": "Description for SAINT VERNOR HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2460,34 +4481,7 @@
           "reference": "Organization/X140240"
         },
         "name": "X140240",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-192"
-        },
-        "name": "FHIR-192",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-195"
-        },
-        "name": "FHIR-195",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-198"
-        },
-        "name": "FHIR-198",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140250"
-        },
-        "name": "Loc-X140250",
+        "description": "Description for KOWEL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2495,34 +4489,7 @@
           "reference": "Organization/X140250"
         },
         "name": "X140250",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-21"
-        },
-        "name": "FHIR-21",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-24"
-        },
-        "name": "FHIR-24",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-27"
-        },
-        "name": "FHIR-27",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140251"
-        },
-        "name": "Loc-X140251",
+        "description": "Description for ST LEIBOWITZ HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2530,34 +4497,7 @@
           "reference": "Organization/X140251"
         },
         "name": "X140251",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-300"
-        },
-        "name": "FHIR-300",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-303"
-        },
-        "name": "FHIR-303",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-306"
-        },
-        "name": "FHIR-306",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140252"
-        },
-        "name": "Loc-X140252",
+        "description": "Description for HERBERT MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2565,34 +4505,7 @@
           "reference": "Organization/X140252"
         },
         "name": "X140252",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-93"
-        },
-        "name": "FHIR-93",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-96"
-        },
-        "name": "FHIR-96",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-99"
-        },
-        "name": "FHIR-99",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140258"
-        },
-        "name": "Loc-X140258",
+        "description": "Description for PELL COMMUNITY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2600,34 +4513,7 @@
           "reference": "Organization/X140258"
         },
         "name": "X140258",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-84"
-        },
-        "name": "FHIR-84",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-87"
-        },
-        "name": "FHIR-87",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-90"
-        },
-        "name": "FHIR-90",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140276"
-        },
-        "name": "Loc-X140276",
+        "description": "Description for SIMAK FAMILY MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2635,34 +4521,7 @@
           "reference": "Organization/X140276"
         },
         "name": "X140276",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-147"
-        },
-        "name": "FHIR-147",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-150"
-        },
-        "name": "FHIR-150",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-153"
-        },
-        "name": "FHIR-153",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140281"
-        },
-        "name": "Loc-X140281",
+        "description": "Description for HALDEMAN UNIVERSITY MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2670,34 +4529,7 @@
           "reference": "Organization/X140281"
         },
         "name": "X140281",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-66"
-        },
-        "name": "FHIR-66",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-69"
-        },
-        "name": "FHIR-69",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-72"
-        },
-        "name": "FHIR-72",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140290"
-        },
-        "name": "Loc-X140290",
+        "description": "Description for FOUNDATION HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2705,34 +4537,7 @@
           "reference": "Organization/X140290"
         },
         "name": "X140290",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-75"
-        },
-        "name": "FHIR-75",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-78"
-        },
-        "name": "FHIR-78",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-81"
-        },
-        "name": "FHIR-81",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X140300"
-        },
-        "name": "Loc-X140300",
+        "description": "Description for SITKA MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -2740,34 +4545,7 @@
           "reference": "Organization/X140300"
         },
         "name": "X140300",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-264"
-        },
-        "name": "FHIR-264",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-267"
-        },
-        "name": "FHIR-267",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-270"
-        },
-        "name": "FHIR-270",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X143300"
-        },
-        "name": "Loc-X143300",
+        "description": "Description for STEPHENSON HOSPITAL OF CHEF COUNTY",
         "exampleBoolean": true
       },
       {
@@ -2775,34 +4553,7 @@
           "reference": "Organization/X143300"
         },
         "name": "X143300",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-30"
-        },
-        "name": "FHIR-30",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-33"
-        },
-        "name": "FHIR-33",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-36"
-        },
-        "name": "FHIR-36",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X143302"
-        },
-        "name": "Loc-X143302",
+        "description": "Description for LEIBER CHILDRENS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2810,34 +4561,7 @@
           "reference": "Organization/X143302"
         },
         "name": "X143302",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-156"
-        },
-        "name": "FHIR-156",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-159"
-        },
-        "name": "FHIR-159",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-162"
-        },
-        "name": "FHIR-162",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410004"
-        },
-        "name": "Loc-X410004",
+        "description": "Description for CLARKE CHILDRENS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2845,34 +4569,7 @@
           "reference": "Organization/X410004"
         },
         "name": "X410004",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-12"
-        },
-        "name": "FHIR-12",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-15"
-        },
-        "name": "FHIR-15",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-18"
-        },
-        "name": "FHIR-18",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410005"
-        },
-        "name": "Loc-X410005",
+        "description": "Organization for CHARLES D WARD MEMORIAL HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2880,34 +4577,7 @@
           "reference": "Organization/X410005"
         },
         "name": "X410005",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-39"
-        },
-        "name": "FHIR-39",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-42"
-        },
-        "name": "FHIR-42",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-45"
-        },
-        "name": "FHIR-45",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410006"
-        },
-        "name": "Loc-X410006",
+        "description": "Organization for SAINT JOHN HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2915,34 +4585,7 @@
           "reference": "Organization/X410006"
         },
         "name": "X410006",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-57"
-        },
-        "name": "FHIR-57",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-60"
-        },
-        "name": "FHIR-60",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-63"
-        },
-        "name": "FHIR-63",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410007"
-        },
-        "name": "Loc-X410007",
+        "description": "Organization for INNSMOUTH HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2950,34 +4593,7 @@
           "reference": "Organization/X410007"
         },
         "name": "X410007",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-219"
-        },
-        "name": "FHIR-219",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-222"
-        },
-        "name": "FHIR-222",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-225"
-        },
-        "name": "FHIR-225",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410008"
-        },
-        "name": "Loc-X410008",
+        "description": "Organization for NEW CYPRUS HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -2985,34 +4601,7 @@
           "reference": "Organization/X410008"
         },
         "name": "X410008",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-444"
-        },
-        "name": "FHIR-444",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-447"
-        },
-        "name": "FHIR-447",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-450"
-        },
-        "name": "FHIR-450",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410009"
-        },
-        "name": "Loc-X410009",
+        "description": "Organization for CIMMERIAN FOUNDATION HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -3020,34 +4609,7 @@
           "reference": "Organization/X410009"
         },
         "name": "X410009",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-165"
-        },
-        "name": "FHIR-165",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-168"
-        },
-        "name": "FHIR-168",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-171"
-        },
-        "name": "FHIR-171",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410010"
-        },
-        "name": "Loc-X410010",
+        "description": "Organization for DUNWICH MEDICAL CENTER",
         "exampleBoolean": true
       },
       {
@@ -3055,34 +4617,7 @@
           "reference": "Organization/X410010"
         },
         "name": "X410010",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-102"
-        },
-        "name": "FHIR-102",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-105"
-        },
-        "name": "FHIR-105",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-108"
-        },
-        "name": "FHIR-108",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410011"
-        },
-        "name": "Loc-X410011",
+        "description": "Organization for MISKATONIC UNIVERSITY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -3090,34 +4625,7 @@
           "reference": "Organization/X410011"
         },
         "name": "X410011",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-138"
-        },
-        "name": "FHIR-138",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-141"
-        },
-        "name": "FHIR-141",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "MeasureReport/FHIR-144"
-        },
-        "name": "FHIR-144",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Location/Loc-X410013"
-        },
-        "name": "Loc-X410013",
+        "description": "Organization for NORTH COUNTY HOSPITAL",
         "exampleBoolean": true
       },
       {
@@ -3125,6 +4633,15 @@
           "reference": "Organization/X410013"
         },
         "name": "X410013",
+        "description": "Organization for WASHINGTON COUNTY MEMORIAL HOSPITAL",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Location/states-NJ"
+        },
+        "name": "states-NJ",
+        "description": "Example Location for the State of New Jersey",
         "exampleBoolean": true
       }
     ],
@@ -3160,14 +4677,53 @@
             },
             {
               "nameUrl": "phrase_book.html",
-              "title": "Creating Measures Supporting Automation",
+              "title": "A Phrase Book for Measures Supporting Automation",
               "generation": "markdown"
             },
             {
-              "nameUrl": "measures.html",
-              "title": "Example Measures",
-              "generation": "markdown"
-            },
+              "nameUrl": "measure_creation.html",
+              "title": "Creating an Example Measure",
+              "generation": "markdown",
+              "page": [
+                {
+                  "nameUrl": "measure_group_covid19_patients.html",
+                  "title": "Creating the Patients with COVID 19 Group",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "measure_group_hospital_acquired_covid19_patients.html",
+                  "title": "Creating the Hospital Acquired COVID 19 Group",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "measure_group_covid19_deaths.html",
+                  "title": "Creating the COVID 19 Deaths Group",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "measure_group_ventilators.html",
+                  "title": "Creating the Ventilator Avaiability Group",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "measure_group_beds.html",
+                  "title": "Creating the Bed Avaiability Group",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "measure_library.html",
+                  "title": "Sample Measure Library",
+                  "generation": "markdown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nameUrl": "architecture.html",
+          "title": "Architecture",
+          "generation": "markdown",
+          "page": [
             {
               "nameUrl": "use_cases.html",
               "title": "Use Cases",
@@ -3184,51 +4740,46 @@
               "generation": "markdown"
             },
             {
-              "nameUrl": "architecture.html",
-              "title": "Architecture",
-              "generation": "markdown"
-            },
-            {
               "nameUrl": "actors.html",
               "title": "Actors",
               "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "transactions.html",
+          "title": "Transactions",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "transaction-1.html",
+              "title": "Query Measure",
+              "generation": "markdown"
             },
             {
-              "nameUrl": "transactions.html",
-              "title": "Transactions",
-              "generation": "markdown",
-              "page": [
-                {
-                  "nameUrl": "transaction-1.html",
-                  "title": "Query Measure",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "transaction-2.html",
-                  "title": "Produce Measure",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "transaction-3.html",
-                  "title": "Query Measure Definition",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "transaction-4.html",
-                  "title": "Compute Measure",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "transaction-5.html",
-                  "title": "Communicate Results",
-                  "generation": "markdown"
-                },
-                {
-                  "nameUrl": "CSV_Conversion.html",
-                  "title": "CSV Conversion",
-                  "generation": "markdown"
-                }
-              ]
+              "nameUrl": "transaction-2.html",
+              "title": "Produce Measure",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "transaction-3.html",
+              "title": "Query Measure Definition",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "transaction-4.html",
+              "title": "Compute Measure",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "transaction-5.html",
+              "title": "Communicate Results",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "CSV_Conversion.html",
+              "title": "CSV Conversion",
+              "generation": "markdown"
             }
           ]
         },

@@ -1,0 +1,40 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter2a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Encounter",
+      "value": "Enc444444"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "period": {
+    "start": "2020-09-08",
+    "end": "2020-09-09"
+  },
+  "subject": {
+    "reference": "Patient/Patient2a"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/Location2a"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "233604007",
+          "system": "http://snomed.info/sct",
+          "display": "Pneumonia (disorder)"
+        }
+      ]
+    }
+  ]
+}

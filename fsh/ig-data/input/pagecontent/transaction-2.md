@@ -57,37 +57,44 @@ MeasureSource actor must support.
 
 
 
-##### Trigger Event - Periodic Reporting Interval elapsed
+##### Trigger Event - Reporting Period Elapsed
 
-brief description (markdown)
+The current reporting period has elapsed, or the operation is triggered by automation (e.g. for manual testing, diagnostics or error recovery).
 
 
-more detailed description (markdown)
+See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension.
 
 
 ##### Message Semantics
 
+A MeasureReport is created or updated by the MeasureSource on the MeasureConsumer.
+
+
+The MeasureReport sends a MeasureReport to the MeasureConsumer using the FHIR
+[create](https://www.hl7.org/fhir/http.html#create) or [update](https://www.hl7.org/fhir/http.html#update) interactions.
+A MeasureSource supporting the CSV option sends the CSV file to the MeasureConsumer using the $report-csv operation.
+                
+
+
 ##### Expected Actions
 
-###### Measure Source reports a Resource
+###### Send MeasureReport Resource
 
 The Measure Source creates resources and sends them to a Measure Consumer
 
 
-When the API option is implemented, the Measure Source performs the FHIR create
-operation on the MeasureReport resource at a Measure Consumer.  When the Dump option is implemented, the Measure Source
-writes the MeasureReport data to external storage specified by the Measure Consumer.
+The Measure Source performs the FHIR create
+operation on the MeasureReport resource at a Measure Consumer.
 
 
 
-###### 
+###### Aggregate MeasureReport Resources
 
-###### The Measure Consumer Accepts Resource
+###### Accept Resource
 
-When the API option is used, the Measure Consumer reports
-success using 200 OK, 201 Created, or 204 No Content to indicate a successful update.  When the Dump option is
-used, the Measure Consumer reports success using the native protocols for the external storage subsytem.
-
+The Measure Consumer reports
+success using 200 OK, 201 Created, or 204 No Content to indicate a successful update.
+                
 
 
 

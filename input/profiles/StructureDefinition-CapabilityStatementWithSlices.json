@@ -20,14 +20,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",

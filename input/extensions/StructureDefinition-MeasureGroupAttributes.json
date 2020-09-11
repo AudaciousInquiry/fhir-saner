@@ -10,14 +10,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -106,8 +108,8 @@
         "min": 0,
         "max": "1",
         "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/ValueSet/measure-scoring"
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureScoring"
         }
       },
       {
@@ -309,7 +311,7 @@
         "id": "Extension.extension:subject",
         "path": "Extension.extension",
         "sliceName": "subject",
-        "short": "Like Measure.subject, but applies to group",
+        "short": "Identifies the type of FHIR Resource to evaluate. Like Measure.subject, but applies to group.",
         "min": 1,
         "max": "1"
       },
@@ -338,10 +340,7 @@
         },
         "type": [
           {
-            "code": "CodeableConcept",
-            "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasuredItemDescription"
-            ]
+            "code": "CodeableConcept"
           }
         ]
       },
@@ -350,6 +349,14 @@
         "path": "Extension.extension.valueCodeableConcept",
         "min": 0,
         "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasuredItemDescription"
+            ]
+          }
+        ],
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"

@@ -1,6 +1,7 @@
 ValueSet: EventContext
 Title: "Event Context"
 Description: "This Value Set enables classification of environmental events for categorizing measures."
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."
 * http://snomed.info/sct#82145005     "Avalanche"
 * http://snomed.info/sct#48071004     "Cyclone"
 * http://snomed.info/sct#8766005      "Earthquake"

@@ -16,6 +16,10 @@ Description: "Enables definitions to identify components that are required, reco
 * valueCode ^short = "SHALL | SHOULD | MAY | SHOULD-NOT"
 * valueCode ^comment = "Defines the level of expectation associated with a resource using this definition."
 
+ValueSet: MeasureScoring
+Description: "All codes from the Public Health Measure Scoring System"
+* include codes from system PublicHealthMeasureScoring
+* include codes from valueset http://hl7.org/fhir/ValueSet/measure-scoring
 
 Extension: MeasureGroupAttributes
 Title: "Attributes describing a group of measures"
@@ -31,7 +35,7 @@ Description: "Attributes describing the group of measures"
     subject 1..1
 * extension[scoring] ^short = "Like Measure.scoring, but applies to group"
 * extension[scoring].value[x] only CodeableConcept
-* extension[scoring].valueCodeableConcept from http://hl7.org/fhir/ValueSet/measure-scoring (extensible)
+* extension[scoring].valueCodeableConcept from MeasureScoring
 
 * extension[compositeScoring] ^short = "Like Measure.compositeScoring, but applies to group"
 * extension[compositeScoring].value[x] only CodeableConcept
@@ -51,8 +55,9 @@ Description: "Attributes describing the group of measures"
 * extension[improvementNotation].value[x] only CodeableConcept
 * extension[improvementNotation].valueCodeableConcept from http://hl7.org/fhir/ValueSet/measure-improvement-notation (extensible)
 
-* extension[subject] ^short = "Like Measure.subject, but applies to group"
-* extension[subject].value[x] only MeasuredItemDescription
+* extension[subject] ^short = "Identifies the type of FHIR Resource to evaluate. Like Measure.subject, but applies to group."
+* extension[subject].value[x] only CodeableConcept
+* extension[subject].valueCodeableConcept only MeasuredItemDescription
 * extension[subject].valueCodeableConcept from http://hl7.org/fhir/ValueSet/resource-types (extensible)
 
 Profile: MeasureCriteria
@@ -60,7 +65,8 @@ Parent: Expression
 Description: "Constraints on documentation for the evaluation of a Measure"
 * insert SanerStructureDefinitionContent
 
-* name 1..1
+// Name only needs to be present if the expression will be reused
+* name 0..1
 * name ^short = "name should align with code."
 
 * description 1..1
@@ -71,7 +77,6 @@ Description: "Constraints on documentation for the evaluation of a Measure"
 
 * expression 1..1
 * expression ^short = "A measure must describe how to automate the computation in an expression that can be evaluated in the specified language"
-
 
 Extension: MeasurePopulationAlternateCriteria
 Title: "Alternate criteria for performing a measure"
@@ -90,13 +95,13 @@ Description:    "A CodeableConcept describing the item to be counted in terms of
 
 * coding ^slicing.discriminator.type = #pattern
 * coding ^slicing.discriminator.path = "system"
-* coding ^slicing.rules = #open
+* coding ^slicing.rules = #openAtEnd
 * coding ^slicing.description = "Slice based on the component.code pattern"
 
-* coding 1..*
-* coding contains ResourceType 1..1 and Snomed 1..1 and Other 0..*
+//* coding 1..*
+* coding contains ResourceType 1..1 and Snomed 1..*
 
-* coding[ResourceType] from http://hl7.org/fhir/ValueSet/resource-types (required)
+* coding[ResourceType].system = "http://hl7.org/fhir/resource-types"
 * coding[ResourceType] ^short = "Describe the FHIR resource type that should be counted for the measure"
 * coding[Snomed].system = "http://snomed.info/sct"
 * coding[Snomed].system ^short = "Further clarify the type of resource using SNOMED"
@@ -153,11 +158,10 @@ should use application/gzip.
 ValueSet: PublicHealthMeasureAttachmentTypes
 Title: "Public Health Measure Attachment Types"
 Description: "Preferred Mime Types for use with Public Health Measure Definitions"
-* http://tools.ietf.org/html/bcp13#application/fhir+xml
-* http://tools.ietf.org/html/bcp13#application/fhir+json
-* http://tools.ietf.org/html/bcp13#text/cql
-* http://tools.ietf.org/html/bcp13#application/gzip
-
+* urn:ietf:bcp:13#application/fhir+xml
+* urn:ietf:bcp:13#application/fhir+json
+* urn:ietf:bcp:13#text/cql
+* urn:ietf:bcp:13#application/gzip
 
 Profile:        PublicHealthMeasureLibrary
 Parent:         Library
@@ -169,7 +173,6 @@ NamingSystem, SearchParameter, CQL definitions or other resources for measure ev
 * insert PublicHealthMeasureMetadata
 * content only PublicHealthMeasureMetadataAttachments
 * content 1..*
-
 
 Profile:        PublicHealthMeasure
 Parent:         Measure
@@ -188,7 +191,7 @@ and computation of it can be automated from systems that have the measure data.
 * library ^type.targetProfile = Canonical(PublicHealthMeasureLibrary)
 * library 1..*
 
-* group.extension contains MeasureGroupAttributes named groupAtts 0..1
+* group.extension contains MeasureGroupAttributes named groupAtts 1..1
 * group.extension[groupAtts] ^short = "Describes the attributes of one or more sections of the measure (form) being reported"
 
 * group.extension[MeasureGroupAttributes].extension[scoring].valueCodeableConcept 1..1
@@ -241,8 +244,8 @@ that is associated with the measure.  The first code should identify the FHIR Re
 it using SNOMED CT. Subsequent codes may describe it using other coding systems."""
 
 * group.extension[MeasureGroupAttributes].extension[rateAggregation].valueString from  MeasureRateAggregationValues
-* group.extension[MeasureGroupAttributes].extension[rateAggregation].valueString ^short = "aggregable-by-period | point-in-time | cumulative"
-* group.extension[MeasureGroupAttributes].extension[rateAggregation].valueString ^comment = """aggregable-by-period
+* group.extension[MeasureGroupAttributes].extension[rateAggregation].valueString ^short = "count | point-in-time | cumulative"
+* group.extension[MeasureGroupAttributes].extension[rateAggregation].valueString ^comment = """count
 : Use this when the value being reported can be aggregated (added to) values in other periods and retain meaning (e.g., adding admissions on day 1 and day 2 reporting period gives admissions for the combined reporting period)"
 
 point-in-time
@@ -258,21 +261,7 @@ cumulative
  * group.population.description 1..1
  * group.population.description ^short = "Human readable instructions for counting or measuring this population"
 
- * group.population.criteria 1..1
- * group.population.criteria ^short = "Instructions for how to automatically count this population"
- * group.population.criteria.name 1..1
- * group.population.criteria ^short = "name should align with code."
-
- * group.population.criteria.description 1..1
- * group.population.criteria.description ^short = "Describe what the criterion does to a human (non-engineer)"
-
- * group.population.criteria.language 1..1
-
- * group.population.criteria.language ^short = "Provide the language for the criterion"
-
  * group.population.criteria only MeasureCriteria
- * group.population.criteria.expression 1..1
- * group.population.criteria.language ^short = "Give the expression for execution"
 
  * group.population.extension contains MeasurePopulationAlternateCriteria named alternateCriteria 0..1
  * group.population.extension[MeasurePopulationAlternateCriteria] ^short = "Other expressions for computing the criterion"
@@ -280,43 +269,17 @@ cumulative
  * group.stratifier 0..*
  * group.stratifier ^short = "A group may have none, some or many strata"
  * group.stratifier.code 1..1
- * group.stratifier.code.coding 1..*
- * group.stratifier.code.coding ^short = "Uniquely identifies the strata"
+ * group.stratifier.code ^short = "Describes the purpose of this stratifier"
+ * group.stratifier.code.coding 0..*
+ * group.stratifier.code.coding ^short = "Optional code uniquely identifying the strata"
  * group.stratifier.code.coding.display 1..1
  * group.stratifier.code.coding.display ^short = "Provides a human readable name for the strata"
+ * group.stratifier.code.text 1..1
+ * group.stratifier.code.text ^short = "Describes the function of the stratifier."
  * group.stratifier.description 1..1
  * group.stratifier.description ^short = "Describes the overall function of the strata."
-
- * group.stratifier.code.text ^short = "Describes the function of the stratifier."
- * group.stratifier.code ^short = "Describes the purpose of this stratifier"
- * group.stratifier.component 1..*
- * group.stratifier.component ^short = "A stratifier must have at least one stratum"
- * group.stratifier.component.description 1..1
- * group.stratifier.component.description ^short = "Describes the purpose of this stratum"
-
-
-Profile:        PublicHealthMeasureStratifier
-Parent:         Measure
-Title:          "Saner Public Health Measure Stratifier"
-Description:    """Profile Saner Public Health Measure Stratifier
-
-A stratifier is effecitively a mixin that can be used with an existing measure
-to add stratification detail to that measure.
-"""
- * insert SanerStructureDefinitionContent
- * group.stratifier 0..*
- * group.stratifier ^short = "A group may have none, some or many strata"
- * group.stratifier.code 1..1
- * group.stratifier.code.coding 1..*
- * group.stratifier.code.coding ^short = "Uniquely identifies the strata"
- * group.stratifier.code.coding.display 1..1
- * group.stratifier.code.coding.display ^short = "Provides a human readable name for the strata"
- * group.stratifier.description 1..1
- * group.stratifier.description ^short = "Describes the overall function of the strata."
-
- * group.stratifier.code.text ^short = "Describes the function of the stratifier."
- * group.stratifier.code ^short = "Describes the purpose of this stratifier"
- * group.stratifier.component 1..*
- * group.stratifier.component ^short = "A stratifier must have at least one stratum"
- * group.stratifier.component.description 1..1
- * group.stratifier.component.description ^short = "Describes the purpose of this stratum"
+ * group.stratifier.criteria 1..1
+ * group.stratifier.criteria.language 1..1
+ * group.stratifier.criteria.expression 1..1
+ * group.stratifier.component 0..0
+ * group.stratifier.component ^short = "Strata components are not used"

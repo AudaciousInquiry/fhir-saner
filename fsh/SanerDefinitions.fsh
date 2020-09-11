@@ -4,8 +4,10 @@ RuleSet: SanerDefinitionContent
  * experimental = true  // true until ready for pilot, then false
  * version = "0.1.0"    // Follow IG Versioning rules
  * publisher = "HL7 International"
+ * contact[0].name = "HL7 Public Health Workgroup"
  * contact[0].telecom.system = #url
- * contact[0].telecom.value = "http://hl7.org/Special/committees/pafm/index.cfm"
+ * contact[0].telecom.value = "http://hl7.org/Special/committees/pher/index.cfm"
+ * contact[1].name = "Keith W. Boone"
  * contact[1].telecom.system = #email
  * contact[1].telecom.value = "mailto:kboone@ainq.com"
  * jurisdiction.coding = urn:iso:std:iso:3166#US
@@ -16,8 +18,10 @@ RuleSet: SanerStructureDefinitionContent
  * ^experimental = true  // true until ready for pilot, then false
  * ^version = "0.1.0"    // Follow IG Versioning rules
  * ^publisher = "HL7 International"
+ * ^contact[0].name = "HL7 Public Health Workgroup"
  * ^contact[0].telecom.system = #url
- * ^contact[0].telecom.value = "http://hl7.org/Special/committees/pafm/index.cfm"
+ * ^contact[0].telecom.value = "http://hl7.org/Special/committees/pher/index.cfm"
+ * ^contact[1].name = "Keith W. Boone"
  * ^contact[1].telecom.system = #email
  * ^contact[1].telecom.value = "mailto:kboone@ainq.com"
  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
@@ -28,11 +32,13 @@ RuleSet: SanerExample
 RuleSet: SanerCapabilityStatementContent
  * status = #draft
  * experimental = true
- * date = "2020-05-07"
- * publisher = "Audacious Inquiry, Inc."
- * contact.name = "Keith W. Boone"
- * contact.telecom.system = #email
- * contact.telecom.value = "kboone@ainq.com"
+ * publisher = "HL7 Public Health Workgroup"
+ * contact[0].name = "HL7 Public Health Workgroup"
+ * contact[0].telecom.system = #web
+ * contact[0].telecom.value = "http://hl7.org/Special/committees/pher/index.cfm"
+ * contact[1].name = "Keith W. Boone"
+ * contact[1].telecom.system = #email
+ * contact[1].telecom.value = "kboone@ainq.com"
  * kind = #requirements
  * fhirVersion = #4.0.1
  * format[0] = #json

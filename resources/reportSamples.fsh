@@ -20,7 +20,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -38,7 +38,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -52,7 +52,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -81,7 +81,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -99,7 +99,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -117,7 +117,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -131,7 +131,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -172,7 +172,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -190,7 +190,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -204,7 +204,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -233,7 +233,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -251,7 +251,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -269,7 +269,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -283,7 +283,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -324,7 +324,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -342,7 +342,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -356,7 +356,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -385,7 +385,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -403,7 +403,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -421,7 +421,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -435,7 +435,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -476,7 +476,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -494,7 +494,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -508,7 +508,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -537,7 +537,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -555,7 +555,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -573,7 +573,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -587,7 +587,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -628,7 +628,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -646,7 +646,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -660,7 +660,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -689,7 +689,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -707,7 +707,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -725,7 +725,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -739,7 +739,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -780,7 +780,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -798,7 +798,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -812,7 +812,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -841,7 +841,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -859,7 +859,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -877,7 +877,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -891,7 +891,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -932,7 +932,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -950,7 +950,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -964,7 +964,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -993,7 +993,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1011,7 +1011,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1029,7 +1029,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1043,7 +1043,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1084,7 +1084,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1102,7 +1102,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1116,7 +1116,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1145,7 +1145,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1163,7 +1163,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1181,7 +1181,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1195,7 +1195,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1236,7 +1236,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1254,7 +1254,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1268,7 +1268,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1297,7 +1297,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1315,7 +1315,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1333,7 +1333,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1347,7 +1347,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1388,7 +1388,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1406,7 +1406,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1420,7 +1420,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1449,7 +1449,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1467,7 +1467,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1485,7 +1485,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1499,7 +1499,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1540,7 +1540,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1558,7 +1558,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1572,7 +1572,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1601,7 +1601,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1619,7 +1619,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1637,7 +1637,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1651,7 +1651,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1692,7 +1692,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1710,7 +1710,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1724,7 +1724,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1753,7 +1753,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1771,7 +1771,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1789,7 +1789,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1803,7 +1803,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1844,7 +1844,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -1862,7 +1862,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -1876,7 +1876,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -1905,7 +1905,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -1923,7 +1923,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -1941,7 +1941,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -1955,7 +1955,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -1996,7 +1996,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2014,7 +2014,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2028,7 +2028,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2057,7 +2057,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2075,7 +2075,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2093,7 +2093,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2107,7 +2107,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2148,7 +2148,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2166,7 +2166,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2180,7 +2180,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2209,7 +2209,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2227,7 +2227,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2245,7 +2245,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2259,7 +2259,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2300,7 +2300,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2318,7 +2318,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2332,7 +2332,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2361,7 +2361,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2379,7 +2379,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2397,7 +2397,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2411,7 +2411,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2452,7 +2452,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2470,7 +2470,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2484,7 +2484,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2513,7 +2513,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2531,7 +2531,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2549,7 +2549,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2563,7 +2563,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2604,7 +2604,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2622,7 +2622,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2636,7 +2636,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2665,7 +2665,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2683,7 +2683,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2701,7 +2701,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2715,7 +2715,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2756,7 +2756,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2774,7 +2774,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2788,7 +2788,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2817,7 +2817,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2835,7 +2835,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -2853,7 +2853,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -2867,7 +2867,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -2908,7 +2908,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -2926,7 +2926,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -2940,7 +2940,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -2969,7 +2969,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -2987,7 +2987,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -3005,7 +3005,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -3019,7 +3019,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -3060,7 +3060,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -3078,7 +3078,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -3092,7 +3092,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -3121,7 +3121,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -3139,7 +3139,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -3157,7 +3157,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -3171,7 +3171,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>
@@ -3212,7 +3212,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrdersIncrease"/>
                <display value="New Diagnostic Tests Ordered/Received"/>
             </coding>
@@ -3230,7 +3230,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResultsIncrease"/>
                <display value="New Tests Resulted"/>
             </coding>
@@ -3244,7 +3244,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positiveIncrease"/>
                <display value="New Positive COVID-19 Tests"/>
             </coding>
@@ -3273,7 +3273,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalOrders"/>
                <display value="Cumulative Diagnostic Tests Ordered/Recieved"/>
             </coding>
@@ -3291,7 +3291,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="rejected"/>
                <display value="Cumulative Specimens Rejected*"/>
             </coding>
@@ -3309,7 +3309,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="totalTestResults"/>
                <display value="Cumulative Tests Performed"/>
             </coding>
@@ -3323,7 +3323,7 @@
       <population>
          <code>
             <coding>
-               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"/>
+               <system value="http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"/>
                <code value="positive"/>
                <display value="Cumulative Positive COVID-19 Tests"/>
             </coding>

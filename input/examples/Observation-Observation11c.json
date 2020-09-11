@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation11c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Observation",
+      "value": "Obs333333-1"
+    }
+  ],
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/Encounter1c"
+  },
+  "subject": {
+    "reference": "Patient/Patient1c"
+  },
+  "effectiveDateTime": "2020-09-02",
+  "code": {
+    "coding": [
+      {
+        "code": "94500-6",
+        "system": "http://loinc.org",
+        "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "260415000",
+        "system": "http://snomed.info/sct",
+        "display": "Not detected"
+      }
+    ]
+  }
+}

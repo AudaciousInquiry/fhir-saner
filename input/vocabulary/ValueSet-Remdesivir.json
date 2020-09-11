@@ -6,7 +6,8 @@
   "title": "Remdesivir",
   "description": "This Value Set identifies Remdesivir",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/Remdsivir",
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/Remdesivir",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards\nDevelopment Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT\nis not covered by this agreement.\n\nThis value set includes source materials developed by the US National Library of Medicine: Reference to specific\ncommercial products, manufacturers, companies, or trademarks does not constitute its endorsement or recommendation\nby the U.S. Government, Department of Health and Human Services, or NLM. Source materials are available from the\nNLM Website at no charge at https://www.nlm.nih.gov/research/umls/rxnorm/index.html",
   "compose": {
     "include": [
       {

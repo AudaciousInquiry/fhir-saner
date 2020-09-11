@@ -48,7 +48,7 @@
             "coding": [
               {
                 "code": "totalOrdersIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -70,7 +70,7 @@
             "coding": [
               {
                 "code": "totalTestResultsIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator",
@@ -85,7 +85,7 @@
             "coding": [
               {
                 "code": "positiveIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "numerator",
@@ -118,7 +118,7 @@
             "coding": [
               {
                 "code": "totalOrders",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -140,7 +140,7 @@
             "coding": [
               {
                 "code": "rejected",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator-exclusion",
@@ -162,7 +162,7 @@
             "coding": [
               {
                 "code": "totalTestResults",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator",
@@ -177,7 +177,7 @@
             "coding": [
               {
                 "code": "positive",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "numerator",
@@ -186,6 +186,44 @@
             ]
           },
           "count": 95865
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "allReports",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+              }
+            ],
+            "text": "All Laboratory Reports for any Order"
+          },
+          "_count": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode": "unsupported"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "code": "latestReports",
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+              }
+            ],
+            "text": "Most Recent Laboratory Reports for any Order"
+          },
+          "_count": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                "valueCode": "unsupported"
+              }
+            ]
+          }
         }
       ],
       "measureScore": {

@@ -1,0 +1,23 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition1a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Condition",
+      "value": "Con111111"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/Patient1a"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "870590002",
+        "system": "http://snomed.info/sct",
+        "display": "Acute hypoxemic respiratory failure due to disease caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
+      }
+    ]
+  },
+  "onsetDateTime": "2020-09-09"
+}

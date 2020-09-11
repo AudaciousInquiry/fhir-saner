@@ -1,6 +1,6 @@
 Invariant: DateTimePreciseToSecond
 Description: "The dateTime value must contain seconds and a timezone"
-Expression: "length(replaceMatches('[0-9.T]',''))=6"
+Expression: "replaceMatches('[0-9.T]','').length()=6"
 Severity: #error
 XPath: "string-length(replace(@value,'01234566789.T',''))=6"
 

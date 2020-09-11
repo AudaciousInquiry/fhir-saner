@@ -12,15 +12,18 @@
       "resource": [
         {
           "type": "MeasureReport",
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          ],
           "operation": [
             {
               "name": "read-csv",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/QueryMeasure-read-csv",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-read-csv",
               "documentation": "Read in CSV Format"
             },
             {
               "name": "search-csv",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/QueryMeasure-search-csv",
+              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-search-csv",
               "documentation": "Search in CSV Format"
             }
           ]
@@ -34,14 +37,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -62,7 +67,7 @@
   ],
   "name": "MeasureSource_QueryMeasure_CSV_Pull",
   "title": "Measure Source implementing the Query Measure transaction with the CSV Option and the Pull Option.",
-  "date": "2020-09-04T23:05:22.903075-04:00",
+  "date": "2020-09-10T18:17:35.860932-04:00",
   "kind": "requirements",
   "description": "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the CSV Option and the Pull Option.",
   "format": [

@@ -1,0 +1,34 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "MedicationRequest16c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/MedicationRequest",
+      "value": "Med543210"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "2367757",
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient6c"
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2020-09-08"
+          }
+        }
+      }
+    }
+  ]
+}

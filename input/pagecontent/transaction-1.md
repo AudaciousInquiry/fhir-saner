@@ -68,16 +68,20 @@ and the read operations that must be supported.
 
 
 
-##### Trigger Event - Periodic Reporting Interval Elapsed, or a Query is Initiated by User/System
+##### Trigger Event - Reporting Period Elapsed
+
+The current reporting period has elapsed.
+
+
+See the [Reporting Period](StructureDefinition-ReportingPeriod.html) extension
+
 
 ##### Message Semantics
 
-If the API Option is supported, the Measure Consumer sends a query
+The Measure Consumer sends a query
 using an HTTP GET or POST transaction to the Measure Source requesting information on
 available resources.
-
-If the Storage Option is supported, the Measure Consumer will read resources from external storage
-using appropriate operations for the storage in use (e.g., SFTP/S3/Blob/File).
+                
 
 
 The following are general requirements of the interaction.
@@ -1960,11 +1964,13 @@ reporter:identifier
 
 ##### Expected Actions
 
-###### Measure Consumer requests data from a Measure Source.
+###### Search for MeasureReport
 
-When the API Option is implemented, the Measure Consumer performs a FHIR Search operation
-to retrieve the selected resources.  When the Storage Option is implemented, the Measure Consumer reads resources from external
-storage specified by the Measure Source.
+Measure Consumer requests data from a Measure Source.
+
+
+The Measure Consumer performs a FHIR Search operation
+to retrieve the selected resources.
                 
 
 
@@ -1987,7 +1993,7 @@ MeasureReport, Location or Organization described elsewhere in this Implementati
 
 ##### Expected Actions
 
-###### Measure Source returns Resources
+###### Returns Matching Resources
 
 The Measure Source returns the requested resource.
 

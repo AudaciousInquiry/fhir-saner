@@ -3,8 +3,10 @@
   "status": "active",
   "name": "COVID19Organism",
   "id": "COVID19Organism",
+  "description": "This Value Set identifies codes describing SARS COV2 Related Substances detected during testing",
   "version": "20200716",
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1143",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
   "date": "2020-07-16T01:00:25-04:00",
   "publisher": "CSTE Steward",
   "compose": {

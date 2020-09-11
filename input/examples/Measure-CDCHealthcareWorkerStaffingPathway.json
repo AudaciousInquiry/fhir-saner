@@ -44,8 +44,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "45956004",
                     "system": "http://snomed.info/sct",
+                    "code": "45956004",
                     "display": "Sanitarian"
                   }
                 ],
@@ -76,7 +76,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -86,7 +86,7 @@
         "coding": [
           {
             "code": "shortenvsvc",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
@@ -152,8 +152,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "106293008",
                     "system": "http://snomed.info/sct",
+                    "code": "106293008",
                     "display": "Nursing personnel"
                   }
                 ],
@@ -184,7 +184,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -194,7 +194,7 @@
         "coding": [
           {
             "code": "shortnurse",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Registered nurses and licensed practical nurses"
@@ -260,8 +260,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "442867008",
                     "system": "http://snomed.info/sct",
+                    "code": "442867008",
                     "display": "Respiratory therapist"
                   }
                 ],
@@ -292,7 +292,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -302,7 +302,7 @@
         "coding": [
           {
             "code": "shortrt",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
@@ -368,8 +368,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "46255001",
                     "system": "http://snomed.info/sct",
+                    "code": "46255001",
                     "display": "Pharmacist"
                   }
                 ],
@@ -400,7 +400,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -410,7 +410,7 @@
         "coding": [
           {
             "code": "shortphar",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Pharmacists and pharmacy techs"
@@ -476,8 +476,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "309343006",
                     "system": "http://snomed.info/sct",
+                    "code": "309343006",
                     "display": "Physician"
                   }
                 ],
@@ -508,7 +508,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -518,7 +518,7 @@
         "coding": [
           {
             "code": "shortphys",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Attending physicians, fellows"
@@ -584,8 +584,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "405623001",
                     "system": "http://snomed.info/sct",
+                    "code": "405623001",
                     "display": "Assigned practitioner"
                   }
                 ],
@@ -616,7 +616,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -626,7 +626,7 @@
         "coding": [
           {
             "code": "shorttemp",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
@@ -692,8 +692,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "33738006",
                     "system": "http://snomed.info/sct",
+                    "code": "33738006",
                     "display": "Other medical/dental/veterinary/related worker"
                   }
                 ],
@@ -724,7 +724,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -734,7 +734,7 @@
         "coding": [
           {
             "code": "shortoth",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
@@ -800,8 +800,8 @@
                     "code": "Practitioner"
                   },
                   {
-                    "code": "158965000",
                     "system": "http://snomed.info/sct",
+                    "code": "158965000",
                     "display": "Medical practitioner"
                   }
                 ],
@@ -832,7 +832,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -842,7 +842,7 @@
         "coding": [
           {
             "code": "shortothlic",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Advanced practice nurses, physician assistants"
@@ -906,9 +906,13 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "106375005"
                   }
                 ],
-                "text": "Persons who work in the facility"
+                "text": "Cleaning Staff"
               }
             },
             {
@@ -935,73 +939,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
-            }
-          ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-        }
-      ],
-      "code": {
-        "coding": [
-          {
-            "code": "shortothsfy",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
-          }
-        ],
-        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
-      }
-    },
-    {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "scoring",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "continuous-variable",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "subject",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/resource-types",
-                    "code": "Practitioner"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "type",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "structure",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "improvementNotation",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "increase",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1011,7 +949,7 @@
         "coding": [
           {
             "code": "posshortenvsvc",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
@@ -1075,8 +1013,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Nursing Staff"
               }
             },
             {
@@ -1103,7 +1045,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1113,7 +1055,7 @@
         "coding": [
           {
             "code": "posshortnurse",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Registered nurses and licensed practical nurses"
@@ -1177,8 +1119,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Respiratory Specialists"
               }
             },
             {
@@ -1205,7 +1151,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1215,7 +1161,7 @@
         "coding": [
           {
             "code": "posshortrt",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
@@ -1279,8 +1225,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Pharmacy Specialists"
               }
             },
             {
@@ -1307,7 +1257,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1317,7 +1267,7 @@
         "coding": [
           {
             "code": "posshortphar",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Pharmacists and pharmacy techs"
@@ -1381,8 +1331,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Attending Physicians"
               }
             },
             {
@@ -1409,7 +1363,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1419,7 +1373,7 @@
         "coding": [
           {
             "code": "posshortphys",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Attending physicians, fellows"
@@ -1483,8 +1437,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Intermittent Staff"
               }
             },
             {
@@ -1511,7 +1469,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1521,7 +1479,7 @@
         "coding": [
           {
             "code": "posshorttemp",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
@@ -1585,8 +1543,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Other Staff"
               }
             },
             {
@@ -1613,7 +1575,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1623,7 +1585,7 @@
         "coding": [
           {
             "code": "posshortoth",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
@@ -1687,8 +1649,12 @@
                   {
                     "system": "http://hl7.org/fhir/resource-types",
                     "code": "Practitioner"
+                  },
+                  {
+                    "system": "http://snomed.info/sct"
                   }
-                ]
+                ],
+                "text": "Advanced Practice Nurse/Physician Assistant"
               }
             },
             {
@@ -1715,7 +1681,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -1725,7 +1691,7 @@
         "coding": [
           {
             "code": "posshortothlic",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Advanced practice nurses, physician assistants"
@@ -1766,72 +1732,6 @@
           }
         }
       ]
-    },
-    {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "scoring",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "continuous-variable",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-scoring"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "subject",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/resource-types",
-                    "code": "Practitioner"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "type",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "structure",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-type"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "improvementNotation",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "code": "increase",
-                    "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
-            }
-          ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-        }
-      ],
-      "code": {
-        "coding": [
-          {
-            "code": "posshortothsfy",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
-          }
-        ],
-        "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
-      }
     }
   ],
   "status": "draft",
@@ -1840,22 +1740,22 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Patient Administration Workgroup",
       "telecom": [
         {
           "system": "url",
           "value": "http://hl7.org/Special/committees/pafm/index.cfm"
         }
-      ],
-      "name": "HL7 Patient Administration Workgroup"
+      ]
     },
     {
+      "name": "Audacious Inquiry",
       "telecom": [
         {
           "system": "url",
           "value": "http://ainq.com"
         }
-      ],
-      "name": "Audacious Inquiry"
+      ]
     },
     {
       "name": "Keith W. Boone",

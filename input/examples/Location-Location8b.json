@@ -1,0 +1,21 @@
+{
+  "resourceType": "Location",
+  "id": "Location8b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Location",
+      "value": "Loc44082"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1097-5",
+          "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+          "display": "Post-anesthesia Care Unit (as an Overflow unit)"
+        }
+      ]
+    }
+  ]
+}

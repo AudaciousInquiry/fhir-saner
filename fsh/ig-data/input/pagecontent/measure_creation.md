@@ -1,103 +1,125 @@
-TBD
 
-NOTE: This should probably be the intro to the profile
+This section of the implementation guide walks through an example for automating computation
+of a measure.
 
-Audiences:
-In Public Health, who is going to be doing this?
-NHSN is one example.
+### Conventions in this Section
+The definitions for these proposed groupings appear below.  For simplicity and brevity, the definitions below are provided in a
+slightly modified version of the [FHIR Shorthand](http://build.fhir.org/ig/HL7/fhir-shorthand/) notation.  The modification
+introduces "with _fieldparts_ do" keyword to shorten repetitions.
 
-### Use of Measure
-#### Defining a Measure
-##### Quality Reporting vs Other Reporting
-#### Writing a Measure to Support Automation
+For example:
+```
+* with name do
+**   given[] = "Robert"
+**   given[] = "Rob"
+**   last = "Williams"
+```
+Would be the same as
+```
+*   name.given[0] = "Robert"
+*   name.given[1] = "Rob"
+*   name.last = "Williams"
+```
 
-### General Information Requirements of a Measure
+NOTE: The the [completed measure](Measure-ComputableCDCPatientImpactAndHospitalCapacity.html) may vary slightly from the
+text in this section.
+1. To save space only the description for the first population in the first group will be provided in this narrative. However,
+it is included in the completed measure.
+2. Technical corrections made to ensure measure
 
-### Considerations in Creating a Measure
-#### Measuring Availability of Resources or Capacity
-#### Measuring Consumption of Resources
-#### Measuring Rates or Periods
+### Patient Impact and Hospital Capacity Module Definition
+Like the phrase book, this walkthrough is based on the measure derived from the CDC Patient Impact and
+Hospital Capacity module shown below.
 
-### Considerations for Existing (or Legacy) Systems
-#### System Configuration vs Product Development
-#### Timeliness of Data
-#### Converting to/from CSV
-#### Converting to/from Other Formats
+![CDC Patient Impact and Hospital Capacity module](57.130-covid19-pimhc-blank-p.png)
 
-### Types of Measures
-#### Selecting the Type of Measure
-##### Proportion Measure
-##### Ratio Measure
-##### Cohort Measure
-##### Continuous Variable Measure
+### Measure Header
+[Describe content of the Measure Header](#todo)
 
-#### Identifying what is being Measured
-##### Types of Location (including Beds)
-##### Types of Service (e.g., ICU, NICU,
-##### Types of Devices
+Every measure must have at least one Library resource conforming to the
+[PublicHealthMeasureLibrary](StructureDefinition-PublicHealthMeasureLibrary.html) profile that
+provides the essential value sets and other resources that may be used to evaluate the measure.
+Details about the measure library for this sample measure can be found in the
+[Sample Measure Library](measure_library.html) page.
 
-#### Considerations with regard to Emergency Use
-##### Counting Repurposed or "Modified" Devices
-##### Temporary Locations
-##### Coordination of Similar Measurements
+### Patient Impact Data Elements
+This measure first addresses the Impact of COVID-19 on hospital patients, stratifying data by
+hospital location (inpatient vs. ED/Overflow), ventilation status, and patient death on the
+date of reporting.
 
-#### Stratifying Data in a Measure
-##### Stratifying for Social Determinants of Health
+There are multiple sets of patients to report upon for this section.
 
+The initial patient population is Patients in the Hospital with Confirmed or Suspected COVID-19.
+  1. Live Patients in any location.
+     1. The subset of these in an inpatient bed.
+        1. The subset of these who are on a ventilator.
+        2. The subset of these who acquired COVID-19 14 days or more after admission.
+     2. The subset of these in an ED or overflow bed with an admission order (i.e., those who are intended to be an inpatient).
+        1. The subset of these who are on a ventilator.
+  2. Dead Patients
 
-1. Populate the metadata.
-   1. What are the pieces of information you need to gather to start building a measure
-      1. Describe concepts
-         1. relationship of Measure development
-         1. Population
-         2. How are things going to be grouped
-         3. What are the things people need to dig up that might be hard.
-      2. Do NOT get technical.
-   2. How do we connect measures to technical pieces
-      1. Making sure that the measure is something that EHR systems are going to be able to digest.
-         * Ongoing support for use of data in USCDI
-         * Migrating data into USCDI (changes to USCDI to accomodate emerging requirements)
-         * Address cases where the measure is valid, but the measure itself is wrong.
-           * All of the population and grouping where you could have something represented as separate things
-             but they really ought to be grouped together?
-           * We need prose that explains it, and it needs to be readily available.
-             * Automation needs to be customizable to address edge cases (e.g., What is a ventilator [vs. C-PAP or BiPAP])
-             * Where definitions may change based on facility specific configuration, workflows, et cetera.
-      2. Address digestion of measures by other Health IT systems
+Patients on a ventilator are of interest, patients not on a ventilator are a stratum that need not be counted because that
+number can be determined mathematically from the data already provided.
 
-   1. Establish organizational conventions.
-      1. SANER says measure must have:
-         name, url, status, exerimental, version, publisher, at least one contact, at least one useContext,
-         author.name, author.contact, at least one relatedArtifact
-         Should probably also have a title.
+Each of the values above is essentially counting an event, an admission to a location, or such admission with the use of ventilator equipment, or a death,
+but are not reporting cumulative totals. These would then be reported as different cohorts with potientially overlapping values.
 
-         Give guidance and examples using FSH
+Patients who aquired COVID-19 while in the hospital are a separate strata from patients on a ventilator.
 
-         title:
+The Venn Diagram below illustrates the different subsets of patients in this measure.
+![Venn Diagram](venn.png).
 
-         name:  Remove all special characters, make camel CASE, and be done: Computational Definition
+To simplify this section, this measure should be divided into at least three separate groups. Each group and stratum is preceded by the name
+used to identify it.
 
-         url:   Provide guidance to simplify development and publication using existing tooling (e.g., FHIR IG Publisher, Sushi)
+1. [Encounters](measure_group_covid19_patients.html): Patients in the hospital during the reporting period who have suspected or confirmed COVID-19.<br/>
+   This last group should be stratified by the [cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of
+   location and ventilator status.
+   1. InpNotVentilated: Inpatient Setting and Non-Ventilated
+   2. InpVentilated: Inpatient Setting and Ventilated
+   3. OFNotVentilated: ED/Overflow Setting and Non-Ventilated
+   4. OFVentilated: ED/Overflow Setting and Ventilated
+2. [AcquiredCovid](measure_group_hospital_acquired_covid19_patients.html): Patients in the hospital during the reporting period who have acquired suspected or confirmed COVID-19 14 days or more after admission.
+3. [CovidDeaths](measure_group_covid19_deaths.html): Deaths in the hospital during the reporting period
 
-         status:  active | draft | retired Explain values and when to use them in the workflow
+### Hospital Capacity
+The next section of this measure addresses hospital capacity with respect to all beds, inpatient beds, ICU beds, and ventilators.
+These are all clearly [Capacity and Utilization](situational_awareness_measures.html#capacity-and-utilization) measures.
+It can be clearly divided into two groups, with stratification of the Bed group in across three categories to support
+all reporting needs.
 
-         experimental: true | false Explain values and when to use them in the workflow
+This portion of the measure makes two assumptions: the total number of licensed and staffed beds and ventilators changes infrequently,
+and that measure data is reviewed and adjusted (e.g., to account for institutional changes in staffing levels or bed counts) before
+being sent forward, so that prior measure reports and transmission review processes can be used to manage counts of total beds
+or ventilators).
 
-         version:  Use semantic versioning ref: https://semver.org/
-                   or date using ISO 8601 format with hyphens (no time) (if more frequency, USE semantic versioning)
+1. [Ventilators](measure_group_ventilators.html): Utilization of ventilators.
+2. [Beds](measure_group_beds.html): Utilization of Beds in the different locations.
 
-         publisher: (Full names preferred vs. acronyms)
+   NOTE: The requested data for Beds is at different levels than the proposed measure. However, the data request
+   is accessible from the proposed location categories below as follows:
 
-         contact:
+   * All Beds -- The sum of all three strata below: NumICUBeds, NumImpBeds and NumAmbBeds
+   * All Inpatient Beds -- The sum of the first two strata: NumICUBeds and NumImpBeds
+   * All ICU Beds -- The first strata: NumICUBeds
 
-         useContext:  How to say "Country", or region (City, State, Province ...)
+   1. NumICUBeds: ICU Beds -- Utilization of staffed inpatient intensive care unit (ICU) beds.
+   2. NumImpBeds: Inpatient Non-ICU Beds -- Utilization of staffed inpatient non-ICU beds.
+   3. NumAmbBeds: Outpatient Beds -- Utilization of non-inpatient (e.g., ED, Ambulatory, Overflow) beds.
 
-         relatedArtifact:  How to describe
+These are provided in a different order in the measure because the group for Beds builds on a similar framework
+as is used for Ventilators, but includes complexity around stratification.
 
-      2. Defining a Group
-      3. Defining Populations within a Group
+NOTE: The Beds group uses strata to reduce repetition in this exposition. However, this would prevent further
+stratification by social determinants such as age, race, ethnicity and gender.  Any stratification layer can be
+"bumped" up a level into a numerator population by the addition of a final filter by the criteria which
+distinguishes it.
 
-      4. Our Measure examples will remain examples in draft/experimental form when published so that actual publishers can
-         handle the real cases.
+```
+    .where(fieldToStratifyBy = 'ValueToMatch')
+```
+
+[TODO: Discuss measure scoring when there are multiple numerators](#todo)
+
 
 

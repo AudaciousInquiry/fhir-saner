@@ -1,0 +1,23 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition3b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Condition",
+      "value": "Con999999"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/Patient3b"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "67782005",
+        "system": "http://snomed.info/sct",
+        "display": "Acute respiratory distress syndrome (disorder)"
+      }
+    ]
+  },
+  "onsetDateTime": "2020-09-09"
+}

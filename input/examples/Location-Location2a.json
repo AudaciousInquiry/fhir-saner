@@ -1,0 +1,21 @@
+{
+  "resourceType": "Location",
+  "id": "Location2a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Location",
+      "value": "Loc44082"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1208-8",
+          "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+          "display": "Telemetry Ward"
+        }
+      ]
+    }
+  ]
+}

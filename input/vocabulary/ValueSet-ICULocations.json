@@ -6,5 +6,99 @@
   "title": "ICU Locations",
   "description": "Codes used for ICU locations",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/ICULocations"
+  "url": "http://hl7.org/fhir/us/saner/ValueSet/ICULocations",
+  "copyright": "This value set includes source materials developed by CDC: Reference to specific commercial products, manufacturers,\ncompanies, or trademarks does not constitute its endorsement or recommendation by the U.S. Government, Department of Health and Human\nServices, or Centers for Disease Control and Prevention. Source materials are available from the CDC Website at no charge at\nhttps://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+        "concept": [
+          {
+            "code": "1026-4",
+            "display": "Burn Critical Care"
+          },
+          {
+            "code": "1028-0",
+            "display": "Medical Cardiac Critical Care"
+          },
+          {
+            "code": "1027-2",
+            "display": "Medical Critical Care"
+          },
+          {
+            "code": "1029-8",
+            "display": "Medical-Surgical Critical Care"
+          },
+          {
+            "code": "1035-5",
+            "display": "Neurologic Critical Care"
+          },
+          {
+            "code": "1223-7",
+            "display": "ONC Medical Critical Care"
+          },
+          {
+            "code": "1224-5",
+            "display": "ONC Surgical Critical Care"
+          },
+          {
+            "code": "1225-2",
+            "display": "ONC Medical-Surgical Critical Care"
+          },
+          {
+            "code": "1034-8",
+            "display": "Prenatal Critical Care"
+          },
+          {
+            "code": "1033-0",
+            "display": "Respiratory Critical Care"
+          },
+          {
+            "code": "1032-2",
+            "display": "Surgical Cardiothoracic Critical Care"
+          },
+          {
+            "code": "1233-6",
+            "display": "ONC Pediatric Critical Care"
+          },
+          {
+            "code": "1043-9",
+            "display": "Cardiothoracic Critical Care"
+          },
+          {
+            "code": "1044-7",
+            "display": "Pediatric Medical Critical Care"
+          },
+          {
+            "code": "1045-4",
+            "display": "Pediatric Medical-Surgical Critical Care"
+          },
+          {
+            "code": "1047-0",
+            "display": "Pediatric Respiratory Critical Care"
+          },
+          {
+            "code": "1048-8",
+            "display": "Pediatric Surgical Critical Care"
+          },
+          {
+            "code": "1039-7",
+            "display": "Neonatal Critical Care (Level II/III)"
+          },
+          {
+            "code": "1221-1",
+            "display": "Long Term Acute Care Ward"
+          },
+          {
+            "code": "1224-5",
+            "display": "Oncology Surgical Critical Care"
+          },
+          {
+            "code": "1225-2",
+            "display": "Oncology Medical-Surgical Critical Care"
+          }
+        ]
+      }
+    ]
+  }
 }

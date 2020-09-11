@@ -25,22 +25,66 @@
         <a href="overview.html">Overview</a>
       </li>
       <li>
-        <a href="technology_environment.html">Technology Environment</a>
+        <a href="situational_awareness_measures.html">Situational Awareness Measures</a>
       </li>
+      <li>
+        <a href="measure_aggregation.html">Aggregatating Measure Reports</a>
+      </li>
+      <li>
+        <a href="measure_automation.html">Computing Measures</a>
+      </li>
+      <li>
+        <a href="phrase_book.html">Phrase Book for Measure Creation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Creating an Example Measure
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="measure_creation.html">Measure Creation</a>
+      </li>
+      <li>
+        <a href="measure_group_covid19_patients.html">Creating the Patients with COVID 19 Group</a>
+      </li>
+      <li>
+        <a href="measure_group_hospital_acquired_covid19_patients.html">Creating the Hospital Acquired COVID 19 Group</a>
+      </li>
+      <li>
+        <a href="measure_group_covid19_deaths.html">Creating the COVID 19 Deaths Group</a>
+      </li>
+      <li>
+        <a href="measure_group_ventilators.html">Creating the Ventilator Avaiability Group</a>
+      </li>
+      <li>
+        <a href="measure_group_beds.html">Creating the Bed Avaiability Group</a>
+      </li>
+      <li>
+        <a href="measure_library.html">Sample Measure Library</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technology
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="architecture.html">Architecture</a>
-      </li>
-      <li>
-        <a href="security_considerations.html">Security Considerations</a>
       </li>
       <li>
         <a href="use_cases.html">Use Cases</a>
       </li>
       <li>
-        <a href="actors.html">Actors</a>
+        <a href="technology_environment.html">Technology Environment</a>
       </li>
       <li>
-        <a href="measures.html">Measures used for Reporting</a>
+        <a href="security_considerations.html">Security Considerations</a>
+      </li>
+      <li>
+        <a href="actors.html">Actors</a>
       </li>
     </ul>
   </li>
@@ -81,7 +125,7 @@
         <a href="vocabulary.html">Vocabulary</a>
       </li>
       <li>
-        Testing and Examples
+        <a href="test_plan.html">Testing</a>
       </li>
       <li>
         <a href="examples.html">Examples</a>

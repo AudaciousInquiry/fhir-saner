@@ -1,0 +1,49 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter7b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Encounter",
+      "value": "Enc223344"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "period": {
+    "start": "2020-09-08"
+  },
+  "hospitalization": {
+    "dischargeDisposition": {
+      "coding": [
+        {
+          "code": "exp",
+          "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition"
+        }
+      ]
+    }
+  },
+  "subject": {
+    "reference": "Patient/Patient7b"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/Location7b"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "U07.1",
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "display": "COVID-19"
+        }
+      ]
+    }
+  ]
+}

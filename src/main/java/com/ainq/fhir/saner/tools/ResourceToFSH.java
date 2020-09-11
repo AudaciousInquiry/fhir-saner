@@ -19,7 +19,10 @@ import org.hl7.fhir.r4.model.CodeType;
 import org.hl7.fhir.r4.model.CodeableConcept;
 import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.Identifier;
+import org.hl7.fhir.r4.model.Location;
+import org.hl7.fhir.r4.model.MeasureReport;
 import org.hl7.fhir.r4.model.Meta;
+import org.hl7.fhir.r4.model.Organization;
 import org.hl7.fhir.r4.model.PrimitiveType;
 import org.hl7.fhir.r4.model.Property;
 import org.hl7.fhir.r4.model.Resource;
@@ -126,12 +129,31 @@ public class ResourceToFSH {
         System.out.printf("InstanceOf: %s%n", type);
 
         String props[] = { "title", "description" };
+        String measure = "";
         for (String prop : props) {
             try {
                 Property p = r.getChildByName(prop);
                 if (p != null && p.hasValues()) {
                     String value = p.getValues().get(0).toString();
                     System.out.printf("%s: \"%s\"%n", StringUtils.capitalize(prop), value);
+                } else if ("description".equals(prop)) {
+                    // There is no description, create one.
+                    String date = "";
+                    if (r instanceof MeasureReport) {
+                        MeasureReport mr = (MeasureReport) r;
+                        measure = type = StringUtils.substringAfterLast(mr.getMeasure(),"/");
+                        name = mr.getSubject().getDisplay();
+                        if (name == null) {
+                            name = mr.getSubject().getReferenceElement().getIdPart();
+                        }
+                        date = " on " + mr.getDateElement().toHumanDisplay();
+                    } else if (r instanceof Organization || r instanceof Location) {
+                        p = r.getChildByName("name");
+                        name = p != null && p.hasValues() ? p.getValues().get(0).toString() : "Unknown";
+                    }
+                    System.out.printf("Description: \"%s for %s%s\"%n",
+                        type, name, date);
+
                 }
             } catch (Exception ex) {
                 // Swallow this, assume there's no title
@@ -142,6 +164,7 @@ public class ResourceToFSH {
 
         introspect("meta", m);
         introspect("", r);
+
         System.out.println();
     }
 
@@ -163,7 +186,8 @@ public class ResourceToFSH {
                     if (v.isPrimitive()) {
                         PrimitiveType<?> prim = (PrimitiveType<?>) v;
                         Object o = prim.getValue();
-                        if (o instanceof CodeType) {
+                        if (o instanceof CodeType || "code".equals(p.getTypeCode())) {
+                            MeasureReport r;
                             System.out.printf("* %s = #%s%n", accessor, prim.getValueAsString());
                         } else if (o instanceof Number || o instanceof Boolean) {
                             System.out.printf("* %s = %s%n", accessor, prim.getValueAsString());

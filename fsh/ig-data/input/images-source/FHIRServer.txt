@@ -1,6 +1,6 @@
 @startuml
 
-rectangle "FHIR Server" as MeasureIntermediary {
+rectangle "FHIR Server (Intermediary)" as MeasureIntermediary {
 agent "Measure Source" as MeasureSource1
 agent "Measure Consumer" as MeasureConsumer1
 MeasureSource1 == MeasureConsumer1

@@ -44,8 +44,8 @@
                     "code": "Device"
                   },
                   {
-                    "code": "706172005",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "706172005"
                   }
                 ],
                 "text": "Mechanical Ventilators"
@@ -75,7 +75,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -96,7 +96,7 @@
             "coding": [
               {
                 "code": "ventsupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
@@ -114,7 +114,7 @@
             "coding": [
               {
                 "code": "ventreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
@@ -132,7 +132,7 @@
             "coding": [
               {
                 "code": "ventobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
@@ -171,10 +171,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "289971007",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "409532003"
                   }
-                ]
+                ],
+                "text": "N95 Masks"
               }
             },
             {
@@ -201,7 +202,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -222,7 +223,7 @@
             "coding": [
               {
                 "code": "n95masksupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -239,7 +240,7 @@
             "coding": [
               {
                 "code": "n95maskreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -256,7 +257,7 @@
             "coding": [
               {
                 "code": "n95maskobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -294,10 +295,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "277973009",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "277973009"
                   }
-                ]
+                ],
+                "text": "Other Respirator Equipment"
               }
             },
             {
@@ -324,7 +326,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -345,7 +347,7 @@
             "coding": [
               {
                 "code": "othrespsupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Other respirators such as PAPRs or elastomerics"
@@ -363,7 +365,7 @@
             "coding": [
               {
                 "code": "othrespreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Other respirators such as PAPRs or elastomerics"
@@ -381,7 +383,7 @@
             "coding": [
               {
                 "code": "othrespobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Other respirators such as PAPRs or elastomerics"
@@ -420,10 +422,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "409528009",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "409528009"
                   }
-                ]
+                ],
+                "text": "Surgical Masks"
               }
             },
             {
@@ -450,7 +453,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -471,7 +474,7 @@
             "coding": [
               {
                 "code": "surgmasksupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -488,7 +491,7 @@
             "coding": [
               {
                 "code": "surgmaskreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -505,7 +508,7 @@
             "coding": [
               {
                 "code": "surgmaskobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -543,10 +546,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "706725000",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "38126007"
                   }
-                ]
+                ],
+                "text": "Eye Protection"
               }
             },
             {
@@ -573,7 +577,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -594,7 +598,7 @@
             "coding": [
               {
                 "code": "shieldsupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -611,7 +615,7 @@
             "coding": [
               {
                 "code": "shieldreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -628,7 +632,7 @@
             "coding": [
               {
                 "code": "shieldobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -666,10 +670,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "409527004",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "409527004"
                   }
-                ]
+                ],
+                "text": "Gowns"
               }
             },
             {
@@ -696,7 +701,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -717,7 +722,7 @@
             "coding": [
               {
                 "code": "gownsupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -734,7 +739,7 @@
             "coding": [
               {
                 "code": "gownreuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -751,7 +756,7 @@
             "coding": [
               {
                 "code": "gownobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -789,10 +794,11 @@
                     "code": "Device"
                   },
                   {
-                    "code": "52291003",
-                    "system": "http://snomed.info/sct"
+                    "system": "http://snomed.info/sct",
+                    "code": "52291003"
                   }
-                ]
+                ],
+                "text": "Gloves"
               }
             },
             {
@@ -819,7 +825,7 @@
             },
             {
               "url": "rateAggregation",
-              "valueString": "aggregable-by-period"
+              "valueString": "count"
             }
           ],
           "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
@@ -840,7 +846,7 @@
             "coding": [
               {
                 "code": "glovesupply",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -857,7 +863,7 @@
             "coding": [
               {
                 "code": "glovereuse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -874,7 +880,7 @@
             "coding": [
               {
                 "code": "gloveobtain",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem"
+                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
               }
             ]
           },
@@ -895,22 +901,13 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
-      ],
-      "name": "HL7 Patient Administration Workgroup"
-    },
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://ainq.com"
-        }
-      ],
-      "name": "Audacious Inquiry"
+      ]
     },
     {
       "name": "Keith W. Boone",

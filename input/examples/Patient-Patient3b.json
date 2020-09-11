@@ -1,0 +1,11 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient3b",
+  "identifier": [
+    {
+      "value": "Pat999999"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1949-12-07"
+}

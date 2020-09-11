@@ -1,0 +1,39 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PublicHealthMeasureScoring",
+  "id": "PublicHealthMeasureScoring",
+  "title": "Public Health Measure Scoring",
+  "description": "A code system describing types of measure scoring used for situational awareness measures",
+  "version": "0.1.0",
+  "url": "http://hl7.org/fhir/us/saner/CodeSystem/PublicHealthMeasureScoring",
+  "concept": [
+    {
+      "code": "capacity",
+      "display": "Capacity",
+      "definition": "Measures point in time capacity or utilization"
+    },
+    {
+      "code": "event-growth",
+      "display": "Event Growth",
+      "definition": "Measures cumulative growth by counting current and cumulative events over time"
+    },
+    {
+      "code": "queue-length",
+      "display": "Queue Length",
+      "definition": "Measures the point in time number of activities awaiting completion"
+    },
+    {
+      "code": "service-time",
+      "display": "Service Time",
+      "definition": "Measures the aggregate total time to complete activities / total number of activities"
+    },
+    {
+      "code": "availability",
+      "display": "Availability",
+      "definition": "Measures the point in time availability of resources"
+    }
+  ],
+  "count": 5
+}

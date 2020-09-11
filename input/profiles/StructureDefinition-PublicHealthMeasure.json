@@ -20,14 +20,16 @@
   "publisher": "HL7 International",
   "contact": [
     {
+      "name": "HL7 Public Health Workgroup",
       "telecom": [
         {
           "system": "url",
-          "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
         }
       ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -247,14 +249,15 @@
           ],
           "ordered": false,
           "rules": "open"
-        }
+        },
+        "min": 1
       },
       {
         "id": "Measure.group.extension:groupAtts",
         "path": "Measure.group.extension",
         "sliceName": "groupAtts",
         "short": "Describes the attributes of one or more sections of the measure (form) being reported",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "type": [
           {
@@ -310,8 +313,8 @@
       {
         "id": "Measure.group.extension:groupAtts.extension:rateAggregation.valueString",
         "path": "Measure.group.extension.extension.valueString",
-        "short": "aggregable-by-period | point-in-time | cumulative",
-        "comment": "aggregable-by-period\n: Use this when the value being reported can be aggregated (added to) values in other periods and retain meaning (e.g., adding admissions on day 1 and day 2 reporting period gives admissions for the combined reporting period)\"\n\npoint-in-time\n: Use this when the value being reported is a point-in-time (e.g. instantanious value) that cannot be meaningfully combined with a value from another reporting period\n\ncumulative\n: Use this when the value being reported is a point-in-time cumulative value over all reports",
+        "short": "count | point-in-time | cumulative",
+        "comment": "count\n: Use this when the value being reported can be aggregated (added to) values in other periods and retain meaning (e.g., adding admissions on day 1 and day 2 reporting period gives admissions for the combined reporting period)\"\n\npoint-in-time\n: Use this when the value being reported is a point-in-time (e.g. instantanious value) that cannot be meaningfully combined with a value from another reporting period\n\ncumulative\n: Use this when the value being reported is a point-in-time cumulative value over all reports",
         "min": 0,
         "max": "1",
         "binding": {
@@ -402,7 +405,6 @@
       {
         "id": "Measure.group.population.criteria",
         "path": "Measure.group.population.criteria",
-        "short": "name should align with code.",
         "type": [
           {
             "code": "Expression",
@@ -411,27 +413,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "Measure.group.population.criteria.description",
-        "path": "Measure.group.population.criteria.description",
-        "short": "Describe what the criterion does to a human (non-engineer)",
-        "min": 1
-      },
-      {
-        "id": "Measure.group.population.criteria.name",
-        "path": "Measure.group.population.criteria.name",
-        "min": 1
-      },
-      {
-        "id": "Measure.group.population.criteria.language",
-        "path": "Measure.group.population.criteria.language",
-        "short": "Give the expression for execution"
-      },
-      {
-        "id": "Measure.group.population.criteria.expression",
-        "path": "Measure.group.population.criteria.expression",
-        "min": 1
       },
       {
         "id": "Measure.group.stratifier",
@@ -447,8 +428,7 @@
       {
         "id": "Measure.group.stratifier.code.coding",
         "path": "Measure.group.stratifier.code.coding",
-        "short": "Uniquely identifies the strata",
-        "min": 1
+        "short": "Optional code uniquely identifying the strata"
       },
       {
         "id": "Measure.group.stratifier.code.coding.display",
@@ -459,7 +439,8 @@
       {
         "id": "Measure.group.stratifier.code.text",
         "path": "Measure.group.stratifier.code.text",
-        "short": "Describes the function of the stratifier."
+        "short": "Describes the function of the stratifier.",
+        "min": 1
       },
       {
         "id": "Measure.group.stratifier.description",
@@ -468,16 +449,20 @@
         "min": 1
       },
       {
-        "id": "Measure.group.stratifier.component",
-        "path": "Measure.group.stratifier.component",
-        "short": "A stratifier must have at least one stratum",
+        "id": "Measure.group.stratifier.criteria",
+        "path": "Measure.group.stratifier.criteria",
         "min": 1
       },
       {
-        "id": "Measure.group.stratifier.component.description",
-        "path": "Measure.group.stratifier.component.description",
-        "short": "Describes the purpose of this stratum",
+        "id": "Measure.group.stratifier.criteria.expression",
+        "path": "Measure.group.stratifier.criteria.expression",
         "min": 1
+      },
+      {
+        "id": "Measure.group.stratifier.component",
+        "path": "Measure.group.stratifier.component",
+        "short": "Strata components are not used",
+        "max": "0"
       }
     ]
   }

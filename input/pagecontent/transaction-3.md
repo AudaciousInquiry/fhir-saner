@@ -614,7 +614,7 @@ code:in
 
 ##### Expected Actions
 
-###### Measure Definition Consumer requests measures from a Measure Definition Source.
+###### Search for Measure
 
 The Measure Definition Consumer performs a FHIR Search operation
 to retrieve the selected measures.
@@ -639,7 +639,7 @@ Public Health Measure described elsewhere in this Implementation Guide
 
 ##### Expected Actions
 
-###### Measure Definition Source returns Resources
+###### Returns Matching Measure Resources
 
 The Measure Definition Source returns the requested resource.
 

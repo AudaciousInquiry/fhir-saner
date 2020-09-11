@@ -1,0 +1,39 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter8a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Encounter",
+      "value": "Enc334455"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "period": {
+    "start": "2020-09-08"
+  },
+  "subject": {
+    "reference": "Patient/Patient8a"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/Location8a"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "67782005",
+          "system": "http://snomed.info/sct",
+          "display": "Acute respiratory distress syndrome (disorder)"
+        }
+      ]
+    }
+  ]
+}

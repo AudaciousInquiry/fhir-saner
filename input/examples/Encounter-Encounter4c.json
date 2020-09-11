@@ -1,0 +1,40 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter4c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Encounter",
+      "value": "Enc345678"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "period": {
+    "start": "2020-09-08",
+    "end": "2020-09-10"
+  },
+  "subject": {
+    "reference": "Patient/Patient4c"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/Location4c"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "U07.1",
+          "system": "http://hl7.org/fhir/sid/icd-10-cm",
+          "display": "COVID-19"
+        }
+      ]
+    }
+  ]
+}

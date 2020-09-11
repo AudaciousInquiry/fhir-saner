@@ -11,15 +11,28 @@
   "concept": [
     {
       "code": "Beds",
-      "display": "Beds"
+      "display": "Beds",
+      "definition": "This group reports on Bed availability"
     },
     {
       "code": "Ventilators",
-      "display": "Ventilators"
+      "display": "Ventilators",
+      "definition": "This group reports on Ventilator availability"
     },
     {
       "code": "Encounters",
-      "display": "Encounters"
+      "display": "Encounters",
+      "definition": "This group reports on COVID-19 Patient Encounters"
+    },
+    {
+      "code": "CovidDeaths",
+      "display": "COVID-19 Deaths",
+      "definition": "This group reports on COVID-19 Patient Deaths"
+    },
+    {
+      "code": "AcquiredCovid",
+      "display": "Acquired COVID-19 in Hospital",
+      "definition": "This group reports on Hospital Acquired COVID-19 Infections"
     },
     {
       "code": "VentilatorSupplies",
@@ -58,5 +71,5 @@
       "display": "Cumulative Percent Positive among Resulted Tests"
     }
   ],
-  "count": 12
+  "count": 14
 }

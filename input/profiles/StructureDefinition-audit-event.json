@@ -124,7 +124,7 @@
             {
               "code": "110153",
               "system": "http://dicom.nema.org/resources/ontology/DCM",
-              "display": "Source"
+              "display": "Source Role ID"
             }
           ]
         }
@@ -188,7 +188,7 @@
             {
               "code": "110152",
               "system": "http://dicom.nema.org/resources/ontology/DCM",
-              "display": "Destination"
+              "display": "Destination Role ID"
             }
           ]
         }

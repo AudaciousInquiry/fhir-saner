@@ -1,0 +1,30 @@
+{
+  "resourceType": "Location",
+  "id": "Location4b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Location",
+      "value": "Loc44082"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1076-9",
+          "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+          "display": "Pediatric Medical Ward"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "PEDU",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "display": "Pediatric unit"
+        }
+      ]
+    }
+  ]
+}

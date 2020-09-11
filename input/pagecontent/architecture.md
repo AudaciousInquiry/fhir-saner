@@ -13,6 +13,14 @@ components that can be used together to support deployment of reporting, analysi
 alerting and data aggregation tools to support fast deployment of solutions supporting
 public health situation awareness.
 
+The technology uses for SANER includes both FHIR Servers and clients,
+implemented in or along side other [Health IT Systems](technology_environment.html) to
+support the [use cases](use_cases.html) of this IG.  The use cases in turn are supported
+by the definitions of [actors](actors.html) that implement various [transactions](transactions.html)
+to implement the functionality described in this guide. These transactions exchange data
+conforming to [profiles](profiles.html) and using the [vocabulary](vocabulary.html) defined
+in this guide.
+
 ## Major Components
 The major design components described by this guide support the following functions:
 

@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation39c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Observation",
+      "value": "778899-3"
+    }
+  ],
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/Encounter9c"
+  },
+  "subject": {
+    "reference": "Patient/Patient9c"
+  },
+  "effectiveDateTime": "2020-09-09",
+  "code": {
+    "coding": [
+      {
+        "code": "19994-3",
+        "system": "http://loinc.org",
+        "display": "Oxygen/Inspired gas setting [Volume Fraction] Ventilator"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "value": 100,
+    "code": "%",
+    "system": "http://unitsofmeasure.org"
+  }
+}

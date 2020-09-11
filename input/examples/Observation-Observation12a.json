@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation12a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Observation",
+      "value": "Obs444444-1"
+    }
+  ],
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/Encounter2a"
+  },
+  "subject": {
+    "reference": "Patient/Patient2a"
+  },
+  "effectiveDateTime": "2020-09-08",
+  "code": {
+    "coding": [
+      {
+        "code": "94558-4",
+        "system": "http://loinc.org",
+        "display": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "260415000",
+        "system": "http://snomed.info/sct",
+        "display": "Not detected"
+      }
+    ]
+  }
+}

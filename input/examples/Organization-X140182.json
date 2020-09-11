@@ -4,15 +4,14 @@
   "meta": {
     "security": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "code": "HTEST",
-        "display": "test health data"
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
       }
     ]
   },
   "identifier": [
     {
-      "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+      "system": "http://sanerproject.org/connectathon/hospitals",
       "value": "X140182"
     }
   ],
@@ -21,8 +20,8 @@
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-          "code": "prov"
+          "code": "prov",
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type"
         }
       ]
     }
@@ -30,21 +29,6 @@
   "name": "LEIBER FAMILY MEDICAL CENTER",
   "address": [
     {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "latitude",
-              "valueDecimal": 41.936315
-            },
-            {
-              "url": "longitude",
-              "valueDecimal": -87.651554
-            }
-          ],
-          "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
-        }
-      ],
       "use": "work",
       "type": "both",
       "line": [

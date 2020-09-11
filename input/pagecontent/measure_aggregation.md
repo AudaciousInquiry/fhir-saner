@@ -16,7 +16,8 @@ There are four different ways to consolidate a collection of MeasureReport resou
 
 All MeasureReport resources being consolidated must reference a common Measure in MeasureReport.measure.
 
-The process to perform this aggregation is the same for all of the above cases, and is defined in more detail in the [Aggregate operation](http://hl7.org/fhir/us/saner/OperationDefinition-ProduceMeasure-aggregate.html). That operation
+The process to perform this aggregation is the same for all of the above cases, and is defined in more detail in the
+[Aggregate operation](http://hl7.org/fhir/us/saner/OperationDefinition-MeasureReport-aggregate.html). That operation
 can be used by an Intermediary to consolidate MeasureReport resources into an aggregated MeasureReport for further processing.
 
 The MeasureReport resource can be used to report on situational awareness not just for individual facilities,
@@ -42,7 +43,46 @@ While the most common use case is aggregation by geopolitical boundry (e.g., cit
 US, a Census Tract) can define regions that are smaller than a city or county. Smaller geographic regions can support additional analysis, e.g., in regard to
 social determinants of health, or geographic regions addressing patterns of referral or service areas (e.g., hospital referral regions and service areas).
 
-The [Aggregate](OperationDefinition-ProduceMeasure-aggregate.html) operation defines the algorithm for aggregating measure reports.
+The [Aggregate](OperationDefinition-MeasureReport-aggregate.html) operation defines the algorithm for aggregating measure reports.
+
+#### Aggregation of Population Counts
+The aggregation of population.count requires special attention.
+
+For a given facility and time period, a measures can be aggregated in different ways depending on
+the [scoring of the measure](CodeSystem-PublicHealthMeasureScoring.html).
+The scoring of measures implies the way that which rate aggregation can be performed:
+
+* Capacity<br/>
+  Measures **point in time** capacity or utilization
+* Event Growth<br/>
+  Measures **cumulative** growth by counting current and cumulative events over time
+* Queue Length<br/>
+  Measures the **point in time** number of activities awaiting completion
+* Service Time<br/>
+  Measures the **aggregate** total time to complete activities / total number of activities
+* Availability
+  Measures the **point in time** availability of resources
+
+Measures aggregate values according to the [Measure Rate Aggregation Values](ValueSet-MeasureRateAggregationValues.html) value set,
+which draws from Each the [Measure Rate Aggregation](CodeSystem-MeasureRateAggregation.html) coding system defined by this
+implementation guide. Each of these must be aggregated differently.
+
+* count<br/>
+  A count of events that happened, or changes in status, or of things consumed over that period in time (e.g., admissions, deaths, tests performed).
+  Quantity measurements, e.g., those counting events such as admissions, deaths, or test performed represent a count.  When aggregated for the same facility over
+  multiple time periods, the population.count values can be summed to produce a count of events or things in the total time period.
+* point-in-time<br/>
+  A count of things at a point in time (e.g., active cases, beds currently occupied, ventilators in use).
+  Point in time measurements (e.g., bed occupancy, ventilators in use) represent a current state. When aggregated for the same facility
+  over multiple (continguous) time  periods, the most recent population.count is the "aggregated" value.
+* cumulative<br/>
+  A cumulative measure (e.g., tests performed).
+  Cumulative measures are a combination of count and point-in-time measurements.  These represent a count of the current quantity (e.g., tests performed)
+  over the total performed over "all time" (e.g., cumulative total tests performed).  When these are aggregated over multiple time periods,
+  the aggregate of the cumulative total (the denominator) is the most recent value, but the aggregate of the current quantity (the numerator) is summed.
+
+Across subjects (locations or facilities), counts are always summed. This assumes that subjects are non-overlapping (one is not trying to aggregate county data
+with the data for an entire state that contains the county).
 
 ### Recommended Coding Systems and Value Sets for Location.identifer
 This implementation guide requires the Location resource reference by MeasureReport.subject to have both a name and an identitifer. This raises the question of

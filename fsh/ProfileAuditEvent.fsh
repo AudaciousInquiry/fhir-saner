@@ -23,7 +23,7 @@ Description: "Defines general constraints on the AuditEvent Resource."
            HumanRequestor 0..* and
            Destination 1..1
 
-* agent[Source].role =  http://dicom.nema.org/resources/ontology/DCM#110153 "Source"
+* agent[Source].role =  http://dicom.nema.org/resources/ontology/DCM#110153 "Source Role ID"
 * agent[Source].who 1..1
 * agent[Source].name 1..1
 * agent[Source].requestor = false
@@ -33,7 +33,7 @@ Description: "Defines general constraints on the AuditEvent Resource."
 * agent[HumanRequestor].name 1..1
 * agent[HumanRequestor].requestor = true
 
-* agent[Destination].role =  http://dicom.nema.org/resources/ontology/DCM#110152 "Destination"
+* agent[Destination].role =  http://dicom.nema.org/resources/ontology/DCM#110152 "Destination Role ID"
 * agent[Destination].who 1..1
 * agent[Destination].name 1..1
 * agent[Destination].requestor = false

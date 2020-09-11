@@ -21,6 +21,7 @@ vocabularies and value sets supported by HL7 FHIR.
 
 In the text below, examples are based on measures analyzed from the CDC Patient Impact and Hospital Capacity module used for
 reporting in the first half of 2020 and shown below.
+
 ![CDC Patient Impact and Hospital Capacity module](57.130-covid19-pimhc-blank-p.png)
 
 
@@ -70,8 +71,8 @@ through a search.
          <td>[Encounter] E where E.status = 'in-progress'</td>
      </tr>
      <tr><td>Encounter.period.start</td>
-         <td>Encounters starting starting on a given date or within a particular period</td>
-         <td>Encounter?date=sa<i>2020-09-07T23:59:59</i>&date=lt<i>2020-09-09</i><br/>
+         <td>Encounters starting on a given date or within a particular period</td>
+         <td>Encounter?date=sa<i>2020-09-07</i>&date=lt<i>2020-09-09</i><br/>
              Because the date search parameter is compared to a period data type, the upper and lower
              bounds must be set in a way that ensures inclusion of the target period.  Using a high
              precision time value for the sa component is less likely to run into implementation

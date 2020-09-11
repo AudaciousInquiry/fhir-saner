@@ -42,9 +42,10 @@ recommendations for URLs used by a publisher.  The example below is used to illu
    In the example above, `https:\//example.com/saner` is the base URL.
 2. The base URL **should** be less than 40 characters in length.
 3. The penultimate path part of the URL may be used to categorize measures in some way, e.g., by topic (e.g., COVID-19, Hurricane) or type of
-   facility (e.g., Hospital, Ambulatory, LTC) to which they apply. In the example above, `covid19` is the category.
+   facility (e.g., Hospital, Ambulatory, LTC) to which they apply. In the example above, `covid19` is the category.  This category **should**
+   also be encoded in Measure.useContext (see [Classifying Measures](#classifying-measures) below).
 4. The last path part in the URL **should** be Measure. Following this recomendation simplifies the use of FHIR IG Development tools to
-   generate Measure resources, as this will be done automatically for measures.  In the example above, the last path part is `Measure`.
+   generate Measure resources.  In the example above, the last path part is `Measure`.
 5. The computable name given in the Measure **should** be the last part of the URL. Again, this simplifies measure development using existing
    FHIR IG Development tools. In the example above, `MyMeasureName` is the name of the measure.
 6. The URL **should** resolve to an HTML page that describes the measure, or provides access to it as a FHIR Resource and ideally, would

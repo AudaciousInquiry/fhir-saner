@@ -1,0 +1,30 @@
+{
+  "resourceType": "Location",
+  "id": "Location3b",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Location",
+      "value": "Loc44082"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1060-3",
+          "system": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+          "display": "Medical Ward"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "HU",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "display": "Hospital unit"
+        }
+      ]
+    }
+  ]
+}

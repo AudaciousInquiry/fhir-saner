@@ -4,18 +4,19 @@
   "status": "draft",
   "experimental": true,
   "version": "0.1.0",
-  "publisher": "Audacious Inquiry, Inc.",
+  "publisher": "HL7 Public Health Workgroup",
   "contact": [
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
           "value": "kboone@ainq.com"
         }
-      ],
-      "name": "Keith W. Boone"
+      ]
     },
     {
+      "name": "Keith W. Boone",
       "telecom": [
         {
           "system": "email",
@@ -129,20 +130,13 @@
               "comment": "Ward beds on a closed/locked psychiatric unit or ward beds where a patient will be staffed by an attendant."
             }
           ]
-        }
-      ]
-    },
-    {
-      "target": "http://hl7.org/fhir/us/saner/CodeSystem/BedType",
-      "element": [
+        },
         {
           "code": "Burn",
           "display": "Burn beds",
           "target": [
             {
-              "code": "BURNU",
-              "equivalence": "equivalent",
-              "comment": "These are thought of as burn ICU beds, either approved by the American Burn Association or self-designated. These beds are NOT to be included in other ICU bed counts."
+              "equivalence": "unmatched"
             }
           ]
         },
@@ -151,9 +145,7 @@
           "display": "Neonatal or newborn care beds including all bed types other than Neonatal ICU",
           "target": [
             {
-              "code": "NURSERY",
-              "equivalence": "equivalent",
-              "comment": "Neonatal or newborn care beds including all bed types other than Neonatal ICU"
+              "equivalence": "unmatched"
             }
           ]
         },
@@ -162,9 +154,7 @@
           "display": "Operating rooms which are equipped, staffed and could be made available for patient care in a short period of time",
           "target": [
             {
-              "code": "OR",
-              "equivalence": "equivalent",
-              "comment": "Operating rooms which are equipped, staffed and could be made available for patient care in a short period of time"
+              "equivalence": "unmatched"
             }
           ]
         },
@@ -173,9 +163,7 @@
           "display": "Negative airflow isolation beds.",
           "target": [
             {
-              "code": "NEGISO",
-              "equivalence": "equivalent",
-              "comment": "These provide respiratory isolation. NOTE: This value may represent available beds included in the counts of other types"
+              "equivalence": "unmatched"
             }
           ]
         },
@@ -184,24 +172,16 @@
           "display": "Isolation beds.",
           "target": [
             {
-              "code": "OTHISO",
-              "equivalence": "equivalent",
-              "comment": "These provide isolation where airflow is not a concern. NOTE: This value may represent available beds included in the counts of other types"
+              "equivalence": "unmatched"
             }
           ]
-        }
-      ]
-    },
-    {
-      "element": [
+        },
         {
-          "code": "N/A",
+          "code": "NONISO",
           "display": "Non-Isolation beds.",
           "target": [
             {
-              "code": "NONISO",
-              "equivalence": "unmatched",
-              "comment": "These provide isolation where airflow is not a concern. NOTE: This value may represent available beds included in the counts of other types"
+              "equivalence": "unmatched"
             }
           ]
         }

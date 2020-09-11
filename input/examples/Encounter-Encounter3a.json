@@ -1,0 +1,49 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter3a",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Encounter",
+      "value": "Enc777777"
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "code": "IMP",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+  },
+  "period": {
+    "start": "2020-09-08"
+  },
+  "hospitalization": {
+    "dischargeDisposition": {
+      "coding": [
+        {
+          "code": "exp",
+          "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition"
+        }
+      ]
+    }
+  },
+  "subject": {
+    "reference": "Patient/Patient3a"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/Location3a"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "67782005",
+          "system": "http://snomed.info/sct",
+          "display": "Acute respiratory distress syndrome (disorder)"
+        }
+      ]
+    }
+  ]
+}

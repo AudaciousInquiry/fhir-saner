@@ -1,0 +1,147 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "MeasureReport-search-csv",
+  "status": "draft",
+  "experimental": true,
+  "version": "0.1.0",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "name": "HL7 Public Health Workgroup",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/pher/index.cfm"
+        }
+      ]
+    },
+    {
+      "name": "Keith W. Boone",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:kboone@ainq.com"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "kind": "operation",
+  "code": "search-csv",
+  "resource": [
+    "MeasureReport"
+  ],
+  "system": false,
+  "type": true,
+  "instance": false,
+  "name": "SearchinCSVFormat",
+  "title": "Search in CSV Format",
+  "description": "Search Measure Report resources using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details.",
+  "url": "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-search-csv",
+  "parameter": [
+    {
+      "name": "_lastUpdated",
+      "use": "in",
+      "min": 0,
+      "max": "2",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "date",
+      "use": "in",
+      "min": 0,
+      "max": "2",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "map",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "composite",
+      "type": "string"
+    },
+    {
+      "name": "measure",
+      "use": "in",
+      "min": 1,
+      "max": "*",
+      "searchType": "uri",
+      "type": "string"
+    },
+    {
+      "name": "measure.title",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "string",
+      "type": "string"
+    },
+    {
+      "name": "period",
+      "use": "in",
+      "min": 1,
+      "max": "2",
+      "searchType": "date",
+      "type": "string"
+    },
+    {
+      "name": "reporter",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "reporter:identifier",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "token",
+      "type": "string"
+    },
+    {
+      "name": "subject",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "reference",
+      "type": "string"
+    },
+    {
+      "name": "subject:Location.near",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "searchType": "special",
+      "type": "string"
+    },
+    {
+      "name": "subject:identifier",
+      "use": "in",
+      "min": 0,
+      "max": "*",
+      "searchType": "token",
+      "type": "string"
+    },
+    {
+      "name": "return",
+      "use": "out",
+      "min": 1,
+      "max": "1",
+      "type": "Binary"
+    }
+  ]
+}

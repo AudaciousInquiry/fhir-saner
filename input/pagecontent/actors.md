@@ -397,7 +397,7 @@ The actors in this profile are described in more detail in the sections below.
 
 #### Measure Source
 
-The Measure Source Actor reports results Meor a single facility, collection of facilities or aggregated data for a region.
+The Measure Source Actor reports results Measures for a single facility, collection of facilities or aggregated data for a region.
 
 
 
@@ -414,17 +414,17 @@ A Measure Source provides the FHIR data that is used by a Measure Consumer.
 ##### Measure Source Requirements
 
 1. The Measure Source **shall** implement either the Pull Option or the Push Option.
-2. A Measure Source that implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.
+2. A Measure Source that implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.
 
 ##### Measure Source Conformance
 
 See the following CapabilityStatement resources for conformance requirements:
-* [CapabilityStatement-MeasureSource-API-Pull](CapabilityStatement-MeasureSource-API-Pull.html) Defines the additional requirements for the Measure Source implementing the API Option and the Pull Option.
-* [CapabilityStatement-MeasureSource-API-Pull-Questionnaire](CapabilityStatement-MeasureSource-API-Pull-Questionnaire.html) Defines the additional requirements for the Measure Source implementing the API Option, the Pull Option, and the Questionnaire Option.
-* [CapabilityStatement-MeasureSource-API-Push](CapabilityStatement-MeasureSource-API-Push.html) Defines the additional requirements for the Measure Source implementing the API Option and the Push Option.
 * [CapabilityStatement-MeasureSource-Aggregate](CapabilityStatement-MeasureSource-Aggregate.html) Defines the additional requirements for the Measure Source implementing the Aggregate Option.
 * [CapabilityStatement-MeasureSource-CSV-Pull](CapabilityStatement-MeasureSource-CSV-Pull.html) Defines the additional requirements for the Measure Source implementing the CSV Option and the Pull Option.
 * [CapabilityStatement-MeasureSource-CSV-Push](CapabilityStatement-MeasureSource-CSV-Push.html) Defines the additional requirements for the Measure Source implementing the CSV Option and the Push Option.
+* [CapabilityStatement-MeasureSource-Pull](CapabilityStatement-MeasureSource-Pull.html) Defines the additional requirements for the Measure Source implementing the Pull Option.
+* [CapabilityStatement-MeasureSource-Pull-Questionnaire](CapabilityStatement-MeasureSource-Pull-Questionnaire.html) Defines the additional requirements for the Measure Source implementing the Pull Option and the Questionnaire Option.
+* [CapabilityStatement-MeasureSource-Push](CapabilityStatement-MeasureSource-Push.html) Defines the additional requirements for the Measure Source implementing the Push Option.
 #### Measure Consumer
 
 The Measure Consumer provides access to aggregated or fine-grained
@@ -443,17 +443,17 @@ or varying levels of granularity using data extracted from a Measure Source.
 ##### Measure Consumer Requirements
 
 1. The Measure Consumer **shall** implement either the Pull Option or the Push Option.
-2. A Measure Consumer that implements the API and Push Options **shall** provide a CapabilityStatement when queried via [base]/metadata.
+2. A Measure Consumer that implements the Push Option **shall** provide a CapabilityStatement when queried via [base]/metadata.
 
 ##### Measure Consumer Conformance
 
 See the following CapabilityStatement resources for conformance requirements:
-* [CapabilityStatement-MeasureConsumer-API-Pull](CapabilityStatement-MeasureConsumer-API-Pull.html) Defines the additional requirements for the Measure Consumer implementing the API Option and the Pull Option.
-* [CapabilityStatement-MeasureConsumer-API-Pull-Questionnaire](CapabilityStatement-MeasureConsumer-API-Pull-Questionnaire.html) Defines the additional requirements for the Measure Consumer implementing the API Option, the Pull Option, and the Questionnaire Option.
-* [CapabilityStatement-MeasureConsumer-API-Push](CapabilityStatement-MeasureConsumer-API-Push.html) Defines the additional requirements for the Measure Consumer implementing the API Option and the Push Option.
 * [CapabilityStatement-MeasureConsumer-Aggregate](CapabilityStatement-MeasureConsumer-Aggregate.html) Defines the additional requirements for the Measure Consumer implementing the Aggregate Option.
 * [CapabilityStatement-MeasureConsumer-CSV-Pull](CapabilityStatement-MeasureConsumer-CSV-Pull.html) Defines the additional requirements for the Measure Consumer implementing the CSV Option and the Pull Option.
 * [CapabilityStatement-MeasureConsumer-CSV-Push](CapabilityStatement-MeasureConsumer-CSV-Push.html) Defines the additional requirements for the Measure Consumer implementing the CSV Option and the Push Option.
+* [CapabilityStatement-MeasureConsumer-Pull](CapabilityStatement-MeasureConsumer-Pull.html) Defines the additional requirements for the Measure Consumer implementing the Pull Option.
+* [CapabilityStatement-MeasureConsumer-Pull-Questionnaire](CapabilityStatement-MeasureConsumer-Pull-Questionnaire.html) Defines the additional requirements for the Measure Consumer implementing the Pull Option and the Questionnaire Option.
+* [CapabilityStatement-MeasureConsumer-Push](CapabilityStatement-MeasureConsumer-Push.html) Defines the additional requirements for the Measure Consumer implementing the Push Option.
 #### Measure Intermediary
 
 The Measure Intermediary is a grouping of a Measure Source with a Measure Consumer.
@@ -462,12 +462,7 @@ The Measure Intermediary is a grouping of a Measure Source with a Measure Consum
 This actor represents the composition of a [Measure Source](actors.html#measure-source) with a [Measure Source](actors.html#measure-source).
 
 The Measure Intermediary role can aggregate data from multiple Measure Sources.  Data from Measure Sources may
-be pulled in by the Intermediary, pushed to the Intermediary by the Measure Source, or may be pushed from a
-Measure Source via a dump.
-
-Using the Dump option with a Measure Intermediary provides a Push or Pull mechanism to transfer
-non-FHIR data or FHIR bulk data.  The Measure Intermediary can then convert the dump data into FHIR data that can be
-served up to Measure Consumers in a format that is compliant with the requirements of a Measure Source.
+be pulled in by the Intermediary, or pushed to the Intermediary by the Measure Source.
 
 The Measure Intermediary may also provide the capabilities of a Measure Consumer to enable data to be
 reported at an aggregated level.
@@ -485,28 +480,21 @@ is exposing a Measure Source capability this method allows data to be aggregated
 In networking parlance, a Bridge is a system that connects between different protocols.  The different options in this Implementation Guide
 can create incompatibilities, but these can be bridged by an Intermediary.
 
-For example, a Measure Intermediary that implements the Dump and Pull Options in the Measure Consumer, that groups with a Measure Source
-implementing the Push and API Options can bridge bridge between a Measure Source implementing the Dump and Push options to enable
-communication with a Measure Consumer implementing the API and Push options.
+For example, a Measure Intermediary that implements the Push Option in the Measure Consumer, that groups with a Measure Source
+implementing the Push Option can bridge between a Measure Source implementing the Pull option to enable
+communication with a Measure Consumer implementing the Pull option.
 
-![Bridge](Bridge.svg)
-
-#### Measure Repository
-A Measure Respository is simply a FHIR Server.  A FHIR Server that supports CRUD operations on MeasureReport and Measure effectively implements both the Measure Consumer with the API and Push Options
-and the Measure Source actor implementing the Pull and API Options.
+In this example, the Bridge is simply a FHIR Server.  A FHIR Server that supports CRUD operations on MeasureReport and Measure effectively implements both the Measure Consumer with the Push Option
+and the Measure Source actor implementing the Pull Option.
 
 ![FHIR Server](FHIRServer.svg)
-
-A multi-level data aggregation and reporting hierarchy using Measure Intermediaries is shown here:
-
-![Multi-Level Aggregation and Reporting](ActorsMultilevelReporting.svg)
         
 
 
 ##### Measure Intermediary Requirements
 
-1. A Measure Intermediary whose Consumer implements the API and Push Options **shall** provide a CapabilityStatement when queried via [base]/metadata.
-2. A Measure Intermediary whose Source implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.
+1. A Measure Intermediary whose Consumer implements the Push Option **shall** provide a CapabilityStatement when queried via [base]/metadata.
+2. A Measure Intermediary whose Source implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.
 
 ##### Measure Intermediary Conformance
 
@@ -516,9 +504,8 @@ See the following CapabilityStatement resources for conformance requirements:
 The Measure Definition Source Actor provides access to Measures defined by public health and emergency response authorities.
 
 
-
-            The Measure Definition Source actor is responsible for maintaining measures for systems that are using this
-            implementation guide to automate measure reporting.
+The Measure Definition Source actor is responsible for maintaining measures for systems that are using this
+implementation guide to automate measure reporting.
         
 
 
@@ -535,9 +522,7 @@ See the following CapabilityStatement resources for conformance requirements:
 The Measure Definition Consumer Actor accesses Measures defined by public health and emergency response authorities.
 
 
-
-            The Measure Definition Consumer actor is responsible for retrieving measures from publishing systems to automate measure reporting.
-        
+The Measure Definition Consumer actor is responsible for retrieving measures from publishing systems to automate measure reporting.
 
 
 
@@ -554,7 +539,7 @@ The Measure Computer Actor is responsible for computing measures from definition
 ##### Measure Computer Requirements
 
 1. The Measure Computer **shall** implement either the Pull Option or the Push Option.
-2. A Measure Computer that implements the API and Pull Options **shall** provide a CapabilityStatement when queried via [base]/metadata.
+2. A Measure Computer that implements the Pull Option **shall** provide a CapabilityStatement when queried via [base]/metadata.
 
 ##### Measure Computer Conformance
 
@@ -577,17 +562,7 @@ between options when applicable are specified in notes.
         
                 <tr>
                 
-                    <td rowspan='6'>Measure Source</td>
-                
-                <td><a href="#storage-option">Storage Option</a></td>
-                </tr>
-            
-                <tr>
-                
-                <td><a href="#api-option">API Option</a></td>
-                </tr>
-            
-                <tr>
+                    <td rowspan='4'>Measure Source</td>
                 
                 <td><a href="#csv-option">CSV Option</a></td>
                 </tr>
@@ -609,17 +584,7 @@ between options when applicable are specified in notes.
             
                 <tr>
                 
-                    <td rowspan='6'>Measure Consumer</td>
-                
-                <td><a href="#storage-option">Storage Option</a></td>
-                </tr>
-            
-                <tr>
-                
-                <td><a href="#api-option">API Option</a></td>
-                </tr>
-            
-                <tr>
+                    <td rowspan='4'>Measure Consumer</td>
                 
                 <td><a href="#csv-option">CSV Option</a></td>
                 </tr>
@@ -656,43 +621,6 @@ between options when applicable are specified in notes.
 
         
 The options in this guide are describe in more detail the sections below.
-
-#### Storage Option
-
-An actor implementing the Storage Option supports the ability to exchange FHIR Resources through
-various means of simple data transfer, rather than directly through a FHIR API call. This include mechanisms such
-as SFTP, S3 Blob Storage, Azure Blob Storage, a Message Queue, https: File Download, File System dumps, or Direct Messages with a
-data payload. Supported formats include JSON, XML and NDJSON.
-        
-
-This option applies to the actors as described below.
-
-##### Measure Source
-
-A [Measure Source](actors.html#measure-source) actor implementing the Storage Option uses external storage to communicate data.
-
-
-##### Measure Consumer
-
-A [Measure Consumer](actors.html#measure-consumer) actor implementing the Storage Option uses external storage to communicate data.
-
-
-#### API Option
-
-An actor implementing the API Option supports the
-ability to exchange FHIR Resources using [FHIR RESTful APIs](http://hl7.org/fhir/R4/http.html).
-
-This option applies to the actors as described below.
-
-##### Measure Source
-
-A [Measure Source](actors.html#measure-source) actor implementing the API option uses FHIR RESTful APIs to communicate data.
-
-
-##### Measure Consumer
-
-A [Measure Consumer](actors.html#measure-consumer) actor implementing the API option uses FHIR RESTful APIs to communicate data.
-
 
 #### CSV Option
 
@@ -762,8 +690,7 @@ An Measure Consumer implementing the Pull Option periodically queries a
 
 An actor implementing the Questionnaire Option supports the use of Questionnaire
 and QuestionnaireResponse resources to determine the current status of selected
-health delivery resources. Implementers of this option must also implement
-the API option.
+health delivery resources.
 
 
 
