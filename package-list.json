@@ -1,8 +1,8 @@
 {
-  "package-id": "hl7.fhir.us.saner",
-  "canonical": "http://hl7.org/fhir/us/saner",
+  "package-id": "hl7.fhir.uv.saner",
+  "canonical": "http://hl7.org/fhir/saner",
   "title": "Situational Awareness for Novel Epidemic Response",
-  "introduction": "The Situational Awareness for Novel Epidemic Response Implementation Guide enables transmission of high level situational awareness information from inpatient facilities to centralized data repositories to support the treatment of novel influenza-like illness.",
+  "introduction": "The Situational Awareness for Novel Epidemic Response Implementation Guide enables transmission of high level situational awareness information from healthcare facilities to centralized data repositories to support the treatment of the novel coronavirus illness.",
   "list": [
     {
       "version": "current",

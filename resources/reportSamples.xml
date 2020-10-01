@@ -17,7 +17,7 @@ Description: "Example MeasureReport of positive for AK on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#2
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -46,7 +46,7 @@ Description: "Example MeasureReport of totalTestResults for AK on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#2
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -75,7 +75,7 @@ Description: "Example MeasureReport of positiveIncrease for AK on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#2
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -104,7 +104,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for AK on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#2
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -133,7 +133,7 @@ Description: "Example MeasureReport of positivePercent for AK on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#2
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -178,7 +178,7 @@ Description: "Example MeasureReport of positive for AL on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#1
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -207,7 +207,7 @@ Description: "Example MeasureReport of totalTestResults for AL on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#1
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -236,7 +236,7 @@ Description: "Example MeasureReport of positiveIncrease for AL on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#1
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -265,7 +265,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for AL on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#1
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -294,7 +294,7 @@ Description: "Example MeasureReport of positivePercent for AL on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#1
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -339,7 +339,7 @@ Description: "Example MeasureReport of positive for AR on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#5
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -368,7 +368,7 @@ Description: "Example MeasureReport of totalTestResults for AR on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#5
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -397,7 +397,7 @@ Description: "Example MeasureReport of positiveIncrease for AR on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#5
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -426,7 +426,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for AR on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#5
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -455,7 +455,7 @@ Description: "Example MeasureReport of positivePercent for AR on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#5
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -499,7 +499,7 @@ Description: "Example MeasureReport of totalTestResults for AS on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#60
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -528,7 +528,7 @@ Description: "Example MeasureReport of positiveIncrease for AS on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#60
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -557,7 +557,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for AS on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#60
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -586,7 +586,7 @@ Description: "Example MeasureReport of positivePercent for AS on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#60
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -631,7 +631,7 @@ Description: "Example MeasureReport of positive for AZ on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#4
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -660,7 +660,7 @@ Description: "Example MeasureReport of totalTestResults for AZ on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#4
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -689,7 +689,7 @@ Description: "Example MeasureReport of positiveIncrease for AZ on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#4
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -718,7 +718,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for AZ on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#4
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -747,7 +747,7 @@ Description: "Example MeasureReport of positivePercent for AZ on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#4
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -792,7 +792,7 @@ Description: "Example MeasureReport of positive for CA on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#6
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -821,7 +821,7 @@ Description: "Example MeasureReport of totalTestResults for CA on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#6
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -850,7 +850,7 @@ Description: "Example MeasureReport of positiveIncrease for CA on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#6
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -879,7 +879,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for CA on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#6
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -908,7 +908,7 @@ Description: "Example MeasureReport of positivePercent for CA on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#6
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -953,7 +953,7 @@ Description: "Example MeasureReport of positive for CO on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#8
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -982,7 +982,7 @@ Description: "Example MeasureReport of totalTestResults for CO on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#8
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1011,7 +1011,7 @@ Description: "Example MeasureReport of positiveIncrease for CO on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#8
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1040,7 +1040,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for CO on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#8
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1069,7 +1069,7 @@ Description: "Example MeasureReport of positivePercent for CO on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#8
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1114,7 +1114,7 @@ Description: "Example MeasureReport of positive for CT on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#9
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1143,7 +1143,7 @@ Description: "Example MeasureReport of totalTestResults for CT on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#9
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1172,7 +1172,7 @@ Description: "Example MeasureReport of positiveIncrease for CT on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#9
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1201,7 +1201,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for CT on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#9
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1230,7 +1230,7 @@ Description: "Example MeasureReport of positivePercent for CT on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#9
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1275,7 +1275,7 @@ Description: "Example MeasureReport of positive for DC on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#11
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1304,7 +1304,7 @@ Description: "Example MeasureReport of totalTestResults for DC on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#11
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1333,7 +1333,7 @@ Description: "Example MeasureReport of positiveIncrease for DC on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#11
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1362,7 +1362,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for DC on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#11
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1391,7 +1391,7 @@ Description: "Example MeasureReport of positivePercent for DC on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#11
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1436,7 +1436,7 @@ Description: "Example MeasureReport of positive for DE on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#10
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositive
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositive
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1465,7 +1465,7 @@ Description: "Example MeasureReport of totalTestResults for DE on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#10
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResults
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResults
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1494,7 +1494,7 @@ Description: "Example MeasureReport of positiveIncrease for DE on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#10
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositiveIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositiveIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1523,7 +1523,7 @@ Description: "Example MeasureReport of totalTestResultsIncrease for DE on 202003
 * MeasureReport.identifier = https://www.census.gov/geographies#10
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERtotalTestResultsIncrease
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERtotalTestResultsIncrease
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude
@@ -1552,7 +1552,7 @@ Description: "Example MeasureReport of positivePercent for DE on 20200331"
 * MeasureReport.identifier = https://www.census.gov/geographies#10
 * MeasureReport.status = #complete
 * MeasureReport.type = #summary
-* MeasureReport.measure = http://hl7.org/fhir/us/saner/Measure/SANERpositivePercent
+* MeasureReport.measure = http://hl7.org/fhir/saner/Measure/SANERpositivePercent
 * MeasureReport.subject.extension.url = http://hl7.org/fhir/StructureDefinition/geolocation
 * MeasureReport.subject.extension[0].extension.url = latitude
 * MeasureReport.subject.extension[0].extension.valueDecimal = latitude

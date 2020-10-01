@@ -23,7 +23,7 @@ The example below illustrates a measure with a reporting period of one report pr
 ```
    "extension": [
      {
-       "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+       "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
        "valueTiming": {
          "repeat": {
            "frequency": 1,    // one report
@@ -43,7 +43,7 @@ The example below illustrates a measure with a reporting period every 8 hours (i
 ```
    "extension": [
      {
-       "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+       "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
        "valueTiming": {
          "repeat": {
            "frequency": 1,    // one report
@@ -63,7 +63,7 @@ The example below illustrates a measure with a reporting period of once a week o
 ```
    "extension": [
      {
-       "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+       "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
        "valueTiming": {
          "repeat": {
            "frequency": 1,    // one report

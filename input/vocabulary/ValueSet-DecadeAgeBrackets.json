@@ -6,7 +6,7 @@
   "title": "Age Brackets By Decade",
   "description": "A Value Set of age groups generally by decade except youth (under 20), or over 80, commonly used for stratification in public health dashboards",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/DecadeAgeBrackets",
+  "url": "http://hl7.org/fhir/saner/ValueSet/DecadeAgeBrackets",
   "compose": {
     "include": [
       {

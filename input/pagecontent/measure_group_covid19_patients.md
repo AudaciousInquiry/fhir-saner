@@ -31,7 +31,7 @@ further describe the measure group content.
 The first step in describing these attributes is to indicate how the measure is scored.
 ```
  * with group[0].extension[groupAtts] do
- ** extension[scoring].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PublicHealthMeasureScoring#queue-length
+ ** extension[scoring].valueCodeableConcept = http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring#queue-length
 ```
 
 Next, the measure describes the type of measure (e.g., structure, process or outcome). This measure is a structural measure,
@@ -87,7 +87,7 @@ Provide a code describing the initial population.
 ```
  * with group[0].population[0] do
  ** with code do
- *** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numC19Pats
+ *** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numC19Pats
  *** coding.display = "All COVID-19 Confirmed or Suspected Patients"
  *** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
  *** text = "Patients with suspected or confirmed COVID-19 in any location."

@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "MeasurePopulationAlternateCriteria",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasurePopulationAlternateCriteria",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasurePopulationAlternateCriteria",
   "version": "0.1.0",
   "name": "MeasurePopulationAlternateCriteria",
   "title": "Alternate criteria for performing a measure",
@@ -68,7 +68,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasurePopulationAlternateCriteria"
+        "fixedUri": "http://hl7.org/fhir/saner/StructureDefinition/MeasurePopulationAlternateCriteria"
       },
       {
         "id": "Extension.value[x]",
@@ -100,7 +100,7 @@
           {
             "code": "Expression",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureCriteria"
+              "http://hl7.org/fhir/saner/StructureDefinition/MeasureCriteria"
             ]
           }
         ]

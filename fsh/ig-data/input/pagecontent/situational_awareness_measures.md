@@ -1,3 +1,19 @@
+The focus of this guide is to inform developers on how to create and use the essential FHIR
+Resources necessary to support national and regional reporting efforts on COVID-19 to
+public health officials.  It describes how to exchange measures supporting situation
+awareness to enable appropriate response to healthcare emergencies affecting a population.  While the
+immediate focus of this guide is in support of efforts to manage challenges reelated to the novel Coronavirus, the
+guide is informed by prior efforts supporting the exchange of situation awareness data in support of other
+emergencies (e.g., huricanes, wild fires, mass injury events, et cetera).
+
+Situation awareness represents an understanding of what resources are available or needed,
+where, and when, so that decisions can be made about allocating resources where needed, or moving resources
+or those in need of them to the appropriate locations so that those resources can be used to support emergency
+response efforts.  Resources can include just about anything that can be used to support the effort, food,
+medicine, supplies, people (with appropriate skills), equipment, utilities like water, power, et cetera. The key
+mechanism by which this guide supports situation awareness is through communication of measures related to
+essential elements of information needed to support emergency response activities.
+
 According to The American Heritage® Stedman's Medical Dictionary:
 <blockquote>
 <dl>
@@ -16,18 +32,13 @@ To mark, lay out, or establish dimensions for by measuring.
 At its simplest, measurement is counting in units, and then doing some math with
 the resulting count or to obtain a value that lets you do something useful.
 
-The focus of this guide is to inform developers on how to create and use the essential FHIR
-Resources necessary to support national and regional reporting efforts on COVID-19 to
-public health officials in the United States.
-
 For more than the last decade, HL7 and its members have been deeply involved in the evolution
-of measurement standards for quality reporting, from early efforts in developing the
+of measurement standards for clinical quality reporting, from early efforts in developing the
 [HL7 Version 3 Health Quality Measure Format](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=97)
 specification, to more recent efforts in the publication of the [HL7 FHIR Quality Measure (QM)](http://hl7.org/fhir/us/cqfmeasures/),
 and the [DaVinci Data Exchange For Quality Measures (DEQM)](http://hl7.org/fhir/us/davinci-deqm/)
 implementation guides. These guides provide excellent reference and background materials
 for those interested in learning more about the terminology used in measurement.
-
 
 This implementation guide uses the [MeasureReport](https://hl7.org/fhir/R4/MeasureReport)
 resource to report measures to regional and federal agencies, including state departments
@@ -64,20 +75,20 @@ A more detailed model about how these are related follows.
 ![Model](Model.svg)
 
 ### Measurement Reporting Approach
-The approach of this IG to measurement is to capture all measures reported to a single
-agency in a single Measure, with multiple groups in the measure.  This is very much
-treating MeasureReport as if it were a report card (as one might receive from a school)
-reporting how a location is doing on all measured criteria, with each group within the
-MeasureReport reflecting one of the "subject areas" being measured, much like a report
-card reports on a student's progress in different subjects.
+The approach of this IG to measurement is to capture all measurements reported to a single
+agency in a single Measure Report, using multiple groups in the measure for each kind of
+measurement.  This is very much treating MeasureReport as if it were a report card (as one
+might receive from a school) reporting how a location is doing on all measured criteria,
+with each group within the MeasureReport reflecting one of the "subject areas" being measured,
+much like a report card reports on a student's progress in different subjects.
 
-Unlike a report card, a Measure Report is not necessarily an evaluation of how a location
-is performing its function. The number of patients in the hospital due to pandemic is
-not related to how well the hospital performs, and much more due to other factors, such
-as the density of the local population, or the implementation of appropriate measures to
-contain the pandemic that are outside the control of the location that is being measured.
-These MeasureReport resources should be viewed not as a critique of a given facility,
-rather, an evaluation of the impact the pandemic is having upon a facility.
+Unlike a report card, a Measure Report is not necessarily a grade or an evaluation of
+how well a location is performing its function. The number of patients in the hospital due
+to pandemic is not related to how well the hospital performs, and much more due to other
+factors, such as the density of the local population, or the implementation of appropriate
+responses to contain the pandemic that are outside the control of the location that is
+being measured. These MeasureReport resources should be viewed not as a critique of a given
+facility, rather, as an evaluation of the impact the pandemic is having upon a facility.
 
 Combining reporting into a single MeasureReport would result in data loss on the Measure
 Resource without the ability to express attributes of each Measured item at the group
@@ -85,13 +96,11 @@ level.  That issue is addressed by this Implementation Guide by creating an exte
 Group Attributes](#supporting-profiles) below) to allow topic, scoring and type to be shifted from Measure to
 Measure.group. To simplify interpretation of Measure by consumers, Measures created
 in this guide always include these extensions on Measure.group, even if they are not strictly
-needed.  A tracker will be created (#TODO: Create Tracker) to suggest moving these classifiers
-to group.
-
+needed.
 
 ### Measures for Situational Awareness
-Just as [quality reporting](https://www.hl7.org/fhir/clinicalreasoning-quality-reporting.html) defines several types of measures, situational
-awareness measures also follow several common patterns.
+Just as [quality reporting](https://www.hl7.org/fhir/clinicalreasoning-quality-reporting.html) defines
+several types of measures, situational awareness measures also follow several common patterns.
 
 The purpose of situation awareness measures is to collect essential elements of information (EEI) used to support emergency response. Briefly, EEIs are the data elements
 emergency response officials need in order to critical support decision making during an emergency.  In the US, the Office of the Assistant Secretary of
@@ -298,8 +307,6 @@ The table below illustrates the populations that are required for computing a si
 Unlike quality measures, situation awareness measures do not require that an initial population be present
 for all measure types. It is permitted, and may be helpful in measure computation, but it is not essential
 for scoring or reporting.
-
-[Move Initial Population in queue-length Measure to denominator (enabling easy switch to service-time).](#todo)
 
 <table rows='12'>
   <thead>

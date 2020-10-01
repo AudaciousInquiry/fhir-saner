@@ -17,7 +17,7 @@ Description: "Create or update a MeasureReport for the given time period. If a r
 * title = "Evaluate the measure"
 * description = """Create or update a MeasureReport for the given time period. If a report already exists for the subject and reporter for the given time period, it is updated.
                             Otherwise, a new report is created."""
-* url = "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure"
+* url = "http://hl7.org/fhir/saner/OperationDefinition/Measure-evaluate-measure"
 
 * parameter[0].name = #periodEnd
 * parameter[0].use = #in

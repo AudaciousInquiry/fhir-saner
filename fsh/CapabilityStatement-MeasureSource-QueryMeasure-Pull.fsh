@@ -6,7 +6,7 @@ Description: "Defines the additional requirements for the Measure Source impleme
 * insert SanerDefinitionContent
 * name = "MeasureSource_QueryMeasure_Pull"
 * title = "Measure Source implementing the Query Measure transaction with the Pull Option."
-* date = "2020-09-10T18:17:35.860932-04:00"
+* date = "2020-10-01T02:36:53.144341-04:00"
 * kind = #requirements
 * description = "Defines the additional requirements for the Measure Source implementing the Query Measure transaction with the Pull Option."
 * format[0] = #xml
@@ -60,7 +60,7 @@ Description: "Defines the additional requirements for the Measure Source impleme
 * rest[serverSlice].resource[LocationSlice].extension[2].extension[0].valueString = "identifier"
 
 * rest[serverSlice].resource[MeasureReportSlice].type = #MeasureReport
-* rest[serverSlice].resource[MeasureReportSlice].supportedProfile[0] = "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+* rest[serverSlice].resource[MeasureReportSlice].supportedProfile[0] = "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
 
 * rest[serverSlice].resource[MeasureReportSlice].interaction[0].code = #read
 * rest[serverSlice].resource[MeasureReportSlice].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
@@ -156,7 +156,7 @@ Description: "Defines the additional requirements for the Measure Source impleme
 * rest[serverSlice].resource[MeasureReportSlice].extension[1].extension[9].valueString = "reporter:identifier"
 
 * rest[serverSlice].resource[MeasureSlice].type = #Measure
-* rest[serverSlice].resource[MeasureSlice].supportedProfile[0] = "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+* rest[serverSlice].resource[MeasureSlice].supportedProfile[0] = "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
 
 * rest[serverSlice].resource[MeasureSlice].interaction[0].code = #read
 * rest[serverSlice].resource[MeasureSlice].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

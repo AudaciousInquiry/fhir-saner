@@ -6,7 +6,7 @@ InstanceOf: PublicHealthMeasureLibrary
  * insert SanerDefinitionContent
  * id = "ComputableNHSNMeasureLibrary"
  * name = "ComputableNHSNMeasureLibrary"
- * url = "http://hl7.org/fhir/us/saner/StructureDefinition/ComputableNHSNMeasureLibrary"
+ * url = "http://hl7.org/fhir/saner/Library/ComputableNHSNMeasureLibrary"
  * title = "Computable NHSN Patient Impact and Hospital Capacity Measure Library"
  * type = http://terminology.hl7.org/CodeSystem/library-type#asset-collection
  * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
@@ -141,19 +141,14 @@ InstanceOf: PublicHealthMeasureLibrary
 * content[24].title = "Ventilator Devices"
 * content[24].contentType = #application/fhir+xml
 
-* content[25].id = "VentilatorWithTracheostomyDevices"
-* content[25].url = Canonical(VentilatorWithTracheostomyDevices)
-* content[25].title = "Ventilator Devices when used with Tracheostomy"
+* content[25].id = "VentilatorObservations"
+* content[25].url = Canonical(VentilatorObservations)
+* content[25].title = "Ventilator Observations"
 * content[25].contentType = #application/fhir+xml
 
-* content[26].id = "VentilatorObservations"
-* content[26].url = Canonical(VentilatorObservations)
-* content[26].title = "Ventilator Observations"
+* content[26].id = "VentilatorProcedures"
+* content[26].url = Canonical(VentilatorProcedures)
+* content[26].title = "Ventilator Procedures"
 * content[26].contentType = #application/fhir+xml
-
-* content[27].id = "VentilatorProcedures"
-* content[27].url = Canonical(VentilatorProcedures)
-* content[27].title = "Ventilator Procedures"
-* content[27].contentType = #application/fhir+xml
 
 

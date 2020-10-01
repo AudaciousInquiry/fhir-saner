@@ -4,12 +4,12 @@
   "meta": {
     "profile": [
       "http://hl7.org/fhir/StructureDefinition/Measure",
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
     ]
   },
   "extension": [
     {
-      "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+      "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
       "valueTiming": {
         "repeat": {
           "frequency": 1,
@@ -79,14 +79,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortenvsvc",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
@@ -187,14 +187,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortnurse",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Registered nurses and licensed practical nurses"
@@ -295,14 +295,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortrt",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
@@ -403,14 +403,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortphar",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Pharmacists and pharmacy techs"
@@ -511,14 +511,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortphys",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Attending physicians, fellows"
@@ -619,14 +619,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shorttemp",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
@@ -727,14 +727,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortoth",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
@@ -835,14 +835,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "shortothlic",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Advanced practice nurses, physician assistants"
@@ -942,14 +942,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortenvsvc",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Front-line persons who clean patient rooms and all areas in a healthcare facility"
@@ -1048,14 +1048,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortnurse",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Registered nurses and licensed practical nurses"
@@ -1154,14 +1154,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortrt",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care"
@@ -1260,14 +1260,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortphar",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Pharmacists and pharmacy techs"
@@ -1366,14 +1366,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortphys",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Attending physicians, fellows"
@@ -1472,14 +1472,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshorttemp",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons"
@@ -1578,14 +1578,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortoth",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
@@ -1684,14 +1684,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "posshortothlic",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
           }
         ],
         "text": "Advanced practice nurses, physician assistants"
@@ -1777,7 +1777,7 @@
       ]
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/Measure/CDCHealthcareWorkerStaffingPathway",
+  "url": "http://hl7.org/fhir/saner/Measure/CDCHealthcareWorkerStaffingPathway",
   "name": "CDCHealthcareWorkerStaffingPathway",
   "title": "COVID-19 Healthcare Worker Staffing Pathway",
   "date": "2020-04-27T07:08:50-04:00",
@@ -1854,7 +1854,7 @@
     }
   ],
   "library": [
-    "http://hl7.org/fhir/us/saner/StructureDefinition/NHSNMeasureLibrary"
+    "http://hl7.org/fhir/saner/StructureDefinition/NHSNMeasureLibrary"
   ],
   "type": [
     {

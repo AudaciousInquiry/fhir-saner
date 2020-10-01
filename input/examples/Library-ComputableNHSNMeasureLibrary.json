@@ -3,7 +3,7 @@
   "id": "ComputableNHSNMeasureLibrary",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary"
     ]
   },
   "status": "draft",
@@ -41,7 +41,7 @@
     }
   ],
   "name": "ComputableNHSNMeasureLibrary",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ComputableNHSNMeasureLibrary",
+  "url": "http://hl7.org/fhir/saner/Library/ComputableNHSNMeasureLibrary",
   "title": "Computable NHSN Patient Impact and Hospital Capacity Measure Library",
   "type": {
     "coding": [
@@ -108,31 +108,31 @@
   "content": [
     {
       "id": "BedLocationOperationalStatus",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/BedLocationOperationalStatus",
+      "url": "http://hl7.org/fhir/saner/ValueSet/BedLocationOperationalStatus",
       "title": "Bed Location Operational Status",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "ConfirmedCOVID19Diagnoses",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/ConfirmedCOVID19Diagnoses",
+      "url": "http://hl7.org/fhir/saner/ValueSet/ConfirmedCOVID19Diagnoses",
       "title": "Confirmed COVID-19 Diagnosis Values",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "PositiveResults",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/PositiveResults",
+      "url": "http://hl7.org/fhir/saner/ValueSet/PositiveResults",
       "title": "Confirmed COVID-19 Diagnosis",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "Covid19Labs",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/Covid19Labs",
+      "url": "http://hl7.org/fhir/saner/ValueSet/Covid19Labs",
       "title": "COVID-19 Diagnostic Test",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "NegativeResults",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/NegativeResults",
+      "url": "http://hl7.org/fhir/saner/ValueSet/NegativeResults",
       "title": "COVID-19 Not Detected",
       "contentType": "application/fhir+xml"
     },
@@ -174,61 +174,61 @@
     },
     {
       "id": "ICULocations",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/ICULocations",
+      "url": "http://hl7.org/fhir/saner/ValueSet/ICULocations",
       "title": "ICU Locations",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "InpatientLocations",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/InpatientLocations",
+      "url": "http://hl7.org/fhir/saner/ValueSet/InpatientLocations",
       "title": "Inpatient Locations",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "MeasureGroups",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureGroups",
+      "url": "http://hl7.org/fhir/saner/ValueSet/MeasureGroups",
       "title": "Measure Groups",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "MeasurePopulations",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasurePopulations",
+      "url": "http://hl7.org/fhir/saner/ValueSet/MeasurePopulations",
       "title": "Measure Populations",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "MeasureRateAggregationValues",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureRateAggregationValues",
+      "url": "http://hl7.org/fhir/saner/ValueSet/MeasureRateAggregationValues",
       "title": "Measure Rate Aggregation Value Set",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "MeasureStatus",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus",
+      "url": "http://hl7.org/fhir/saner/ValueSet/MeasureStatus",
       "title": "Measure Status Values",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "PatientsOnVentilator",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientsOnVentilator",
+      "url": "http://hl7.org/fhir/saner/ValueSet/PatientsOnVentilator",
       "title": "Observations for Patients on a Ventilator",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "PatientDeaths",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientDeaths",
+      "url": "http://hl7.org/fhir/saner/ValueSet/PatientDeaths",
       "title": "Patient Died",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "Remdesivir",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/Remdesivir",
+      "url": "http://hl7.org/fhir/saner/ValueSet/Remdesivir",
       "title": "Remdesivir",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "SARSCoV2GeneticLabs",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/SARSCoV2GeneticLabs",
+      "url": "http://hl7.org/fhir/saner/ValueSet/SARSCoV2GeneticLabs",
       "title": "SARSCoV2 Genetic Labs",
       "contentType": "application/fhir+xml"
     },
@@ -240,37 +240,31 @@
     },
     {
       "id": "SuspectedCOVID19Diagnoses",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/SuspectedCOVID19Diagnoses",
+      "url": "http://hl7.org/fhir/saner/ValueSet/SuspectedCOVID19Diagnoses",
       "title": "Suspected COVID-19 Diagnosis Values",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "SuspectedOrConfirmedCOVID19Diagnoses",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/SuspectedOrConfirmedCOVID19Diagnoses",
+      "url": "http://hl7.org/fhir/saner/ValueSet/SuspectedOrConfirmedCOVID19Diagnoses",
       "title": "Suspected Or Diagnosed COVID-19",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "VentilatorDevices",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorDevices",
+      "url": "http://hl7.org/fhir/saner/ValueSet/VentilatorDevices",
       "title": "Ventilator Devices",
       "contentType": "application/fhir+xml"
     },
     {
-      "id": "VentilatorWithTracheostomyDevices",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorWithTracheostomyDevices",
-      "title": "Ventilator Devices when used with Tracheostomy",
-      "contentType": "application/fhir+xml"
-    },
-    {
       "id": "VentilatorObservations",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorObservations",
+      "url": "http://hl7.org/fhir/saner/ValueSet/VentilatorObservations",
       "title": "Ventilator Observations",
       "contentType": "application/fhir+xml"
     },
     {
       "id": "VentilatorProcedures",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorProcedures",
+      "url": "http://hl7.org/fhir/saner/ValueSet/VentilatorProcedures",
       "title": "Ventilator Procedures",
       "contentType": "application/fhir+xml"
     }

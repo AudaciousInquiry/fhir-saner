@@ -48,7 +48,7 @@ Description: "Observation-4 for Test Case 9b: No Diagnosis of Suspected  COVID-1
 * status = #final
 * effectiveDateTime = "2020-09-07"
 * code = LOINC#20077-4  "Positive end expiratory pressure setting Ventilator"
-* valueQuantity = 5 'cm[H20]'
+* valueQuantity = 5 'cm[H2O]'
 
 Instance: Immunization19b
 InstanceOf: Immunization

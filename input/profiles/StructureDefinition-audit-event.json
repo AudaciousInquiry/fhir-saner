@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/audit-event",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/audit-event",
   "version": "0.1.0",
   "name": "SanerAuditEvent",
   "title": "General Audit Event Requirements",

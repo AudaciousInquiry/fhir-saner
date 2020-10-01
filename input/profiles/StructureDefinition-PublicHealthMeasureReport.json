@@ -11,7 +11,7 @@
       "valueCode": "business"
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport",
   "version": "0.1.0",
   "name": "PublicHealthMeasureReport",
   "title": "Saner Public Health Measure Report",
@@ -143,7 +143,7 @@
             "human": "A reporter must be present in a complete report.",
             "expression": "MeasureReport.status != 'completed' or MeasureReport.reporter.exists()",
             "xpath": "/f:MeasureReport/f:status != 'completed' or /f:MeasureReport/f:reporter",
-            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+            "source": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
           }
         ]
       },
@@ -199,7 +199,7 @@
           {
             "code": "dateTime",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+              "http://hl7.org/fhir/saner/StructureDefinition/PreciseDateTime"
             ]
           }
         ]
@@ -218,7 +218,7 @@
           {
             "code": "dateTime",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+              "http://hl7.org/fhir/saner/StructureDefinition/PreciseDateTime"
             ]
           }
         ]
@@ -231,7 +231,7 @@
           {
             "code": "dateTime",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+              "http://hl7.org/fhir/saner/StructureDefinition/PreciseDateTime"
             ]
           }
         ]
@@ -243,7 +243,7 @@
         "min": 1,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureGroups"
+          "valueSet": "http://hl7.org/fhir/saner/ValueSet/MeasureGroups"
         }
       },
       {
@@ -264,7 +264,7 @@
             "human": "A population.count must have a value, or .extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'",
             "expression": "count.exists() or extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason'",
             "xpath": "f:count or f:extension[@url='http://hl7.org/fhir/StructureDefinition/data-absent-reason']",
-            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+            "source": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
           }
         ]
       },
@@ -275,7 +275,7 @@
         "min": 1,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasurePopulations"
+          "valueSet": "http://hl7.org/fhir/saner/ValueSet/MeasurePopulations"
         }
       },
       {

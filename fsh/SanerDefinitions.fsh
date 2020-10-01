@@ -43,5 +43,5 @@ RuleSet: SanerCapabilityStatementContent
  * fhirVersion = #4.0.1
  * format[0] = #json
  * format[1] = #xml
- * implementationGuide = "http://hl7.org/fhir/us/saner/ImplementationGuide/hl7.fhir.us.saner"
+ * implementationGuide = "http://hl7.org/fhir/saner/ImplementationGuide/hl7.fhir.uv.saner"
 

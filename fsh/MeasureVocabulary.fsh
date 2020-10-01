@@ -1,5 +1,5 @@
 // This sheet convert output to FHIR Shorthand for generating measures.
-Alias: $Base = http://hl7.org/fhir/us/saner
+Alias: $Base = http://hl7.org/fhir/saner
 Alias: HSLOC = https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html
 Alias: ICD10CM = http://hl7.org/fhir/sid/icd-10-cm
 Alias: SCT = http://snomed.info/sct
@@ -322,15 +322,12 @@ https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html"""
 * HSLOC#1221-1  "Long Term Acute Care Ward"
 * HSLOC#1224-5  "Oncology Surgical Critical Care"
 * HSLOC#1225-2  "Oncology Medical-Surgical Critical Care"
+
 ValueSet:    VentilatorDevices
 Title:       "Ventilator Devices"
-Description: "Codes used for Ventilator Devices [Populate VentilatorDevices](#todo)"
-// We have none at the momement
-
-ValueSet:    VentilatorWithTracheostomyDevices
-Title:       "Ventilator Devices when used with Tracheostomy"
-Description: "Codes used for Devices that support Ventilation with a Tracheostomy [Populate VentilatorWithTracheostomyDevices](#todo)"
-// We have none at the momement
+Description: "Codes used for Ventilator Devices"
+* SCT#706172005 "Ventilator"
+* SCT#257463002 "Ventilator outlet"
 
 ValueSet:    VentilatorObservations
 Title:       "Ventilator Observations"

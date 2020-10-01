@@ -61,6 +61,10 @@
           {
             "code": "94559-2",
             "display": "SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Respiratory specimen by NAA with probe detection"
+          },
+          {
+            "code": "94759-8",
+            "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection"
           }
         ]
       }

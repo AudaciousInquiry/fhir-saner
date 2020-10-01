@@ -7,7 +7,7 @@
   "title": "Public Health Measure Scoring",
   "description": "A code system describing types of measure scoring used for situational awareness measures",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/CodeSystem/PublicHealthMeasureScoring",
+  "url": "http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring",
   "concept": [
     {
       "code": "capacity",

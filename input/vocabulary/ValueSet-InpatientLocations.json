@@ -6,7 +6,7 @@
   "title": "Inpatient Locations",
   "description": "Codes used for inpatient locations",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/InpatientLocations",
+  "url": "http://hl7.org/fhir/saner/ValueSet/InpatientLocations",
   "copyright": "aterials developed by CDC: Reference to specific commercial products, manufacturers, companies, or trademarks does not\nconstitute its endorsement or recommendation by the U.S. Government, Department of Health and Human Services, or Centers for Disease Control\nand Prevention. Source materials are available from the CDC Website at no charge at\nhttps://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
   "compose": {
     "include": [

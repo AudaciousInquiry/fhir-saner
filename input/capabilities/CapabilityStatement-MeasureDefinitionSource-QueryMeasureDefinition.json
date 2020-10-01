@@ -3,7 +3,7 @@
   "id": "MeasureDefinitionSource-QueryMeasureDefinition",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+      "http://hl7.org/fhir/saner/StructureDefinition/CapabilityStatementWithSlices"
     ]
   },
   "rest": [
@@ -13,7 +13,7 @@
         {
           "type": "Measure",
           "supportedProfile": [
-            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+            "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
           ],
           "interaction": [
             {
@@ -39,6 +39,16 @@
             {
               "name": "_id",
               "type": "token",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "url",
+              "type": "uri",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -117,6 +127,15 @@
                 {
                   "url": "required",
                   "valueString": "_id"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
                 }
               ]
             },
@@ -239,6 +258,16 @@
                   "valueCode": "SHALL"
                 }
               ]
+            },
+            {
+              "name": "url",
+              "type": "uri",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
             }
           ],
           "searchInclude": [
@@ -261,6 +290,249 @@
                 {
                   "url": "required",
                   "valueString": "_id"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ValueSet",
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "token",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "url",
+              "type": "uri",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchInclude": [
+            "*"
+          ],
+          "_searchInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "_id"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "CodeSystem",
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "token",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "url",
+              "type": "uri",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchInclude": [
+            "*"
+          ],
+          "_searchInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "_id"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ConceptMap",
+          "interaction": [
+            {
+              "code": "read",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "code": "search-type",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "token",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "name": "url",
+              "type": "uri",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "searchInclude": [
+            "*"
+          ],
+          "_searchInclude": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "_id"
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+              "extension": [
+                {
+                  "url": "required",
+                  "valueString": "url"
                 }
               ]
             }
@@ -305,7 +577,7 @@
   ],
   "name": "MeasureDefinitionSource_QueryMeasureDefinition",
   "title": "Measure Definition Source implementing the Query Measure Definition transaction.",
-  "date": "2020-09-10T18:17:35.860932-04:00",
+  "date": "2020-10-01T02:36:53.144341-04:00",
   "kind": "requirements",
   "description": "Defines the requirements for the Measure Definition Source implementing the Query Measure Definition transaction.",
   "format": [

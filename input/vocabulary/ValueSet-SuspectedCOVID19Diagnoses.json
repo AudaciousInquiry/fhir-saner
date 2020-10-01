@@ -5,7 +5,7 @@
   "id": "SuspectedCOVID19Diagnoses",
   "description": "This Value Set identifies conditions that may be related to COVID-19",
   "version": "20200410",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/SuspectedCOVID19Diagnoses",
+  "url": "http://hl7.org/fhir/saner/ValueSet/SuspectedCOVID19Diagnoses",
   "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
   "date": "2020-04-10T01:00:18-04:00",
   "publisher": "HL7",

@@ -401,13 +401,15 @@ active.  The `Condition.recordedDate` indicates when the provider recorded the c
 </table>
 
 
-### Measures based on Diagnostic Values
-Several different kinds of measures can be based on values of diagnostic tests or observations, including
-observations such as those about social history or vital signs.
+### Measures based on codes or results
+Several different kinds of measures can be based on codes describing a diagnostic tests, a procedure, or other activity
+having been performed, and in the case of diagnostic tests, combinations including both the test code and result value.
 
-#### Test Performed
+#### Test / Procedure / Immunization Performed
 Electronic laboratory reporting is used to track both the kinds of tested performed as well as the results.
-A commonly reported measure for COVID-19 is the number of COVID-19 diagnostic tests performed.
+A commonly reported measure for COVID-19 is the number of COVID-19 diagnostic tests performed, regardless
+of outcome, where the results are then stratified by outcome.  This can be counted by looking for the existence
+of an Observation, Procedure
 
 Reporting of certain kinds of observations (e.g., Fraction of Inhaled Oxygen or Positive End Expiratory Pressure) are commonly reported
 for patients who are on a ventilator.  Existence of these observations indicate that a patient is on a ventilator.
@@ -429,8 +431,6 @@ http://loinc.org|94533-7,http://loinc.org|94534-5,http://loinc.org|94558-4,http:
      </tr>
      <tr><td>Observation.code</td>
          <td>Patients with observations indicating that they are on a ventilator</td>
-         <td>// Chained search<br/>
-             Observation.code=http://loinc.org|,http://loinc.org|</td>
          <td>Observation?code=http://loinc.org|19835-8,http://loinc.org|19994-3,http://loinc.org|20077-4,http://loinc.org|20079-0,http://loinc.org|20103-8,<br/>
 http://loinc.org|20112-9,http://loinc.org|20115-2,http://loinc.org|33438-3,http://loinc.org|57655-3,http://loinc.org|76530-5,http://loinc.org|19839-0
         </td>
@@ -442,42 +442,78 @@ http://loinc.org|20112-9,http://loinc.org|20115-2,http://loinc.org|33438-3,http:
   </tbody>
 </table>
 
+The handling of Procedure or Immunization resources is similar.  For Procedure, change Observation above to Procedure.  For Immunization, change Obsevation to Immunization,
+and code to vaccine-code for FHIR Query, or to vaccineCode for FHIRPath and CQL.
+
 #### Test with a coded result or interpretation
-[Todo: Test Value with a coded result](#todo)
+To test for a specific coded result, add the following clauses to the above expressions:
+
+<table border='1' cellspacing='0'>
+  <caption>Determining the reason for care using Encounter resources</caption>
+  <thead><tr><th>Field</th><th>Description</th><th>FHIR Query</th><th>FHIR Path</th><th>CQL</th></tr></thead>
+  <tbody>
+     <tr><td>Observation.valueCodeableConcept</td>
+         <td>Coded Result matching a particular value</td>
+         <td>&value-concept=http://snomed.info/sct|260385009
+        </td>
+         <td>Observation.where( ... and valueCodeableConcept.where(system='http://snomed.info/sct' and value='260385009'))</td>
+         <td>valueset NegativeResults http://example.com/valueset/NegativeResults
+             [Observation] O where O.valueCodeableConcept in NegativeResults </td>
+     </tr>
+     <tr><td>Observation.interpretation</td>
+         <td>A result interpretation of a specified value</td>
+         <td>// NOTE: Requires custom search parameter for interpretation
+             &interpretation=http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|NEG
+        </td>
+         <td>Observation.where( ... and interpretation.where(system='http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation' and value='NEG'))</td>
+         <td>valueset NegativeInterpretations http://example.com/valueset/NegativeInterpretations
+             [Observation] O where O.interpreation in NegativeInterpretations </td>
+     </tr>
+  </tbody>
+</table>
+
 #### Test Value within a Range
-[Todo: Test Value within a range](#todo)
-
-### Using or Not using a given medication
-[Todo: Test Medications](#todo)
-
-on/not on a given medication:
-  medication prescribed
-  medication administered
-  reporting via Medication Resource vs. Medication code
-
-### Immunized / Not Immunized for a Disease
-[Todo: Test Immunizations](#todo)
-having/not having a given immunization:
-
-### Having/Not Having had a given Procedure
-[Todo: Test Procedures](#todo)
-having/not having had a given procedure:
-
-with X (see above) within N days of today:
+<table border='1' cellspacing='0'>
+  <caption>Determining the reason for care using Encounter resources</caption>
+  <thead><tr><th>Field</th><th>Description</th><th>FHIR Query</th><th>FHIR Path</th><th>CQL</th></tr></thead>
+  <tbody>
+     <tr><td>Observation.valueQuantity</td>
+         <td>Quantity above/below/with a range</td>
+         <td>&value-quantity=gt5.4|http://unitsofmeasure.org|mg<br/>
+             &value-quantity=lt5.4|http://unitsofmeasure.org|mg<br/>
+             &value-quantity=gt5.4|http://unitsofmeasure.org|mg&value-quantity=lt8.0|http://unitsofmeasure.org|mg<br/>
+        </td>
+         <td>Observation.where( ... and valueQuantity > 5.4 'mg')<br/>
+             Observation.where( ... and valueQuantity < 5.4 'mg')<br/>
+             Observation.where( ... and valueQuantity > 5.4 'mg' and valueQuantity < 8.0 'mg')<br/>
+         </td>
+         <td>[Observation] O where O.valueQuantity > 5.4 'mg'<br/>
+             [Observation] O where O.valueQuantity < 5.4 'mg'<br/>
+             [Observation] O where O.valueQuantity > 5.4 'mg' and O.valueQuantity < 8.0 'mg'<br/>
+     </tr>
+  </tbody>
+</table>
 
 ### Handling Temporal Relationships
-[Todo: Temporal and Resource relationships](#todo)
 In the example below, NHSN defined HOSPITAL ONSET for COVID-19 as shown below:
 
 > HOSPITAL ONSET: Patients currently hospitalized in an inpatient bed with onset of
 > suspected or confirmed COVID-19 fourteen or more days after hospital admission
 > due to a condition other than COVID-19
 
+This kind of query cannot be handled directly using a FHIR Search query, as it requires computing a relationship between
+to related resources.
 
+In FHIRPath, assuming both the encounter and condition are available in the current set of results, one would write:
+```
+   Condition.where(resolve(encounter).period.start + 14 'days' < onsetDateTime)
+```
+This expression will select Condition resources for which the associated Condition.encounter.period.start date plus 14 days is less than the time of onset of the condition.
 
-
-
-
-
-
-
+A similar expression can be written for CQL:
+```
+ [Condition] C where
+ C.encounter = Encounter.id and
+ C.code in COVID19Conditions and
+ C.onset - 14 days > Encounter.period.start
+```

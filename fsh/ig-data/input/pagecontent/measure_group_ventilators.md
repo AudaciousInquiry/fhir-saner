@@ -24,7 +24,7 @@ The first step in describing these attributes is to indicate how the measure is 
 a measure of available and utilized capacity, so the capacity scoring is used.
 ```
  * with group[3].extension[groupAtts] do
- ** extension[scoring].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PublicHealthMeasureScoring#capacity
+ ** extension[scoring].valueCodeableConcept = http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring#capacity
 ```
 
 Next, the measure describes the type of measure (e.g., structure, process or outcome). This measure is a structural measure,
@@ -78,22 +78,22 @@ so the measure starts with the denominator.
 ```
  * with group[3].population[0] do
  ** with code do
- *** coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numVent "Mechanical Ventilators"
+ *** coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numVent "Mechanical Ventilators"
  *** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#denominator
  *** text = "Total number of ventilators"
  ** description = "Count of all ventilators that can support patient care, whether or not they are presently in use."
 
  * with group[3].population[1] do
  ** with code do
- *** coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numVentUse "Mechanical Ventilators in Use"
+ *** coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numVentUse "Mechanical Ventilators in Use"
  *** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#numerator
  *** text = "Total number of ventilators in use"
  ** description = "Count of all ventilators in use."
 
  * with group[3].population[2] do
  ** with code do
- *** coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numVentAvail "Mechanical Ventilators Available"
- *** coding[1] = http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem#numerator-complement
+ *** coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numVentAvail "Mechanical Ventilators Available"
+ *** coding[1] = http://hl7.org/fhir/saner/CodeSystem/MeasurePopulationSystem#numerator-complement
  *** text = "Total number of ventilators not presently in use."
  ** description = "Count of all ventilators not presently in use."
 ```

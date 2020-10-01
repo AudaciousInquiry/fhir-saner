@@ -35,7 +35,7 @@ onset infections within a facility or region.
 
 ```
  * with group[1].extension[groupAtts] do
- ** extension[scoring].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PublicHealthMeasureScoring#event-growth
+ ** extension[scoring].valueCodeableConcept = http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring#event-growth
 ```
 
 Next, the measure describes the type of measure (e.g., structure, process or outcome). This measure is an outcome measure,
@@ -81,19 +81,19 @@ the Initial Population, a Numerator (the new infections), and a Denominator (the
 Provide a code describing each population.
 ```
  * with group[1].population[1].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numC19HospPats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numC19HospPats
  ** coding.display = "Hospitalized COVID-19 Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
  ** text = "Patients with suspected or confirmed COVID-19 in an inpatient location"
 
  * with group[1].population[2].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numC19HOPats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numC19HOPats
  ** coding.display = "Hospital Onset COVID-19 Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#numerator
  ** text = "Hospital Onset COVID-19 Patients"
 
  * with group[1].population[3].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#cumC19HOPats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#cumC19HOPats
  ** coding.display = "Cumulative Hospital Onset COVID-19 Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#denominator
  ** text = "Cumulative Hospital Onset COVID-19 Patients"
@@ -196,16 +196,14 @@ used in the first measure group.
  ** expression = "iif(%PriorReport.empty(),0,%PriorReport.group[1].population[2].count) + %NumC19HOPats)"
 ```
 NOTE: This expression simply returns a numeric value based on the previously reported value plus the number of new infections
-detected.
-
+detected.  Populations whose values are computed in this manner will not be able to report stratification data
+within the measure report for the cumulative total.
 
 ### Stratification
 Social determinants of health, such as age, race, ethnicity and gender can have negative impacts on
 patient treatment.  This measure is stratified by age group, race, ethnicity and gender to illustrate
 the use of stratification in a cumulative measure.
 
-[BIG TODO: Figure out stratification for cumulative values](#todo)
-One concern is that cumulative totals that are computed using prior sums will not be able to be stratified.
 
 #### Stratification by Age Group
 Stratification by age group involves determining the age of the patient. There is no
@@ -218,7 +216,6 @@ specification for durations.
  * with group[1].stratifier[0] do
  ** code.text = "By Age Group"
  ** description = "Stratifies the population by Age Group"
- ** criteria.name = "Age Group"
  ** criteria.language = #text/fhirpath
  ** criteria.expression = """
     Patient.select(

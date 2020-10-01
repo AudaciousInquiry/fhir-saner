@@ -1,0 +1,83 @@
+
+Encounter:
+* with status in  3
+    * in-progress or 
+    * finished or 
+    * entered-in-error
+    
+* with date (Period) 4
+    * before, 
+    * after, 
+    * within and 
+    * equal to reporting period
+
+* with reasonCode  2
+    * in Suspected or Confirmed,
+    * not in Suspected or Confirmed
+
+* with reasonReference(Condition)  having Condition TC2
+    * with code
+        * in Suspected or Confirmed,
+        * not in Suspected or Confirmed
+
+* with reasonReference(Observation) having Observation TC3
+    * with status of
+        * final
+        * entered-in-error
+    * with code
+        * in Covid 19 Labs AND
+            * with value 
+                * in Positive Results
+                * not in Positive Results
+        * not in Covid 19 Labs AND
+            * with value 
+                * in Positive Results
+                * not in Positive Results
+
+* OR other Observation TC4
+    * date is
+        * before, after or equal to reporting period start
+        * less that 14 days after admission
+        * greater than 14 days after admission
+    * status is
+        * final
+        * entered-in-error
+    * code in Covid 19 Labs AND value in Positive Results
+    * code not in Covid 19 Labs AND value in Positive Results
+    * code in Covid 19 Labs AND value not in Positive Results
+    * code not in Covid 19 Labs AND value not in Positive Results
+
+* OR other Condition TC5
+    * with date
+        * date is before, after or equal to reporting period start
+        * less that 14 days after admission
+        * greater than 14 days after admission
+
+    * verification-status is
+        * refuted
+        * confirmed
+    * code
+        * in Suspected or Confirmed,
+        * not in Suspected or Confirmed,
+
+* with location.location(Location) having Location
+    * with type of (4)
+        * inpatient non-icu
+        * inpatient ICU
+        * ED
+        * other/overflow
+
+* with Patient spanning different (16)
+    * decades in age, (2)
+    * races (2)
+    * ethnicities (2)
+    * and genders in positive cases (2)
+        
+* with Ventilator Observation (2) TC6
+    * present
+    * absent
+        
+* with deaths in positive cases where death is indicated by TC7
+   * encounter.dispositionCode = patient expired OR
+   * patient deceasedBoolean = true OR
+   * deceasedDateTime is valued

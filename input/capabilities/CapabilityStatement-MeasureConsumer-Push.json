@@ -3,7 +3,7 @@
   "id": "MeasureConsumer-Push",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+      "http://hl7.org/fhir/saner/StructureDefinition/CapabilityStatementWithSlices"
     ]
   },
   "rest": [
@@ -13,7 +13,7 @@
         {
           "type": "MeasureReport",
           "supportedProfile": [
-            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+            "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
           ],
           "interaction": [
             {
@@ -75,7 +75,7 @@
   ],
   "name": "MeasureConsumer_Push",
   "title": "Measure Consumer implementing the Push Option.",
-  "date": "2020-09-10T18:17:35.860932-04:00",
+  "date": "2020-10-01T02:36:53.144341-04:00",
   "kind": "requirements",
   "description": "Defines the additional requirements for the Measure Consumer implementing the Push Option.",
   "format": [

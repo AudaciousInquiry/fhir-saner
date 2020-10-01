@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-code",
+  "url": "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-code",
   "description": "This SearchParameter enables resources used in The SANER Project to be discovered by codes or valueSets used in the resource including those in any extensions.",
   "name": "code",
   "purpose": "",

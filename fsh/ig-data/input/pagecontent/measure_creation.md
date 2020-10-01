@@ -2,7 +2,7 @@
 This section of the implementation guide walks through an example for automating computation
 of a measure.
 
-### Conventions in this Section
+## Conventions in this Section
 The definitions for these proposed groupings appear below.  For simplicity and brevity, the definitions below are provided in a
 slightly modified version of the [FHIR Shorthand](http://build.fhir.org/ig/HL7/fhir-shorthand/) notation.  The modification
 introduces "with _fieldparts_ do" keyword to shorten repetitions.
@@ -23,26 +23,73 @@ Would be the same as
 
 NOTE: The the [completed measure](Measure-ComputableCDCPatientImpactAndHospitalCapacity.html) may vary slightly from the
 text in this section.
-1. To save space only the description for the first population in the first group will be provided in this narrative. However,
-it is included in the completed measure.
-2. Technical corrections made to ensure measure
 
-### Patient Impact and Hospital Capacity Module Definition
+## Patient Impact and Hospital Capacity Module Definition
 Like the phrase book, this walkthrough is based on the measure derived from the CDC Patient Impact and
-Hospital Capacity module shown below.
+Hospital Capacity module shown below.  This measure example is provided for the purposes of discussion, it is
+neither an official CDC publication nor a normative artifact in this guide.
 
 ![CDC Patient Impact and Hospital Capacity module](57.130-covid19-pimhc-blank-p.png)
 
-### Measure Header
-[Describe content of the Measure Header](#todo)
+## Measure Header
+The top part of the measure contains the metadata describing the measure itself, giving it a name, an identifier,
+author and publisher, et cetera.  These components are described in more detail below.
 
+### Author Information
+The measure begins by describing the author and providing contact information using an e-mail address.
+This enables those with access to the measure content to easily contact the organziation which authored
+it.
+```
+ * author.name = "Centers for Disease Control/National Healthcare Safety Network (CDC/NHSN)"
+ * author.telecom.system = #email
+ * author.telecom.value = "mailto:nhsn@cdc.gov"
+```
+
+### Suggested Reporting Frequency
+This measure should be reported daily.  This makes uses of the [ReportingPeriod](StructureDefinition-ReportingPeriod.html) extension
+and the [MeasureReportingTiming](StructureDefinition-MeasureReportingTiming.html) profile to identify how often to report
+the measure.
+
+```
+* extension[measureTiming].valueTiming.repeat.frequency = 1
+* extension[measureTiming].valueTiming.repeat.period = 1
+* extension[measureTiming].valueTiming.repeat.periodUnit =  http://unitsofmeasure.org#d "day"
+```
+
+### Measure Name and Title
+Each measure has both a human readable title, and computation oriented name, and a url which uniquely identifies
+it.
+
+```
+ * name = "ComputableCDCPatientImpactAndHospitalCapacity"
+ * url = "http://hl7.org/fhir/saner/Measure/ComputableCDCPatientImpactAndHospitalCapacity"
+ * title = "Patient Impact and Hospital Capacity"
+```
+
+### Related Documentation
+A measure is expected to be documented, and that documentation should contain the details necessary
+for implement the measure itself.
+```
+ * relatedArtifact[0].type = http://hl7.org/fhir/ValueSet/library-type#documentation
+ * relatedArtifact[0].url = "https://web.archive.org/web/20200501215043/https://www.cdc.gov/nhsn/acute-care-hospital/covid19/"
+ * relatedArtifact[0].label = "NHSN COVID-19 Reporting"  // Descriptive Text to display in a Link
+ * relatedArtifact[0].display = "CDC/NHSN COVID-19 Patient Impact & Hospital Capacity Module Home Page" // Title of the link target page
+```
+Multiple relatedArtifiact elements can be provided, the text above shows only the first of four relatedArtifact
+entries included in the actual example measure.
+
+### Measure Library
 Every measure must have at least one Library resource conforming to the
 [PublicHealthMeasureLibrary](StructureDefinition-PublicHealthMeasureLibrary.html) profile that
 provides the essential value sets and other resources that may be used to evaluate the measure.
 Details about the measure library for this sample measure can be found in the
 [Sample Measure Library](measure_library.html) page.
 
-### Patient Impact Data Elements
+```
+ * library = "http://hl7.org/fhir/saner/Library/ComputableNHSNMeasureLibrary"
+```
+
+## Patient Impact Data Elements
 This measure first addresses the Impact of COVID-19 on hospital patients, stratifying data by
 hospital location (inpatient vs. ED/Overflow), ventilation status, and patient death on the
 date of reporting.
@@ -82,7 +129,7 @@ used to identify it.
 2. [AcquiredCovid](measure_group_hospital_acquired_covid19_patients.html): Patients in the hospital during the reporting period who have acquired suspected or confirmed COVID-19 14 days or more after admission.
 3. [CovidDeaths](measure_group_covid19_deaths.html): Deaths in the hospital during the reporting period
 
-### Hospital Capacity
+## Hospital Capacity
 The next section of this measure addresses hospital capacity with respect to all beds, inpatient beds, ICU beds, and ventilators.
 These are all clearly [Capacity and Utilization](situational_awareness_measures.html#capacity-and-utilization) measures.
 It can be clearly divided into two groups, with stratification of the Bed group in across three categories to support
@@ -119,7 +166,6 @@ distinguishes it.
     .where(fieldToStratifyBy = 'ValueToMatch')
 ```
 
-[TODO: Discuss measure scoring when there are multiple numerators](#todo)
 
 
 

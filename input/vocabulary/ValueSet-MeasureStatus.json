@@ -6,7 +6,7 @@
   "title": "Measure Status Values",
   "description": "Allowed Status Values for Saner Measures",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus",
+  "url": "http://hl7.org/fhir/saner/ValueSet/MeasureStatus",
   "compose": {
     "include": [
       {

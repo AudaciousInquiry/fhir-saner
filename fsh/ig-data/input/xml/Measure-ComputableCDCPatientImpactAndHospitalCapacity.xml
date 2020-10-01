@@ -1,0 +1,200 @@
+<Measure xmlns="http://hl7.org/fhir"><id value="ComputableCDCPatientImpactAndHospitalCapacity"></id><meta><profile value="http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"></profile></meta><text><status value="generated"></status><div xmlns="http://www.w3.org/1999/xhtml">Yeah, I got nothing</div></text><extension url="http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod"><valueTiming><repeat><frequency value="1"></frequency><period value="1"></period><periodUnit value="d"></periodUnit></repeat></valueTiming></extension><url value="http://hl7.org/fhir/saner/Measure/ComputableCDCPatientImpactAndHospitalCapacity"></url><version value="0.1.0"></version><name value="ComputableCDCPatientImpactAndHospitalCapacity"></name><title value="Patient Impact and Hospital Capacity"></title><status value="draft"></status><experimental value="true"></experimental><publisher value="HL7 International"></publisher><contact><name value="HL7 Public Health Workgroup"></name><telecom><system value="url"></system><value value="http://hl7.org/Special/committees/pher/index.cfm"></value></telecom></contact><contact><name value="Keith W. Boone"></name><telecom><system value="email"></system><value value="mailto:kboone@ainq.com"></value></telecom></contact><description value="This measure demonstrates automated reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.
+It is used to illustrate automation of measure reporting using the SANER Implementation guide."></description><useContext><code><system value="http://terminology.hl7.org/CodeSystem/usage-context-type"></system><code value="focus"></code></code><valueCodeableConcept><coding><system value="http://snomed.info/sct"></system><code value="840539006"></code><display value="COVID-19"></display></coding></valueCodeableConcept></useContext><jurisdiction><coding><system value="urn:iso:std:iso:3166"></system><code value="US"></code></coding></jurisdiction><author><name value="Centers for Disease Control/National Healthcare Safety Network (CDC/NHSN)"></name><telecom><system value="email"></system><value value="mailto:nhsn@cdc.gov"></value></telecom></author><relatedArtifact><type value="documentation"></type><label value="NHSN COVID-19 Reporting"></label><display value="CDC/NHSN COVID-19 Patient Impact &amp; Hospital Capacity Module Home Page"></display><url value="https://web.archive.org/web/20200501215043/https://www.cdc.gov/nhsn/acute-care-hospital/covid19/"></url></relatedArtifact><relatedArtifact><type value="documentation"></type><label value="How to import COVID-19 Summary Data"></label><display value="Importing COVID-19 Patient Module Denominator data for Patient Safety Component"></display><url value="https://web.archive.org/web/20200501215043/https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf"></url></relatedArtifact><relatedArtifact><type value="documentation"></type><label value="Table of Instructions"></label><display value="Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)"></display><url value="https://web.archive.org/web/20200501215043/https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"></url></relatedArtifact><relatedArtifact><type value="documentation"></type><label value="CSV File Template"></label><display value="CDC/NHSN COVID-19 Reporting CSV File Template"></display><url value="https://web.archive.org/web/20200501215043/https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv"></url></relatedArtifact><library value="http://hl7.org/fhir/saner/Library/ComputableNHSNMeasureLibrary"></library><definition value="&lt;dl&gt;&lt;dt&gt;Ventilator&lt;/dt&gt;
+&lt;dd&gt;Any device used to support, assist or control respiration (inclusive of the weaning period) through the application of positive
+pressure to the airway when delivered via an artificial airway, specifically an oral/nasal endotracheal or tracheostomy tube.
+Note: Ventilation and lung expansion devices that deliver positive pressure to the airway (for example: CPAP, BiPAP, bi-level, IPPB and
+PEEP) via non-invasive means (for example: nasal prongs, nasal mask, full face mask, total mask, etc.) are not considered ventilators
+unless positive pressure is delivered via an artificial airway (oral/nasal endotracheal or tracheostomy tube).
+&lt;/dd&gt;
+&lt;dt&gt;Beds&lt;/dt&gt;
+&lt;dd&gt;Baby beds in mom's room count as 1 bed, even if there are multiple baby beds
+Follow-up in progress if staffed is less than licensed.
+Total includes all beds, even if with surge beds it exceeds licensed beds.
+&lt;/dd&gt;
+&lt;dt&gt;ICU beds&lt;/dt&gt;
+&lt;dd&gt;Include NICU&lt;/dd&gt;
+&lt;/dl&gt;"></definition><group><extension url="http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"><extension url="subject"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/resource-types"></system><code value="Encounter"></code></coding><coding><system value="http://snomed.info/sct"></system><code value="398284004"></code><display value="Patient in room"></display></coding><text value="Patient in room"></text></valueCodeableConcept></extension><extension url="scoring"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"></system><code value="queue-length"></code></coding></valueCodeableConcept></extension><extension url="type"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-type"></system><code value="structure"></code></coding></valueCodeableConcept></extension><extension url="improvementNotation"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system><code value="decrease"></code></coding></valueCodeableConcept></extension><extension url="rateAggregation"><valueString value="point-in-time"></valueString></extension></extension><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"></system><code value="Encounters"></code><display value="Encounters"></display></coding><text value="Hospital COVID-19 Patient Encounters Reporting"></text></code><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numC19Pats"></code><display value="All COVID-19 Confirmed or Suspected Patients"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="initial-population"></code></coding><text value="Patients with suspected or confirmed COVID-19 in any location."></text></code><description value="Active encounters where the encounter diagnosis is suspected or confirmed COVID-19,
+ or a Condition of suspected or confirmed COVID-19 was created during that encounter.  This includes the patients with laboratory-confirmed
+ or clinically diagnosed COVID-19.
+
+&lt;dl&gt;&lt;dt&gt;Confirmed&lt;/dt&gt;
+&lt;dd&gt;A patient with a laboratory confirmed COVID-19 diagnosis&lt;/dd&gt;
+&lt;dt&gt;Suspected&lt;/dt&gt;
+&lt;dd&gt;A patient without a laboratory confirmed COVID-19 diagnosis who, in accordance with CDC’s Interim Public Health Guidance
+for Evaluating Persons Under Investigation (PUIs), has signs and symptoms compatible with COVID-19 (most patients with confirmed
+COVID-19 have developed fever and/or symptoms of acute respiratory illness, such as cough, shortness of breath or myalgia/fatigue).&lt;/dd&gt;
+&lt;/dl&gt;"></description><criteria><description value="This expression finds encounters that were active or finished in the reporting period, and their referenced Patient, Condition and Observation resources.
+It filters these based on cases where Encounter reports a reason or condition in the SuspectedOrDiagnosedCOVID19 value set, or
+where a positive lab test from the Covid19Labs valueset, or where the patient has any such associated Condition or Observation resources
+in the prior two weeks."></description><name value="NumC19Pats"></name><language value="text/fhirpath"></language><expression value=" ( %Base + 'Encounter?' +
+    '_include=Encounter:subject&amp;_include=Encounter:Condition&amp;' +
+    '_include=Encounter:reasonReference' +
+    '&amp;status=in-progress,finished' +
+    '&amp;date=ge' + %ReportingPeriod.start.toString() +
+    '&amp;date=lt' + %ReportingPeriod.end.toString()
+ ).resolve().select(entry.resource).
+ where(
+   iif(myMemberOf((Encounter.reasonCode | Condition.code), %SuspectedOrDiagnosedCOVID19.url) |
+       Observation.where((myMemberOf(code, %Covid19Labs.url) and myMemberOf(value, %PositiveResults.url))
+     ),
+     true,
+     iif(
+       Patient.distinct().where(
+         %Base + 'Observation?_count=1' +
+         '&amp;status=registered,preliminary,final,amended,corrected' +
+         '&amp;patient=' + $this.id +
+         '&amp;date=gt' + (dateSubtract(%ReportingPeriod.start, 14 'days')).toString() +
+         '&amp;code:in=' + %Covid19Labs.url +
+         '&amp;value-concept:in=' + %PositiveResults.url
+       ).resolve().select(entry.resource as Observation).exists(), true,
+       Patient.distinct().where(
+         %Base + 'Condition?_count=1'+
+         '&amp;status:not=refuted&amp;status:not=entered-in-error' +
+         '&amp;patient=' + $this.id +
+         '&amp;verificationStatus:not=refuted,entered-in-error' +
+         '&amp;date=gt' + (dateSubtract(%ReportingPeriod.start, 14 'days')).toString() +
+         '&amp;code:in=' + SuspectedOrConfirmedCOVID19Diagnoses.url
+       ).resolve().select(entry.resource as Condition).exists()
+     )
+  )
+)
+.distinct()
+.aggregate(
+  iif($total.subject contains $this.subject,
+      $total, $total | $this
+  )
+)"></expression></criteria></population><stratifier><code><text value="By Location and Ventilator Status"></text></code><description value="Stratifies the population by Location (inpatient vs ED/Overflow/Other) and Ventilator Status (Ventilated vs Not Ventilated)"></description><criteria><language value="text/fhirpath"></language><expression value="iif(%NumVentUse.id contains Encounter.subject,
+    iif(myMemberOf(Encounter.location.location.resolve().type, %InpatientLocations.url), 'InpVentilated', 'OFVentilated'),
+    iif(myMemberOf(Encounter.location.location.resolve().type, %InpatientLocations.url), 'InpNotVentilated', 'OFNotVentilated')
+)"></expression></criteria></stratifier></group><group><extension url="http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"><extension url="subject"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/resource-types"></system><code value="Patient"></code></coding><coding><system value="http://snomed.info/sct"></system><code value="116154003|Patient|: 20401003|With| = (840539006|COVID-19|: 246512002|Timing| = 277056009|Hospital Acquired|)"></code><display value="Patient: With = COVID-19: Timing = Hospital Acquired"></display></coding><text value="Hospital Acquired COVID-19"></text></valueCodeableConcept></extension><extension url="scoring"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"></system><code value="event-growth"></code></coding></valueCodeableConcept></extension><extension url="type"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-type"></system><code value="outcome"></code></coding></valueCodeableConcept></extension><extension url="improvementNotation"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system><code value="decrease"></code></coding></valueCodeableConcept></extension><extension url="rateAggregation"><valueString value="cumulative"></valueString></extension></extension><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"></system><code value="AcquiredCovid"></code><display value="Acquired COVID-19 in Hospital"></display></coding><text value="Hospital Onset COVID-19 Patient Encounters Reporting"></text></code><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numC19HospPats"></code><display value="Hospitalized COVID-19 Patients"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="initial-population"></code></coding><text value="Patients with suspected or confirmed COVID-19 in an inpatient location"></text></code><description value="Patients with suspected or confirmed COVID-19 in an inpatient location"></description><criteria><description value="Uses the value of NumC19Pat as the initial population"></description><name value="NumC19HospPats"></name><language value="text/fhirpath"></language><expression value="%NumC19Pats.entry.resource.location.location.resolve().where(myMemberOf(type, %InpatientLocations.url))"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numC19HOPats"></code><display value="Hospital Onset COVID-19 Patients"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="numerator"></code></coding><text value="Hospital Onset COVID-19 Patients"></text></code><description value="Hospital Onset COVID-19 Patients"></description><criteria><description value="Filters the initial population by ruling out those patients whose first suspected or
+confirmed diagnosis or lab result appears less than 14 days from admission."></description><name value="NumC19HOPats"></name><language value="text/fhirpath"></language><expression value="Encounter.where(
+  iif(dateAdd(period.start,14 'days') &gt; today(),
+    false,
+    iif( (%Base + 'Condition?_count=1'+
+       '&amp;status:not=refuted&amp;status:not=entered-in-error' +
+       '&amp;patient=' + $this.subject +
+       '&amp;verificationStatus:not=refuted,entered-in-error' +
+       '&amp;date=gt' + (dateAdd($this.period.start,14 'days')).toString() +
+       '&amp;date=le' + (dateSubtract($this.period.start,14 'days')).toString() +
+       '&amp;code:in=' + %SuspectedOrConfirmedCOVID19Diagnoses.url
+      ).resolve().select(entry.resource as Condition).exists(),
+      false,
+      (%Base + 'Observation?_count=1' +
+       '&amp;status=registered,preliminary,final,amended,corrected' +
+       '&amp;patient=' + $this.subject +
+       '&amp;date=gt' + (dateSubtract($this.period.start, 14 'days')).toString() +
+       '&amp;date=le' + (dateAdd($this.period.start,14 'days')).toString() +
+       '&amp;code:in=' + %Covid19Labs.url +
+       '&amp;value-concept:in=' + %PositiveResults.url
+      ).resolve().select(entry.resource as Observation)
+     .empty()
+    )
+  )
+).select(patient).resolve().trace('patients', id)"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="cumC19HOPats"></code><display value="Cumulative Hospital Onset COVID-19 Patients"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="denominator"></code></coding><text value="Cumulative Hospital Onset COVID-19 Patients"></text></code><description value="Cumulative Hospital Onset COVID-19 Patients"></description><criteria><description value="omputes the cumulative total from the prior measure report and the number of new
+infections detected in the current reporting period."></description><name value="CumC19HOPats"></name><language value="text/fhirpath"></language><expression value="iif(%PriorReport.empty(), 0, %PriorReport.group[1].population[2].count + %NumC19HOPats.total)"></expression></criteria></population><stratifier><code><text value="By Age Group"></text></code><description value="Stratifies the population by Age Group"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.select(
+  iif(dateAdd(birthDate, 20 'years') &lt; today(), 'P0Y--P20Y',
+    iif(dateAdd(birthDate, 30 'years') &lt; today(), 'P20Y--P30Y',
+      iif(dateAdd(birthDate, 40 'years') &lt; today(), 'P30Y--P40Y',
+        iif(dateAdd(birthDate, 50 'years') &lt; today(), 'P40Y--P50Y',
+          iif(dateAdd(birthDate, 60 'years') &lt; today(), 'P50Y--P60Y',
+            iif(dateAdd(birthDate, 70 'years') &lt; today(), 'P60Y--P70Y',
+              iif(dateAdd(birthDate, 80 'years') &lt; today(), 'P70Y--P80Y', 'P80Y-P9999Y')
+            )
+          )
+        )
+      )
+    )
+  )
+)"></expression></criteria></stratifier><stratifier><code><text value="By Gender"></text></code><description value="Stratifies the population by Gender"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.gender"></expression></criteria></stratifier><stratifier><code><text value="By Ethnicity"></text></code><description value="Stratifies the population by Ethnicity"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.extension('http://hl7.org/fhir/us/core/StructureDefinition/us-ethnicity-category').extension('ombCategory').valueCoding.code"></expression></criteria></stratifier><stratifier><code><text value="By Race"></text></code><description value="Stratifies the population by Race"></description><criteria><language value="text/fhirpath"></language><expression value="Patient
+.extension('http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')
+.extension('ombCategory')
+.select(
+  iif(valueCoding.count() &gt; 1,
+     'Mixed',
+     iif(valueCoding.system = 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor',
+         'Unknown',
+         valueCoding.code
+     )
+  )
+)"></expression></criteria></stratifier></group><group><extension url="http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"><extension url="subject"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/resource-types"></system><code value="Patient"></code></coding><coding><system value="http://snomed.info/sct"></system><code value="419620001"></code><display value="Patient Deaths"></display></coding><text value="Patients with conformed or suspected COVID-19 who have died"></text></valueCodeableConcept></extension><extension url="scoring"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"></system><code value="event-growth"></code></coding></valueCodeableConcept></extension><extension url="type"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-type"></system><code value="outcome"></code></coding></valueCodeableConcept></extension><extension url="improvementNotation"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system><code value="decrease"></code></coding></valueCodeableConcept></extension><extension url="rateAggregation"><valueString value="cumulative"></valueString></extension></extension><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"></system><code value="CovidDeaths"></code><display value="COVID-19 Deaths"></display></coding><text value="COVID-19 Patient Death Reporting"></text></code><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numC19Pats"></code><display value="All COVID-19 Confirmed or Suspected Patients"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="initial-population"></code></coding><text value="Patients with suspected or confirmed COVID-19 in any location."></text></code><description value="Patients with suspected or confirmed COVID-19 in any location."></description><criteria><description value="COVID-19 Patients in an inpatient setting"></description><language value="text/fhirpath"></language><expression value="%NumC19Pats.entry.resource"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numC19Died"></code><display value="COVID-19 Patient Deaths"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="numerator"></code></coding><text value="Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location"></text></code><description value="Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location"></description><criteria><description value="Filters the initial population by selecting those who have died."></description><name value="NumC19Died"></name><language value="text/fhirpath"></language><expression value="Encounter.where(
+  iif(
+    hospitalization.where(
+      myMemberOf(dispositionCode, %PatientExpired)
+    ),
+    true,
+    subject.resolve().where(deceasedBoolean = true | deceasedDateTime.exists())
+  )
+).select(subject).resolve()"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="cumC19Died"></code><display value="Cumulative COVID-19 Patient Deaths"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="denominator"></code></coding><text value="Cumulative total of Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location"></text></code><description value="Cumulative total of Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location"></description><criteria><description value="Computes the cumulative total from the prior measure report and the number of new deaths in the current reporting period."></description><name value="CumC19Died"></name><language value="text/fhirpath"></language><expression value="iif(%PriorReport.empty(), 0, %PriorReport.group[2].population[2].count + %NumC29Died.count())"></expression></criteria></population><stratifier><code><text value="By Age Group"></text></code><description value="Stratifies the population by Age Group"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.select(
+  iif(dateAdd(birthDate, 20 'years') &lt; today(), 'P0Y--P20Y',
+    iif(dateAdd(birthDate, 30 'years') &lt; today(), 'P20Y--P30Y',
+      iif(dateAdd(birthDate, 40 'years') &lt; today(), 'P30Y--P40Y',
+        iif(dateAdd(birthDate, 50 'years') &lt; today(), 'P40Y--P50Y',
+          iif(dateAdd(birthDate, 60 'years') &lt; today(), 'P50Y--P60Y',
+            iif(dateAdd(birthDate, 70 'years') &lt; today(), 'P60Y--P70Y',
+              iif(dateAdd(birthDate, 80 'years') &lt; today(), 'P70Y--P80Y', 'P80Y-P9999Y')
+            )
+          )
+        )
+      )
+    )
+  )
+)"></expression></criteria></stratifier><stratifier><code><text value="By Gender"></text></code><description value="Stratifies the population by Gender"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.gender"></expression></criteria></stratifier><stratifier><code><text value="By Ethnicity"></text></code><description value="Stratifies the population by Ethnicity"></description><criteria><language value="text/fhirpath"></language><expression value="Patient.extension('http://hl7.org/fhir/us/core/StructureDefinition/us-ethnicity-category').extension('ombCategory').valueCoding.code"></expression></criteria></stratifier><stratifier><code><text value="By Race"></text></code><description value="Stratifies the population by Race"></description><criteria><language value="text/fhirpath"></language><expression value="Patient
+.extension('http://hl7.org/fhir/us/core/StructureDefinition/us-core-race')
+.extension('ombCategory')
+.select(
+  iif(valueCoding.code contains '1992-5', 'A', ' ') +
+  iif(valueCoding.code contains '2054-5', 'B', ' ') +
+  iif(valueCoding.code contains '2076-8', 'H', ' ') +
+  iif(valueCoding.code contains '2028-9', 'S', ' ') +
+  iif(valueCoding.code contains '2106-3', 'W', ' ')
+)"></expression></criteria></stratifier></group><group><extension url="http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"><extension url="subject"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/resource-types"></system><code value="Device"></code></coding><coding><system value="http://snomed.info/sct"></system><code value="257463002"></code><display value="Ventilator Outlet"></display></coding><text value="Ventilator capacity"></text></valueCodeableConcept></extension><extension url="scoring"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"></system><code value="capacity"></code></coding></valueCodeableConcept></extension><extension url="type"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-type"></system><code value="structure"></code></coding></valueCodeableConcept></extension><extension url="improvementNotation"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system><code value="decrease"></code></coding></valueCodeableConcept></extension><extension url="rateAggregation"><valueString value="point-in-time"></valueString></extension></extension><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"></system><code value="Ventilators"></code><display value="Ventilators"></display></coding><text value="Ventilator Reporting"></text></code><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numVent"></code><display value="Mechanical Ventilators"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="denominator"></code></coding><text value="Total number of ventilators"></text></code><description value="Count of all ventilators that can support patient care, whether or not they are presently in use."></description><criteria><description value="Computes the total number of ventilators from the previously reported MeasureReport"></description><name value="NumVent"></name><language value="text/fhirpath"></language><expression value="iif(trace('PriorReport exists:', %PriorReport.exists()), %PriorReport.group[3].population[0].count, 0)"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numVentUse"></code><display value="Mechanical Ventilators in Use"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="numerator"></code></coding><text value="Total number of ventilators in use"></text></code><description value="Count of all ventilators in use."></description><criteria><description value="dentifies the number of ventilators in use by counting Patient with an Observation
+or Procedure resource from an appropriate value set indicating ventilator use."></description><name value="NumVentUse"></name><language value="text/fhirpath"></language><expression value="( %Base + 'Encounter?' +
+  'status=in-progress,finished' +
+  '&amp;_include=Encounter:subject' +
+  '&amp;date=ge' + %ReportingPeriod.start.toString() +
+  '&amp;date=lt' + %ReportingPeriod.end.toString()
+).resolve()
+.select(entry.resource as Patient)
+.where(
+  iif(
+    ( %Base + 'Observation?_count=1'+
+      '&amp;status=registered,preliminary,final,amended,corrected' +
+      '&amp;patient=' + $this.id +
+      '&amp;verificationStatus:not=refuted,entered-in-error' +
+      '&amp;date=gt' + %ReportingPeriod.start.toString()  +
+      '&amp;date=le' + %ReportingPeriod.end.toString() +
+      '&amp;code:in=' + %VentilatorObservations.url
+    ).resolve().select(entry.resource as Observation).exists(),
+    true,
+    ( %Base + 'Procedure?_count=1'+
+      '&amp;status=in-progress,competed' +
+      '&amp;patient=' + $this.id +
+      '&amp;date=gt' + %ReportingPeriod.start.toString()  +
+      '&amp;date=le' + %ReportingPeriod.end.toString()  +
+      '&amp;code:in=' + %VentilatorProcedures.url
+    ).resolve().select(entry.resource as Procedure).exists()
+  )
+)"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numVentAvail"></code><display value="Mechanical Ventilators Available"></display></coding><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasurePopulationSystem"></system><code value="numerator-complement"></code></coding><text value="Total number of ventilators not presently in use."></text></code><description value="Count of all ventilators not presently in use."></description><criteria><description value="omputes the number of ventilators available by substracting the number of ventilators in use
+determined by population 1 from thee total number of ventilators given in population 0"></description><name value="NumVentAvail"></name><language value="text/fhirpath"></language><expression value="%NumVent - %NumVentUse.total.toInteger()"></expression></criteria></population></group><group><extension url="http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"><extension url="subject"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/resource-types"></system><code value="Device"></code></coding><coding><system value="http://snomed.info/sct"></system><code value="91537007"></code><display value="Hospital Bed"></display></coding><text value="Bed capacity"></text></valueCodeableConcept></extension><extension url="scoring"><valueCodeableConcept><coding><system value="http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"></system><code value="capacity"></code></coding></valueCodeableConcept></extension><extension url="type"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-type"></system><code value="structure"></code></coding></valueCodeableConcept></extension><extension url="improvementNotation"><valueCodeableConcept><coding><system value="http://terminology.hl7.org/CodeSystem/measure-improvement-notation"></system><code value="decrease"></code></coding></valueCodeableConcept></extension><extension url="rateAggregation"><valueString value="point-in-time"></valueString></extension></extension><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"></system><code value="Beds"></code><display value="Beds"></display></coding><text value="Bed Reporting"></text></code><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numTotBeds"></code><display value="All Hospital Beds"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="denominator"></code></coding><text value="Total number of beds"></text></code><description value="Total number of all Inpatient and outpatient beds, including all staffed, ICU,
+licensed, and overflow (surge) beds used for inpatients or outpatients"></description><criteria><description value="Computes the total number of beds from the previously reported MeasureReport"></description><name value="NumTotBeds"></name><language value="text/fhirpath"></language><expression value="iif(%PriorReport.exists(),%PriorReport.group[3].population[0].count,0)"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numTotBedsOcc"></code><display value="Hospital Beds Occupied"></display></coding><coding><system value="http://terminology.hl7.org/CodeSystem/measure-population"></system><code value="numerator"></code></coding><text value="Total number of beds in use"></text></code><description value="Total number of all Inpatient and outpatient beds that are occupied"></description><criteria><description value="Identifies the number of beds in use by counting the most recent Encounter for each patient where the encounter
+was in-progress or finished within the period."></description><name value="NumTotBedsOcc"></name><language value="text/fhirpath"></language><expression value="( %Base + 'Encounter?' +
+  'status=in-progress' +
+  '&amp;date=ge' + %ReportingPeriod.start.toString() +
+  '&amp;date=lt' + %ReportingPeriod.end.toString()
+).resolve().select(entry.resource as Encounter)
+.aggregate(
+   iif($total.select(location[0]).location contains $this.location.location.first(),
+       $total,
+       $total | $this
+   )
+)"></expression></criteria></population><population><code><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"></system><code value="numTotBedsAvail"></code><display value="Hospital Beds Available"></display></coding><coding><system value="http://hl7.org/fhir/saner/CodeSystem/MeasurePopulationSystem"></system><code value="numerator-complement"></code></coding><text value="Total number of hospital beds available"></text></code><description value="Total number of all hospital inpatient and outpatient beds that are available"></description><criteria><description value="omputes the number of beds  available by substracting the number of beds in use
+determined by population 1 from the total number of beds given in population 0"></description><name value="NumTotBedsAvail"></name><language value="text/fhirpath"></language><expression value="%NumTotBeds - %NumTotBedsOcc.count()"></expression></criteria></population><stratifier><code><text value="By Type of Location"></text></code><description value="Inpatient Non-ICU, Inpatient ICU, Other"></description><criteria><description value="Determines the location of the encounter based on the membership
+of location.type in the InpatientLocations and ICULocations ValueSet resources.
+When location.type is assigned to any other value, it is reported to be Other"></description><language value="text/fhirpath"></language><expression value="Encounter.location.location.resolve()
+.iif(myMemberOf(type, %InpatientLocations.url),
+    iif (myMemberOf(type, %ICULocations.url),
+        'Inpatient ICU',
+        'Inpatient Non-ICU'
+    ),
+    'Other'
+)"></expression></criteria></stratifier></group></Measure>

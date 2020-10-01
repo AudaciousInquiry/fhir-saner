@@ -7,7 +7,7 @@
   "title": "Measured Values in Sample Measures",
   "description": "A Code System for Populations in Sample Measures defined by The SANER Project",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+  "url": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
   "concept": [
     {
       "code": "numTotBeds",

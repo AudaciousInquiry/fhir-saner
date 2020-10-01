@@ -24,7 +24,11 @@ Description:    "A Capability Statement with slicing defined"
     MeasureReportSlice 0..1 and
     QuestionnaireSlice 0..1 and
     QuestionnaireResponseSlice 0..1 and
-    LibrarySlice 0..*
+    LibrarySlice 0..* and
+    ConceptMapSlice 0..* and
+    ValueSetSlice 0..* and
+    CodeSystemSlice 0..* and
+    ParametersSlice 0..*
 
 * rest.resource[LocationSlice].type = #Location (exactly)
 * rest.resource[OrganizationSlice].type = #Organization (exactly)

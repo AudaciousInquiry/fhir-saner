@@ -6,7 +6,7 @@
   "title": "Age Brackets By Score (20)",
   "description": "A Value Set of age groups in 20 year increments used in some public health dashboards",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/ScoreAgeBrackets",
+  "url": "http://hl7.org/fhir/saner/ValueSet/ScoreAgeBrackets",
   "compose": {
     "include": [
       {

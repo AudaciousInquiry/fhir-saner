@@ -55,7 +55,7 @@ Description: "Observation-4 for Test Case 3a: Neither Adm diagnosis or Problem l
 * subject = Reference(Patient3a)
 * effectiveDateTime = "2020-09-07"
 * code = LOINC#20077-4  "Positive end expiratory pressure setting Ventilator"
-* valueQuantity = 5 'cm[H20]'
+* valueQuantity = 5 'cm[H2O]'
 
 Instance: MedicationRequest13a
 InstanceOf: MedicationRequest

@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-definition-text",
+  "url": "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-definition-text",
   "description": "This SearchParameter enables definition resources used in The SANER Project to be discovered from text used in the resource definition.",
   "name": "definition-text",
   "code": "definition-text",

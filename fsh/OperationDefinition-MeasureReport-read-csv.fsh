@@ -15,7 +15,7 @@ Description: "Read a given MeasureReport using the CSV Format. See [CSV Conversi
 * name = "ReadinCSVFormat"
 * title = "Read in CSV Format"
 * description = "Read a given MeasureReport using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details."
-* url = "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-read-csv"
+* url = "http://hl7.org/fhir/saner/OperationDefinition/MeasureReport-read-csv"
 
 * parameter[0].name = #map
 * parameter[0].use = #in

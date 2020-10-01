@@ -3,7 +3,7 @@
   "id": "MeasureComputer-ComputeMeasure",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices"
+      "http://hl7.org/fhir/saner/StructureDefinition/CapabilityStatementWithSlices"
     ]
   },
   "rest": [
@@ -15,7 +15,7 @@
           "operation": [
             {
               "name": "evaluate-measure",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure",
+              "definition": "http://hl7.org/fhir/saner/OperationDefinition/Measure-evaluate-measure",
               "documentation": "Evaluate the measure"
             }
           ]
@@ -30,7 +30,7 @@
           "operation": [
             {
               "name": "evaluate-measure",
-              "definition": "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure",
+              "definition": "http://hl7.org/fhir/saner/OperationDefinition/Measure-evaluate-measure",
               "documentation": "Evaluate the measure"
             }
           ]
@@ -74,7 +74,7 @@
   ],
   "name": "MeasureComputer_ComputeMeasure",
   "title": "Measure Computer implementing the Compute Measure transaction.",
-  "date": "2020-09-10T18:17:35.860932-04:00",
+  "date": "2020-10-01T02:36:53.144341-04:00",
   "kind": "requirements",
   "description": "Defines the requirements for the Measure Computer implementing the Compute Measure transaction.",
   "format": [

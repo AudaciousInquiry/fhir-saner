@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ReportingPeriod",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
   "version": "0.1.0",
   "name": "ReportingPeriod",
   "title": "Enables specification of proposed measure reporting",
@@ -68,7 +68,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod"
+        "fixedUri": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod"
       },
       {
         "id": "Extension.value[x]",
@@ -88,7 +88,7 @@
           {
             "code": "Timing",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureReportingTiming"
+              "http://hl7.org/fhir/saner/StructureDefinition/MeasureReportingTiming"
             ]
           }
         ]

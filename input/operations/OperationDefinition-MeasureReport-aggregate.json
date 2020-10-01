@@ -46,7 +46,7 @@
   "name": "AggregatetwoormoremoreMessureReportresourcesintoasingleMeasureReport.",
   "title": "Aggregate two or more more Messure Report resources into a single MeasureReport.",
   "description": "This operation enables a Measure Intermediary to create a measure report that aggregates data from multiple measure reports.\nThe MeasureReport to be aggregated can be provided in the measure-report parameter, or the caller can indicate which measures **should** be aggregated by\nspecifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources\nbeing aggregated must reference the same Measure resource defining the MeasureReport to generate.",
-  "url": "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-aggregate",
+  "url": "http://hl7.org/fhir/saner/OperationDefinition/MeasureReport-aggregate",
   "parameter": [
     {
       "name": "_id",

@@ -11,7 +11,7 @@
       "valueCode": "anonymous"
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary",
   "version": "0.1.0",
   "name": "PublicHealthMeasureLibrary",
   "title": "Public Health Measure Library",
@@ -106,7 +106,7 @@
         "comment": "draft - The resource is still in development. active - The resource is ready for piloting or normal use.  retired - resource has been deprecated or replaced.",
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureStatus"
+          "valueSet": "http://hl7.org/fhir/saner/ValueSet/MeasureStatus"
         }
       },
       {
@@ -169,7 +169,7 @@
           {
             "code": "Attachment",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureMetadataAttachments"
+              "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureMetadataAttachments"
             ]
           }
         ]

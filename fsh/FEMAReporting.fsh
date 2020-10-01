@@ -3,7 +3,7 @@ InstanceOf: PublicHealthMeasureLibrary
  * insert SanerDefinitionContent
  * id = "FEMAMeasureLibrary"
  * name = "FEMAMeasureLibrary"
- * url = "http://hl7.org/fhir/us/saner/StructureDefinition/FEMAMeasureLibrary"
+ * url = "http://hl7.org/fhir/saner/StructureDefinition/FEMAMeasureLibrary"
  * title = "FEMA Measure Library"
  * type = http://terminology.hl7.org/CodeSystem/library-type#asset-collection
  * useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
@@ -29,7 +29,7 @@ Title: "FEMA Laboratory Orders and Results Daily Increase Reporting"
 Description: "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts."
  * insert SanerDefinitionContent
  * name = "FEMADailyHospitalCOVID19Reporting"
- * url = "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting"
+ * url = "http://hl7.org/fhir/saner/Measure/FEMADailyHospitalCOVID19Reporting"
  * author.name = "HL7 Public Health Workgroup"
  * author.telecom.system = #email
  * author.telecom.value = "mailto:pher@lists.hl7.org"

@@ -63,7 +63,7 @@ Description: "Observation-4 for Test Case 2b: Negative test result w/ outcome = 
 * subject = Reference(Patient2b)
 * effectiveDateTime = "2020-09-07"
 * code = LOINC#20077-4  "Positive end expiratory pressure setting Ventilator"
-* valueQuantity = 5 'cm[H20]'
+* valueQuantity = 5 'cm[H2O]'
 
 Instance: MedicationRequest12b
 InstanceOf: MedicationRequest

@@ -355,11 +355,11 @@ _count
 
 A client must be able to read individual Measure and Library resources that are returned by a query.
 
-The MeasureDefinitionSource <b>SHALL</b> demonstrate the FHIR read operation on  the Measure and Library resources.
+The MeasureDefinitionSource <b>SHALL</b> demonstrate the FHIR read operation on  the Measure, Library, ValueSet, CodeSystem and ConceptMap resources.
 
 ###### Search by _id on Measure and Library Resources
-The MeasureDefinitionConsumer <b>SHOULD</b> demonstrate the FHIR search operation on  the Measure and Library resources with the following parameters.
-The MeasureDefinitionSource <b>SHALL</b> demonstrate the FHIR search operation on  the Measure and Library resources with the following parameters.
+The MeasureDefinitionConsumer <b>SHOULD</b> demonstrate the FHIR search operation on  the Measure, Library, ValueSet, CodeSystem and ConceptMap resources with the following parameters.
+The MeasureDefinitionSource <b>SHALL</b> demonstrate the FHIR search operation on  the Measure, Library, ValueSet, CodeSystem and ConceptMap resources with the following parameters.
 
 <ol>
 
@@ -394,6 +394,61 @@ Measure Definition Consumer Expectation</th>
 <td>
 
 _id
+
+</td>
+
+<td>
+
+1..*
+</td>
+<td>
+
+<b>SHALL</b>
+
+</td>
+<td>
+
+<b>SHALL</b>
+
+</td>
+</tr>
+
+</tbody>
+</table>
+
+        
+</li>
+
+<li>
+Search by _url
+<div>
+
+A client must be able to read individual resources that are returned or referenced within a measure
+                                by the canonical url that is used to identify them.  Client systems may save resource references for future use, 
+                                retrieving them later as needed.
+
+
+</div>
+
+
+<table class='grid'>
+
+<thead><tr>
+
+<th>Parameter</th><th>Cardinality</th><th>
+Measure Definition Source Expectation</th><th>
+Measure Definition Consumer Expectation</th>
+
+</tr></thead>
+
+<tbody>
+
+
+<tr>
+
+<td>
+
+url
 
 </td>
 

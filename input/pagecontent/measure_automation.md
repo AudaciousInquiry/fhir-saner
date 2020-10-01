@@ -228,11 +228,23 @@ by (%Base + "/metadata").[resolve](https://www.hl7.org/fhir/fhirpath.html#functi
 Measure
 : The Measure parameter is of the FHIR Measure resource type, and represents the measure being computed.
 
+MeasureReport
+: The MeasureReport parameter is of the FHIR MeasureReport resource type, and represents the current
+MeasureReport that is being computed.
+
 PriorReport
 : The PriorReport parameter is of the FHIR MeasureReport resource type, and represents the details of the
 most recent version (e.g., including any corrections) of the MeasureReport that was computed for the prior
 reporting period. This simplifies computations for cumulative results, and enables reuse of infrequently
 changing values (e.g., total ventilators).
+
+Reporter
+: The Reporter parameter is of the FHIR Organization resource type and represents the reporter of
+the MeasureReport.  A reference to the reporter can be found in %MeasureReport.reporter.
+
+Subject
+: The Subject parameter is of the FHIR Location resource type and represents the subject of the
+MeasureReport.  A reference to this subject can be found in %MeasureReport.subject.
 
 ##### Date Parameters
 Date parameters are essential to support appropriate filters for queries.  This enables essential dates such as the date of evaluation and the
@@ -252,17 +264,19 @@ is being generated "today", then the prior reporting period for it is "the day b
 data from prior measures, for example, to support reporting of cumulative totals.
 
 Today
-: This parameter is the current date and is of the FHIR Date data type.  This is equivalent to the FHIRPath
+: This parameter is the "as of" date for the report and is of the FHIR Date data type.  This is functionally equivalent to the FHIRPath
 [today()](http://hl7.org/fhirpath/#current-date-and-time-functions) or CQL
-[Today()](https://cql.hl7.org/02-authorsguide.html#datetime-operators) functions.
+[Today()](https://cql.hl7.org/02-authorsguide.html#datetime-operators) functions, save that it is the "date of reporting" rather
+than the current time stamp.  It should be used for calculating age of events that are based on the date of reporting.
+Generally, this is the day after the reporting period ends for daily measures.
 
 Tomorrow
-: This parameter is the day after today and is of the FHIR Date data type. It works like the FHIRPath today() function,
-but returns the day after today().
+: This parameter is the day after the "as of date" and is of the FHIR Date data type. It works like the FHIRPath today() function,
+but returns the day after today() with respect to the date associated with the report.
 
 Yesterday
-: This parameter is the day before today and is of the FHIR Date data type. It works like the FHIRPath today() function,
-but returns the day before today().
+: This parameter is the day before the "as of date" and is of the FHIR Date data type. It works like the FHIRPath today() function,
+but returns the day before today() with reespeect to the date associated with the report.
 
 ##### Library Resources
 Attachments in Library resources referenced by a Measure (through Measure.library) are also available as parameters using the name given

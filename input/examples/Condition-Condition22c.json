@@ -1,0 +1,22 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition22c",
+  "identifier": [
+    {
+      "system": "http://sanerproject.org/test/Condition",
+      "value": "Con666666"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "882784691000119100",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient2c"
+  },
+  "onsetDateTime": "2020-09-08"
+}

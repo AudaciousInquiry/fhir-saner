@@ -5,13 +5,13 @@
 # │  configuration from now on. You may delete your package.json as it is no longer needed.        │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-# ╭───────────────────────────ImplementationGuide-hl7.fhir.us.saner.json───────────────────────────╮
+# ╭───────────────────────────ImplementationGuide-hl7.fhir.uv.saner.json───────────────────────────╮
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see:                                                                    │
 # │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.us.saner
-canonical: http://hl7.org/fhir/us/saner
+id: hl7.fhir.uv.saner
+canonical: http://hl7.org/fhir/saner
 version: 0.1.0
 name: SituationalAwarenessforNovelEpidemicResponse
 title: Situational Awareness for Novel Epidemic Response
@@ -32,9 +32,10 @@ contact:
         value: mailto:kboone@ainq.com
 description: The Situational Awareness for Novel Epidemic Response Implementation Guide
   enables transmission of high level situational awareness information from
-  inpatient facilities to centralized data repositories to support the treatment
-  of novel influenza-like illness.
-jurisdiction: "urn:iso:std:iso:3166#US"
+  healthcare facilities to centralized data repositories to support the treatment
+  of the novel coronavirus illness.
+jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
+# "urn:iso:std:iso:3166#US"
 license: CC0-1.0
 fhirVersion: 4.0.1
 dependencies:
@@ -68,9 +69,9 @@ pages:
   index.md:
     title: Home
     generation: markdown
-  overview.md:
-    title: Overview
-    generation: markdown
+    background.md:
+      title: Background
+      generation: markdown
     situational_awareness_measures.md:
       title: Situational Awareness Measures
       generation: markdown
@@ -152,9 +153,7 @@ pages:
     examples.md:
       title: Examples
       generation: markdown
-#  definitions.md:
-#    title: Definitions
-#    generation: markdown
+
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To control the menu.xml using this config, uncomment and set the "menu" property.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -162,7 +161,7 @@ menu:
   IG Home: index.html
   Table of Contents: toc.html
   SANER IG Content:
-    Overview: overview.html
+    Overview: background.html
     Situational Awareness Measures: situational_awareness_measures.html
     Aggregatating Measure Reports: measure_aggregation.html
     Computing Measures: measure_automation.html

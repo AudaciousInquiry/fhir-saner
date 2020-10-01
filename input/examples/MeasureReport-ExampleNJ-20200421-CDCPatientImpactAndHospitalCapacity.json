@@ -3,12 +3,12 @@
   "id": "ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
     ]
   },
   "type": "summary",
   "status": "complete",
-  "measure": "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+  "measure": "http://hl7.org/fhir/saner/Measure/CDCPatientImpactAndHospitalCapacity",
   "subject": {
     "identifier": {
       "system": "https://www.census.gov/geographies",
@@ -38,7 +38,7 @@
         "coding": [
           {
             "code": "Beds",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ]
       },
@@ -48,7 +48,7 @@
             "coding": [
               {
                 "code": "numTotBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -63,7 +63,7 @@
             "coding": [
               {
                 "code": "numbeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -78,7 +78,7 @@
             "coding": [
               {
                 "code": "numBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -100,7 +100,7 @@
             "coding": [
               {
                 "code": "numICUBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -115,7 +115,7 @@
             "coding": [
               {
                 "code": "numICUBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -139,7 +139,7 @@
         "coding": [
           {
             "code": "Ventilators",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ]
       },
@@ -149,7 +149,7 @@
             "coding": [
               {
                 "code": "numVent",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -164,7 +164,7 @@
             "coding": [
               {
                 "code": "numVentUse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -181,7 +181,7 @@
         "coding": [
           {
             "code": "Encounters",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ]
       },
@@ -191,7 +191,7 @@
             "coding": [
               {
                 "code": "numC19HospPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -206,7 +206,7 @@
             "coding": [
               {
                 "code": "numC19MechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -221,7 +221,7 @@
             "coding": [
               {
                 "code": "numC19HOPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -243,7 +243,7 @@
             "coding": [
               {
                 "code": "numC19OverflowPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -265,7 +265,7 @@
             "coding": [
               {
                 "code": "numC19OFMechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -287,7 +287,7 @@
             "coding": [
               {
                 "code": "numC19Died",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "measure-population",
@@ -309,7 +309,7 @@
             "coding": [
               {
                 "code": "numC19Pats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients with suspected or confirmed COVID-19 in any location."
@@ -328,7 +328,7 @@
             "coding": [
               {
                 "code": "numC19VentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Ventilated COVID-19 Patients"

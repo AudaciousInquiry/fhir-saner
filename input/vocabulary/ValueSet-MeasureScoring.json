@@ -5,11 +5,11 @@
   "id": "MeasureScoring",
   "description": "All codes from the Public Health Measure Scoring System",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/MeasureScoring",
+  "url": "http://hl7.org/fhir/saner/ValueSet/MeasureScoring",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/saner/CodeSystem/PublicHealthMeasureScoring"
+        "system": "http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring"
       },
       {
         "valueSet": [

@@ -26,12 +26,12 @@
 
 Group System|Group Code|Population System|Population Code
 ------------|----------|-----------------|---------------
-http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem|positiveIncreasePercent|<nobr/>|<nobr/>
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalOrdersIncrease<br/>initial-population
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalTestResultsIncrease<br/>denominator
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|positiveIncrease<br/>numerator
-http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem|positivePercent|<nobr/>|<nobr/>
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalOrders<br/>initial-population
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalTestResults<br/>denominator
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|positive<br/>numerator
-<nobr/>|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|rejected<br/>denominator-exclusion
+http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem|positiveIncreasePercent|<nobr/>|<nobr/>
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalOrdersIncrease<br/>initial-population
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalTestResultsIncrease<br/>denominator
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|positiveIncrease<br/>numerator
+http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem|positivePercent|<nobr/>|<nobr/>
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalOrders<br/>initial-population
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|totalTestResults<br/>denominator
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|positive<br/>numerator
+<nobr/>|<nobr/>|http://hl7.org/fhir/saner/CodeSystem/MeasuredValues<br/>http://terminology.hl7.org/CodeSystem/measure-population|rejected<br/>denominator-exclusion

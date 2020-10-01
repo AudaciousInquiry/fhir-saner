@@ -22,7 +22,7 @@ exception of the subject, which is Beds rather than ventilators.
 
 ```
  * with group[4].extension[groupAtts]
- ** extension[scoring].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PublicHealthMeasureScoring#capacity
+ ** extension[scoring].valueCodeableConcept = http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring#capacity
  ** extension[type].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/measure-type#structure
  ** extension[improvementNotation].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/measure-improvement-notation#decrease
  ** extension[subject].valueCodeableConcept.coding[ResourceType] = http://hl7.org/fhir/resource-types#Device
@@ -35,7 +35,7 @@ The next step for the bed capacity measure is to define the denominator, numerat
 
 ```
  * with group[4].population[0]
- ** code.coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numTotBeds "All Hospital Beds"
+ ** code.coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numTotBeds "All Hospital Beds"
  ** code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#denominator
  ** code.text = "Total number of beds"
  ** description = """
@@ -43,14 +43,14 @@ The next step for the bed capacity measure is to define the denominator, numerat
  licensed, and overflow (surge) beds used for inpatients or outpatients"""
 
  * with group[4].population[1]
- ** code.coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numTotBedsOcc "Hospital Beds Occupied"
+ ** code.coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numTotBedsOcc "Hospital Beds Occupied"
  ** code.coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#numerator
  ** code.text = "Total number of beds in use"
  ** description = "Total number of all Inpatient and outpatient beds that are occupied"
 
  * with group[4].population[2]
- ** code.coding[0] = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numTotBedsAvail "Hospital Beds Available"
- ** code.coding[1] = http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem#numerator-complement
+ ** code.coding[0] = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numTotBedsAvail "Hospital Beds Available"
+ ** code.coding[1] = http://hl7.org/fhir/saner/CodeSystem/MeasurePopulationSystem#numerator-complement
  ** code.text = "Total number of hospital beds available"
  ** description = "Total number of all hospital inpatient and outpatient beds that are available"
 ```

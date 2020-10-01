@@ -210,7 +210,7 @@ cohort:
 Also use cohort to count answers to categorical questions, where each question is one cohort, and is stratified by possible answers (e.g., Yes/No, 0 days/1-3 days/4-6 days/7-9 days/more than 9 days supply).
 """
 * group.extension[MeasureGroupAttributes].extension[scoring].valueCodeableConcept ^short = "Measure must have a scoring"
-* group.extension[MeasureGroupAttributes].extension[scoring].valueCodeableConcept from http://hl7.org/fhir/ValueSet/measure-scoring
+* group.extension[MeasureGroupAttributes].extension[scoring].valueCodeableConcept from MeasureScoring
 
 * group.extension[MeasureGroupAttributes].extension[type].valueCodeableConcept 1..1
 * group.extension[MeasureGroupAttributes].extension[type].valueCodeableConcept from http://hl7.org/fhir/ValueSet/measure-type

@@ -44,13 +44,13 @@
 <polygon fill="none" stroke="black" points="556,-96 556,-171 723,-171 723,-96 556,-96"/>
 <text text-anchor="middle" x="639.5" y="-155.8" font-family="SansSerif" font-size="14.00">Emergency Department</text>
 </g>
-<g id="clust10" class="cluster"><title>cluster_Laboratory</title>
-<polygon fill="none" stroke="black" points="350,-96 350,-171 548,-171 548,-96 350,-96"/>
-<text text-anchor="middle" x="449" y="-155.8" font-family="SansSerif" font-size="14.00">Laboratory</text>
-</g>
 <g id="clust12" class="cluster"><title>cluster_Imaging</title>
-<polygon fill="none" stroke="black" points="24,-24 24,-171 342,-171 342,-24 24,-24"/>
-<text text-anchor="middle" x="183" y="-155.8" font-family="SansSerif" font-size="14.00">Imaging</text>
+<polygon fill="none" stroke="black" points="230,-24 230,-171 548,-171 548,-24 230,-24"/>
+<text text-anchor="middle" x="389" y="-155.8" font-family="SansSerif" font-size="14.00">Imaging</text>
+</g>
+<g id="clust10" class="cluster"><title>cluster_Laboratory</title>
+<polygon fill="none" stroke="black" points="24,-96 24,-171 222,-171 222,-96 24,-96"/>
+<text text-anchor="middle" x="123" y="-155.8" font-family="SansSerif" font-size="14.00">Laboratory</text>
 </g>
 <!-- SEC -->
 <g id="node1" class="node"><title>SEC</title>
@@ -174,15 +174,15 @@
 <!-- LIS -->
 <g id="node13" class="node"><title>LIS</title>
 <g id="a_node13"><a xlink:href="technology_environment.html#laboratory-information-systems-lis" xlink:title="Laboratory Information System" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="540,-140 358,-140 358,-104 540,-104 540,-140"/>
-<text text-anchor="middle" x="449" y="-118.9" font-family="SansSerif" font-size="12.00">Laboratory Information System</text>
+<polygon fill="#fefece" stroke="#a80036" points="214,-140 32,-140 32,-104 214,-104 214,-140"/>
+<text text-anchor="middle" x="123" y="-118.9" font-family="SansSerif" font-size="12.00">Laboratory Information System</text>
 </a>
 </g>
 </g>
 <!-- LIS&#45;&gt;DS -->
 <g id="edge2" class="edge"><title>LIS&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M482.297,-140.135C502.196,-149.965 528.164,-162.083 552,-171 556.457,-172.667 561.077,-174.29 565.759,-175.855"/>
-<polygon fill="none" stroke="#a80036" points="564.832,-179.234 575.424,-178.983 566.988,-172.574 564.832,-179.234"/>
+<path fill="none" stroke="#a80036" d="M152.094,-140.168C172.145,-151.078 199.801,-164.358 226,-171 287.764,-186.658 462.265,-192.62 563.588,-194.805"/>
+<polygon fill="none" stroke="#a80036" points="563.69,-198.308 573.761,-195.017 563.836,-191.31 563.69,-198.308"/>
 </g>
 <!-- LnD -->
 <g id="node14" class="node"><title>LnD</title>
@@ -200,27 +200,27 @@
 <!-- PACS -->
 <g id="node15" class="node"><title>PACS</title>
 <g id="a_node15"><a xlink:href="technology_environment.html#picture-archival-and-communication-systems-pacs" xlink:title="Picture Archiving and Communication System (PACS)" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="333.5,-68 32.5,-68 32.5,-32 333.5,-32 333.5,-68"/>
-<text text-anchor="middle" x="183" y="-46.9" font-family="SansSerif" font-size="12.00">Picture Archiving and Communication System (PACS)</text>
+<polygon fill="#fefece" stroke="#a80036" points="539.5,-68 238.5,-68 238.5,-32 539.5,-32 539.5,-68"/>
+<text text-anchor="middle" x="389" y="-46.9" font-family="SansSerif" font-size="12.00">Picture Archiving and Communication System (PACS)</text>
 </a>
 </g>
 </g>
 <!-- RIS -->
 <g id="node16" class="node"><title>RIS</title>
 <g id="a_node16"><a xlink:href="technology_environment.html#radiology-information-systems-ris" xlink:title="Radiology Information System (RIS)" target="parent">
-<polygon fill="#fefece" stroke="#a80036" points="310.5,-140 101.5,-140 101.5,-104 310.5,-104 310.5,-140"/>
-<text text-anchor="middle" x="206" y="-118.9" font-family="SansSerif" font-size="12.00">Radiology Information System (RIS)</text>
+<polygon fill="#fefece" stroke="#a80036" points="516.5,-140 307.5,-140 307.5,-104 516.5,-104 516.5,-140"/>
+<text text-anchor="middle" x="412" y="-118.9" font-family="SansSerif" font-size="12.00">Radiology Information System (RIS)</text>
 </a>
 </g>
 </g>
 <!-- PACS&#45;&gt;RIS -->
 <g id="edge7" class="edge"><title>PACS&#45;&gt;RIS</title>
-<path fill="none" stroke="#a80036" d="M188.685,-68.3034C192.251,-79.1537 196.827,-93.0833 200.38,-103.896"/>
+<path fill="none" stroke="#a80036" d="M394.685,-68.3034C398.251,-79.1537 402.827,-93.0833 406.38,-103.896"/>
 </g>
 <!-- RIS&#45;&gt;DS -->
 <g id="edge1" class="edge"><title>RIS&#45;&gt;DS</title>
-<path fill="none" stroke="#a80036" d="M246.906,-140.003C274.432,-150.697 311.807,-163.794 346,-171 418.96,-186.376 504.038,-192.345 563.659,-194.636"/>
-<polygon fill="none" stroke="#a80036" points="563.625,-198.136 573.744,-194.997 563.876,-191.141 563.625,-198.136"/>
+<path fill="none" stroke="#a80036" d="M459.751,-140.04C486.722,-149.496 521.12,-161.276 552,-171 557.246,-172.652 562.685,-174.32 568.164,-175.968"/>
+<polygon fill="none" stroke="#a80036" points="567.455,-179.408 578.038,-178.905 569.452,-172.699 567.455,-179.408"/>
 </g>
 <!-- ED -->
 <g id="node17" class="node"><title>ED</title>

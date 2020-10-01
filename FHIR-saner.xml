@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://example.org/fhir/STU1" ciUrl="http://build.fhir.org/ig/example/example-ig" defaultVersion="current" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-saner" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/saner"><version code="current" url="http://build.fhir.org/ig/example/example-ig"/>
+<version code="0.0.1" url="http://example.org/fhir/STU1"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/DecadeAgeBrackets" key="ValueSet-DecadeAgeBrackets" name="Age Brackets By Decade"/>
+<artifact id="ValueSet/ScoreAgeBrackets" key="ValueSet-ScoreAgeBrackets" name="Age Brackets By Score (20)"/>
+<artifact id="CodeSystem/IHE-ADX-agerange" key="CodeSystem-IHE-ADX-agerange" name="Age Range Coding System"/>
+<artifact id="StructureDefinition/MeasurePopulationAlternateCriteria" key="StructureDefinition-MeasurePopulationAlternateCriteria" name="Alternate criteria for performing a measure"/>
+<artifact id="StructureDefinition/MeasureGroupAttributes" key="StructureDefinition-MeasureGroupAttributes" name="Attributes describing a group of measures"/>
+<artifact id="StructureDefinition/audit-event-delete" key="StructureDefinition-audit-event-delete" name="Audit Event Delete Profile"/>
+<artifact id="StructureDefinition/audit-event-read" key="StructureDefinition-audit-event-read" name="Audit Event Read"/>
+<artifact id="StructureDefinition/audit-event-search" key="StructureDefinition-audit-event-search" name="Audit Event Search"/>
+<artifact id="StructureDefinition/audit-event-update" key="StructureDefinition-audit-event-update" name="Audit Event Update Profile"/>
+<artifact id="StructureDefinition/audit-event-write" key="StructureDefinition-audit-event-write" name="Audit Event Write Profile"/>
+<artifact deprecated="true" id="StructureDefinition/audit-event-read" key="AuditEventRead" name="AuditEventRead"/>
+<artifact deprecated="true" id="StructureDefinition/Audit-event-write" key="AuditEventWrite" name="AuditEventWrite"/>
+<artifact id="ValueSet/BedLocationOperationalStatus" key="ValueSet-BedLocationOperationalStatus" name="Bed Location Operational Status"/>
+<artifact id="Measure/CDCHealthcareSupplyPathway" key="Measure-CDCHealthcareSupplyPathway" name="CDC Healthcare Supply Pathway"/>
+<artifact id="Measure/CDCPatientImpactAndHospitalCapacity" key="Measure-CDCPatientImpactAndHospitalCapacity" name="CDC Patient Impact and Hospital Capacity"/>
+<artifact id="Measure/CDCHealthcareWorkerStaffingPathway" key="Measure-CDCHealthcareWorkerStaffingPathway" name="CDCHealthcareWorkerStaffingPathway"/>
+<artifact id="ValueSet/Covid19Labs" key="ValueSet-Covid19Labs" name="COVID-19 Diagnostic Test"/>
+<artifact id="ValueSet/NegativeResults" key="ValueSet-NegativeResults" name="COVID-19 Not Detected"/>
+<artifact id="ValueSet/COVID19Antibody" key="ValueSet-COVID19Antibody" name="COVID19Antibody"/>
+<artifact id="ValueSet/COVID19DXICD10" key="ValueSet-COVID19DXICD10" name="COVID19DXICD10"/>
+<artifact id="ValueSet/COVID19DXSNOMED" key="ValueSet-COVID19DXSNOMED" name="COVID19DXSNOMED"/>
+<artifact id="ValueSet/COVID19Exposures" key="ValueSet-COVID19Exposures" name="COVID19Exposures"/>
+<artifact id="ValueSet/COVID19Organism" key="ValueSet-COVID19Organism" name="COVID19Organism"/>
+<artifact id="StructureDefinition/CapabilityStatementWithSlices" key="StructureDefinition-CapabilityStatementWithSlices" name="Capability Statements with Slices"/>
+<artifact id="Measure/ComputableCDCPatientImpactAndHospitalCapacity" key="Measure-ComputableCDCPatientImpactAndHospitalCapacity" name="Computable CDC Patient Impact and Hospital Capacity"/>
+<artifact id="Library/ComputableNHSNMeasureLibrary" key="Library-ComputableNHSNMeasureLibrary" name="ComputableNHSNMeasureLibrary"/>
+<artifact id="Condition/Condition12c" key="Condition-Condition12c" name="Condition12c"/>
+<artifact id="Condition/Condition1a" key="Condition-Condition1a" name="Condition1a"/>
+<artifact id="Condition/Condition1b" key="Condition-Condition1b" name="Condition1b"/>
+<artifact id="Condition/Condition1c" key="Condition-Condition1c" name="Condition1c"/>
+<artifact id="Condition/Condition22c" key="Condition-Condition22c" name="Condition22c"/>
+<artifact id="Condition/Condition2a" key="Condition-Condition2a" name="Condition2a"/>
+<artifact id="Condition/Condition2b" key="Condition-Condition2b" name="Condition2b"/>
+<artifact id="Condition/Condition3b" key="Condition-Condition3b" name="Condition3b"/>
+<artifact id="Condition/Condition4b" key="Condition-Condition4b" name="Condition4b"/>
+<artifact id="Condition/Condition4c" key="Condition-Condition4c" name="Condition4c"/>
+<artifact id="Condition/Condition5a" key="Condition-Condition5a" name="Condition5a"/>
+<artifact id="Condition/Condition5c" key="Condition-Condition5c" name="Condition5c"/>
+<artifact id="Condition/Condition6a" key="Condition-Condition6a" name="Condition6a"/>
+<artifact id="Condition/Condition6c" key="Condition-Condition6c" name="Condition6c"/>
+<artifact id="Condition/Condition7a" key="Condition-Condition7a" name="Condition7a"/>
+<artifact id="Condition/Condition7b" key="Condition-Condition7b" name="Condition7b"/>
+<artifact id="Condition/Condition8a" key="Condition-Condition8a" name="Condition8a"/>
+<artifact id="Condition/Condition9a" key="Condition-Condition9a" name="Condition9a"/>
+<artifact id="Condition/Condition9b" key="Condition-Condition9b" name="Condition9b"/>
+<artifact id="Condition/Condition9c" key="Condition-Condition9c" name="Condition9c"/>
+<artifact id="ValueSet/PositiveResults" key="ValueSet-PositiveResults" name="Confirmed COVID-19 Diagnosis"/>
+<artifact id="ValueSet/ConfirmedCOVID19Diagnoses" key="ValueSet-ConfirmedCOVID19Diagnoses" name="Confirmed COVID-19 Diagnosis Values"/>
+<artifact id="StructureDefinition/ReportingPeriod" key="StructureDefinition-ReportingPeriod" name="Enables specification of proposed measure reporting"/>
+<artifact id="Encounter/Encounter1a" key="Encounter-Encounter1a" name="Encounter1a"/>
+<artifact id="Encounter/Encounter1b" key="Encounter-Encounter1b" name="Encounter1b"/>
+<artifact id="Encounter/Encounter1c" key="Encounter-Encounter1c" name="Encounter1c"/>
+<artifact id="Encounter/Encounter2a" key="Encounter-Encounter2a" name="Encounter2a"/>
+<artifact id="Encounter/Encounter2b" key="Encounter-Encounter2b" name="Encounter2b"/>
+<artifact id="Encounter/Encounter2c" key="Encounter-Encounter2c" name="Encounter2c"/>
+<artifact id="Encounter/Encounter3a" key="Encounter-Encounter3a" name="Encounter3a"/>
+<artifact id="Encounter/Encounter3b" key="Encounter-Encounter3b" name="Encounter3b"/>
+<artifact id="Encounter/Encounter4a" key="Encounter-Encounter4a" name="Encounter4a"/>
+<artifact id="Encounter/Encounter4b" key="Encounter-Encounter4b" name="Encounter4b"/>
+<artifact id="Encounter/Encounter4c" key="Encounter-Encounter4c" name="Encounter4c"/>
+<artifact id="Encounter/Encounter5a" key="Encounter-Encounter5a" name="Encounter5a"/>
+<artifact id="Encounter/Encounter5b" key="Encounter-Encounter5b" name="Encounter5b"/>
+<artifact id="Encounter/Encounter5c" key="Encounter-Encounter5c" name="Encounter5c"/>
+<artifact id="Encounter/Encounter6a" key="Encounter-Encounter6a" name="Encounter6a"/>
+<artifact id="Encounter/Encounter6b" key="Encounter-Encounter6b" name="Encounter6b"/>
+<artifact id="Encounter/Encounter6c" key="Encounter-Encounter6c" name="Encounter6c"/>
+<artifact id="Encounter/Encounter7a" key="Encounter-Encounter7a" name="Encounter7a"/>
+<artifact id="Encounter/Encounter7b" key="Encounter-Encounter7b" name="Encounter7b"/>
+<artifact id="Encounter/Encounter8a" key="Encounter-Encounter8a" name="Encounter8a"/>
+<artifact id="Encounter/Encounter8b" key="Encounter-Encounter8b" name="Encounter8b"/>
+<artifact id="Encounter/Encounter8c" key="Encounter-Encounter8c" name="Encounter8c"/>
+<artifact id="Encounter/Encounter9a" key="Encounter-Encounter9a" name="Encounter9a"/>
+<artifact id="Encounter/Encounter9b" key="Encounter-Encounter9b" name="Encounter9b"/>
+<artifact id="Encounter/Encounter9c" key="Encounter-Encounter9c" name="Encounter9c"/>
+<artifact id="ValueSet/EventContext" key="ValueSet-EventContext" name="Event Context"/>
+<artifact id="MeasureReport/ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="MeasureReport/ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity" key="MeasureReport-ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity" name="ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity"/>
+<artifact id="MeasureReport/ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting" key="MeasureReport-ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting" name="ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting"/>
+<artifact id="Measure/FEMADailyHospitalCOVID19Reporting" key="Measure-FEMADailyHospitalCOVID19Reporting" name="FEMA Laboratory Orders and Results Daily Increase Reporting"/>
+<artifact id="Library/FEMAMeasureLibrary" key="Library-FEMAMeasureLibrary" name="FEMAMeasureLibrary"/>
+<artifact id="MeasureReport/FHIR-102" key="MeasureReport-FHIR-102" name="FHIR-102"/>
+<artifact id="MeasureReport/FHIR-105" key="MeasureReport-FHIR-105" name="FHIR-105"/>
+<artifact id="MeasureReport/FHIR-108" key="MeasureReport-FHIR-108" name="FHIR-108"/>
+<artifact id="MeasureReport/FHIR-111" key="MeasureReport-FHIR-111" name="FHIR-111"/>
+<artifact id="MeasureReport/FHIR-114" key="MeasureReport-FHIR-114" name="FHIR-114"/>
+<artifact id="MeasureReport/FHIR-117" key="MeasureReport-FHIR-117" name="FHIR-117"/>
+<artifact id="MeasureReport/FHIR-12" key="MeasureReport-FHIR-12" name="FHIR-12"/>
+<artifact id="MeasureReport/FHIR-120" key="MeasureReport-FHIR-120" name="FHIR-120"/>
+<artifact id="MeasureReport/FHIR-123" key="MeasureReport-FHIR-123" name="FHIR-123"/>
+<artifact id="MeasureReport/FHIR-126" key="MeasureReport-FHIR-126" name="FHIR-126"/>
+<artifact id="MeasureReport/FHIR-129" key="MeasureReport-FHIR-129" name="FHIR-129"/>
+<artifact id="MeasureReport/FHIR-132" key="MeasureReport-FHIR-132" name="FHIR-132"/>
+<artifact id="MeasureReport/FHIR-135" key="MeasureReport-FHIR-135" name="FHIR-135"/>
+<artifact id="MeasureReport/FHIR-138" key="MeasureReport-FHIR-138" name="FHIR-138"/>
+<artifact id="MeasureReport/FHIR-141" key="MeasureReport-FHIR-141" name="FHIR-141"/>
+<artifact id="MeasureReport/FHIR-144" key="MeasureReport-FHIR-144" name="FHIR-144"/>
+<artifact id="MeasureReport/FHIR-147" key="MeasureReport-FHIR-147" name="FHIR-147"/>
+<artifact id="MeasureReport/FHIR-15" key="MeasureReport-FHIR-15" name="FHIR-15"/>
+<artifact id="MeasureReport/FHIR-150" key="MeasureReport-FHIR-150" name="FHIR-150"/>
+<artifact id="MeasureReport/FHIR-153" key="MeasureReport-FHIR-153" name="FHIR-153"/>
+<artifact id="MeasureReport/FHIR-156" key="MeasureReport-FHIR-156" name="FHIR-156"/>
+<artifact id="MeasureReport/FHIR-159" key="MeasureReport-FHIR-159" name="FHIR-159"/>
+<artifact id="MeasureReport/FHIR-162" key="MeasureReport-FHIR-162" name="FHIR-162"/>
+<artifact id="MeasureReport/FHIR-165" key="MeasureReport-FHIR-165" name="FHIR-165"/>
+<artifact id="MeasureReport/FHIR-168" key="MeasureReport-FHIR-168" name="FHIR-168"/>
+<artifact id="MeasureReport/FHIR-171" key="MeasureReport-FHIR-171" name="FHIR-171"/>
+<artifact id="MeasureReport/FHIR-174" key="MeasureReport-FHIR-174" name="FHIR-174"/>
+<artifact id="MeasureReport/FHIR-177" key="MeasureReport-FHIR-177" name="FHIR-177"/>
+<artifact id="MeasureReport/FHIR-18" key="MeasureReport-FHIR-18" name="FHIR-18"/>
+<artifact id="MeasureReport/FHIR-180" key="MeasureReport-FHIR-180" name="FHIR-180"/>
+<artifact id="MeasureReport/FHIR-183" key="MeasureReport-FHIR-183" name="FHIR-183"/>
+<artifact id="MeasureReport/FHIR-186" key="MeasureReport-FHIR-186" name="FHIR-186"/>
+<artifact id="MeasureReport/FHIR-189" key="MeasureReport-FHIR-189" name="FHIR-189"/>
+<artifact id="MeasureReport/FHIR-192" key="MeasureReport-FHIR-192" name="FHIR-192"/>
+<artifact id="MeasureReport/FHIR-195" key="MeasureReport-FHIR-195" name="FHIR-195"/>
+<artifact id="MeasureReport/FHIR-198" key="MeasureReport-FHIR-198" name="FHIR-198"/>
+<artifact id="MeasureReport/FHIR-201" key="MeasureReport-FHIR-201" name="FHIR-201"/>
+<artifact id="MeasureReport/FHIR-204" key="MeasureReport-FHIR-204" name="FHIR-204"/>
+<artifact id="MeasureReport/FHIR-207" key="MeasureReport-FHIR-207" name="FHIR-207"/>
+<artifact id="MeasureReport/FHIR-21" key="MeasureReport-FHIR-21" name="FHIR-21"/>
+<artifact id="MeasureReport/FHIR-210" key="MeasureReport-FHIR-210" name="FHIR-210"/>
+<artifact id="MeasureReport/FHIR-213" key="MeasureReport-FHIR-213" name="FHIR-213"/>
+<artifact id="MeasureReport/FHIR-216" key="MeasureReport-FHIR-216" name="FHIR-216"/>
+<artifact id="MeasureReport/FHIR-219" key="MeasureReport-FHIR-219" name="FHIR-219"/>
+<artifact id="MeasureReport/FHIR-222" key="MeasureReport-FHIR-222" name="FHIR-222"/>
+<artifact id="MeasureReport/FHIR-225" key="MeasureReport-FHIR-225" name="FHIR-225"/>
+<artifact id="MeasureReport/FHIR-228" key="MeasureReport-FHIR-228" name="FHIR-228"/>
+<artifact id="MeasureReport/FHIR-231" key="MeasureReport-FHIR-231" name="FHIR-231"/>
+<artifact id="MeasureReport/FHIR-234" key="MeasureReport-FHIR-234" name="FHIR-234"/>
+<artifact id="MeasureReport/FHIR-237" key="MeasureReport-FHIR-237" name="FHIR-237"/>
+<artifact id="MeasureReport/FHIR-24" key="MeasureReport-FHIR-24" name="FHIR-24"/>
+<artifact id="MeasureReport/FHIR-240" key="MeasureReport-FHIR-240" name="FHIR-240"/>
+<artifact id="MeasureReport/FHIR-243" key="MeasureReport-FHIR-243" name="FHIR-243"/>
+<artifact id="MeasureReport/FHIR-246" key="MeasureReport-FHIR-246" name="FHIR-246"/>
+<artifact id="MeasureReport/FHIR-249" key="MeasureReport-FHIR-249" name="FHIR-249"/>
+<artifact id="MeasureReport/FHIR-252" key="MeasureReport-FHIR-252" name="FHIR-252"/>
+<artifact id="MeasureReport/FHIR-255" key="MeasureReport-FHIR-255" name="FHIR-255"/>
+<artifact id="MeasureReport/FHIR-258" key="MeasureReport-FHIR-258" name="FHIR-258"/>
+<artifact id="MeasureReport/FHIR-261" key="MeasureReport-FHIR-261" name="FHIR-261"/>
+<artifact id="MeasureReport/FHIR-264" key="MeasureReport-FHIR-264" name="FHIR-264"/>
+<artifact id="MeasureReport/FHIR-267" key="MeasureReport-FHIR-267" name="FHIR-267"/>
+<artifact id="MeasureReport/FHIR-27" key="MeasureReport-FHIR-27" name="FHIR-27"/>
+<artifact id="MeasureReport/FHIR-270" key="MeasureReport-FHIR-270" name="FHIR-270"/>
+<artifact id="MeasureReport/FHIR-273" key="MeasureReport-FHIR-273" name="FHIR-273"/>
+<artifact id="MeasureReport/FHIR-276" key="MeasureReport-FHIR-276" name="FHIR-276"/>
+<artifact id="MeasureReport/FHIR-279" key="MeasureReport-FHIR-279" name="FHIR-279"/>
+<artifact id="MeasureReport/FHIR-282" key="MeasureReport-FHIR-282" name="FHIR-282"/>
+<artifact id="MeasureReport/FHIR-285" key="MeasureReport-FHIR-285" name="FHIR-285"/>
+<artifact id="MeasureReport/FHIR-288" key="MeasureReport-FHIR-288" name="FHIR-288"/>
+<artifact id="MeasureReport/FHIR-291" key="MeasureReport-FHIR-291" name="FHIR-291"/>
+<artifact id="MeasureReport/FHIR-294" key="MeasureReport-FHIR-294" name="FHIR-294"/>
+<artifact id="MeasureReport/FHIR-297" key="MeasureReport-FHIR-297" name="FHIR-297"/>
+<artifact id="MeasureReport/FHIR-30" key="MeasureReport-FHIR-30" name="FHIR-30"/>
+<artifact id="MeasureReport/FHIR-300" key="MeasureReport-FHIR-300" name="FHIR-300"/>
+<artifact id="MeasureReport/FHIR-303" key="MeasureReport-FHIR-303" name="FHIR-303"/>
+<artifact id="MeasureReport/FHIR-306" key="MeasureReport-FHIR-306" name="FHIR-306"/>
+<artifact id="MeasureReport/FHIR-309" key="MeasureReport-FHIR-309" name="FHIR-309"/>
+<artifact id="MeasureReport/FHIR-312" key="MeasureReport-FHIR-312" name="FHIR-312"/>
+<artifact id="MeasureReport/FHIR-315" key="MeasureReport-FHIR-315" name="FHIR-315"/>
+<artifact id="MeasureReport/FHIR-318" key="MeasureReport-FHIR-318" name="FHIR-318"/>
+<artifact id="MeasureReport/FHIR-321" key="MeasureReport-FHIR-321" name="FHIR-321"/>
+<artifact id="MeasureReport/FHIR-324" key="MeasureReport-FHIR-324" name="FHIR-324"/>
+<artifact id="MeasureReport/FHIR-327" key="MeasureReport-FHIR-327" name="FHIR-327"/>
+<artifact id="MeasureReport/FHIR-33" key="MeasureReport-FHIR-33" name="FHIR-33"/>
+<artifact id="MeasureReport/FHIR-330" key="MeasureReport-FHIR-330" name="FHIR-330"/>
+<artifact id="MeasureReport/FHIR-333" key="MeasureReport-FHIR-333" name="FHIR-333"/>
+<artifact id="MeasureReport/FHIR-336" key="MeasureReport-FHIR-336" name="FHIR-336"/>
+<artifact id="MeasureReport/FHIR-339" key="MeasureReport-FHIR-339" name="FHIR-339"/>
+<artifact id="MeasureReport/FHIR-342" key="MeasureReport-FHIR-342" name="FHIR-342"/>
+<artifact id="MeasureReport/FHIR-345" key="MeasureReport-FHIR-345" name="FHIR-345"/>
+<artifact id="MeasureReport/FHIR-348" key="MeasureReport-FHIR-348" name="FHIR-348"/>
+<artifact id="MeasureReport/FHIR-351" key="MeasureReport-FHIR-351" name="FHIR-351"/>
+<artifact id="MeasureReport/FHIR-354" key="MeasureReport-FHIR-354" name="FHIR-354"/>
+<artifact id="MeasureReport/FHIR-357" key="MeasureReport-FHIR-357" name="FHIR-357"/>
+<artifact id="MeasureReport/FHIR-36" key="MeasureReport-FHIR-36" name="FHIR-36"/>
+<artifact id="MeasureReport/FHIR-360" key="MeasureReport-FHIR-360" name="FHIR-360"/>
+<artifact id="MeasureReport/FHIR-363" key="MeasureReport-FHIR-363" name="FHIR-363"/>
+<artifact id="MeasureReport/FHIR-366" key="MeasureReport-FHIR-366" name="FHIR-366"/>
+<artifact id="MeasureReport/FHIR-369" key="MeasureReport-FHIR-369" name="FHIR-369"/>
+<artifact id="MeasureReport/FHIR-372" key="MeasureReport-FHIR-372" name="FHIR-372"/>
+<artifact id="MeasureReport/FHIR-375" key="MeasureReport-FHIR-375" name="FHIR-375"/>
+<artifact id="MeasureReport/FHIR-378" key="MeasureReport-FHIR-378" name="FHIR-378"/>
+<artifact id="MeasureReport/FHIR-381" key="MeasureReport-FHIR-381" name="FHIR-381"/>
+<artifact id="MeasureReport/FHIR-384" key="MeasureReport-FHIR-384" name="FHIR-384"/>
+<artifact id="MeasureReport/FHIR-387" key="MeasureReport-FHIR-387" name="FHIR-387"/>
+<artifact id="MeasureReport/FHIR-39" key="MeasureReport-FHIR-39" name="FHIR-39"/>
+<artifact id="MeasureReport/FHIR-390" key="MeasureReport-FHIR-390" name="FHIR-390"/>
+<artifact id="MeasureReport/FHIR-393" key="MeasureReport-FHIR-393" name="FHIR-393"/>
+<artifact id="MeasureReport/FHIR-396" key="MeasureReport-FHIR-396" name="FHIR-396"/>
+<artifact id="MeasureReport/FHIR-399" key="MeasureReport-FHIR-399" name="FHIR-399"/>
+<artifact id="MeasureReport/FHIR-402" key="MeasureReport-FHIR-402" name="FHIR-402"/>
+<artifact id="MeasureReport/FHIR-405" key="MeasureReport-FHIR-405" name="FHIR-405"/>
+<artifact id="MeasureReport/FHIR-408" key="MeasureReport-FHIR-408" name="FHIR-408"/>
+<artifact id="MeasureReport/FHIR-411" key="MeasureReport-FHIR-411" name="FHIR-411"/>
+<artifact id="MeasureReport/FHIR-414" key="MeasureReport-FHIR-414" name="FHIR-414"/>
+<artifact id="MeasureReport/FHIR-417" key="MeasureReport-FHIR-417" name="FHIR-417"/>
+<artifact id="MeasureReport/FHIR-42" key="MeasureReport-FHIR-42" name="FHIR-42"/>
+<artifact id="MeasureReport/FHIR-420" key="MeasureReport-FHIR-420" name="FHIR-420"/>
+<artifact id="MeasureReport/FHIR-423" key="MeasureReport-FHIR-423" name="FHIR-423"/>
+<artifact id="MeasureReport/FHIR-426" key="MeasureReport-FHIR-426" name="FHIR-426"/>
+<artifact id="MeasureReport/FHIR-429" key="MeasureReport-FHIR-429" name="FHIR-429"/>
+<artifact id="MeasureReport/FHIR-432" key="MeasureReport-FHIR-432" name="FHIR-432"/>
+<artifact id="MeasureReport/FHIR-435" key="MeasureReport-FHIR-435" name="FHIR-435"/>
+<artifact id="MeasureReport/FHIR-438" key="MeasureReport-FHIR-438" name="FHIR-438"/>
+<artifact id="MeasureReport/FHIR-441" key="MeasureReport-FHIR-441" name="FHIR-441"/>
+<artifact id="MeasureReport/FHIR-444" key="MeasureReport-FHIR-444" name="FHIR-444"/>
+<artifact id="MeasureReport/FHIR-447" key="MeasureReport-FHIR-447" name="FHIR-447"/>
+<artifact id="MeasureReport/FHIR-45" key="MeasureReport-FHIR-45" name="FHIR-45"/>
+<artifact id="MeasureReport/FHIR-450" key="MeasureReport-FHIR-450" name="FHIR-450"/>
+<artifact id="MeasureReport/FHIR-453" key="MeasureReport-FHIR-453" name="FHIR-453"/>
+<artifact id="MeasureReport/FHIR-456" key="MeasureReport-FHIR-456" name="FHIR-456"/>
+<artifact id="MeasureReport/FHIR-459" key="MeasureReport-FHIR-459" name="FHIR-459"/>
+<artifact id="MeasureReport/FHIR-462" key="MeasureReport-FHIR-462" name="FHIR-462"/>
+<artifact id="MeasureReport/FHIR-465" key="MeasureReport-FHIR-465" name="FHIR-465"/>
+<artifact id="MeasureReport/FHIR-468" key="MeasureReport-FHIR-468" name="FHIR-468"/>
+<artifact id="MeasureReport/FHIR-471" key="MeasureReport-FHIR-471" name="FHIR-471"/>
+<artifact id="MeasureReport/FHIR-474" key="MeasureReport-FHIR-474" name="FHIR-474"/>
+<artifact id="MeasureReport/FHIR-477" key="MeasureReport-FHIR-477" name="FHIR-477"/>
+<artifact id="MeasureReport/FHIR-48" key="MeasureReport-FHIR-48" name="FHIR-48"/>
+<artifact id="MeasureReport/FHIR-480" key="MeasureReport-FHIR-480" name="FHIR-480"/>
+<artifact id="MeasureReport/FHIR-483" key="MeasureReport-FHIR-483" name="FHIR-483"/>
+<artifact id="MeasureReport/FHIR-486" key="MeasureReport-FHIR-486" name="FHIR-486"/>
+<artifact id="MeasureReport/FHIR-489" key="MeasureReport-FHIR-489" name="FHIR-489"/>
+<artifact id="MeasureReport/FHIR-492" key="MeasureReport-FHIR-492" name="FHIR-492"/>
+<artifact id="MeasureReport/FHIR-495" key="MeasureReport-FHIR-495" name="FHIR-495"/>
+<artifact id="MeasureReport/FHIR-51" key="MeasureReport-FHIR-51" name="FHIR-51"/>
+<artifact id="MeasureReport/FHIR-54" key="MeasureReport-FHIR-54" name="FHIR-54"/>
+<artifact id="MeasureReport/FHIR-57" key="MeasureReport-FHIR-57" name="FHIR-57"/>
+<artifact id="MeasureReport/FHIR-60" key="MeasureReport-FHIR-60" name="FHIR-60"/>
+<artifact id="MeasureReport/FHIR-63" key="MeasureReport-FHIR-63" name="FHIR-63"/>
+<artifact id="MeasureReport/FHIR-66" key="MeasureReport-FHIR-66" name="FHIR-66"/>
+<artifact id="MeasureReport/FHIR-69" key="MeasureReport-FHIR-69" name="FHIR-69"/>
+<artifact id="MeasureReport/FHIR-72" key="MeasureReport-FHIR-72" name="FHIR-72"/>
+<artifact id="MeasureReport/FHIR-75" key="MeasureReport-FHIR-75" name="FHIR-75"/>
+<artifact id="MeasureReport/FHIR-78" key="MeasureReport-FHIR-78" name="FHIR-78"/>
+<artifact id="MeasureReport/FHIR-81" key="MeasureReport-FHIR-81" name="FHIR-81"/>
+<artifact id="MeasureReport/FHIR-84" key="MeasureReport-FHIR-84" name="FHIR-84"/>
+<artifact id="MeasureReport/FHIR-87" key="MeasureReport-FHIR-87" name="FHIR-87"/>
+<artifact id="MeasureReport/FHIR-90" key="MeasureReport-FHIR-90" name="FHIR-90"/>
+<artifact id="MeasureReport/FHIR-93" key="MeasureReport-FHIR-93" name="FHIR-93"/>
+<artifact id="MeasureReport/FHIR-96" key="MeasureReport-FHIR-96" name="FHIR-96"/>
+<artifact id="MeasureReport/FHIR-99" key="MeasureReport-FHIR-99" name="FHIR-99"/>
+<artifact id="StructureDefinition/audit-event" key="StructureDefinition-audit-event" name="General Audit Event Requirements"/>
+<artifact deprecated="true" id="StructureDefinition/GeoLocation" key="GeoLocation" name="GeoLocation"/>
+<artifact id="ConceptMap/HAvBED2toFHIR" key="ConceptMap-HAvBED2toFHIR" name="HAvBED2 to FHIR Concept Map"/>
+<artifact id="ValueSet/HealthcareServiceLocation" key="ValueSet-HealthcareServiceLocation" name="HealthcareServiceLocation"/>
+<artifact id="ValueSet/ICULocations" key="ValueSet-ICULocations" name="ICU Locations"/>
+<artifact id="Immunization/Immunization11c" key="Immunization-Immunization11c" name="Immunization11c"/>
+<artifact id="Immunization/Immunization12a" key="Immunization-Immunization12a" name="Immunization12a"/>
+<artifact id="Immunization/Immunization12b" key="Immunization-Immunization12b" name="Immunization12b"/>
+<artifact id="Immunization/Immunization12c" key="Immunization-Immunization12c" name="Immunization12c"/>
+<artifact id="Immunization/Immunization16c" key="Immunization-Immunization16c" name="Immunization16c"/>
+<artifact id="Immunization/Immunization19a" key="Immunization-Immunization19a" name="Immunization19a"/>
+<artifact id="Immunization/Immunization19b" key="Immunization-Immunization19b" name="Immunization19b"/>
+<artifact id="ValueSet/InpatientLocations" key="ValueSet-InpatientLocations" name="Inpatient Locations"/>
+<artifact id="Location/Loc-X140008" key="Location-Loc-X140008" name="Loc-X140008"/>
+<artifact id="Location/Loc-X140010" key="Location-Loc-X140010" name="Loc-X140010"/>
+<artifact id="Location/Loc-X140048" key="Location-Loc-X140048" name="Loc-X140048"/>
+<artifact id="Location/Loc-X140049" key="Location-Loc-X140049" name="Loc-X140049"/>
+<artifact id="Location/Loc-X140054" key="Location-Loc-X140054" name="Loc-X140054"/>
+<artifact id="Location/Loc-X140062" key="Location-Loc-X140062" name="Loc-X140062"/>
+<artifact id="Location/Loc-X140063" key="Location-Loc-X140063" name="Loc-X140063"/>
+<artifact id="Location/Loc-X140065" key="Location-Loc-X140065" name="Loc-X140065"/>
+<artifact id="Location/Loc-X140068" key="Location-Loc-X140068" name="Loc-X140068"/>
+<artifact id="Location/Loc-X140080" key="Location-Loc-X140080" name="Loc-X140080"/>
+<artifact id="Location/Loc-X140082" key="Location-Loc-X140082" name="Loc-X140082"/>
+<artifact id="Location/Loc-X140083" key="Location-Loc-X140083" name="Loc-X140083"/>
+<artifact id="Location/Loc-X140088" key="Location-Loc-X140088" name="Loc-X140088"/>
+<artifact id="Location/Loc-X140095" key="Location-Loc-X140095" name="Loc-X140095"/>
+<artifact id="Location/Loc-X140103" key="Location-Loc-X140103" name="Loc-X140103"/>
+<artifact id="Location/Loc-X140114" key="Location-Loc-X140114" name="Loc-X140114"/>
+<artifact id="Location/Loc-X140115" key="Location-Loc-X140115" name="Loc-X140115"/>
+<artifact id="Location/Loc-X140117" key="Location-Loc-X140117" name="Loc-X140117"/>
+<artifact id="Location/Loc-X140119" key="Location-Loc-X140119" name="Loc-X140119"/>
+<artifact id="Location/Loc-X140124" key="Location-Loc-X140124" name="Loc-X140124"/>
+<artifact id="Location/Loc-X140133" key="Location-Loc-X140133" name="Loc-X140133"/>
+<artifact id="Location/Loc-X140150" key="Location-Loc-X140150" name="Loc-X140150"/>
+<artifact id="Location/Loc-X140158" key="Location-Loc-X140158" name="Loc-X140158"/>
+<artifact id="Location/Loc-X140177" key="Location-Loc-X140177" name="Loc-X140177"/>
+<artifact id="Location/Loc-X140179" key="Location-Loc-X140179" name="Loc-X140179"/>
+<artifact id="Location/Loc-X140180" key="Location-Loc-X140180" name="Loc-X140180"/>
+<artifact id="Location/Loc-X140181" key="Location-Loc-X140181" name="Loc-X140181"/>
+<artifact id="Location/Loc-X140182" key="Location-Loc-X140182" name="Loc-X140182"/>
+<artifact id="Location/Loc-X140191" key="Location-Loc-X140191" name="Loc-X140191"/>
+<artifact id="Location/Loc-X140197" key="Location-Loc-X140197" name="Loc-X140197"/>
+<artifact id="Location/Loc-X140206" key="Location-Loc-X140206" name="Loc-X140206"/>
+<artifact id="Location/Loc-X140208" key="Location-Loc-X140208" name="Loc-X140208"/>
+<artifact id="Location/Loc-X140223" key="Location-Loc-X140223" name="Loc-X140223"/>
+<artifact id="Location/Loc-X140224" key="Location-Loc-X140224" name="Loc-X140224"/>
+<artifact id="Location/Loc-X140240" key="Location-Loc-X140240" name="Loc-X140240"/>
+<artifact id="Location/Loc-X140250" key="Location-Loc-X140250" name="Loc-X140250"/>
+<artifact id="Location/Loc-X140251" key="Location-Loc-X140251" name="Loc-X140251"/>
+<artifact id="Location/Loc-X140252" key="Location-Loc-X140252" name="Loc-X140252"/>
+<artifact id="Location/Loc-X140258" key="Location-Loc-X140258" name="Loc-X140258"/>
+<artifact id="Location/Loc-X140276" key="Location-Loc-X140276" name="Loc-X140276"/>
+<artifact id="Location/Loc-X140281" key="Location-Loc-X140281" name="Loc-X140281"/>
+<artifact id="Location/Loc-X140290" key="Location-Loc-X140290" name="Loc-X140290"/>
+<artifact id="Location/Loc-X140300" key="Location-Loc-X140300" name="Loc-X140300"/>
+<artifact id="Location/Loc-X143300" key="Location-Loc-X143300" name="Loc-X143300"/>
+<artifact id="Location/Loc-X143302" key="Location-Loc-X143302" name="Loc-X143302"/>
+<artifact id="Location/Loc-X410004" key="Location-Loc-X410004" name="Loc-X410004"/>
+<artifact id="Location/Loc-X410005" key="Location-Loc-X410005" name="Loc-X410005"/>
+<artifact id="Location/Loc-X410006" key="Location-Loc-X410006" name="Loc-X410006"/>
+<artifact id="Location/Loc-X410007" key="Location-Loc-X410007" name="Loc-X410007"/>
+<artifact id="Location/Loc-X410008" key="Location-Loc-X410008" name="Loc-X410008"/>
+<artifact id="Location/Loc-X410009" key="Location-Loc-X410009" name="Loc-X410009"/>
+<artifact id="Location/Loc-X410010" key="Location-Loc-X410010" name="Loc-X410010"/>
+<artifact id="Location/Loc-X410011" key="Location-Loc-X410011" name="Loc-X410011"/>
+<artifact id="Location/Loc-X410013" key="Location-Loc-X410013" name="Loc-X410013"/>
+<artifact id="Location/Location1a" key="Location-Location1a" name="Location1a"/>
+<artifact id="Location/Location1b" key="Location-Location1b" name="Location1b"/>
+<artifact id="Location/Location1c" key="Location-Location1c" name="Location1c"/>
+<artifact id="Location/Location2a" key="Location-Location2a" name="Location2a"/>
+<artifact id="Location/Location2b" key="Location-Location2b" name="Location2b"/>
+<artifact id="Location/Location2c" key="Location-Location2c" name="Location2c"/>
+<artifact id="Location/Location3a" key="Location-Location3a" name="Location3a"/>
+<artifact id="Location/Location3b" key="Location-Location3b" name="Location3b"/>
+<artifact id="Location/Location4a" key="Location-Location4a" name="Location4a"/>
+<artifact id="Location/Location4b" key="Location-Location4b" name="Location4b"/>
+<artifact id="Location/Location4c" key="Location-Location4c" name="Location4c"/>
+<artifact id="Location/Location5a" key="Location-Location5a" name="Location5a"/>
+<artifact id="Location/Location5b" key="Location-Location5b" name="Location5b"/>
+<artifact id="Location/Location5c" key="Location-Location5c" name="Location5c"/>
+<artifact id="Location/Location6a" key="Location-Location6a" name="Location6a"/>
+<artifact id="Location/Location6b" key="Location-Location6b" name="Location6b"/>
+<artifact id="Location/Location6c" key="Location-Location6c" name="Location6c"/>
+<artifact id="Location/Location7a" key="Location-Location7a" name="Location7a"/>
+<artifact id="Location/Location7b" key="Location-Location7b" name="Location7b"/>
+<artifact id="Location/Location8a" key="Location-Location8a" name="Location8a"/>
+<artifact id="Location/Location8b" key="Location-Location8b" name="Location8b"/>
+<artifact id="Location/Location8c" key="Location-Location8c" name="Location8c"/>
+<artifact id="Location/Location9a" key="Location-Location9a" name="Location9a"/>
+<artifact id="Location/Location9b" key="Location-Location9b" name="Location9b"/>
+<artifact id="Location/Location9c" key="Location-Location9c" name="Location9c"/>
+<artifact id="CodeSystem/MeasureGroupSystem" key="CodeSystem-MeasureGroupSystem" name="Measure Group System"/>
+<artifact id="ValueSet/MeasureGroups" key="ValueSet-MeasureGroups" name="Measure Groups"/>
+<artifact id="ValueSet/MeasurePopulations" key="ValueSet-MeasurePopulations" name="Measure Populations"/>
+<artifact id="CodeSystem/MeasureRateAggregation" key="CodeSystem-MeasureRateAggregation" name="Measure Rate Aggregation Coding System"/>
+<artifact id="ValueSet/MeasureRateAggregationValues" key="ValueSet-MeasureRateAggregationValues" name="Measure Rate Aggregation Value Set"/>
+<artifact id="ValueSet/MeasureStatus" key="ValueSet-MeasureStatus" name="Measure Status Values"/>
+<artifact id="OperationDefinition/Measure-evaluate-measure" key="OperationDefinition-Measure-evaluate-measure" name="Measure-evaluate-measure"/>
+<artifact id="OperationDefinition/Measure-report-csv" key="OperationDefinition-Measure-report-csv" name="Measure-report-csv"/>
+<artifact id="CapabilityStatement/MeasureComputer" key="CapabilityStatement-MeasureComputer" name="MeasureComputer"/>
+<artifact id="CapabilityStatement/MeasureComputer-ComputeMeasure" key="CapabilityStatement-MeasureComputer-ComputeMeasure" name="MeasureComputer-ComputeMeasure"/>
+<artifact id="CapabilityStatement/MeasureConsumer-Aggregate" key="CapabilityStatement-MeasureConsumer-Aggregate" name="MeasureConsumer-Aggregate"/>
+<artifact id="CapabilityStatement/MeasureConsumer-CSV-Pull" key="CapabilityStatement-MeasureConsumer-CSV-Pull" name="MeasureConsumer-CSV-Pull"/>
+<artifact id="CapabilityStatement/MeasureConsumer-CSV-Push" key="CapabilityStatement-MeasureConsumer-CSV-Push" name="MeasureConsumer-CSV-Push"/>
+<artifact id="CapabilityStatement/MeasureConsumer-ProduceMeasure-CSV-Push" key="CapabilityStatement-MeasureConsumer-ProduceMeasure-CSV-Push" name="MeasureConsumer-ProduceMeasure-CSV-Push"/>
+<artifact id="CapabilityStatement/MeasureConsumer-ProduceMeasure-Push" key="CapabilityStatement-MeasureConsumer-ProduceMeasure-Push" name="MeasureConsumer-ProduceMeasure-Push"/>
+<artifact id="CapabilityStatement/MeasureConsumer-Pull" key="CapabilityStatement-MeasureConsumer-Pull" name="MeasureConsumer-Pull"/>
+<artifact id="CapabilityStatement/MeasureConsumer-Pull-Questionnaire" key="CapabilityStatement-MeasureConsumer-Pull-Questionnaire" name="MeasureConsumer-Pull-Questionnaire"/>
+<artifact id="CapabilityStatement/MeasureConsumer-Push" key="CapabilityStatement-MeasureConsumer-Push" name="MeasureConsumer-Push"/>
+<artifact id="CapabilityStatement/MeasureConsumer-QueryMeasure-CSV-Pull" key="CapabilityStatement-MeasureConsumer-QueryMeasure-CSV-Pull" name="MeasureConsumer-QueryMeasure-CSV-Pull"/>
+<artifact id="CapabilityStatement/MeasureConsumer-QueryMeasure-Pull" key="CapabilityStatement-MeasureConsumer-QueryMeasure-Pull" name="MeasureConsumer-QueryMeasure-Pull"/>
+<artifact id="CapabilityStatement/MeasureConsumer-QueryMeasure-Pull-Questionnaire" key="CapabilityStatement-MeasureConsumer-QueryMeasure-Pull-Questionnaire" name="MeasureConsumer-QueryMeasure-Pull-Questionnaire"/>
+<artifact id="StructureDefinition/MeasureCriteria" key="StructureDefinition-MeasureCriteria" name="MeasureCriteria"/>
+<artifact id="CapabilityStatement/MeasureDefinitionConsumer" key="CapabilityStatement-MeasureDefinitionConsumer" name="MeasureDefinitionConsumer"/>
+<artifact id="CapabilityStatement/MeasureDefinitionConsumer-QueryMeasureDefinition" key="CapabilityStatement-MeasureDefinitionConsumer-QueryMeasureDefinition" name="MeasureDefinitionConsumer-QueryMeasureDefinition"/>
+<artifact id="CapabilityStatement/MeasureDefinitionSource" key="CapabilityStatement-MeasureDefinitionSource" name="MeasureDefinitionSource"/>
+<artifact id="CapabilityStatement/MeasureDefinitionSource-QueryMeasureDefinition" key="CapabilityStatement-MeasureDefinitionSource-QueryMeasureDefinition" name="MeasureDefinitionSource-QueryMeasureDefinition"/>
+<artifact id="StructureDefinition/measure-expectation" key="StructureDefinition-measure-expectation" name="MeasureExpection"/>
+<artifact id="OperationDefinition/MeasureReport-aggregate" key="OperationDefinition-MeasureReport-aggregate" name="MeasureReport-aggregate"/>
+<artifact id="OperationDefinition/MeasureReport-read-csv" key="OperationDefinition-MeasureReport-read-csv" name="MeasureReport-read-csv"/>
+<artifact id="OperationDefinition/MeasureReport-search-csv" key="OperationDefinition-MeasureReport-search-csv" name="MeasureReport-search-csv"/>
+<artifact id="ValueSet/MeasureScoring" key="ValueSet-MeasureScoring" name="MeasureScoring"/>
+<artifact id="CapabilityStatement/MeasureSource-Aggregate" key="CapabilityStatement-MeasureSource-Aggregate" name="MeasureSource-Aggregate"/>
+<artifact id="CapabilityStatement/MeasureSource-CSV-Pull" key="CapabilityStatement-MeasureSource-CSV-Pull" name="MeasureSource-CSV-Pull"/>
+<artifact id="CapabilityStatement/MeasureSource-CSV-Push" key="CapabilityStatement-MeasureSource-CSV-Push" name="MeasureSource-CSV-Push"/>
+<artifact id="CapabilityStatement/MeasureSource-ProduceMeasure-CSV-Push" key="CapabilityStatement-MeasureSource-ProduceMeasure-CSV-Push" name="MeasureSource-ProduceMeasure-CSV-Push"/>
+<artifact id="CapabilityStatement/MeasureSource-ProduceMeasure-Push" key="CapabilityStatement-MeasureSource-ProduceMeasure-Push" name="MeasureSource-ProduceMeasure-Push"/>
+<artifact id="CapabilityStatement/MeasureSource-Pull" key="CapabilityStatement-MeasureSource-Pull" name="MeasureSource-Pull"/>
+<artifact id="CapabilityStatement/MeasureSource-Pull-Questionnaire" key="CapabilityStatement-MeasureSource-Pull-Questionnaire" name="MeasureSource-Pull-Questionnaire"/>
+<artifact id="CapabilityStatement/MeasureSource-Push" key="CapabilityStatement-MeasureSource-Push" name="MeasureSource-Push"/>
+<artifact id="CapabilityStatement/MeasureSource-QueryMeasure-CSV-Pull" key="CapabilityStatement-MeasureSource-QueryMeasure-CSV-Pull" name="MeasureSource-QueryMeasure-CSV-Pull"/>
+<artifact id="CapabilityStatement/MeasureSource-QueryMeasure-Pull" key="CapabilityStatement-MeasureSource-QueryMeasure-Pull" name="MeasureSource-QueryMeasure-Pull"/>
+<artifact id="CapabilityStatement/MeasureSource-QueryMeasure-Pull-Questionnaire" key="CapabilityStatement-MeasureSource-QueryMeasure-Pull-Questionnaire" name="MeasureSource-QueryMeasure-Pull-Questionnaire"/>
+<artifact id="CodeSystem/MeasuredValues" key="CodeSystem-MeasuredValues" name="Measured Values in Sample Measures"/>
+<artifact id="MedicationRequest/MedicationRequest11a" key="MedicationRequest-MedicationRequest11a" name="MedicationRequest11a"/>
+<artifact id="MedicationRequest/MedicationRequest11b" key="MedicationRequest-MedicationRequest11b" name="MedicationRequest11b"/>
+<artifact id="MedicationRequest/MedicationRequest12b" key="MedicationRequest-MedicationRequest12b" name="MedicationRequest12b"/>
+<artifact id="MedicationRequest/MedicationRequest12c" key="MedicationRequest-MedicationRequest12c" name="MedicationRequest12c"/>
+<artifact id="MedicationRequest/MedicationRequest13a" key="MedicationRequest-MedicationRequest13a" name="MedicationRequest13a"/>
+<artifact id="MedicationRequest/MedicationRequest14b" key="MedicationRequest-MedicationRequest14b" name="MedicationRequest14b"/>
+<artifact id="MedicationRequest/MedicationRequest14c" key="MedicationRequest-MedicationRequest14c" name="MedicationRequest14c"/>
+<artifact id="MedicationRequest/MedicationRequest15a" key="MedicationRequest-MedicationRequest15a" name="MedicationRequest15a"/>
+<artifact id="MedicationRequest/MedicationRequest15b" key="MedicationRequest-MedicationRequest15b" name="MedicationRequest15b"/>
+<artifact id="MedicationRequest/MedicationRequest16b" key="MedicationRequest-MedicationRequest16b" name="MedicationRequest16b"/>
+<artifact id="MedicationRequest/MedicationRequest16c" key="MedicationRequest-MedicationRequest16c" name="MedicationRequest16c"/>
+<artifact id="MedicationRequest/MedicationRequest17a" key="MedicationRequest-MedicationRequest17a" name="MedicationRequest17a"/>
+<artifact id="MedicationRequest/MedicationRequest17b" key="MedicationRequest-MedicationRequest17b" name="MedicationRequest17b"/>
+<artifact id="MedicationRequest/MedicationRequest18a" key="MedicationRequest-MedicationRequest18a" name="MedicationRequest18a"/>
+<artifact id="MedicationRequest/MedicationRequest18b" key="MedicationRequest-MedicationRequest18b" name="MedicationRequest18b"/>
+<artifact id="MedicationRequest/MedicationRequest18c" key="MedicationRequest-MedicationRequest18c" name="MedicationRequest18c"/>
+<artifact id="MedicationRequest/MedicationRequest19c" key="MedicationRequest-MedicationRequest19c" name="MedicationRequest19c"/>
+<artifact id="Library/NHSNMeasureLibrary" key="Library-NHSNMeasureLibrary" name="NHSNMeasureLibrary"/>
+<artifact id="Organization/NJ-DPH" key="Organization-NJ-DPH" name="NJ-DPH"/>
+<artifact id="Observation/Observation11a" key="Observation-Observation11a" name="Observation11a"/>
+<artifact id="Observation/Observation11b" key="Observation-Observation11b" name="Observation11b"/>
+<artifact id="Observation/Observation11c" key="Observation-Observation11c" name="Observation11c"/>
+<artifact id="Observation/Observation12a" key="Observation-Observation12a" name="Observation12a"/>
+<artifact id="Observation/Observation12b" key="Observation-Observation12b" name="Observation12b"/>
+<artifact id="Observation/Observation12c" key="Observation-Observation12c" name="Observation12c"/>
+<artifact id="Observation/Observation13a" key="Observation-Observation13a" name="Observation13a"/>
+<artifact id="Observation/Observation13b" key="Observation-Observation13b" name="Observation13b"/>
+<artifact id="Observation/Observation14a" key="Observation-Observation14a" name="Observation14a"/>
+<artifact id="Observation/Observation14b" key="Observation-Observation14b" name="Observation14b"/>
+<artifact id="Observation/Observation14c" key="Observation-Observation14c" name="Observation14c"/>
+<artifact id="Observation/Observation15a" key="Observation-Observation15a" name="Observation15a"/>
+<artifact id="Observation/Observation15b" key="Observation-Observation15b" name="Observation15b"/>
+<artifact id="Observation/Observation15c" key="Observation-Observation15c" name="Observation15c"/>
+<artifact id="Observation/Observation16a" key="Observation-Observation16a" name="Observation16a"/>
+<artifact id="Observation/Observation16b" key="Observation-Observation16b" name="Observation16b"/>
+<artifact id="Observation/Observation16c" key="Observation-Observation16c" name="Observation16c"/>
+<artifact id="Observation/Observation17a" key="Observation-Observation17a" name="Observation17a"/>
+<artifact id="Observation/Observation17b" key="Observation-Observation17b" name="Observation17b"/>
+<artifact id="Observation/Observation18a" key="Observation-Observation18a" name="Observation18a"/>
+<artifact id="Observation/Observation18b" key="Observation-Observation18b" name="Observation18b"/>
+<artifact id="Observation/Observation18c" key="Observation-Observation18c" name="Observation18c"/>
+<artifact id="Observation/Observation19c" key="Observation-Observation19c" name="Observation19c"/>
+<artifact id="Observation/Observation22c" key="Observation-Observation22c" name="Observation22c"/>
+<artifact id="Observation/Observation31c" key="Observation-Observation31c" name="Observation31c"/>
+<artifact id="Observation/Observation32c" key="Observation-Observation32c" name="Observation32c"/>
+<artifact id="Observation/Observation33b" key="Observation-Observation33b" name="Observation33b"/>
+<artifact id="Observation/Observation34a" key="Observation-Observation34a" name="Observation34a"/>
+<artifact id="Observation/Observation34b" key="Observation-Observation34b" name="Observation34b"/>
+<artifact id="Observation/Observation34c" key="Observation-Observation34c" name="Observation34c"/>
+<artifact id="Observation/Observation36a" key="Observation-Observation36a" name="Observation36a"/>
+<artifact id="Observation/Observation36b" key="Observation-Observation36b" name="Observation36b"/>
+<artifact id="Observation/Observation36c" key="Observation-Observation36c" name="Observation36c"/>
+<artifact id="Observation/Observation37a" key="Observation-Observation37a" name="Observation37a"/>
+<artifact id="Observation/Observation38c" key="Observation-Observation38c" name="Observation38c"/>
+<artifact id="Observation/Observation39c" key="Observation-Observation39c" name="Observation39c"/>
+<artifact id="Observation/Observation41c" key="Observation-Observation41c" name="Observation41c"/>
+<artifact id="Observation/Observation42b" key="Observation-Observation42b" name="Observation42b"/>
+<artifact id="Observation/Observation43a" key="Observation-Observation43a" name="Observation43a"/>
+<artifact id="Observation/Observation46b" key="Observation-Observation46b" name="Observation46b"/>
+<artifact id="Observation/Observation46c" key="Observation-Observation46c" name="Observation46c"/>
+<artifact id="Observation/Observation47a" key="Observation-Observation47a" name="Observation47a"/>
+<artifact id="Observation/Observation48c" key="Observation-Observation48c" name="Observation48c"/>
+<artifact id="Observation/Observation49b" key="Observation-Observation49b" name="Observation49b"/>
+<artifact id="ValueSet/PatientsOnVentilator" key="ValueSet-PatientsOnVentilator" name="Observations for Patients on a Ventilator"/>
+<artifact id="ValueSet/PatientDeaths" key="ValueSet-PatientDeaths" name="Patient Died"/>
+<artifact id="Patient/Patient1a" key="Patient-Patient1a" name="Patient1a"/>
+<artifact id="Patient/Patient1b" key="Patient-Patient1b" name="Patient1b"/>
+<artifact id="Patient/Patient1c" key="Patient-Patient1c" name="Patient1c"/>
+<artifact id="Patient/Patient2a" key="Patient-Patient2a" name="Patient2a"/>
+<artifact id="Patient/Patient2b" key="Patient-Patient2b" name="Patient2b"/>
+<artifact id="Patient/Patient2c" key="Patient-Patient2c" name="Patient2c"/>
+<artifact id="Patient/Patient3a" key="Patient-Patient3a" name="Patient3a"/>
+<artifact id="Patient/Patient3b" key="Patient-Patient3b" name="Patient3b"/>
+<artifact id="Patient/Patient4a" key="Patient-Patient4a" name="Patient4a"/>
+<artifact id="Patient/Patient4b" key="Patient-Patient4b" name="Patient4b"/>
+<artifact id="Patient/Patient4c" key="Patient-Patient4c" name="Patient4c"/>
+<artifact id="Patient/Patient5a" key="Patient-Patient5a" name="Patient5a"/>
+<artifact id="Patient/Patient5b" key="Patient-Patient5b" name="Patient5b"/>
+<artifact id="Patient/Patient5c" key="Patient-Patient5c" name="Patient5c"/>
+<artifact id="Patient/Patient6a" key="Patient-Patient6a" name="Patient6a"/>
+<artifact id="Patient/Patient6b" key="Patient-Patient6b" name="Patient6b"/>
+<artifact id="Patient/Patient6c" key="Patient-Patient6c" name="Patient6c"/>
+<artifact id="Patient/Patient7a" key="Patient-Patient7a" name="Patient7a"/>
+<artifact id="Patient/Patient7b" key="Patient-Patient7b" name="Patient7b"/>
+<artifact id="Patient/Patient8a" key="Patient-Patient8a" name="Patient8a"/>
+<artifact id="Patient/Patient8b" key="Patient-Patient8b" name="Patient8b"/>
+<artifact id="Patient/Patient8c" key="Patient-Patient8c" name="Patient8c"/>
+<artifact id="Patient/Patient9a" key="Patient-Patient9a" name="Patient9a"/>
+<artifact id="Patient/Patient9b" key="Patient-Patient9b" name="Patient9b"/>
+<artifact id="Patient/Patient9c" key="Patient-Patient9c" name="Patient9c"/>
+<artifact id="StructureDefinition/PreciseDateTime" key="StructureDefinition-PreciseDateTime" name="Precise Date Time"/>
+<artifact id="ValueSet/PublicHealthMeasureAttachmentTypes" key="ValueSet-PublicHealthMeasureAttachmentTypes" name="Public Health Measure Attachment Types"/>
+<artifact id="StructureDefinition/PublicHealthMeasureLibrary" key="StructureDefinition-PublicHealthMeasureLibrary" name="Public Health Measure Library"/>
+<artifact id="CodeSystem/PublicHealthMeasureScoring" key="CodeSystem-PublicHealthMeasureScoring" name="Public Health Measure Scoring"/>
+<artifact id="StructureDefinition/PublicHealthMeasureMetadataAttachments" key="StructureDefinition-PublicHealthMeasureMetadataAttachments" name="PublicHealthMeasureMetadataAttachments"/>
+<artifact deprecated="true" id="StructureDefinition/PublicHealthMeasureStratifier" key="PublicHealthMeasureStratifier" name="PublicHealthMeasureStratifier"/>
+<artifact id="StructureDefinition/MeasureReportingTiming" key="StructureDefinition-MeasureReportingTiming" name="Recommended Measure Reporting Times"/>
+<artifact id="ValueSet/Remdesivir" key="ValueSet-Remdesivir" name="Remdesivir"/>
+<artifact id="StructureDefinition/saner-resource-location" key="StructureDefinition-saner-resource-location" name="Resource Location Profile"/>
+<artifact deprecated="true" id="StructureDefinition/saner-resource-location" key="ResourceLocation" name="ResourceLocation"/>
+<artifact id="ValueSet/SARSCoV2GeneticLabs" key="ValueSet-SARSCoV2GeneticLabs" name="SARSCoV2 Genetic Labs"/>
+<artifact id="ValueSet/SARSCoV2Labs" key="ValueSet-SARSCoV2Labs" name="SARSCoV2Labs"/>
+<artifact id="StructureDefinition/MeasuredItemDescription" key="StructureDefinition-MeasuredItemDescription" name="Saner Measured Item Description"/>
+<artifact id="StructureDefinition/PublicHealthMeasure" key="StructureDefinition-PublicHealthMeasure" name="Saner Public Health Measure"/>
+<artifact id="StructureDefinition/PublicHealthMeasureReport" key="StructureDefinition-PublicHealthMeasureReport" name="Saner Public Health Measure Report"/>
+<artifact id="SearchParameter/SearchParameter-code" key="SearchParameter-SearchParameter-code" name="Search by Code in Definitions and Instances"/>
+<artifact id="SearchParameter/SearchParameter-definition-text" key="SearchParameter-SearchParameter-definition-text" name="Search by Text in Definitions"/>
+<artifact id="SearchParameter/SearchParameter-disposition" key="SearchParameter-SearchParameter-disposition" name="Search by hospitalization.dispositionCode in Encounters"/>
+<artifact id="CodeSystem/MeasurePopulationSystem" key="CodeSystem-MeasurePopulationSystem" name="Situationa Awareness Measure Populations"/>
+<artifact id="StructureDefinition/saner-supporting-device" key="StructureDefinition-saner-supporting-device" name="Supporting Device Profile"/>
+<artifact deprecated="true" id="StructureDefinition/saner-supporting-device" key="SupportingDevice" name="SupportingDevice"/>
+<artifact id="ValueSet/SuspectedOrConfirmedCOVID19Diagnoses" key="ValueSet-SuspectedOrConfirmedCOVID19Diagnoses" name="Suspected Or Diagnosed COVID-19"/>
+<artifact id="ValueSet/SuspectedCOVID19Diagnoses" key="ValueSet-SuspectedCOVID19Diagnoses" name="SuspectedCOVID19Diagnoses"/>
+<artifact id="ValueSet/VentilatorDevices" key="ValueSet-VentilatorDevices" name="Ventilator Devices"/>
+<artifact id="ValueSet/VentilatorObservations" key="ValueSet-VentilatorObservations" name="Ventilator Observations"/>
+<artifact id="ValueSet/VentilatorProcedures" key="ValueSet-VentilatorProcedures" name="Ventilator Procedures"/>
+<artifact id="Organization/X140008" key="Organization-X140008" name="X140008"/>
+<artifact id="Organization/X140010" key="Organization-X140010" name="X140010"/>
+<artifact id="Organization/X140048" key="Organization-X140048" name="X140048"/>
+<artifact id="Organization/X140049" key="Organization-X140049" name="X140049"/>
+<artifact id="Organization/X140054" key="Organization-X140054" name="X140054"/>
+<artifact id="Organization/X140062" key="Organization-X140062" name="X140062"/>
+<artifact id="Organization/X140063" key="Organization-X140063" name="X140063"/>
+<artifact id="Organization/X140065" key="Organization-X140065" name="X140065"/>
+<artifact id="Organization/X140068" key="Organization-X140068" name="X140068"/>
+<artifact id="Organization/X140080" key="Organization-X140080" name="X140080"/>
+<artifact id="Organization/X140082" key="Organization-X140082" name="X140082"/>
+<artifact id="Organization/X140083" key="Organization-X140083" name="X140083"/>
+<artifact id="Organization/X140088" key="Organization-X140088" name="X140088"/>
+<artifact id="Organization/X140095" key="Organization-X140095" name="X140095"/>
+<artifact id="Organization/X140103" key="Organization-X140103" name="X140103"/>
+<artifact id="Organization/X140114" key="Organization-X140114" name="X140114"/>
+<artifact id="Organization/X140115" key="Organization-X140115" name="X140115"/>
+<artifact id="Organization/X140117" key="Organization-X140117" name="X140117"/>
+<artifact id="Organization/X140119" key="Organization-X140119" name="X140119"/>
+<artifact id="Organization/X140124" key="Organization-X140124" name="X140124"/>
+<artifact id="Organization/X140133" key="Organization-X140133" name="X140133"/>
+<artifact id="Organization/X140150" key="Organization-X140150" name="X140150"/>
+<artifact id="Organization/X140158" key="Organization-X140158" name="X140158"/>
+<artifact id="Organization/X140177" key="Organization-X140177" name="X140177"/>
+<artifact id="Organization/X140179" key="Organization-X140179" name="X140179"/>
+<artifact id="Organization/X140180" key="Organization-X140180" name="X140180"/>
+<artifact id="Organization/X140181" key="Organization-X140181" name="X140181"/>
+<artifact id="Organization/X140182" key="Organization-X140182" name="X140182"/>
+<artifact id="Organization/X140191" key="Organization-X140191" name="X140191"/>
+<artifact id="Organization/X140197" key="Organization-X140197" name="X140197"/>
+<artifact id="Organization/X140206" key="Organization-X140206" name="X140206"/>
+<artifact id="Organization/X140208" key="Organization-X140208" name="X140208"/>
+<artifact id="Organization/X140223" key="Organization-X140223" name="X140223"/>
+<artifact id="Organization/X140224" key="Organization-X140224" name="X140224"/>
+<artifact id="Organization/X140240" key="Organization-X140240" name="X140240"/>
+<artifact id="Organization/X140250" key="Organization-X140250" name="X140250"/>
+<artifact id="Organization/X140251" key="Organization-X140251" name="X140251"/>
+<artifact id="Organization/X140252" key="Organization-X140252" name="X140252"/>
+<artifact id="Organization/X140258" key="Organization-X140258" name="X140258"/>
+<artifact id="Organization/X140276" key="Organization-X140276" name="X140276"/>
+<artifact id="Organization/X140281" key="Organization-X140281" name="X140281"/>
+<artifact id="Organization/X140290" key="Organization-X140290" name="X140290"/>
+<artifact id="Organization/X140300" key="Organization-X140300" name="X140300"/>
+<artifact id="Organization/X143300" key="Organization-X143300" name="X143300"/>
+<artifact id="Organization/X143302" key="Organization-X143302" name="X143302"/>
+<artifact id="Organization/X410004" key="Organization-X410004" name="X410004"/>
+<artifact id="Organization/X410005" key="Organization-X410005" name="X410005"/>
+<artifact id="Organization/X410006" key="Organization-X410006" name="X410006"/>
+<artifact id="Organization/X410007" key="Organization-X410007" name="X410007"/>
+<artifact id="Organization/X410008" key="Organization-X410008" name="X410008"/>
+<artifact id="Organization/X410009" key="Organization-X410009" name="X410009"/>
+<artifact id="Organization/X410010" key="Organization-X410010" name="X410010"/>
+<artifact id="Organization/X410011" key="Organization-X410011" name="X410011"/>
+<artifact id="Organization/X410013" key="Organization-X410013" name="X410013"/>
+<artifact id="Location/states-NJ" key="Location-states-NJ" name="states-NJ"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="phrase_book" name="A Phrase Book for Measures Supporting Automation"/>
+<page key="actors" name="Actors"/>
+<page deprecated="true" key="ActorsandTransactions" name="Actors and Transactions"/>
+<page key="measure_aggregation" name="Aggregatating Measure Reports"/>
+<page key="Architecture" name="Architecture"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="background" name="Background"/>
+<page key="CSV_Conversion" name="CSV Conversion"/>
+<page key="transaction-5" name="Communicate Results"/>
+<page key="transaction-4" name="Compute Measure"/>
+<page key="measure_automation" name="Computing Measures"/>
+<page key="measure_creation" name="Creating an Example Measure"/>
+<page key="measure_group_beds" name="Creating the Bed Avaiability Group"/>
+<page key="measure_group_covid19_deaths" name="Creating the COVID 19 Deaths Group"/>
+<page key="measure_group_hospital_acquired_covid19_patients" name="Creating the Hospital Acquired COVID 19 Group"/>
+<page key="measure_group_covid19_patients" name="Creating the Patients with COVID 19 Group"/>
+<page key="measure_group_ventilators" name="Creating the Ventilator Avaiability Group"/>
+<page deprecated="true" key="Definitions" name="Definitions"/>
+<page key="Examples" name="Examples"/>
+<page key="Home" name="Home"/>
+<page deprecated="true" key="Measures" name="Measures"/>
+<page deprecated="true" key="Overview" name="Overview"/>
+<page key="transaction-2" name="Produce Measure"/>
+<page deprecated="true" key="Profiles" name="Profiles"/>
+<page key="profiles" name="Profiles and Extensions"/>
+<page key="transaction-1" name="Query Measure"/>
+<page key="transaction-3" name="Query Measure Definition"/>
+<page key="measure_library" name="Sample Measure Library"/>
+<page key="SecurityConsiderations" name="Security Considerations"/>
+<page key="situational_awareness_measures" name="Situational Awareness Measures"/>
+<page key="toc" name="Table of Contents"/>
+<page key="TechnologyEnvironment" name="Technology Environment"/>
+<page key="test_plan" name="Test Plan"/>
+<page deprecated="true" key="Testplan" name="Testplan"/>
+<page deprecated="true" key="Transaction1" name="Transaction 1"/>
+<page deprecated="true" key="Transaction2" name="Transaction 2"/>
+<page deprecated="true" key="Transaction3" name="Transaction 3"/>
+<page key="Transactions" name="Transactions"/>
+<page key="UseCases" name="Use Cases"/>
+<page key="Vocabulary" name="Vocabulary"/>
+</specification>

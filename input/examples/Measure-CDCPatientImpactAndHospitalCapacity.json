@@ -3,12 +3,12 @@
   "id": "CDCPatientImpactAndHospitalCapacity",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
     ]
   },
   "extension": [
     {
-      "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+      "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
       "valueTiming": {
         "repeat": {
           "frequency": 1,
@@ -78,14 +78,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "Beds",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem",
             "display": "Beds"
           }
         ],
@@ -97,7 +97,7 @@
             "coding": [
               {
                 "code": "numTotBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "All Hospital Beds"
               },
               {
@@ -120,7 +120,7 @@
             "coding": [
               {
                 "code": "numbeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Hospital Inpatient Beds"
               }
             ],
@@ -139,7 +139,7 @@
             "coding": [
               {
                 "code": "numBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Hospital Inpatient Bed Occupancy"
               }
             ],
@@ -158,7 +158,7 @@
             "coding": [
               {
                 "code": "numICUBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "ICU Beds"
               }
             ],
@@ -177,7 +177,7 @@
             "coding": [
               {
                 "code": "numICUBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "ICU Bed Occupancy"
               }
             ],
@@ -252,14 +252,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "Ventilators",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem",
             "display": "Ventilators"
           }
         ],
@@ -271,7 +271,7 @@
             "coding": [
               {
                 "code": "numVent",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Mechanical Ventilators"
               },
               {
@@ -294,7 +294,7 @@
             "coding": [
               {
                 "code": "numVentUse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Mechanical Ventilators in Use"
               }
             ],
@@ -369,14 +369,14 @@
               "valueString": "count"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "Encounters",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem",
             "display": "Encounters"
           }
         ],
@@ -388,7 +388,7 @@
             "coding": [
               {
                 "code": "numC19HospPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Hospitalized COVID-19 Patients"
               }
             ],
@@ -407,7 +407,7 @@
             "coding": [
               {
                 "code": "numC19MechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Hospitalized and Ventilated COVID-19 Patients"
               }
             ],
@@ -426,7 +426,7 @@
             "coding": [
               {
                 "code": "numC19HOPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Hospital Onset COVID-19 Patients"
               }
             ],
@@ -445,7 +445,7 @@
             "coding": [
               {
                 "code": "numC19OverflowPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "ED/Overflow COVID-19 Patients"
               }
             ],
@@ -464,7 +464,7 @@
             "coding": [
               {
                 "code": "numC19OFMechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "ED/Overflow and Ventilated COVID-19 Patients"
               }
             ],
@@ -489,7 +489,7 @@
             "coding": [
               {
                 "code": "numC19Died",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "COVID-19 Patient Deaths"
               }
             ],
@@ -502,7 +502,7 @@
             "coding": [
               {
                 "code": "numC19Pats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "All COVID-19 Confirmed or Suspected Patients"
               },
               {
@@ -525,7 +525,7 @@
             "coding": [
               {
                 "code": "numC19VentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Ventilated COVID-19 Patients"
               }
             ],
@@ -608,7 +608,7 @@
     }
   ],
   "name": "CDCPatientImpactAndHospitalCapacity",
-  "url": "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+  "url": "http://hl7.org/fhir/saner/Measure/CDCPatientImpactAndHospitalCapacity",
   "title": "Patient Impact and Hospital Capacity",
   "relatedArtifact": [
     {
@@ -637,6 +637,6 @@
     }
   ],
   "library": [
-    "http://hl7.org/fhir/us/saner/StructureDefinition/NHSNMeasureLibrary"
+    "http://hl7.org/fhir/saner/StructureDefinition/NHSNMeasureLibrary"
   ]
 }

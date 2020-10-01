@@ -6,7 +6,7 @@
   "title": "COVID-19 Not Detected",
   "description": "Codes for a negative COVID-19 Diagnostic Test Result",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/NegativeResults",
+  "url": "http://hl7.org/fhir/saner/ValueSet/NegativeResults",
   "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
   "compose": {
     "include": [

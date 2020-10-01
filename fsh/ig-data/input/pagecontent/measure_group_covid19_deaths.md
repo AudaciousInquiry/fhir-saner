@@ -32,7 +32,7 @@ deaths within a facility or region.
 
 ```
  * with group[2].extension[groupAtts] do
- ** extension[scoring].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/PublicHealthMeasureScoring#event-growth
+ ** extension[scoring].valueCodeableConcept = http://hl7.org/fhir/saner/CodeSystem/PublicHealthMeasureScoring#event-growth
 ```
 
 Next, the measure describes the type of measure (e.g., structure, process or outcome). This measure is an outcome measure,
@@ -75,19 +75,19 @@ the Initial Population, a Numerator (the new infections), and a Denominator (the
 Provide a code describing each population.
 ```
  * with group[2].population[0].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numC19Pats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numC19Pats
  ** coding.display = "All COVID-19 Confirmed or Suspected Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
  ** text = "Patients with suspected or confirmed COVID-19 in any location."
 
  * with group[2].population[1].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#numC19HOPats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#numC19HOPats
  ** coding.display = "Hospital Onset COVID-19 Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#numerator
  ** text = "Hospital Onset COVID-19 Patients"
 
  * with group[2].population[2].code do
- ** coding = http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues#cumC19HOPats
+ ** coding = http://hl7.org/fhir/saner/CodeSystem/MeasuredValues#cumC19HOPats
  ** coding.display = "Cumulative Hospital Onset COVID-19 Patients"
  ** coding[1] = http://terminology.hl7.org/CodeSystem/measure-population#denominator
  ** text = "Cumulative Hospital Onset COVID-19 Patients"
@@ -106,26 +106,29 @@ information for a competent human reader to correctly implement the computation.
  * with group[2].population[0].criteria do
  ** name = "NumC19HospPats"
  // This criteria does not have a name because it duplicates a previously computed criteria
- ** description = """Identifies patients with suspected or confirmed COVID-19 in any location based
+ ** description = """
+Identifies patients with suspected or confirmed COVID-19 in any location based
  on the existence of an encounter, observation or condition related to COVID that was
  active in the last 14 days"""
 
  * with group[2].population[1].criteria do
  ** name = "NumC19Died"
- ** description = """Filters the initial population by selecting those who have died."""
+ ** description = """
+Filters the initial population by selecting those who have died."""
 
  * with group[2].population[2].criteria do
  ** name = "CumC19Died"
- ** description = """Computes the cumulative total from the prior measure report and the number of new deaths in the current reporting period."""
+ ** description = """
+Computes the cumulative total from the prior measure report and the number of new deaths in the current reporting period."""
 ```
 
 #### Provide the Computable Content
 The computable content "implements" the automated computation of the measure.
 
 The first population is easily computed as it is the same as %NumC19HospPats which is computed
-in the group reporting on [hospital acquired COVID-19](#todo-add-link-to-this-part) of the measure.
-This also illustrates the value of reporting multiple measures in one measure report, as it enables
-reuse of common subexpressions and reduces evaluation overhead.
+in the group reporting on [hospital acquired COVID-19](measure_group_hospital_acquired_covid19_patients.html)
+of the measure. This also illustrates the value of reporting multiple measures in one measure report, as it
+enables reuse of common subexpressions reducing evaluation overhead.
 
 Measure Developers **should** consider the order of presentation of groups within measures.
 While this walkthrough follows the original order in which the groups are presented, a different

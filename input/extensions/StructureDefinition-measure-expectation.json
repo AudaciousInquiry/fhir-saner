@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "measure-expectation",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/measure-expectation",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/measure-expectation",
   "version": "0.1.0",
   "name": "MeasureExpection",
   "status": "draft",
@@ -67,7 +67,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/measure-expectation"
+        "fixedUri": "http://hl7.org/fhir/saner/StructureDefinition/measure-expectation"
       },
       {
         "id": "Extension.value[x]",

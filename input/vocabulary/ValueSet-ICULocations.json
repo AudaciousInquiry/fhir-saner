@@ -6,7 +6,7 @@
   "title": "ICU Locations",
   "description": "Codes used for ICU locations",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/ICULocations",
+  "url": "http://hl7.org/fhir/saner/ValueSet/ICULocations",
   "copyright": "This value set includes source materials developed by CDC: Reference to specific commercial products, manufacturers,\ncompanies, or trademarks does not constitute its endorsement or recommendation by the U.S. Government, Department of Health and Human\nServices, or Centers for Disease Control and Prevention. Source materials are available from the CDC Website at no charge at\nhttps://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
   "compose": {
     "include": [

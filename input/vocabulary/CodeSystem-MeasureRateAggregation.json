@@ -7,7 +7,7 @@
   "title": "Measure Rate Aggregation Coding System",
   "description": "This Coding System Identifies methods of rate aggregation",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureRateAggregation",
+  "url": "http://hl7.org/fhir/saner/CodeSystem/MeasureRateAggregation",
   "concept": [
     {
       "code": "count",

@@ -1,0 +1,188 @@
+TestCase Case1:
+    date startDate with (
+        value equals '@2020-09-09'
+    )
+
+    date encounterStartDate with (
+        value equals startDate or
+              equals 1 days before startDate or
+              equals 14 days before startDate
+    )
+
+    Encounter edEncounter
+    with (
+        period.start = encounterStartDate,
+        period.end = encounterStartDate,
+        statusHistory.period.start = encounterStartDate,
+        statusHistory.period.end = encounterStartDate
+    )
+
+Values
+    // This is a set of common last names, it is purposefully of prime length
+    "lastnames": {
+        Smith
+        Johnson
+        Williams
+        Brown
+        Jones
+        Garcia
+        Miller
+        Davis
+        Rodriguez
+        Martinez
+        Hernandez
+        Lopez
+        Gonzalez
+        Wilson
+        Anderson
+        Thomas
+        Taylor
+        Moore
+        Jackson
+        Martin
+        Lee
+        Perez
+        Thompson
+    }
+
+    // This is a set of first names that are gender free, also of prime length
+    // and mutually prime with the set of last names.
+    "firstnames": {
+        Alex
+        James
+        Blake
+        Kyle
+        Drew
+        Taylor
+        Kennedy
+        Jordan
+        Parker
+        Avery
+        Ryan
+        Brooklyn
+        Cameron
+        Logan
+        Emerson
+        Charlie
+        Ezra
+    }
+
+    "genders": {
+        male
+        female
+    }
+
+    "locationTypes": {
+        "HSLOC|1027-2|Medical Critical Care|ROLECODE|ICU|Intensive care unit"
+        "HSLOC|1028-0|Medical Cardiac Critical Care|ROLECODE|ICU|Intensive care unit"
+        "HSLOC|1030-6|Surgical Critical Care|ROLECODE|ICU|Intensive care unit"
+        "HSLOC|1060-3|Medical Ward|ROLECODE|HU|Hospital unit"
+        "HSLOC|1076-9|Pediatric Medical Ward|ROLECODE|PEDU|Pediatric unit"
+        "HSLOC|1097-5|Post-anesthesia Care Unit|ROLECODE|HU|Hospital unit"
+        "HSLOC|1208-8|Telemetry Ward|ROLECODE|HU|Hospital unit"
+        "HSLOC|1108-0|Emergency Department|ROLECODE|ER|Emergency room"
+    }
+
+    "OVLocations": {
+        "HSLOC|1097-5|Post-anesthesia Care Unit|ROLECODE|HU|Hospital unit"
+    }
+
+    "EDLocations": {
+        "HSLOC|1108-0|Emergency Department|ROLECODE|ER|Emergency room"
+    }
+
+    "ICULocations": {
+        "HSLOC|1027-2|Medical Critical Care|ROLECODE|ICU|Intensive care unit"
+        "HSLOC|1028-0|Medical Cardiac Critical Care|ROLECODE|ICU|Intensive care unit"
+        "HSLOC|1030-6|Surgical Critical Care|ROLECODE|ICU|Intensive care unit"
+    }
+
+    "NonICULocations": {
+        "HSLOC|1060-3|Medical Ward|ROLECODE|HU|Hospital unit"
+        "HSLOC|1076-9|Pediatric Medical Ward|ROLECODE|PEDU|Pediatric unit"
+        "HSLOC|1097-5|Post-anesthesia Care Unit|ROLECODE|HU|Hospital unit"
+        "HSLOC|1208-8|Telemetry Ward|ROLECODE|HU|Hospital unit"
+    }
+
+    "encounterStatusOK": {
+        "in-progress" "finished"
+    }
+
+    "conditionStatusOK": {
+        "active"
+    }
+
+    "conditionStatusOver": {
+        "completed"
+    }
+
+    "error": {
+        "entered-in-error"
+    }
+
+    covid19Labs: {
+        "LOINC|94500-6|SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+        "LOINC|94558-4|SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+        "LOINC|94759-8|SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection"
+    }
+
+    positiveLabs: {
+        "SCT|260373001|Detected"
+        "SCT|10828004|Positive"
+    }
+
+    negativeLabs: {
+        "SCT|260385009|Negative"
+        "SCT|260415000|Not detected"
+    }
+
+    ventObservations: {
+        "LOINC|19994-3|Oxygen/Inspired gas setting [Volume Fraction] Ventilator"
+        "LOINC|20077-4|Positive end expiratory pressure setting Ventilator"
+    }
+
+    covid19suspectedOrConfirmed: {
+        "SCT|233604007|Pneumonia"
+        "SCT|67782005|Acute respiratory distress syndrome"
+        "SCT|870590002|Acute hypoxemic respiratory failure due to disease caused by Severe acute respiratory syndrome coronavirus 2"
+        "SCT|882784691000119100|Pneumonia caused by Severe acute respiratory syndrome coronavirus 2"
+    }
+
+    encounterTypes: {
+        system = "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "AMB|ambulatory"
+        "EMER|emergency"
+        "IMP|inpatient encounter"
+        "ACUTE|inpatient acute"
+        "NONAC|inpatient non-acute"
+    }
+
+    ICUEncounterTypes: {
+        system = "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "ACUTE|inpatient acute"
+    }
+
+    NonICUEncounterTypes: {
+        system = "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "NONAC|inpatient non-acute"
+    }
+
+    EDEncounterTypes: {
+        system = "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "EMER|emergency"
+    }
+
+    AmbEncounterTypes: {
+        system = "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "EMER|emergency"
+        "AMB|ambulatory"
+        "OBSENC|observation encounter"
+    }
+
+    Remdesivir: {
+        "http://www.nlm.nih.gov/research/umls/rxnorm|2367757|Remdesivir"
+    }
+
+    Died: {
+        "http://terminology.hl7.org/CodeSystem/discharge-disposition|exp|Expired"
+    }

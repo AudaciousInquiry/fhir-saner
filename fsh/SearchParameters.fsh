@@ -2,7 +2,7 @@ Instance: SearchParameter-definition-text
 InstanceOf: SearchParameter
 Title: "Search by Text in Definitions"
  * insert SanerDefinitionContent
- * url = "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-definition-text"
+ * url = "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-definition-text"
  * description = "This SearchParameter enables definition resources used in The SANER Project to be discovered from text used in the resource definition."
  * name = "definition-text"
  * code = #definition-text
@@ -51,7 +51,7 @@ Instance: SearchParameter-code
 InstanceOf: SearchParameter
 Title: "Search by Code in Definitions and Instances"
  * insert SanerDefinitionContent
- * url = "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-code"
+ * url = "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-code"
  * description = "This SearchParameter enables resources used in The SANER Project to be discovered by codes or valueSets used in the resource including those in any extensions."
  * name = "code"
  * purpose = """
@@ -85,7 +85,7 @@ Instance: SearchParameter-disposition
 InstanceOf: SearchParameter
 Title: "Search by hospitalization.dispositionCode in Encounters"
  * insert SanerDefinitionContent
- * url = "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-disposition"
+ * url = "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-disposition"
  * description = "This SearchParameter enables query of encounters by disposition to support automation of measure computation."
  * name = "disposition"
  * purpose = """

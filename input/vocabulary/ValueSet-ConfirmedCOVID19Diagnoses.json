@@ -6,7 +6,7 @@
   "title": "Confirmed COVID-19 Diagnosis Values",
   "description": "Codes confirming a COVID-19 diagnosis",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/ConfirmedCOVID19Diagnoses",
+  "url": "http://hl7.org/fhir/saner/ValueSet/ConfirmedCOVID19Diagnoses",
   "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
   "compose": {
     "include": [
@@ -45,6 +45,10 @@
           {
             "code": "840539006",
             "display": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)"
+          },
+          {
+            "code": "882784691000119100",
+            "display": "Pneumonia caused by Severe acute respiratory syndrome coronavirus 2 (disorder)"
           }
         ]
       }

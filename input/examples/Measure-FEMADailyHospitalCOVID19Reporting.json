@@ -3,12 +3,12 @@
   "id": "FEMADailyHospitalCOVID19Reporting",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
     ]
   },
   "extension": [
     {
-      "url": "http://hl7.org/fhir/us/saner/StructureDefinition/ReportingPeriod",
+      "url": "http://hl7.org/fhir/saner/StructureDefinition/ReportingPeriod",
       "valueTiming": {
         "repeat": {
           "frequency": 1,
@@ -78,14 +78,14 @@
               "valueString": "cumulative"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "positiveIncreasePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem",
             "display": "Percent Positive among Newly Resulted Tests"
           }
         ],
@@ -97,7 +97,7 @@
             "coding": [
               {
                 "code": "totalOrdersIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "New Diagnostic Tests Ordered/Received"
               },
               {
@@ -120,7 +120,7 @@
             "coding": [
               {
                 "code": "totalTestResultsIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "New Tests Resulted"
               },
               {
@@ -143,7 +143,7 @@
             "coding": [
               {
                 "code": "positiveIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "New Positive COVID-19 Tests"
               },
               {
@@ -222,14 +222,14 @@
               "valueString": "cumulative"
             }
           ],
-          "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+          "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
         }
       ],
       "code": {
         "coding": [
           {
             "code": "positivePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem",
             "display": "Cumulative Percent Positive among Resulted Tests"
           }
         ],
@@ -241,7 +241,7 @@
             "coding": [
               {
                 "code": "totalOrders",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Cumulative Diagnostic Tests Ordered/Received"
               },
               {
@@ -264,7 +264,7 @@
             "coding": [
               {
                 "code": "rejected",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Cumulative Specimens Rejected"
               },
               {
@@ -287,7 +287,7 @@
             "coding": [
               {
                 "code": "totalTestResults",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Cumulative Tests Performed"
               },
               {
@@ -310,7 +310,7 @@
             "coding": [
               {
                 "code": "positive",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Cumulative Positive COVID-19 Tests"
               },
               {
@@ -333,7 +333,7 @@
             "coding": [
               {
                 "code": "allReports",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "All Laboratory Reports for any Order"
               }
             ],
@@ -352,7 +352,7 @@
             "coding": [
               {
                 "code": "latestReports",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues",
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues",
                 "display": "Most Recent Laboratory Reports for any Order"
               }
             ],
@@ -404,7 +404,7 @@
     }
   ],
   "name": "FEMADailyHospitalCOVID19Reporting",
-  "url": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
+  "url": "http://hl7.org/fhir/saner/Measure/FEMADailyHospitalCOVID19Reporting",
   "author": [
     {
       "name": "HL7 Public Health Workgroup",
@@ -482,6 +482,6 @@
     }
   ],
   "library": [
-    "http://hl7.org/fhir/us/saner/StructureDefinition/FEMAMeasureLibrary"
+    "http://hl7.org/fhir/saner/StructureDefinition/FEMAMeasureLibrary"
   ]
 }

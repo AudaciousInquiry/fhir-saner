@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "saner-resource-location",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/saner-resource-location",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/saner-resource-location",
   "version": "0.1.0",
   "name": "ResourceLocation",
   "title": "Resource Location Profile",

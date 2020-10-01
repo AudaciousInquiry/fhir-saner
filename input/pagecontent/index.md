@@ -30,8 +30,9 @@ the SANER project.
 This guide is organized into five main sections:
 
 <details>
-    <summary>Chapter I: <a href="overview.html">Overview</a> - Provides an overview of the challenges this effort is trying to address.</summary>
+    <summary>Chapter I: Background and Overview</summary>
     <ol>
+      <li><a href="background.html">Background</a> - Provides background about this IG</li>
       <li><a href="situational_awareness_measures.html">Measuring Situational Awareness</a> - Describes situational awareness and how to measure it.</li>
       <li><a href="measure_aggregation.html">Aggregating Data</a> - Describes how to aggregate Measure data.</li>
       <li><a href="measure_automation.html">Computing Measures</a> - Describes mechanisms to automate measure computation.</li>

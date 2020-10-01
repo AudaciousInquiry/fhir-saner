@@ -14,7 +14,7 @@
   },
   "status": "complete",
   "type": "summary",
-  "measure": "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+  "measure": "http://hl7.org/fhir/saner/Measure/CDCPatientImpactAndHospitalCapacity",
   "subject": {
     "reference": "Location/Loc-X140150",
     "identifier": {
@@ -38,7 +38,7 @@
         "coding": [
           {
             "code": "Beds",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ],
         "text": "Hospital Bed Reporting"
@@ -49,7 +49,7 @@
             "coding": [
               {
                 "code": "numTotBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -65,7 +65,7 @@
             "coding": [
               {
                 "code": "numbeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients."
@@ -77,7 +77,7 @@
             "coding": [
               {
                 "code": "numBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Total number of staffed inpatient beds that are occupied."
@@ -89,7 +89,7 @@
             "coding": [
               {
                 "code": "numICUBeds",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Total number of staffed inpatient intensive care unit (ICU) beds."
@@ -101,7 +101,7 @@
             "coding": [
               {
                 "code": "numICUBedsOcc",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Total number of staffed inpatient ICU beds that are occupied."
@@ -115,7 +115,7 @@
         "coding": [
           {
             "code": "Ventilators",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ],
         "text": "Hospital Ventilator Reporting"
@@ -126,7 +126,7 @@
             "coding": [
               {
                 "code": "numVent",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -142,7 +142,7 @@
             "coding": [
               {
                 "code": "numVentUse",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Total number of ventilators in use."
@@ -156,7 +156,7 @@
         "coding": [
           {
             "code": "Encounters",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ],
         "text": "Hospital COVID-19 Encounters Reporting"
@@ -167,7 +167,7 @@
             "coding": [
               {
                 "code": "numC19HospPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19."
@@ -179,7 +179,7 @@
             "coding": [
               {
                 "code": "numC19MechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator."
@@ -191,7 +191,7 @@
             "coding": [
               {
                 "code": "numC19HOPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization."
@@ -203,7 +203,7 @@
             "coding": [
               {
                 "code": "numC19OverflowPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed."
@@ -215,7 +215,7 @@
             "coding": [
               {
                 "code": "numC19OFMechVentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator."
@@ -227,7 +227,7 @@
             "coding": [
               {
                 "code": "numC19Died",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location."
@@ -239,7 +239,7 @@
             "coding": [
               {
                 "code": "numC19Pats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Patients with suspected or confirmed COVID-19 in any location."
@@ -258,7 +258,7 @@
             "coding": [
               {
                 "code": "numC19VentPats",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Ventilated COVID-19 Patients"

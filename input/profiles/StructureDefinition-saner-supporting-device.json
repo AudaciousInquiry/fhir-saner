@@ -11,7 +11,7 @@
       "valueCode": "business"
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/saner-supporting-device",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/saner-supporting-device",
   "version": "0.1.0",
   "name": "SupportingDevice",
   "title": "Supporting Device Profile",

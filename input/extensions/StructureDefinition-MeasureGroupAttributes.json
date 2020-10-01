@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "MeasureGroupAttributes",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes",
   "version": "0.1.0",
   "name": "MeasureGroupAttributes",
   "title": "Attributes describing a group of measures",
@@ -109,7 +109,7 @@
         "max": "1",
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/saner/ValueSet/MeasureScoring"
+          "valueSet": "http://hl7.org/fhir/saner/ValueSet/MeasureScoring"
         }
       },
       {
@@ -353,7 +353,7 @@
           {
             "code": "CodeableConcept",
             "profile": [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/MeasuredItemDescription"
+              "http://hl7.org/fhir/saner/StructureDefinition/MeasuredItemDescription"
             ]
           }
         ],
@@ -365,7 +365,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+        "fixedUri": "http://hl7.org/fhir/saner/StructureDefinition/MeasureGroupAttributes"
       },
       {
         "id": "Extension.value[x]",

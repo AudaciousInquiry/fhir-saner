@@ -3,7 +3,7 @@
   "id": "NHSNMeasureLibrary",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary"
     ]
   },
   "status": "draft",
@@ -41,7 +41,7 @@
     }
   ],
   "name": "NHSNMeasureLibrary",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/NHSNMeasureLibrary",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/NHSNMeasureLibrary",
   "title": "NHSN Patient Impact and Hospital Capacity Measure Library",
   "type": {
     "coding": [
@@ -128,7 +128,7 @@
       "id": "Remdesivir",
       "contentType": "application/fhir+xml",
       "title": "Remdesivir",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/Remdesivir"
+      "url": "http://hl7.org/fhir/saner/ValueSet/Remdesivir"
     },
     {
       "id": "COVID19Exposure",
@@ -152,7 +152,7 @@
       "id": "PatientsOnVentilator",
       "contentType": "application/fhir+xml",
       "title": "Patients on a Ventilator",
-      "url": "http://hl7.org/fhir/us/saner/ValueSet/PatientsOnVentilator"
+      "url": "http://hl7.org/fhir/saner/ValueSet/PatientsOnVentilator"
     }
   ]
 }

@@ -46,7 +46,7 @@
   "name": "Evaluatethemeasure",
   "title": "Evaluate the measure",
   "description": "port for the given time period. If a report already exists for the subject and reporter for the given time period, it is updated.\nOtherwise, a new report is created.",
-  "url": "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-evaluate-measure",
+  "url": "http://hl7.org/fhir/saner/OperationDefinition/Measure-evaluate-measure",
   "parameter": [
     {
       "name": "periodEnd",

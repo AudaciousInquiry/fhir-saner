@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "PreciseDateTime",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/PreciseDateTime",
   "version": "0.1.0",
   "name": "PreciseDateTime",
   "title": "Precise Date Time",
@@ -57,7 +57,7 @@
             "human": "The dateTime value must contain seconds and a timezone",
             "expression": "replaceMatches('[0-9.T]','').length()=6",
             "xpath": "string-length(replace(@value,'01234566789.T',''))=6",
-            "source": "http://hl7.org/fhir/us/saner/StructureDefinition/PreciseDateTime"
+            "source": "http://hl7.org/fhir/saner/StructureDefinition/PreciseDateTime"
           }
         ]
       }

@@ -22,6 +22,24 @@
             <artifactId>opencsv</artifactId>
             <version>4.5</version>
         </dependency>
+        <!--  Used for Narrative Generation -->
+        <dependency>
+		    <groupId>com.atlassian.commonmark</groupId>
+		    <artifactId>commonmark</artifactId>
+		    <version>0.15.2</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>

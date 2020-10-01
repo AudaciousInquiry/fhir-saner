@@ -3,12 +3,12 @@
   "id": "ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
     ]
   },
   "type": "summary",
   "status": "complete",
-  "measure": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
+  "measure": "http://hl7.org/fhir/saner/Measure/FEMADailyHospitalCOVID19Reporting",
   "subject": {
     "identifier": {
       "system": "https://www.census.gov/geographies",
@@ -38,7 +38,7 @@
         "coding": [
           {
             "code": "positiveIncreasePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ]
       },
@@ -48,7 +48,7 @@
             "coding": [
               {
                 "code": "totalOrdersIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -70,7 +70,7 @@
             "coding": [
               {
                 "code": "totalTestResultsIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator",
@@ -85,7 +85,7 @@
             "coding": [
               {
                 "code": "positiveIncrease",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "numerator",
@@ -108,7 +108,7 @@
         "coding": [
           {
             "code": "positivePercent",
-            "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem"
+            "system": "http://hl7.org/fhir/saner/CodeSystem/MeasureGroupSystem"
           }
         ]
       },
@@ -118,7 +118,7 @@
             "coding": [
               {
                 "code": "totalOrders",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "initial-population",
@@ -140,7 +140,7 @@
             "coding": [
               {
                 "code": "rejected",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator-exclusion",
@@ -162,7 +162,7 @@
             "coding": [
               {
                 "code": "totalTestResults",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "denominator",
@@ -177,7 +177,7 @@
             "coding": [
               {
                 "code": "positive",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               },
               {
                 "code": "numerator",
@@ -192,7 +192,7 @@
             "coding": [
               {
                 "code": "allReports",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "All Laboratory Reports for any Order"
@@ -211,7 +211,7 @@
             "coding": [
               {
                 "code": "latestReports",
-                "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasuredValues"
+                "system": "http://hl7.org/fhir/saner/CodeSystem/MeasuredValues"
               }
             ],
             "text": "Most Recent Laboratory Reports for any Order"

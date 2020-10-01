@@ -1,0 +1,90 @@
+TestCase Case1:
+
+    Patient "patient - Generate sample patients with random characteristics" X 30 with (
+        "extension[0].url" = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension[0].extension[0].url" = "ombCategory",
+        "extension[0].extension[0].valueCoding" in "races",
+        "extension[1].url" = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension[1].extension[0].url" = "ombCategory",
+        "extension[1].extension[0].valueCoding" in "ethnicities",
+        identifier.value = Identifier Pat1000,
+        identifier.system = "http://sanerproject.org/testdata/patients",
+        name.given in "firstnames",
+        "name.given[1]" in "firstnames",
+        name.family in "lastnames",
+        gender in "genders",
+        birthDate within '@1930-09-09' to '@2020-09-09'
+    )
+
+Values
+    // This is a set of common last names, it is purposefully of prime length
+    "lastnames": {
+        Smith
+        Johnson
+        Williams
+        Brown
+        Jones
+        Garcia
+        Miller
+        Davis
+        Rodriguez
+        Martinez
+        Hernandez
+        Lopez
+        Gonzalez
+        Wilson
+        Anderson
+        Thomas
+        Taylor
+        Moore
+        Jackson
+        Martin
+        Lee
+        Perez
+        Thompson
+    }
+
+    // This is a set of first names that are gender free, also of prime length
+    // and mutually prime with the set of last names.
+    "firstnames": {
+        Alex
+        James
+        Blake
+        Kyle
+        Drew
+        Taylor
+        Kennedy
+        Jordan
+        Parker
+        Avery
+        Ryan
+        Brooklyn
+        Cameron
+        Logan
+        Emerson
+        Charlie
+        Ezra
+    }
+
+    "genders": {
+        male
+        female
+    }
+
+    "races": {
+        "urn:oid:2.16.840.1.113883.6.238|1002-5|American Indian or Alaska Native"            2
+        "urn:oid:2.16.840.1.113883.6.238|2028-9|Asian"                                       6
+        "urn:oid:2.16.840.1.113883.6.238|2054-5|Black or African American"                  13
+        "urn:oid:2.16.840.1.113883.6.238|2076-8|Native Hawaiian or Other Pacific Islander"   1
+        "urn:oid:2.16.840.1.113883.6.238|2106-3|White"                                      76
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|UNK|Unknown"                   10
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|ASKU|Asked but no answer"      15
+        ""  30
+    }
+
+    "ethnicities": {
+        system = "urn:oid:2.16.840.1.113883.6.238",
+        "2135-2|Hispanic or Latino"         2
+        "2186-5|Non Hispanic or Latino"     9
+        ""                                  3
+    }

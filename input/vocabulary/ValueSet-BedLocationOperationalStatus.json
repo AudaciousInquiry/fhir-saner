@@ -6,7 +6,7 @@
   "title": "Bed Location Operational Status",
   "description": "This Value Set is used to indicate whether a bed is in use (O), available for use (U), or not available (C) for use.",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/BedLocationOperationalStatus",
+  "url": "http://hl7.org/fhir/saner/ValueSet/BedLocationOperationalStatus",
   "compose": {
     "include": [
       {

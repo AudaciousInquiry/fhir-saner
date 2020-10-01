@@ -1,4 +1,4 @@
-<profile xmlns="http://ainq.com/ig-definition" id="SANER" chapter='1' base='http://hl7.org/fhir/us/saner' codingsystems="SanerBedType" valuesets="BedLocationOperationalStatus BedProperty BedType">
+<profile xmlns="http://ainq.com/ig-definition" id="SANER" chapter='1' base='http://hl7.org/fhir/saner' codingsystems="SanerBedType" valuesets="BedLocationOperationalStatus BedProperty BedType">
 	<domain id="PH">
 	    <org>HL7</org>
 	    <name>Situational Awareness for Novel Epidemic Response</name>
@@ -885,11 +885,11 @@ value for _count if no value is provided to avoid server overloading.  This guid
 existing implementation experience.</description>
                         <parameter name='_count' min='0' max='1' expect='shall'/>
                     </group>
-                    <operation name='read' resources='Measure Library' expect='shall'>
+                    <operation name='read' resources='Measure Library ValueSet CodeSystem ConceptMap' expect='shall'>
                         <name>Read on Required Resources</name>
                         <description>A client must be able to read individual Measure and Library resources that are returned by a query.</description>
                     </operation>
-                    <operation name='search' resources='Measure Library' expect='shall' client="should">
+                    <operation name='search' resources='Measure Library ValueSet CodeSystem ConceptMap' expect='shall' client="should">
                         <name>Search by _id on Measure and Library Resources</name>
                         <group>
                             <name>Search by _id</name>
@@ -898,6 +898,13 @@ returned by a query.  Client systems may save resource references for future use
 needed.  To reduce overhead, a client system may also wish to retrieve the resources referenced by the
 selected resource. This can be accomplished by using a search with an _id parameter, combined with _include=*</description>
                             <parameter name='_id' min='1' max='*' type='token' expect='shall'/>
+                        </group>
+                        <group>
+                            <name>Search by _url</name>
+                            <description>A client must be able to read individual resources that are returned or referenced within a measure
+                                by the canonical url that is used to identify them.  Client systems may save resource references for future use, 
+                                retrieving them later as needed.</description>
+                            <parameter name='url' min='1' max='*' type='uri' expect='shall'/>
                         </group>
                     </operation>
                     <operation id='search-for-measure-definition' name='search' resources='Measure' expect='shall' client="should">

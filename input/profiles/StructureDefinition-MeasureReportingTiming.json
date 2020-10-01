@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "MeasureReportingTiming",
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureReportingTiming",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/MeasureReportingTiming",
   "version": "0.1.0",
   "name": "MeasureReportingTiming",
   "title": "Recommended Measure Reporting Times",

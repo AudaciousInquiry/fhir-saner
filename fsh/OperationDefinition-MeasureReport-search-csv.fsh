@@ -15,7 +15,7 @@ Description: "Search Measure Report resources using the CSV Format. See [CSV Con
 * name = "SearchinCSVFormat"
 * title = "Search in CSV Format"
 * description = "Search Measure Report resources using the CSV Format. See [CSV Conversion](CSV_Conversion.html) for details."
-* url = "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-search-csv"
+* url = "http://hl7.org/fhir/saner/OperationDefinition/MeasureReport-search-csv"
 
 * parameter[0].name = #_lastUpdated
 * parameter[0].use = #in

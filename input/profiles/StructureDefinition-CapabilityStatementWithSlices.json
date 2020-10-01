@@ -11,7 +11,7 @@
       "valueCode": "anonymous"
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/StructureDefinition/CapabilityStatementWithSlices",
+  "url": "http://hl7.org/fhir/saner/StructureDefinition/CapabilityStatementWithSlices",
   "version": "0.1.0",
   "name": "CapabilityStatementWithSlices",
   "title": "Capability Statements with Slices",
@@ -190,6 +190,34 @@
         "id": "CapabilityStatement.rest.resource:LibrarySlice.type",
         "path": "CapabilityStatement.rest.resource.type",
         "fixedCode": "Library"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:ConceptMapSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "ConceptMapSlice",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:ValueSetSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "ValueSetSlice",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:CodeSystemSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "CodeSystemSlice",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "CapabilityStatement.rest.resource:ParametersSlice",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "ParametersSlice",
+        "min": 0,
+        "max": "*"
       },
       {
         "id": "CapabilityStatement.rest:clientSlice",

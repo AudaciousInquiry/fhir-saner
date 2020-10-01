@@ -35,7 +35,7 @@
       ]
     }
   ],
-  "url": "http://hl7.org/fhir/us/saner/SearchParameter/SearchParameter-disposition",
+  "url": "http://hl7.org/fhir/saner/SearchParameter/SearchParameter-disposition",
   "description": "This SearchParameter enables query of encounters by disposition to support automation of measure computation.",
   "name": "disposition",
   "purpose": "",

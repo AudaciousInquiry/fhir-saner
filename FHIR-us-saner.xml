@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               url="http://hl7.org/fhir/us/saner"
+               url="http://hl7.org/fhir/saner"
                ciUrl="http://build.fhir.org/ig/example/example-ig"
                defaultWorkgroup=""
                defaultVersion="current"

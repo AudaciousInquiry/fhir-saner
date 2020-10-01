@@ -1,7 +1,7 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "hl7.fhir.us.saner",
-  "url": "http://hl7.org/fhir/us/saner/ImplementationGuide/hl7.fhir.us.saner",
+  "id": "hl7.fhir.uv.saner",
+  "url": "http://hl7.org/fhir/saner/ImplementationGuide/hl7.fhir.uv.saner",
   "version": "0.1.0",
   "name": "SituationalAwarenessforNovelEpidemicResponse",
   "title": "Situational Awareness for Novel Epidemic Response",
@@ -35,18 +35,18 @@
       ]
     }
   ],
-  "description": "The Situational Awareness for Novel Epidemic Response Implementation Guide enables transmission of high level situational awareness information from inpatient facilities to centralized data repositories to support the treatment of novel influenza-like illness.",
+  "description": "The Situational Awareness for Novel Epidemic Response Implementation Guide enables transmission of high level situational awareness information from healthcare facilities to centralized data repositories to support the treatment of the novel coronavirus illness.",
   "jurisdiction": [
     {
       "coding": [
         {
-          "code": "US",
-          "system": "urn:iso:std:iso:3166"
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
         }
       ]
     }
   ],
-  "packageId": "hl7.fhir.us.saner",
+  "packageId": "hl7.fhir.uv.saner",
   "license": "CC0-1.0",
   "fhirVersion": [
     "4.0.1"
@@ -466,7 +466,7 @@
           "reference": "ValueSet/VentilatorDevices"
         },
         "name": "Ventilator Devices",
-        "description": "Codes used for Ventilator Devices [Populate VentilatorDevices](#todo)",
+        "description": "Codes used for Ventilator Devices",
         "exampleBoolean": false
       },
       {
@@ -483,14 +483,6 @@
         },
         "name": "Ventilator Procedures",
         "description": "Codes used to report a ventilation procedure",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/VentilatorWithTracheostomyDevices"
-        },
-        "name": "Ventilator Devices when used with Tracheostomy",
-        "description": "Codes used for Devices that support Ventilation with a Tracheostomy [Populate VentilatorWithTracheostomyDevices](#todo)",
         "exampleBoolean": false
       },
       {
@@ -546,14 +538,14 @@
           "reference": "Measure/CDCHealthcareSupplyPathway"
         },
         "name": "CDC Healthcare Supply Pathway",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
           "reference": "Measure/CDCHealthcareWorkerStaffingPathway"
         },
         "name": "CDCHealthcareWorkerStaffingPathway",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
@@ -561,7 +553,7 @@
         },
         "name": "CDC Patient Impact and Hospital Capacity",
         "description": "This measure demonstrates reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
@@ -569,14 +561,22 @@
         },
         "name": "Computable CDC Patient Impact and Hospital Capacity",
         "description": "This measure demonstrates automated reporting on bed availability and use at a facility location based on CDC/NHSN reporting requirements.",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
           "reference": "Library/ComputableNHSNMeasureLibrary"
         },
         "name": "ComputableNHSNMeasureLibrary",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary"
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition12c"
+        },
+        "name": "Condition12c",
+        "description": "Condition for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -600,6 +600,14 @@
         },
         "name": "Condition1c",
         "description": "Condition for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/Condition22c"
+        },
+        "name": "Condition22c",
+        "description": "Condition for 2c",
         "exampleBoolean": true
       },
       {
@@ -764,6 +772,14 @@
       },
       {
         "reference": {
+          "reference": "Encounter/Encounter2c"
+        },
+        "name": "Encounter2c",
+        "description": "Encounter for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Encounter/Encounter3a"
         },
         "name": "Encounter3a",
@@ -920,7 +936,7 @@
         },
         "name": "ExampleNJ-20200404-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/04/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -928,7 +944,7 @@
         },
         "name": "ExampleNJ-20200404-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/04/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -936,7 +952,7 @@
         },
         "name": "ExampleNJ-20200405-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/05/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -944,7 +960,7 @@
         },
         "name": "ExampleNJ-20200405-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/05/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -952,7 +968,7 @@
         },
         "name": "ExampleNJ-20200406-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/06/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -960,7 +976,7 @@
         },
         "name": "ExampleNJ-20200406-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/06/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -968,7 +984,7 @@
         },
         "name": "ExampleNJ-20200407-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/07/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -976,7 +992,7 @@
         },
         "name": "ExampleNJ-20200407-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/07/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -984,7 +1000,7 @@
         },
         "name": "ExampleNJ-20200408-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/08/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -992,7 +1008,7 @@
         },
         "name": "ExampleNJ-20200408-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/08/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1000,7 +1016,7 @@
         },
         "name": "ExampleNJ-20200409-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/09/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1008,7 +1024,7 @@
         },
         "name": "ExampleNJ-20200409-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/09/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1016,7 +1032,7 @@
         },
         "name": "ExampleNJ-20200410-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/10/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1024,7 +1040,7 @@
         },
         "name": "ExampleNJ-20200410-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/10/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1032,7 +1048,7 @@
         },
         "name": "ExampleNJ-20200411-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/11/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1040,7 +1056,7 @@
         },
         "name": "ExampleNJ-20200411-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/11/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1048,7 +1064,7 @@
         },
         "name": "ExampleNJ-20200412-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/12/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1056,7 +1072,7 @@
         },
         "name": "ExampleNJ-20200412-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/12/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1064,7 +1080,7 @@
         },
         "name": "ExampleNJ-20200413-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/13/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1072,7 +1088,7 @@
         },
         "name": "ExampleNJ-20200413-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/13/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1080,7 +1096,7 @@
         },
         "name": "ExampleNJ-20200414-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/14/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1088,7 +1104,7 @@
         },
         "name": "ExampleNJ-20200414-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/14/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1096,7 +1112,7 @@
         },
         "name": "ExampleNJ-20200415-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/15/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1104,7 +1120,7 @@
         },
         "name": "ExampleNJ-20200415-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/15/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1112,7 +1128,7 @@
         },
         "name": "ExampleNJ-20200416-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/16/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1120,7 +1136,7 @@
         },
         "name": "ExampleNJ-20200416-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/16/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1128,7 +1144,7 @@
         },
         "name": "ExampleNJ-20200417-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/17/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1136,7 +1152,7 @@
         },
         "name": "ExampleNJ-20200417-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/17/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1144,7 +1160,7 @@
         },
         "name": "ExampleNJ-20200418-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/18/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1152,7 +1168,7 @@
         },
         "name": "ExampleNJ-20200418-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/18/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1160,7 +1176,7 @@
         },
         "name": "ExampleNJ-20200419-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/19/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1168,7 +1184,7 @@
         },
         "name": "ExampleNJ-20200419-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/19/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1176,7 +1192,7 @@
         },
         "name": "ExampleNJ-20200420-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/20/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1184,7 +1200,7 @@
         },
         "name": "ExampleNJ-20200420-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/20/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1192,7 +1208,7 @@
         },
         "name": "ExampleNJ-20200421-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/21/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1200,7 +1216,7 @@
         },
         "name": "ExampleNJ-20200421-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/21/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1208,7 +1224,7 @@
         },
         "name": "ExampleNJ-20200422-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/22/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1216,7 +1232,7 @@
         },
         "name": "ExampleNJ-20200422-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/22/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1224,7 +1240,7 @@
         },
         "name": "ExampleNJ-20200423-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/23/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1232,7 +1248,7 @@
         },
         "name": "ExampleNJ-20200423-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/23/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1240,7 +1256,7 @@
         },
         "name": "ExampleNJ-20200424-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/24/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1248,7 +1264,7 @@
         },
         "name": "ExampleNJ-20200424-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/24/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1256,7 +1272,7 @@
         },
         "name": "ExampleNJ-20200425-CDCPatientImpactAndHospitalCapacity",
         "description": "Example MeasureReport of CDCPatientImpactAndHospitalCapacity for NJ on 04/25/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1264,7 +1280,7 @@
         },
         "name": "ExampleNJ-20200425-FEMADailyHospitalCOVID19Reporting",
         "description": "Example MeasureReport of FEMADailyHospitalCOVID19Reporting for NJ on 04/25/2020",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
       },
       {
         "reference": {
@@ -1272,14 +1288,14 @@
         },
         "name": "FEMA Laboratory Orders and Results Daily Increase Reporting",
         "description": "This measure demonstrates reporting about Daily Laboratory Testing at a inpatient test sites capturing laboratory orders and results daily increase and cumulative counts.",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasure"
       },
       {
         "reference": {
           "reference": "Library/FEMAMeasureLibrary"
         },
         "name": "FEMAMeasureLibrary",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary"
       },
       {
         "reference": {
@@ -2610,6 +2626,14 @@
       },
       {
         "reference": {
+          "reference": "Immunization/Immunization12c"
+        },
+        "name": "Immunization12c",
+        "description": "Immunization for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Immunization/Immunization16c"
         },
         "name": "Immunization16c",
@@ -3106,6 +3130,14 @@
       },
       {
         "reference": {
+          "reference": "Location/Location2c"
+        },
+        "name": "Location2c",
+        "description": "Location for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Location/Location3a"
         },
         "name": "Location3a",
@@ -3546,6 +3578,14 @@
       },
       {
         "reference": {
+          "reference": "MedicationRequest/MedicationRequest12c"
+        },
+        "name": "MedicationRequest12c",
+        "description": "MedicationRequest for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "MedicationRequest/MedicationRequest13a"
         },
         "name": "MedicationRequest13a",
@@ -3653,7 +3693,7 @@
           "reference": "Library/NHSNMeasureLibrary"
         },
         "name": "NHSNMeasureLibrary",
-        "exampleCanonical": "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureLibrary"
+        "exampleCanonical": "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureLibrary"
       },
       {
         "reference": {
@@ -3701,6 +3741,14 @@
         },
         "name": "Observation12b",
         "description": "Observation-1 for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation12c"
+        },
+        "name": "Observation12c",
+        "description": "Observation-1 for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
         "exampleBoolean": true
       },
       {
@@ -3841,10 +3889,26 @@
       },
       {
         "reference": {
+          "reference": "Observation/Observation22c"
+        },
+        "name": "Observation22c",
+        "description": "Observation-2 for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Observation/Observation31c"
         },
         "name": "Observation31c",
         "description": "Observation-3 for Test Case 1c: Admission date =T-2 w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/Observation32c"
+        },
+        "name": "Observation32c",
+        "description": "Observation-3 for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
         "exampleBoolean": true
       },
       {
@@ -4029,6 +4093,14 @@
         },
         "name": "Patient2b",
         "description": "Patient for Test Case 2b: Negative test result w/ outcome = No",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/Patient2c"
+        },
+        "name": "Patient2c",
+        "description": "Patient for Test Case 2c: Negative test followed by Positive  w/ outcome = Yes",
         "exampleBoolean": true
       },
       {
@@ -4653,13 +4725,13 @@
         {
           "nameUrl": "index.html",
           "title": "Home",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "overview.html",
-          "title": "Overview",
           "generation": "markdown",
           "page": [
+            {
+              "nameUrl": "background.html",
+              "title": "Background",
+              "generation": "markdown"
+            },
             {
               "nameUrl": "situational_awareness_measures.html",
               "title": "Situational Awareness Measures",
@@ -4826,7 +4898,7 @@
       },
       {
         "code": "path-history",
-        "value": "http://hl7.org/fhir/us/saner/history.html"
+        "value": "http://hl7.org/fhir/saner/history.html"
       }
     ]
   }

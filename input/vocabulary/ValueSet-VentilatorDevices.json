@@ -4,7 +4,24 @@
   "name": "VentilatorDevices",
   "id": "VentilatorDevices",
   "title": "Ventilator Devices",
-  "description": "Codes used for Ventilator Devices [Populate VentilatorDevices](#todo)",
+  "description": "Codes used for Ventilator Devices",
   "version": "0.1.0",
-  "url": "http://hl7.org/fhir/us/saner/ValueSet/VentilatorDevices"
+  "url": "http://hl7.org/fhir/saner/ValueSet/VentilatorDevices",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "706172005",
+            "display": "Ventilator"
+          },
+          {
+            "code": "257463002",
+            "display": "Ventilator outlet"
+          }
+        ]
+      }
+    ]
+  }
 }

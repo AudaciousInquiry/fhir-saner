@@ -6,7 +6,7 @@ Description: "Defines the additional requirements for the Measure Source impleme
 * insert SanerDefinitionContent
 * name = "MeasureSource_Push"
 * title = "Measure Source implementing the Push Option."
-* date = "2020-09-10T18:17:35.860932-04:00"
+* date = "2020-10-01T02:36:53.144341-04:00"
 * kind = #requirements
 * description = "Defines the additional requirements for the Measure Source implementing the Push Option."
 * format[0] = #xml
@@ -16,7 +16,7 @@ Description: "Defines the additional requirements for the Measure Source impleme
 * rest[clientSlice].mode = #client
 
 * rest[clientSlice].resource[MeasureReportSlice].type = #MeasureReport
-* rest[clientSlice].resource[MeasureReportSlice].supportedProfile[0] = "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+* rest[clientSlice].resource[MeasureReportSlice].supportedProfile[0] = "http://hl7.org/fhir/saner/StructureDefinition/PublicHealthMeasureReport"
 
 * rest[clientSlice].resource[MeasureReportSlice].interaction[0].code = #create
 * rest[clientSlice].resource[MeasureReportSlice].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

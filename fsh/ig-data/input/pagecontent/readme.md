@@ -1,0 +1,186 @@
+
+# actors.md
+Audience
+: Implementors (software developers)
+Purpose
+: Describes the software components that a developer will implement, and provides references to the CapabilityStatement resources
+deescribing the features that the developers are expected to include in their software.
+
+# architecture.md
+Audience
+: Developers and development managers, software architects
+Purpose
+: Describes the various ways in which the actors can be deployed by multiple organizations to support communication of situation
+awareness data.
+
+# CSV_Conversion.md
+Audience
+: Developers
+
+Purpose
+: Describes how to convert CSV data to a MeasureReport and back again
+
+# definitions.md
+Audience
+: Readers of the guide
+Purpose
+: Provides key definitions for terms or concepts that developers may not be aware of (e.g., different ways of describing bed counts).
+
+# examples.md
+Audience
+: Readers of the guide
+Purpose
+: Provides navigation to examples, it should be broken up into different groupings for examples supporting different test cases.
+
+# identifier_systems.md
+Audience
+: Readers of the guide
+Purpose
+: It is empty and can likely be deleted.  It was intended to support navigation for identifier systems defined or referenced
+by this guide.
+
+# index.md
+Audience
+: Readers of the guide
+Purpose
+: The first page (the landing page) for the guide.  It is intended to be a navigational aid that is somewhat better than the
+automatically generated table of contents.  It is designed to fit (initially) on a single screen without scrolling.
+
+# measure_aggregation.md
+Audience
+:
+Purpose
+:
+
+# measure_automation.md
+Audience
+: Readers of the guide interested in automation features
+Purpose
+: Describes the requirements for automatic computation of measures from an EHR or other system.
+
+# measure_creation.md
+Audience
+: Measure Developers, implementors supporting automation
+Purpose
+: Explains how to create a measure and walks through a detailed example.
+
+# measure_group_beds.md
+Audience
+: Measure Developers, implementors supporting automation
+
+Purpose
+: Describes how the Beds Measure group in the guide works.
+
+# measure_group_covid19_deaths.md
+Audience
+: Measure Developers, implementors supporting automation
+
+Purpose
+: Describes how the COVID 19 deaths measure group in the guide works.
+
+# measure_group_covid19_patients.md
+Audience
+: Measure Developers, implementors supporting automation
+
+Purpose
+: Describes how the COVID19 Patient measure group in the guide works.
+
+# measure_group_hospital_acquired_covid19_patients.md
+Audience
+: Measure Developers, implementors supporting automation
+Purpose
+: Describes how the COVID19 Patient measure group in the guide works.
+
+# measure_group_ventilators.md
+Audience
+: Measure Developers, implementors supporting automation
+
+Purpose
+: Describes how the Ventilators measure group in the guide works.
+
+# measure_library.md
+Audience
+: Measure Developers, implementors supporting automation
+
+Purpose
+: Empty right now, meant to explain how a measure library works.
+
+# background.md
+Audience
+: Readers of the guide.
+
+Purpose
+: More like background and history
+
+# phrase_book.md
+Audience
+: Measure Developers
+
+Purpose
+: Explains how to encode various common concepts in a measure.
+
+# profiles.md
+Audience
+: Readers of the guide
+
+Purpose
+: A naviagtion aid enabling users to find profiles and extensions defined in the guide.
+
+# security_considerations.md
+Audience
+: Software architects, security professionals
+
+Purpose
+: Addresses the security concerns associated with the implementation of the components described in the guide.
+
+# situational_awareness_measures.md
+Audience
+: Readers of the guide
+Purpose
+: Introduces the topic of situation awareness, an area that overlaps with, but is not commonly addressed
+by technical professionals implementing HL7 FHIR.
+
+# technology_environment.md
+Audience
+: Policy makers, technology developers not familiar with hospital information system environments
+
+Purpose
+: Explains the information systems that make up a hospital enterprise.
+
+# test_plan.md
+Audience
+: Implementers, connectathon participants
+
+Purpose
+: Describes how components in the guide can be tested.
+
+# transaction-1.md transaction-2.md transaction-3.md transaction-4.md transaction-5.md
+Audience
+: Implementers
+
+Purpose
+: Describes the technical requirements of interactions between actors (called transactions by this guide). This material is automatically generated from XML.
+
+
+# transactions.md
+Audience
+: Implementers
+
+Purpose
+: Summarizes the function of each transaction described in the guide, and provides navigation to all transactions.
+
+# use_cases.md
+Audience
+: Readers of the guide, decision makers
+Purpose
+: Summarizes key use cases in the guide
+
+# vocabulary.md
+Audience
+: Readers of the guide
+Purpose
+: A navigation page organizing the technical artifacts (FHIR Resources) associated with the guide.
+
+
+
+

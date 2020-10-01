@@ -17,7 +17,7 @@ Description: "Create or update a MeasureReport from the CSV Format. If a report 
 * title = "Create or update a MeasureReport from CSV Format"
 * description = """Create or update a MeasureReport from the CSV Format. If a report already exists for the subject and reporter for the given time period, it is updated.
                             Otherwise, a new report is created. See [CSV Conversion](CSV_Conversion.html) for details."""
-* url = "http://hl7.org/fhir/us/saner/OperationDefinition/Measure-report-csv"
+* url = "http://hl7.org/fhir/saner/OperationDefinition/Measure-report-csv"
 
 * parameter[0].name = #input
 * parameter[0].use = #in

@@ -23,7 +23,7 @@ The MeasureReport to be aggregated can be provided in the measure-report paramet
 specifying the search criteria which the Intermediary will use to select the MeasureReport resources to aggregate.  In all cases, the MeasureReport resources
 being aggregated must reference the same Measure resource defining the MeasureReport to generate.
                         """
-* url = "http://hl7.org/fhir/us/saner/OperationDefinition/MeasureReport-aggregate"
+* url = "http://hl7.org/fhir/saner/OperationDefinition/MeasureReport-aggregate"
 
 * parameter[0].name = #_id
 * parameter[0].use = #in
